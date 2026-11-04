@@ -11,7 +11,7 @@
   const USD_TO_VND = 25500;
   const LAST_STATE_KEY = "cocvn157_last_seen_state";
 
-  // Danh mục đầy đủ 50 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($12,965 USD)
+  // Danh mục đầy đủ 58 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($13,565 USD)
   const KNOWN_BOUNTY_PRS = [
     {
       repo: "tenstorrent/tt-metal",
@@ -34,7 +34,7 @@
       prNumber: 11358,
       title: "Add shutdownCause to Dequeue, Enqueue, Queue, and Hub (#9844)",
       usd: 1000,
-      ciStatus: "✅ Đã ký CLA • 🟢 128/128 Tests Xanh",
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
       url: "https://github.com/zio/zio/pull/11358"
     },
     {
@@ -122,7 +122,7 @@
       prNumber: 3464,
       title: "Quote PostgreSQL reserved keywords in table names, aliases, and identifiers (#2914)",
       usd: 250,
-      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      ciStatus: "✅ Đã ký CLA • 🟢 18/18 Xanh",
       url: "https://github.com/zio/zio-quill/pull/3464"
     },
     {
@@ -254,11 +254,27 @@
       url: "https://github.com/zio/zio/pull/11364"
     },
     {
+      repo: "zio/zio",
+      prNumber: 11366,
+      title: "Die when Semaphore.withPermits requests more than maxPermits (#11187)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11366"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11367,
+      title: "Restore interruptibility after an async canceler runs (#11115)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11367"
+    },
+    {
       repo: "zio/zio-http",
       prNumber: 4368,
       title: "Generate optional OpenAPI endpoint query parameters with .optional (#4196)",
       usd: 100,
-      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      ciStatus: "✅ Đã ký CLA • 🟢 44/44 Xanh",
       url: "https://github.com/zio/zio-http/pull/4368"
     },
     {
@@ -266,8 +282,24 @@
       prNumber: 4369,
       title: "Ensure Middleware.requestLogging logs unrecovered defects in HandlerAspect (#4221)",
       usd: 100,
-      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      ciStatus: "✅ Đã ký CLA • 🟢 44/44 Xanh",
       url: "https://github.com/zio/zio-http/pull/4369"
+    },
+    {
+      repo: "zio/zio-http",
+      prNumber: 4370,
+      title: "Fix nested trailing fallback losing to root route after failed literal match (#4336)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio-http/pull/4370"
+    },
+    {
+      repo: "zio/zio-http",
+      prNumber: 4371,
+      title: "Support typed and optional OpenAPI endpoint header parameters (#4197)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio-http/pull/4371"
     },
     {
       repo: "tscircuit/schematic-trace-solver",
@@ -330,7 +362,7 @@
       prNumber: 983,
       title: "Add Arduino Uno Rev3 Schematic Tutorial (#42)",
       usd: 65,
-      ciStatus: "🟢 4/4 Checks Xanh",
+      ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/docs/pull/983"
     },
     {
@@ -338,7 +370,7 @@
       prNumber: 986,
       title: "Add ESP32 PCB Layout & Routing 4-Layer Tutorial (#44)",
       usd: 60,
-      ciStatus: "🟢 4/4 Checks Xanh",
+      ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/docs/pull/986"
     },
     {
@@ -346,8 +378,16 @@
       prNumber: 5125,
       title: "Pass fill_color to schematic_rect in SchematicRect (#3068)",
       usd: 50,
-      ciStatus: "🟢 17/17 Checks Xanh",
+      ciStatus: "🟢 19/19 Checks Xanh",
       url: "https://github.com/tscircuit/core/pull/5125"
+    },
+    {
+      repo: "tscircuit/cli",
+      prNumber: 5679,
+      title: "Use CircuitJsonToKicadProConverter to preserve board design-rule limits in KiCad export (#4716)",
+      usd: 50,
+      ciStatus: "🟢 CI Xanh 100%",
+      url: "https://github.com/tscircuit/cli/pull/5679"
     },
     {
       repo: "tscircuit/docs",
@@ -362,7 +402,7 @@
       prNumber: 982,
       title: "Add Class D Audio Amplifier Raspberry Pi HAT Tutorial (#603)",
       usd: 50,
-      ciStatus: "🟢 4/4 Checks Xanh",
+      ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/docs/pull/982"
     },
     {
@@ -370,7 +410,7 @@
       prNumber: 984,
       title: "Add Building an LED Letter Sign Tutorial (#50)",
       usd: 50,
-      ciStatus: "🟢 4/4 Checks Xanh",
+      ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/docs/pull/984"
     },
     {
@@ -378,8 +418,32 @@
       prNumber: 985,
       title: "Update circuit elements & overviews for recent core and props features (#849)",
       usd: 50,
-      ciStatus: "🟢 4/4 Checks Xanh",
+      ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/docs/pull/985"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 987,
+      title: "Add guide on using M.2 connectors for SparkFun MicroMod modules (#51)",
+      usd: 50,
+      ciStatus: "🟢 5/5 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/987"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 988,
+      title: "Document tscircuit user-facing tools & ecosystem (#60)",
+      usd: 50,
+      ciStatus: "🟢 5/5 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/988"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 989,
+      title: "Expand contributor guide across tscircuit repositories (#61)",
+      usd: 50,
+      ciStatus: "🟢 5/5 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/989"
     },
     {
       repo: "golang-cafe/job-board",

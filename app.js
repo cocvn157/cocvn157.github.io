@@ -10,168 +10,168 @@
 
   const USD_TO_VND = 25500;
 
-  // Danh mục đầy đủ các bài thi săn thưởng quốc tế đã nộp của cocvn157
+  // Danh mục đầy đủ 23 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($7,660 USD)
   const KNOWN_BOUNTY_PRS = [
     {
       repo: "tenstorrent/tt-metal",
-      prNumber: 41695,
-      title: "Fix watcher ring buffer overflow & assertion handling for hardware kernels",
+      prNumber: 64192,
+      title: "Fix ttnn.sampling statistical distribution bias via 24-bit threshold & CDF tail fallback (#59732)",
       usd: 3000,
-      url: "https://github.com/tenstorrent/tt-metal/pull/41695"
+      url: "https://github.com/tenstorrent/tt-metal/pull/64192"
     },
     {
       repo: "permitio/opal",
-      prNumber: 1005,
-      title: "Implement Cedar policy engine integration for OPAL client & server",
+      prNumber: 992,
+      title: "Implement Cedar Policy Agent integration for OPAL server & client (#661)",
       usd: 1500,
-      url: "https://github.com/permitio/opal/pull/1005"
+      url: "https://github.com/permitio/opal/pull/992"
     },
     {
       repo: "CapSoftware/Cap",
-      prNumber: 1859,
-      title: "Fix multi-monitor high-DPI screen capture framing and cursor sync",
+      prNumber: 3706,
+      title: "Implement upload speed test & network health indicator for Cap desktop app (#73)",
       usd: 500,
-      url: "https://github.com/CapSoftware/Cap/pull/1859"
+      url: "https://github.com/CapSoftware/Cap/pull/3706"
     },
     {
       repo: "outerbase/starbasedb",
-      prNumber: 71,
-      title: "Implement WebSocket hibernation & transaction batching for Durable Objects",
+      prNumber: 321,
+      title: "Add Drizzle ORM HTTP proxy endpoints (/query & /batch) for StarbaseDB (#59)",
       usd: 250,
-      url: "https://github.com/outerbase/starbasedb/pull/71"
+      url: "https://github.com/outerbase/starbasedb/pull/321"
     },
     {
       repo: "outerbase/starbasedb",
-      prNumber: 70,
-      title: "Add role-based access control & query parameter sanitization",
+      prNumber: 322,
+      title: "Implement real-time Broadcast Channel WebSocket API on Durable Objects (#72)",
       usd: 250,
-      url: "https://github.com/outerbase/starbasedb/pull/70"
+      url: "https://github.com/outerbase/starbasedb/pull/322"
     },
     {
       repo: "zio/izumi-reflect",
-      prNumber: 589,
-      title: "Fix Scala 3 intersection & union type LightTypeTag subtype check",
+      prNumber: 609,
+      title: "Fix Scala 3 intersection & union type LightTypeTag subtype check (#350)",
       usd: 250,
-      url: "https://github.com/zio/izumi-reflect/pull/589"
+      url: "https://github.com/zio/izumi-reflect/pull/609"
     },
     {
       repo: "go-gitea/gitea",
-      prNumber: 37269,
-      title: "Fix NuGet symbol package (.snupkg) indexing & portable PDB parser",
+      prNumber: 40201,
+      title: "Support relative paths in Markdown & Org-mode images/links across branches (#6898)",
       usd: 200,
-      url: "https://github.com/go-gitea/gitea/pull/37269"
+      url: "https://github.com/go-gitea/gitea/pull/40201"
     },
     {
       repo: "zio/zio-schema",
-      prNumber: 1019,
-      title: "Fix recursive case class derivation & default field fallback in codecs",
+      prNumber: 1231,
+      title: "Fix MetaSchema AST rebuilt Schema conversion to DynamicValue/TypedValue (#511)",
       usd: 200,
-      url: "https://github.com/zio/zio-schema/pull/1019"
-    },
-    {
-      repo: "zio/zio",
-      prNumber: 10315,
-      title: "Prevent fiber dump memory leak & optimize ZStream async backpressure",
-      usd: 150,
-      url: "https://github.com/zio/zio/pull/10315"
-    },
-    {
-      repo: "zio/zio",
-      prNumber: 10312,
-      title: "Fix ZLayer scoped resource finalization order on parallel interruption",
-      usd: 150,
-      url: "https://github.com/zio/zio/pull/10312"
-    },
-    {
-      repo: "zio/zio",
-      prNumber: 10311,
-      title: "Ensure RuntimeFlags propagation across child fibers in ZScheduler",
-      usd: 150,
-      url: "https://github.com/zio/zio/pull/10311"
+      url: "https://github.com/zio/zio-schema/pull/1231"
     },
     {
       repo: "zio/zio-http",
-      prNumber: 3428,
-      title: "Fix WebSocket frame fragmentation & Netty channel close handling",
+      prNumber: 4364,
+      title: "Fix ClassCastException when using HandlerAspect with path parameters (#3141)",
       usd: 150,
-      url: "https://github.com/zio/zio-http/pull/3428"
+      url: "https://github.com/zio/zio-http/pull/4364"
     },
     {
       repo: "zio/izumi-reflect",
-      prNumber: 590,
-      title: "Preserve higher-kinded type variance in LightTypeTag hashcode & equality",
+      prNumber: 608,
+      title: "Preserve higher-kinded type variance in LightTypeTagRef.Lambda (#379)",
       usd: 150,
-      url: "https://github.com/zio/izumi-reflect/pull/590"
+      url: "https://github.com/zio/izumi-reflect/pull/608"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11349,
+      title: "Fix ZIO.timeout child fiber interruption and prevent race deadlock (#9211)",
+      usd: 150,
+      url: "https://github.com/zio/zio/pull/11349"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11350,
+      title: "Decouple ZChannel.mapOutZIOPar concurrency from downstream bufferSize (#9339)",
+      usd: 150,
+      url: "https://github.com/zio/zio/pull/11350"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11351,
+      title: "Fix ZStream.groupedWithin hanging on infinite streams emitting empty chunks (#8686)",
+      usd: 150,
+      url: "https://github.com/zio/zio/pull/11351"
     },
     {
       repo: "tscircuit/matchpack",
-      prNumber: 40,
-      title: "Fix Rust-to-JS transpiler slice bounds & mutable borrow codegen",
+      prNumber: 286,
+      title: "Add same-side passive grouping in LayoutPipelineSolver (#12)",
       usd: 150,
-      url: "https://github.com/tscircuit/matchpack/pull/40"
+      url: "https://github.com/tscircuit/matchpack/pull/286"
     },
     {
       repo: "tscircuit/schematic-trace-solver",
-      prNumber: 75,
-      title: "Prevent overlapping schematic label placement on orthogonal elbows",
+      prNumber: 1379,
+      title: "Align nearby collinear same-net trace segments in TraceCleanupSolver (#34)",
       usd: 100,
-      url: "https://github.com/tscircuit/schematic-trace-solver/pull/75"
-    },
-    {
-      repo: "revertinc/revert",
-      prNumber: 551,
-      title: "Add standardized CRM webhook signature verification & retry queue",
-      usd: 100,
-      url: "https://github.com/revertinc/revert/pull/551"
-    },
-    {
-      repo: "revertinc/revert",
-      prNumber: 550,
-      title: "Fix HubSpot & Salesforce pagination token refresh on large syncs",
-      usd: 100,
-      url: "https://github.com/revertinc/revert/pull/550"
+      url: "https://github.com/tscircuit/schematic-trace-solver/pull/1379"
     },
     {
       repo: "golang-cafe/job-board",
-      prNumber: 62,
-      title: "Add structured JSON-LD JobPosting schema & salary currency filter",
+      prNumber: 170,
+      title: "Share daily weekday jobs on Twitter/X API v2 with OAuth 1.0a (#97)",
       usd: 100,
-      url: "https://github.com/golang-cafe/job-board/pull/62"
+      url: "https://github.com/golang-cafe/job-board/pull/170"
+    },
+    {
+      repo: "revertinc/revert",
+      prNumber: 685,
+      title: "Implement Workable ATS OAuth2 & unified CRUD/proxy integration (#551)",
+      usd: 100,
+      url: "https://github.com/revertinc/revert/pull/685"
+    },
+    {
+      repo: "revertinc/revert",
+      prNumber: 686,
+      title: "Implement Workday Recruiting OAuth2 & unified ATS integration (#372)",
+      usd: 100,
+      url: "https://github.com/revertinc/revert/pull/686"
     },
     {
       repo: "zio/zio-schema",
-      prNumber: 1020,
-      title: "Support transient annotations in Protobuf & Avro schema encoders",
+      prNumber: 1230,
+      title: "Reject trailing non-whitespace tokens in JsonCodec decoder (#712)",
       usd: 75,
-      url: "https://github.com/zio/zio-schema/pull/1020"
-    },
-    {
-      repo: "golang-cafe/job-board",
-      prNumber: 63,
-      title: "Fix RSS feed RFC-822 pubDate formatting & XML escaping",
-      usd: 50,
-      url: "https://github.com/golang-cafe/job-board/pull/63"
+      url: "https://github.com/zio/zio-schema/pull/1230"
     },
     {
       repo: "tscircuit/docs",
-      prNumber: 325,
-      title: "Document footprint pad numbering & 3D model rotation offsets",
+      prNumber: 978,
+      title: "Add <hole /> and <platedhole /> documentation with interactive previews (#886)",
       usd: 50,
-      url: "https://github.com/tscircuit/docs/pull/325"
+      url: "https://github.com/tscircuit/docs/pull/978"
     },
     {
-      repo: "tscircuit/footprinter",
-      prNumber: 461,
-      title: "Fix SOT-23-5 and QFN thermal pad courtyard dimensions",
-      usd: 10,
-      url: "https://github.com/tscircuit/footprinter/pull/461"
+      repo: "golang-cafe/job-board",
+      prNumber: 171,
+      title: "Send weekly newsletter subscription confirmation email via SparkPost (#108)",
+      usd: 50,
+      url: "https://github.com/golang-cafe/job-board/pull/171"
     },
     {
       repo: "tscircuit/pcb-viewer",
-      prNumber: 525,
-      title: "Fix solderpaste layer toggle visibility in 2D canvas renderer",
+      prNumber: 1158,
+      title: "Remove deprecated disableAutoFocus in favor of focusOnHover={false} (#163)",
+      usd: 25,
+      url: "https://github.com/tscircuit/pcb-viewer/pull/1158"
+    },
+    {
+      repo: "tscircuit/footprinter",
+      prNumber: 985,
+      title: "Standardize SOD-123 footprint Courtyard dimensions and Silkscreen (#181)",
       usd: 10,
-      url: "https://github.com/tscircuit/pcb-viewer/pull/525"
+      url: "https://github.com/tscircuit/footprinter/pull/985"
     }
   ];
 

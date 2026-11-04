@@ -34,7 +34,7 @@
       prNumber: 611,
       title: "Fix #481: Support subtype checks for refined types when overriding or defining type members",
       usd: 750,
-      ciStatus: "✅ Đã ký CLA • 🟢 Đang Chốt CI",
+      ciStatus: "✅ Đã ký CLA • 🟢 11/11 Xanh",
       url: "https://github.com/zio/izumi-reflect/pull/611"
     },
     {
@@ -114,7 +114,7 @@
       prNumber: 610,
       title: "Fix #404: Support TagMacro parameter substitution for polymorphic function types on Scala 3",
       usd: 150,
-      ciStatus: "✅ Đã ký CLA • 🟢 Đang Chốt CI",
+      ciStatus: "✅ Đã ký CLA • 🟢 11/11 Xanh",
       url: "https://github.com/zio/izumi-reflect/pull/610"
     },
     {

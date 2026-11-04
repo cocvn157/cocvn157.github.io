@@ -11,7 +11,7 @@
   const USD_TO_VND = 25500;
   const LAST_STATE_KEY = "cocvn157_last_seen_state";
 
-  // Danh mục đầy đủ 30 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($9,260 USD)
+  // Danh mục đầy đủ 40 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($12,190 USD)
   const KNOWN_BOUNTY_PRS = [
     {
       repo: "tenstorrent/tt-metal",
@@ -28,6 +28,14 @@
       usd: 1500,
       ciStatus: "🟢 4/4 Checks Xanh",
       url: "https://github.com/permitio/opal/pull/992"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11358,
+      title: "Add shutdownCause to Dequeue, Enqueue, Queue, and Hub (#9844)",
+      usd: 1000,
+      ciStatus: "✅ Đã ký CLA • 🟢 128/128 Tests Xanh",
+      url: "https://github.com/zio/zio/pull/11358"
     },
     {
       repo: "zio/izumi-reflect",
@@ -54,6 +62,38 @@
       url: "https://github.com/tscircuit/matchpack/pull/287"
     },
     {
+      repo: "zio/zio",
+      prNumber: 11359,
+      title: "Preserve defects in Cause#failureOrCause and Cause#failureTraceOrCause (#9874)",
+      usd: 300,
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
+      url: "https://github.com/zio/zio/pull/11359"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11360,
+      title: "Optimize FiberRuntime inbox with specialized FiberMailbox (#8807)",
+      usd: 300,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11360"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11361,
+      title: "Add Loom-friendly concurrent weak FiberSet (#8861)",
+      usd: 300,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11361"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11355,
+      title: "Fix Scala Native WeakConcurrentBag bucket collision & TreeBin NPE (#9681)",
+      usd: 280,
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
+      url: "https://github.com/zio/zio/pull/11355"
+    },
+    {
       repo: "outerbase/starbasedb",
       prNumber: 321,
       title: "Add Drizzle ORM HTTP proxy endpoints (/query & /batch) for StarbaseDB (#59)",
@@ -76,6 +116,14 @@
       usd: 250,
       ciStatus: "✅ Đã ký CLA • 🟢 11/11 Xanh",
       url: "https://github.com/zio/izumi-reflect/pull/609"
+    },
+    {
+      repo: "zio/zio-quill",
+      prNumber: 3464,
+      title: "Quote PostgreSQL reserved keywords in table names, aliases, and identifiers (#2914)",
+      usd: 250,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio-quill/pull/3464"
     },
     {
       repo: "go-gitea/gitea",
@@ -150,12 +198,44 @@
       url: "https://github.com/zio/zio/pull/11352"
     },
     {
+      repo: "zio/zio",
+      prNumber: 11357,
+      title: "Fix ZStream#tapSink backpressure and early downstream termination (#8792)",
+      usd: 150,
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
+      url: "https://github.com/zio/zio/pull/11357"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11362,
+      title: "Add Scala 3 derives Config support (#9268)",
+      usd: 150,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11362"
+    },
+    {
       repo: "tscircuit/matchpack",
       prNumber: 286,
       title: "Add same-side passive grouping in LayoutPipelineSolver (#12)",
       usd: 150,
       ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/matchpack/pull/286"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11354,
+      title: "Use ConcurrentLinkedDeque on Scala Native via core/jvm-native (#9189)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11354"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11356,
+      title: "Use Diff and modular DiffRenderer in classic Assertion.equalTo (#8664)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
+      url: "https://github.com/zio/zio/pull/11356"
     },
     {
       repo: "tscircuit/schematic-trace-solver",
@@ -463,31 +543,37 @@
 
     try {
       const resp = await fetch(
-        "https://api.github.com/search/issues?q=is:pr+author:cocvn157&sort=created&order=desc&per_page=50",
+        "https://api.github.com/search/issues?q=is:pr+author:cocvn157&sort=created&order=desc&per_page=100",
         { headers: { Accept: "application/vnd.github+json" } }
       );
       if (!resp.ok) throw new Error("GitHub API rate limit");
       const data = await resp.json();
       if (!data.items || data.items.length === 0) throw new Error("Empty items");
 
-      const mapped = data.items.map((pr) => {
-        const repoUrlParts = (pr.repository_url || "").split("/");
-        const repoName = repoUrlParts.slice(-2).join("/");
-        const meta = getKnownMeta(repoName, pr.number);
-        const isMerged = Boolean(pr.pull_request && pr.pull_request.merged_at);
+      const mapped = data.items
+        .filter((pr) => {
+          const repoUrlParts = (pr.repository_url || "").split("/");
+          const repoName = repoUrlParts.slice(-2).join("/").toLowerCase();
+          return !repoName.includes("awesome-");
+        })
+        .map((pr) => {
+          const repoUrlParts = (pr.repository_url || "").split("/");
+          const repoName = repoUrlParts.slice(-2).join("/");
+          const meta = getKnownMeta(repoName, pr.number);
+          const isMerged = Boolean(pr.pull_request && pr.pull_request.merged_at);
 
-        return {
-          repo: repoName,
-          prNumber: pr.number,
-          title: pr.title,
-          usd: meta.usd,
-          ciStatus: meta.ciStatus,
-          url: pr.html_url,
-          state: pr.state,
-          merged: isMerged,
-          comments: pr.comments || 0
-        };
-      });
+          return {
+            repo: repoName,
+            prNumber: pr.number,
+            title: pr.title,
+            usd: meta.usd,
+            ciStatus: meta.ciStatus,
+            url: pr.html_url,
+            state: pr.state,
+            merged: isMerged,
+            comments: pr.comments || 0
+          };
+        });
 
       renderTableAndKpis(mapped, true, false);
     } catch (err) {

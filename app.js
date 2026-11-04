@@ -11,7 +11,7 @@
   const USD_TO_VND = 25500;
   const LAST_STATE_KEY = "cocvn157_last_seen_state";
 
-  // Danh mục đầy đủ 40 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($12,190 USD)
+  // Danh mục đầy đủ 50 bài thi săn thưởng quốc tế thực tế đã nộp của cocvn157 ($12,965 USD)
   const KNOWN_BOUNTY_PRS = [
     {
       repo: "tenstorrent/tt-metal",
@@ -74,7 +74,7 @@
       prNumber: 11360,
       title: "Optimize FiberRuntime inbox with specialized FiberMailbox (#8807)",
       usd: 300,
-      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
       url: "https://github.com/zio/zio/pull/11360"
     },
     {
@@ -82,7 +82,7 @@
       prNumber: 11361,
       title: "Add Loom-friendly concurrent weak FiberSet (#8861)",
       usd: 300,
-      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
       url: "https://github.com/zio/zio/pull/11361"
     },
     {
@@ -210,8 +210,16 @@
       prNumber: 11362,
       title: "Add Scala 3 derives Config support (#9268)",
       usd: 150,
-      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
       url: "https://github.com/zio/zio/pull/11362"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11365,
+      title: "Fix Gen.fromIterable nondeterminism in for-comprehensions (#9101)",
+      usd: 150,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11365"
     },
     {
       repo: "tscircuit/matchpack",
@@ -236,6 +244,30 @@
       usd: 100,
       ciStatus: "✅ Đã ký CLA • 🟢 21/21 Xanh",
       url: "https://github.com/zio/zio/pull/11356"
+    },
+    {
+      repo: "zio/zio",
+      prNumber: 11364,
+      title: "Implement RuntimeFlag.OpLog debug logging in FiberRuntime.runLoop (#9170)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio/pull/11364"
+    },
+    {
+      repo: "zio/zio-http",
+      prNumber: 4368,
+      title: "Generate optional OpenAPI endpoint query parameters with .optional (#4196)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio-http/pull/4368"
+    },
+    {
+      repo: "zio/zio-http",
+      prNumber: 4369,
+      title: "Ensure Middleware.requestLogging logs unrecovered defects in HandlerAspect (#4221)",
+      usd: 100,
+      ciStatus: "✅ Đã ký CLA • 🟢 CI Xanh 100%",
+      url: "https://github.com/zio/zio-http/pull/4369"
     },
     {
       repo: "tscircuit/schematic-trace-solver",
@@ -295,11 +327,59 @@
     },
     {
       repo: "tscircuit/docs",
+      prNumber: 983,
+      title: "Add Arduino Uno Rev3 Schematic Tutorial (#42)",
+      usd: 65,
+      ciStatus: "🟢 4/4 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/983"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 986,
+      title: "Add ESP32 PCB Layout & Routing 4-Layer Tutorial (#44)",
+      usd: 60,
+      ciStatus: "🟢 4/4 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/986"
+    },
+    {
+      repo: "tscircuit/core",
+      prNumber: 5125,
+      title: "Pass fill_color to schematic_rect in SchematicRect (#3068)",
+      usd: 50,
+      ciStatus: "🟢 17/17 Checks Xanh",
+      url: "https://github.com/tscircuit/core/pull/5125"
+    },
+    {
+      repo: "tscircuit/docs",
       prNumber: 978,
       title: "Add Designing an ESP32 WiFi Test Board schematic tutorial (#886)",
       usd: 50,
       ciStatus: "🟢 5/5 Checks Xanh",
       url: "https://github.com/tscircuit/docs/pull/978"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 982,
+      title: "Add Class D Audio Amplifier Raspberry Pi HAT Tutorial (#603)",
+      usd: 50,
+      ciStatus: "🟢 4/4 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/982"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 984,
+      title: "Add Building an LED Letter Sign Tutorial (#50)",
+      usd: 50,
+      ciStatus: "🟢 4/4 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/984"
+    },
+    {
+      repo: "tscircuit/docs",
+      prNumber: 985,
+      title: "Update circuit elements & overviews for recent core and props features (#849)",
+      usd: 50,
+      ciStatus: "🟢 4/4 Checks Xanh",
+      url: "https://github.com/tscircuit/docs/pull/985"
     },
     {
       repo: "golang-cafe/job-board",

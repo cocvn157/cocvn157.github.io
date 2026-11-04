@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">SmileStudio International Dental & Aesthetic Clinic | Swiss Precision Dentistry</title>
+  <meta name="description" content="Hệ thống Nha Khoa Thẩm Mỹ & Da Liễu Chuẩn Quốc Tế. Trải nghiệm mô phỏng nụ cười AI 3D, bảng giá minh bạch trả góp 0% và đặt lịch chụp phim CT ConeBeam 3D miễn phí." />
+
+  <!-- Google Fonts: Plus Jakarta Sans + Instrument Serif + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pearl: '#F8FAFC',
+            navy: {
+              DEFAULT: '#0B192C',
+              800: '#112540',
+              900: '#07111E'
+            },
+            teal: {
+              DEFAULT: '#0D9488',
+              600: '#0D9488',
+              700: '#0F766E',
+              800: '#115E59'
+            },
+            mint: {
+              DEFAULT: '#CCFBF1',
+              soft: '#F0FDFA'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'swiss': '0 20px 50px -12px rgba(11, 25, 44, 0.07)',
+            'swiss-lg': '0 28px 70px -15px rgba(11, 25, 44, 0.12)',
+            'teal-glow': '0 12px 32px -8px rgba(13, 148, 136, 0.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-pearl: #F8FAFC;
+      --pure-white: #FFFFFF;
+      --surgical-navy: #0B192C;
+      --medical-teal: #0D9488;
+      --soft-mint: #CCFBF1;
+    }
+
+    body {
+      background-color: var(--bg-pearl);
+      color: var(--surgical-navy);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Architectural Swiss Grid Lines */
+    .swiss-grid-bg {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(11, 25, 44, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 25, 44, 0.03) 1px, transparent 1px);
+    }
+
+    /* Interactive Before/After Smile Slider Styling */
+    .comparison-stage {
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    /* Simulated Clinical Enamel States */
+    .smile-before-filter {
+      filter: sepia(0.34) saturate(1.22) brightness(0.91) contrast(0.96);
+    }
+
+    .smile-after-a1 {
+      filter: brightness(1.05) contrast(1.04) saturate(1.02);
+      transition: filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .smile-after-bl2 {
+      filter: brightness(1.11) contrast(1.07) saturate(0.96) hue-rotate(-3deg);
+      transition: filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .smile-after-bl1 {
+      filter: brightness(1.17) contrast(1.10) saturate(0.90) hue-rotate(-6deg);
+      transition: filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Custom Range Input for Cost Calculator */
+    input[type="range"].clinical-range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 999px;
+      outline: none;
+    }
+
+    input[type="range"].clinical-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #0D9488;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.25);
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    input[type="range"].clinical-range::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+      background: #0B192C;
+    }
+
+    /* Subtle pulse for live clinic availability */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.85); opacity: 0.8; }
+      70% { transform: scale(1.9); opacity: 0; }
+      100% { transform: scale(1.9); opacity: 0; }
+    }
+    .live-dot::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      background-color: #0D9488;
+      animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="selection:bg-mint selection:text-navy">
+
+  <!-- TOP CLINICAL TELEMETRY & PROMO BAR -->
+  <div class="bg-navy text-white border-b border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-teal/20 border border-mint/30 text-mint font-mono text-[11px] uppercase tracking-wider">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-mint"></span>
+          </span>
+          ISO 9001:2015 • SWISS STERILIZATION
+        </span>
+        <span id="top-promo-addr" class="font-medium text-slate-200 truncate max-w-xs sm:max-w-xl">
+          Đặt lịch khám Online: Miễn phí 100% Chụp Phim CT 3D &amp; Tư vấn Bác sĩ
+        </span>
+      </div>
+      <div class="hidden md:flex items-center gap-5 font-mono text-[11px] text-slate-300">
+        <span>GIỜ LÀM VIỆC: 08:00 – 20:00 (T2 – CN)</span>
+        <span class="text-white/20">|</span>
+        <a href="#booking-section" class="text-mint hover:underline flex items-center gap-1">
+          <span>ƯU TIÊN KHÔNG CHỜ ĐỢI</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY ARCHITECTURAL HEADER (TEND DENTAL / ONE MEDICAL STYLE) -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Brand Identity -->
+      <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
+        <div class="w-11 h-11 rounded-xl bg-navy flex items-center justify-center text-mint shadow-sm group-hover:bg-teal transition-colors shrink-0">
+          <!-- Minimalist Swiss Cross + Dental Arch Vector -->
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-3.8 0-6.5 2.4-6.5 6.2 0 2.6 1.1 5.1 2.1 7.9.6 1.7 1.3 3.9 2.3 3.9.9 0 1.2-2.1 2.1-2.1s1.2 2.1 2.1 2.1c1 0 1.7-2.2 2.3-3.9 1-2.8 2.1-5.3 2.1-7.9C18.5 5.4 15.8 3 12 3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 9.5h5M12 7v5" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="nav-clinic-name" class="font-bold text-base sm:text-lg tracking-tight text-navy leading-tight line-clamp-1">
+              SmileStudio International Dental
+            </span>
+            <span class="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono font-semibold bg-mint text-teal-800 rounded">
+              FDA / CE
+            </span>
+          </div>
+          <p class="text-[11px] font-mono uppercase tracking-widest text-slate-500">
+            Aesthetic Dentistry &amp; Clinical Dermatology
+          </p>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#smile-simulator" class="hover:text-teal transition-colors flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-teal"></span>
+          Mô Phỏng Nụ Cười 3D
+        </a>
+        <a href="#treatments" class="hover:text-teal transition-colors">Chuyên Khoa Thẩm Mỹ</a>
+        <a href="#cost-calculator" class="hover:text-teal transition-colors">Dự Toán &amp; Trả Góp 0%</a>
+        <a href="#doctors" class="hover:text-teal transition-colors">Hội Đồng Bác Sĩ</a>
+        <a href="#booking-section" class="hover:text-teal transition-colors">Đặt Lịch CT 3D</a>
+      </nav>
+
+      <!-- Direct Hotline & CTA -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a id="nav-phone-btn" href="tel:0909888999" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-pearl hover:border-teal/40 text-xs font-mono font-semibold text-navy transition-all">
+          <svg class="w-3.5 h-3.5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span id="nav-phone-display">0909 888 999</span>
+        </a>
+        <a href="#booking-section" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-teal hover:bg-teal-700 text-white font-semibold text-xs sm:text-sm shadow-teal-glow transition-all active:scale-[0.98]">
+          <span>Đặt Lịch Khám</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION: SWISS CLINICAL ARCHITECTURE -->
+  <section class="relative swiss-grid-bg pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-slate-200/80 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Column: Editorial Value Proposition -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-teal relative live-dot"></span>
+            <span class="text-xs font-mono font-medium text-navy uppercase tracking-wider">
+              SWISS DENTAL &amp; AESTHETIC PROTOCOL • 2026 EDITION
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-navy tracking-tight leading-[1.08]">
+            Kiến tạo nụ cười chuẩn <span class="font-serif italic font-normal text-teal text-5xl sm:text-6xl lg:text-[64px]">Thụy Sĩ</span>, nhẹ nhàng không ê buốt.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Tại <strong id="hero-clinic-name" class="text-navy font-semibold">SmileStudio International Dental &amp; Aesthetic Clinic</strong>, mỗi phác đồ thẩm mỹ răng sứ Emax, chỉnh nha Invisalign và cấy ghép Implant đều được thiết kế số hóa trên hệ thống <strong>iTero Element 5D</strong> &amp; <strong>CT ConeBeam 3D</strong> trước khi chạm vào răng thật.
+          </p>
+
+          <!-- Dynamic Address / Offer Highlight Card -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-white border border-teal/25 shadow-swiss flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-mint/70 text-teal-800 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-[11px] font-mono uppercase tracking-wider text-teal font-semibold">
+                  ĐẶC QUYỀN ĐẶT HẸN TRỰC TUYẾN &amp; ĐỊA CHỈ PHÒNG KHÁM
+                </div>
+                <p id="hero-addr-text" class="text-sm sm:text-base font-bold text-navy mt-0.5">
+                  Đặt lịch khám Online: Miễn phí 100% Chụp Phim CT 3D &amp; Tư vấn Bác sĩ
+                </p>
+              </div>
+            </div>
+            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-lg bg-mint text-teal-800 font-mono text-xs font-bold shrink-0">
+              TRỊ GIÁ 1.200.000Đ
+            </span>
+          </div>
+
+          <!-- Dual Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+            <a href="#booking-section" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-navy hover:bg-navy-800 text-white font-bold text-sm sm:text-base shadow-swiss-lg transition-all group">
+              <span>Nhận Suất Chụp CT 3D Miễn Phí</span>
+              <svg class="w-4 h-4 text-mint group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="#smile-simulator" class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white hover:bg-mint-soft text-navy border border-slate-200 hover:border-teal/40 font-semibold text-sm sm:text-base transition-all">
+              <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+              <span>Thử Tone Răng Sứ Trực Tuyến</span>
+            </a>
+          </div>
+
+          <!-- Clinical Trust Metrics -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-200/80">
+            <div>
+              <div class="font-mono text-2xl sm:text-3xl font-bold text-navy">18,400+</div>
+              <div class="text-xs text-slate-500 mt-0.5">Ca Veneer &amp; Implant thành công</div>
+            </div>
+            <div>
+              <div class="font-mono text-2xl sm:text-3xl font-bold text-teal">0.03<span class="text-base">mm</span></div>
+              <div class="text-xs text-slate-500 mt-0.5">Độ chính xác vi phẫu CAD/CAM</div>
+            </div>
+            <div>
+              <div class="font-mono text-2xl sm:text-3xl font-bold text-navy">100%</div>
+              <div class="text-xs text-slate-500 mt-0.5">Hợp đồng &amp; Thẻ bảo hành Quốc tế</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Architectural Clinical Suite Photography + Live Telemetry Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-swiss-lg bg-white">
+            <img 
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85" 
+              alt="Phòng điều trị vô trùng chuẩn Thụy Sĩ tại SmileStudio" 
+              class="w-full h-[420px] sm:h-[500px] object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent"></div>
+
+            <!-- Top Floating Badge -->
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+              <span class="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-navy font-mono text-[11px] font-semibold shadow-sm flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-teal"></span>
+                SUITE 04 • NEGATIVE PRESSURE STERILE
+              </span>
+              <span class="px-3 py-1.5 rounded-full bg-navy/80 backdrop-blur-md text-mint font-mono text-[11px]">
+                3D CONEBEAM READY
+              </span>
+            </div>
+
+            <!-- Bottom Clinical Guarantee Overlay -->
+            <div class="absolute bottom-5 left-5 right-5 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-white shadow-lg">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="font-serif italic text-teal text-lg leading-none">“Zero Pain, Maximum Preservation”</p>
+                  <h2 class="font-bold text-navy text-sm sm:text-base mt-1">
+                    Cam kết bảo tồn tối đa mô răng nguyên bản
+                  </h2>
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    Trực tiếp thăm khám bởi Bác sĩ Chuyên khoa I &amp; Thạc sĩ Răng Hàm Mặt
+                  </p>
+                </div>
+                <a href="#booking-section" class="w-11 h-11 rounded-xl bg-teal text-white flex items-center justify-center shrink-0 hover:bg-navy transition-colors" title="Đặt lịch ngay">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FEATURE 1: SMILE TRANSFORMATION SIMULATOR (BEFORE / AFTER DRAG SLIDER + SHADE GUIDE) -->
+  <section id="smile-simulator" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint/60 text-teal-800 font-mono text-xs font-semibold uppercase tracking-wider">
+            INTERACTIVE DIGITAL SMILE DESIGN (DSD)
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight mt-3">
+            Trình Mô Phỏng Biến Đổi Nụ Cười <span class="font-serif italic font-normal text-teal text-4xl sm:text-5xl">Before / After</span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
+            Kéo thanh trượt sang trái/phải để so sánh hiệu quả thực tế giữa men răng ố vàng/xỉn màu và kết quả sau 60 phút công nghệ <strong>Laser Whitening Beyond II</strong> hoặc <strong>Mặt dán sứ Emax Veneer Thụy Sĩ</strong>.
+          </p>
+        </div>
+
+        <!-- Case Selector Pills -->
+        <div class="inline-flex p-1.5 rounded-2xl bg-pearl border border-slate-200 self-start">
+          <button type="button" onclick="selectSmileCase(0)" id="case-tab-0" class="case-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-white shadow-sm">
+            Ca 01: Laser Whitening + Veneer
+          </button>
+          <button type="button" onclick="selectSmileCase(1)" id="case-tab-1" class="case-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 hover:text-navy">
+            Ca 02: Thiết Kế Sứ Emax 16 Răng
+          </button>
+          <button type="button" onclick="selectSmileCase(2)" id="case-tab-2" class="case-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 hover:text-navy">
+            Ca 03: Chỉnh Nha &amp; Tinh Chỉnh Nụ Cười
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulator Main Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        
+        <!-- Left 7 Cols: Interactive Drag Comparison Stage -->
+        <div class="lg:col-span-7">
+          <div id="comparison-container" class="comparison-stage rounded-3xl border border-slate-200 shadow-swiss-lg bg-navy h-[380px] sm:h-[480px] relative cursor-ew-resize">
+            
+            <!-- AFTER LAYER (Full Width Underneath) -->
+            <img 
+              id="sim-after-img"
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=85" 
+              alt="Sau khi Tẩy Trắng Laser / Bọc Sứ Emax Veneer" 
+              class="w-full h-full object-cover object-center smile-after-a1 pointer-events-none select-none"
+            />
+            <!-- Subtle Pearl Glint Overlay for After -->
+            <div id="sim-after-tint" class="absolute inset-0 bg-gradient-to-tr from-teal/10 via-transparent to-white/15 pointer-events-none transition-opacity duration-300"></div>
+
+            <!-- BEFORE LAYER (Clipped by Slider Percentage) -->
+            <div id="sim-before-wrapper" class="absolute inset-0 overflow-hidden pointer-events-none" style="clip-path: inset(0 50% 0 0);">
+              <img 
+                id="sim-before-img"
+                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=85" 
+                alt="Trước khi Tẩy Trắng / Bọc Sứ Veneer" 
+                class="w-full h-full object-cover object-center smile-before-filter select-none"
+              />
+              <!-- Warm Enamel Stain Overlay for Realistic Clinical Before Comparison -->
+              <div class="absolute inset-0 bg-amber-900/20 mix-blend-multiply"></div>
+            </div>
+
+            <!-- Top Labels: BEFORE & AFTER -->
+            <div class="absolute top-4 left-4 z-10 pointer-events-none">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-navy/85 backdrop-blur-md text-white text-xs font-mono font-medium border border-white/15">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                TRƯỚC: MEN RĂNG XỈN MÀU (SHADE A3.5)
+              </span>
+            </div>
+            <div class="absolute top-4 right-4 z-10 pointer-events-none">
+              <span id="sim-after-badge" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal/95 backdrop-blur-md text-white text-xs font-mono font-semibold shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-mint"></span>
+                SAU 60 PHÚT: TONE TỰ NHIÊN A1
+              </span>
+            </div>
+
+            <!-- DRAG HANDLE LINE & BUTTON -->
+            <div id="sim-handle-line" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] z-20 pointer-events-none" style="left: 50%;">
+              <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white text-navy shadow-xl border-2 border-teal flex items-center justify-center">
+                <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 9l-4 3 4 3m8-6l4 3-4 3"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Bottom Slider Helper Bar -->
+            <div class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between px-4 py-2.5 rounded-2xl bg-navy/80 backdrop-blur-md text-white text-xs border border-white/10 pointer-events-none">
+              <span id="sim-case-caption" class="font-medium truncate">
+                Phác đồ: Laser Beyond II + Phủ sứ Emax Press 0.3mm
+              </span>
+              <span id="sim-percent-readout" class="font-mono text-mint font-semibold shrink-0 ml-2">
+                SO SÁNH: 50% / 50%
+              </span>
+            </div>
+          </div>
+
+          <!-- Accessible Range Control Below Image -->
+          <div class="mt-4 flex items-center gap-4 px-2">
+            <span class="text-xs font-mono uppercase text-slate-500 shrink-0">Trước điều trị</span>
+            <input 
+              id="sim-range-input" 
+              type="range" 
+              min="5" 
+              max="95" 
+              value="50" 
+              aria-label="Kéo để so sánh trước và sau điều trị nha khoa"
+              class="clinical-range"
+              oninput="updateSmileComparison(this.value)"
+            />
+            <span class="text-xs font-mono uppercase text-teal font-semibold shrink-0">Sau 60 phút</span>
+          </div>
+        </div>
+
+        <!-- Right 5 Cols: VITA 3D-Master Shade Guide & Clinical Telemetry -->
+        <div class="lg:col-span-5 bg-pearl rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-swiss space-y-6">
+          <div>
+            <span class="text-[11px] font-mono font-semibold uppercase tracking-widest text-teal">
+              VITA 3D-MASTER® SPECTROPHOTOMETER
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold text-navy mt-1">
+              Chọn Tone Màu Sứ &amp; Độ Trắng Sáng
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Nhấn vào từng bảng màu sứ chuẩn Quốc tế bên dưới để xem độ bắt sáng và độ trong mờ trên nụ cười mẫu:
+            </p>
+          </div>
+
+          <!-- 3 Shade Guide Cards -->
+          <div class="space-y-3">
+            <!-- Shade A1 -->
+            <button 
+              type="button" 
+              onclick="selectToothShade('A1')" 
+              id="shade-btn-A1"
+              class="w-full text-left p-4 rounded-2xl border-2 border-teal bg-white shadow-sm transition-all flex items-center justify-between gap-4"
+            >
+              <div class="flex items-center gap-3.5">
+                <!-- Tooth Swatch Visual -->
+                <div class="w-12 h-12 rounded-xl border border-slate-200 flex flex-col items-center justify-center shrink-0 shadow-inner" style="background: linear-gradient(145deg, #FFFFFF 0%, #F7F5EE 65%, #EBE6D8 100%);">
+                  <span class="font-mono text-xs font-bold text-navy">A1</span>
+                  <span class="text-[9px] font-mono text-slate-500">VITA</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-navy text-sm sm:text-base">Tone Tự Nhiên A1</span>
+                    <span class="px-2 py-0.5 rounded bg-mint text-teal-800 font-mono text-[10px] font-bold">PHỔ BIẾN NHẤT</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    Trắng ngà ngọc trai tự nhiên, có rìa cắn trong mờ 98% như răng thật.
+                  </p>
+                </div>
+              </div>
+              <div class="font-mono text-xs font-bold text-teal shrink-0">+5 Tone</div>
+            </button>
+
+            <!-- Shade BL2 -->
+            <button 
+              type="button" 
+              onclick="selectToothShade('BL2')" 
+              id="shade-btn-BL2"
+              class="w-full text-left p-4 rounded-2xl border border-slate-200 bg-white/70 hover:bg-white transition-all flex items-center justify-between gap-4"
+            >
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl border border-slate-200 flex flex-col items-center justify-center shrink-0 shadow-inner" style="background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 70%, #E6EEF6 100%);">
+                  <span class="font-mono text-xs font-bold text-navy">BL2</span>
+                  <span class="text-[9px] font-mono text-slate-500">SWISS</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-navy text-sm sm:text-base">Tone Trắng Sáng BL2</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-[10px] font-semibold">DOANH NHÂN</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    Trắng sáng thanh lịch chuẩn Âu Mỹ, tôn da và cực kỳ sang trọng khi giao tiếp.
+                  </p>
+                </div>
+              </div>
+              <div class="font-mono text-xs font-bold text-teal shrink-0">+8 Tone</div>
+            </button>
+
+            <!-- Shade BL1 -->
+            <button 
+              type="button" 
+              onclick="selectToothShade('BL1')" 
+              id="shade-btn-BL1"
+              class="w-full text-left p-4 rounded-2xl border border-slate-200 bg-white/70 hover:bg-white transition-all flex items-center justify-between gap-4"
+            >
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl border border-teal/30 flex flex-col items-center justify-center shrink-0 shadow-inner" style="background: linear-gradient(145deg, #FFFFFF 0%, #F4F9FF 80%, #E0F2FE 100%);">
+                  <span class="font-mono text-xs font-bold text-teal-800">BL1</span>
+                  <span class="text-[9px] font-mono text-teal">GLAM</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-navy text-sm sm:text-base">Tone Sứ Hollywood BL1</span>
+                    <span class="px-2 py-0.5 rounded bg-navy text-mint font-mono text-[10px] font-semibold">CELEBRITY</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">
+                    Trắng sứ kim cương nổi bật dưới ống kính studio, chống bám màu cà phê/trà tuyệt đối.
+                  </p>
+                </div>
+              </div>
+              <div class="font-mono text-xs font-bold text-teal shrink-0">+12 Tone</div>
+            </button>
+          </div>
+
+          <!-- Clinical Optical Spec Readout -->
+          <div class="p-4 rounded-2xl bg-white border border-slate-200/80 grid grid-cols-3 gap-3 text-center">
+            <div>
+              <div class="text-[10px] font-mono uppercase text-slate-400">ĐỘ TRONG MỜ</div>
+              <div id="spec-translucency" class="font-mono text-sm font-bold text-navy mt-0.5">98.4% (Emax)</div>
+            </div>
+            <div class="border-x border-slate-100">
+              <div class="text-[10px] font-mono uppercase text-slate-400">ĐỘ BỀN UỐN</div>
+              <div id="spec-strength" class="font-mono text-sm font-bold text-teal mt-0.5">530 MPa</div>
+            </div>
+            <div>
+              <div class="text-[10px] font-mono uppercase text-slate-400">BẢO HÀNH</div>
+              <div id="spec-warranty" class="font-mono text-sm font-bold text-navy mt-0.5">15 Năm Quốc Tế</div>
+            </div>
+          </div>
+
+          <!-- Apply to Booking Button -->
+          <button 
+            type="button"
+            onclick="applyShadeToBooking()"
+            class="w-full py-3.5 px-5 rounded-2xl bg-navy hover:bg-teal text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
+          >
+            <span>Đặt Lịch Ướm Thử Form Răng &amp; Tone Màu Này (Miễn Phí)</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL TREATMENTS SHOWCASE (NO EMOJIS — HIGH-RES PHOTOGRAPHY ONLY) -->
+  <section id="treatments" class="py-16 lg:py-24 swiss-grid-bg border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-teal">
+            SWISS CLINICAL DEPARTMENTS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight mt-2">
+            Chuyên Khoa Nha Khoa &amp; Thẩm Mỹ Công Nghệ Cao
+          </h2>
+        </div>
+        <p class="text-slate-600 text-sm max-w-md">
+          100% vật liệu sứ Ivoclar Vivadent (Thụy Sĩ), trụ Implant Straumann và khay chỉnh nha Invisalign Hoa Kỳ đều có mã QR truy xuất nguồn gốc chính hãng.
+        </p>
+      </div>
+
+      <!-- 4 Architectural Treatment Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Emax Veneer & Crown -->
+        <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss hover:shadow-swiss-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85" 
+                alt="Mặt dán sứ Emax Veneer siêu mỏng" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[10px] font-semibold">
+                CODE: VEN-EMAX-3D
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">IVOCLAR VIVADENT • SWITZERLAND</div>
+              <h3 class="text-lg font-bold text-navy mt-1">
+                Mặt Dán Sứ Veneer Emax &amp; Lisi Press
+              </h3>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                Thiết kế siêu mỏng chỉ 0.2 – 0.3mm, bảo tồn 95% men răng thật, không điều trị tủy, độ trong quang học tự nhiên tuyệt đối.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 block">CHỈ TỪ</span>
+              <span class="font-mono font-bold text-navy text-sm">5.100.000đ <span class="text-xs font-normal text-slate-500">/ răng</span></span>
+            </div>
+            <button type="button" onclick="jumpToCalculator('veneer')" class="px-3.5 py-2 rounded-xl bg-mint/60 hover:bg-teal hover:text-white text-teal-800 font-semibold text-xs transition-colors">
+              Tính trả góp
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2: Invisalign & Orthodontics -->
+        <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss hover:shadow-swiss-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=85" 
+                alt="Niềng răng trong suốt Invisalign" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[10px] font-semibold">
+                CODE: ORTHO-INV-5D
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">ALIGN TECHNOLOGY • USA</div>
+              <h3 class="text-lg font-bold text-navy mt-1">
+                Chỉnh Nha Trong Suốt Invisalign &amp; iTero 5D
+              </h3>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                Xem trước kết quả dịch chuyển răng 3D sau 15 phút quét dấu hàm kỹ thuật số. Khay SmartTrack vô hình, tháo lắp linh hoạt.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 block">TRẢ GÓP 0%</span>
+              <span class="font-mono font-bold text-navy text-sm">3.750.000đ <span class="text-xs font-normal text-slate-500">/ tháng</span></span>
+            </div>
+            <button type="button" onclick="jumpToCalculator('invisalign')" class="px-3.5 py-2 rounded-xl bg-mint/60 hover:bg-teal hover:text-white text-teal-800 font-semibold text-xs transition-colors">
+              Tính trả góp
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3: Swiss Implant -->
+        <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss hover:shadow-swiss-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=85" 
+                alt="Trồng răng Implant Thụy Sĩ Straumann" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[10px] font-semibold">
+                CODE: IMP-STRAUMANN
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">STRAUMANN® SLACTIVE • SWISS</div>
+              <h3 class="text-lg font-bold text-navy mt-1">
+                Cấy Ghép Implant Máng Hướng Dẫn 3D
+              </h3>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                Phẫu thuật không lật vạt bằng máng định vị kỹ thuật số, tích hợp xương nhanh gấp 2 lần, ăn nhai bền vững trọn đời.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 block">TRỌN GÓI TRỤ + SỨ</span>
+              <span class="font-mono font-bold text-navy text-sm">15.300.000đ <span class="text-xs font-normal text-slate-500">/ trụ</span></span>
+            </div>
+            <button type="button" onclick="jumpToCalculator('implant')" class="px-3.5 py-2 rounded-xl bg-mint/60 hover:bg-teal hover:text-white text-teal-800 font-semibold text-xs transition-colors">
+              Tính trả góp
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4: Laser Whitening & Ultrasonic Prophylaxis -->
+        <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss hover:shadow-swiss-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=900&q=85" 
+                alt="Tẩy trắng răng Laser Beyond II và Cạo vôi siêu âm" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[10px] font-semibold">
+                CODE: LASER-BEYOND-II
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">BEYOND® POLUS • COLD LIGHT</div>
+              <h3 class="text-lg font-bold text-navy mt-1">
+                Tẩy Trắng Laser &amp; Cạo Vôi Siêu Âm EMS
+              </h3>
+              <p class="text-xs text-slate-600 leading-relaxed mt-2">
+                Ánh sáng lạnh kết hợp hoạt chất tái khoáng Fluor bảo vệ ngà răng, bật trắng 4–6 tone chỉ sau 45 phút nằm thư giãn.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 block">ƯU ĐÃI TRẢ THẲNG</span>
+              <span class="font-mono font-bold text-navy text-sm">2.125.000đ <span class="text-xs font-normal text-slate-500">/ 2 hàm</span></span>
+            </div>
+            <button type="button" onclick="jumpToCalculator('whitening')" class="px-3.5 py-2 rounded-xl bg-mint/60 hover:bg-teal hover:text-white text-teal-800 font-semibold text-xs transition-colors">
+              Xem chi phí
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FEATURE 2: TRANSPARENT TREATMENT & INSTALLMENT COST CALCULATOR -->
+  <section id="cost-calculator" class="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint/60 text-teal-800 font-mono text-xs font-semibold uppercase tracking-wider">
+          100% PRICING TRANSPARENCY • NO HIDDEN FEES
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight mt-3">
+          Bảng Tính Chi Phí Minh Bạch &amp; <span class="font-serif italic font-normal text-teal text-4xl sm:text-5xl">Trả Góp 0%</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Chọn dịch vụ quan tâm, số lượng răng cần phục hình và phương thức thanh toán để nhận bảng dự toán chi tiết ngay lập tức (Cam kết không phát sinh chi phí ẩn).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        
+        <!-- Left 7 Cols: Interactive Configuration Controls -->
+        <div class="lg:col-span-7 bg-pearl rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-swiss space-y-7">
+          
+          <!-- Step 1: Select Service -->
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold mb-3">
+              01. CHỌN DỊCH VỤ NHA KHOA / THẨM MỸ
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="calc-service-grid">
+              <!-- Populated/Managed by JS -->
+              <button type="button" onclick="selectCalcService('scaling')" id="srv-btn-scaling" class="calc-srv-btn p-4 rounded-2xl border border-slate-200 bg-white text-left transition-all hover:border-teal/50">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm text-navy">Cạo vôi siêu âm</span>
+                  <span class="font-mono text-xs text-teal font-semibold">400.000đ</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1">Sóng siêu âm EMS + Đánh bóng muối khoáng</p>
+              </button>
+
+              <button type="button" onclick="selectCalcService('whitening')" id="srv-btn-whitening" class="calc-srv-btn p-4 rounded-2xl border border-slate-200 bg-white text-left transition-all hover:border-teal/50">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm text-navy">Tẩy trắng Laser</span>
+                  <span class="font-mono text-xs text-teal font-semibold">2.500.000đ</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1">Laser Beyond II 2 hàm + Bộ máng duy trì</p>
+              </button>
+
+              <button type="button" onclick="selectCalcService('veneer')" id="srv-btn-veneer" class="calc-srv-btn p-4 rounded-2xl border-2 border-teal bg-white text-left transition-all shadow-sm">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm text-navy">Răng sứ Veneer/Cercon</span>
+                  <span class="font-mono text-xs text-teal font-semibold">6.000.000đ/răng</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1">Sứ Emax Press / Cercon HT chính hãng Đức</p>
+              </button>
+
+              <button type="button" onclick="selectCalcService('invisalign')" id="srv-btn-invisalign" class="calc-srv-btn p-4 rounded-2xl border border-slate-200 bg-white text-left transition-all hover:border-teal/50">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm text-navy">Niềng răng Invisalign</span>
+                  <span class="font-mono text-xs text-teal font-semibold">45.000.000đ</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1">Trọn gói khay trong suốt Hoa Kỳ + iTero 5D</p>
+              </button>
+
+              <button type="button" onclick="selectCalcService('implant')" id="srv-btn-implant" class="calc-srv-btn sm:col-span-2 p-4 rounded-2xl border border-slate-200 bg-white text-left transition-all hover:border-teal/50">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm text-navy">Trồng răng Implant Thụy Sĩ / Hàn Quốc</span>
+                  <span class="font-mono text-xs text-teal font-semibold">18.000.000đ/trụ</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1">Bao gồm Trụ Titanium nguyên khối + Khớp nối Abutment + Mão sứ toàn phần</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Number of Teeth / Units Slider -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/90">
+            <div class="flex items-center justify-between mb-3">
+              <label for="calc-teeth-range" id="calc-unit-label" class="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
+                02. SỐ LƯỢNG RĂNG CẦN PHỤC HÌNH
+              </label>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="stepTeethCount(-1)" class="w-8 h-8 rounded-lg border border-slate-200 hover:bg-pearl font-mono font-bold text-navy flex items-center justify-center">−</button>
+                <span id="calc-teeth-display" class="font-mono text-base font-bold text-teal px-3 py-1 rounded-lg bg-mint/50 min-w-[90px] text-center">
+                  8 Răng
+                </span>
+                <button type="button" onclick="stepTeethCount(1)" class="w-8 h-8 rounded-lg border border-slate-200 hover:bg-pearl font-mono font-bold text-navy flex items-center justify-center">+</button>
+              </div>
+            </div>
+            <input 
+              id="calc-teeth-range" 
+              type="range" 
+              min="1" 
+              max="20" 
+              value="8" 
+              class="clinical-range"
+              oninput="updateTeethCount(this.value)"
+            />
+            <div class="flex justify-between text-[11px] font-mono text-slate-400 mt-2">
+              <span>1 đơn vị</span>
+              <span>8 răng (1 hàm thẩm mỹ)</span>
+              <span>16–20 răng (Cười toàn diện)</span>
+            </div>
+          </div>
+
+          <!-- Step 3: Payment Mode Toggle (Trả thẳng -15% vs Trả góp 0% lãi suất) -->
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold mb-3">
+              03. CHỌN PHƯƠNG THỨC THANH TOÁN
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button 
+                type="button" 
+                id="pay-mode-direct"
+                onclick="selectPaymentMode('direct')" 
+                class="p-4 rounded-2xl border-2 border-teal bg-white text-left transition-all shadow-sm flex items-start justify-between"
+              >
+                <div>
+                  <span class="inline-block px-2 py-0.5 rounded bg-mint text-teal-800 font-mono text-[10px] font-bold mb-1">TIẾT KIỆM NGAY 15%</span>
+                  <div class="font-bold text-navy text-sm sm:text-base">Trả thẳng (Ưu đãi -15%)</div>
+                  <p class="text-xs text-slate-500 mt-0.5">Chiết khấu trực tiếp vào tổng hóa đơn khi thanh toán 1 lần</p>
+                </div>
+                <span id="pay-radio-direct" class="w-5 h-5 rounded-full border-2 border-teal flex items-center justify-center mt-1 shrink-0">
+                  <span class="w-2.5 h-2.5 rounded-full bg-teal"></span>
+                </span>
+              </button>
+
+              <button 
+                type="button" 
+                id="pay-mode-installment"
+                onclick="selectPaymentMode('installment')" 
+                class="p-4 rounded-2xl border border-slate-200 bg-white/80 text-left transition-all hover:bg-white flex items-start justify-between"
+              >
+                <div>
+                  <span class="inline-block px-2 py-0.5 rounded bg-navy text-mint font-mono text-[10px] font-bold mb-1">0% LÃI SUẤT • DUYỆT 5 PHÚT</span>
+                  <div class="font-bold text-navy text-sm sm:text-base">Trả góp 0% lãi suất</div>
+                  <p class="text-xs text-slate-500 mt-0.5">Chia nhỏ thanh toán 6 hoặc 12 tháng, không phí chuyển đổi</p>
+                </div>
+                <span id="pay-radio-installment" class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center mt-1 shrink-0">
+                  <span class="w-2.5 h-2.5 rounded-full bg-transparent"></span>
+                </span>
+              </button>
+            </div>
+
+            <!-- Installment Tenor Selector (Shown when Installment is active) -->
+            <div id="installment-months-bar" class="hidden mt-3 p-3.5 rounded-2xl bg-white border border-teal/30 flex items-center justify-between gap-3">
+              <span class="text-xs font-medium text-navy">Chọn kỳ hạn trả góp 0% lãi suất:</span>
+              <div class="inline-flex gap-1.5">
+                <button type="button" onclick="selectInstallmentMonths(3)" id="month-btn-3" class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border border-slate-200 text-slate-600">3 tháng</button>
+                <button type="button" onclick="selectInstallmentMonths(6)" id="month-btn-6" class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-navy text-white">6 tháng</button>
+                <button type="button" onclick="selectInstallmentMonths(12)" id="month-btn-12" class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border border-slate-200 text-slate-600">12 tháng</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 5 Cols: Live Financial Summary & Clinical Invoice Slip -->
+        <div class="lg:col-span-5 bg-navy text-white rounded-3xl p-6 sm:p-8 shadow-swiss-lg relative overflow-hidden">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <div>
+              <span class="font-mono text-[11px] text-mint uppercase tracking-widest">ESTIMATED CLINICAL INVOICE</span>
+              <h3 class="text-lg font-bold text-white mt-0.5" id="summary-service-title">Răng sứ Veneer / Cercon HT</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-white/10 font-mono text-xs text-mint" id="summary-code-badge">
+              #EST-2026
+            </span>
+          </div>
+
+          <!-- Line Items -->
+          <div class="space-y-3.5 py-6 border-b border-white/10 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Đơn giá niêm yết</span>
+              <span id="summary-unit-price" class="font-mono font-medium text-white">6.000.000đ / răng</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Số lượng dự kiến</span>
+              <span id="summary-quantity" class="font-mono font-medium text-white">8 răng</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Tổng chi phí gốc</span>
+              <span id="summary-original-total" class="font-mono text-slate-400 line-through">48.000.000đ</span>
+            </div>
+            <div class="flex items-center justify-between text-mint">
+              <span id="summary-discount-label">Ưu đãi Trả thẳng (-15%)</span>
+              <span id="summary-discount-amount" class="font-mono font-bold">-7.200.000đ</span>
+            </div>
+            <div class="flex items-center justify-between text-xs pt-2 border-t border-white/10">
+              <span class="text-slate-300">Chụp phim CT ConeBeam 3D &amp; Quét iTero 5D</span>
+              <span class="font-mono font-semibold text-mint">MIỄN PHÍ (0đ)</span>
+            </div>
+          </div>
+
+          <!-- Highlighted Final Payable -->
+          <div class="py-6">
+            <div class="text-xs font-mono uppercase tracking-wider text-slate-300" id="summary-final-caption">
+              TỔNG THANH TOÁN TRỌN GÓI (ĐÃ GIẢM 15%)
+            </div>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span id="summary-final-price" class="font-mono text-3xl sm:text-4xl font-extrabold text-mint">
+                40.800.000đ
+              </span>
+              <span id="summary-per-month-suffix" class="font-mono text-xs text-slate-300">
+                / trọn gói
+              </span>
+            </div>
+            <p id="summary-subnote" class="text-xs text-slate-300 mt-2">
+              Đã bao gồm 100% chi phí thiết kế nụ cười DSD, răng tạm thẩm mỹ và thẻ bảo hành chính hãng.
+            </p>
+          </div>
+
+          <!-- Action Button: Lock Price & Book Free 3D CT Scan -->
+          <button 
+            type="button" 
+            onclick="applyQuoteToBooking()"
+            class="w-full py-4 px-6 rounded-2xl bg-teal hover:bg-teal-700 text-white font-bold text-sm sm:text-base shadow-teal-glow transition-all flex items-center justify-center gap-2"
+          >
+            <span>Giữ Ưu Đãi Này &amp; Đặt Lịch Chụp CT 3D Miễn Phí</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALIST MEDICAL BOARD (DOCTORS) -->
+  <section id="doctors" class="py-16 lg:py-24 swiss-grid-bg border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-teal">
+            BOARD-CERTIFIED SPECIALISTS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight mt-2">
+            Hội Đồng Bác Sĩ Chuyên Khoa Trực Tiếp Điều Trị
+          </h2>
+        </div>
+        <p class="text-slate-600 text-sm max-w-md">
+          Mỗi khách hàng được thăm khám 1-kèm-1 bởi đúng Bác sĩ trưởng khoa chuyên trách từng lĩnh vực Phục hình sứ, Chỉnh nha hoặc Cấy ghép Implant.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <!-- Doctor 1 -->
+        <div class="bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=900&q=85" 
+                alt="ThS. BS. Trần Minh Quân" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[11px]">
+                15+ NĂM KINH NGHIỆM
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">GIÁM ĐỐC CHUYÊN MÔN IMPLANT &amp; PHẪU THUẬT</div>
+              <h3 class="text-xl font-bold text-navy mt-1">ThS. BS. Trần Minh Quân</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Tu nghiệp Cấy ghép Implant kỹ thuật số tại Đại học Bern (Thụy Sĩ). Thành viên Hiệp hội Implant Quốc tế ITI, thực hiện hơn 5.200 trụ Implant phức tạp.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <button type="button" onclick="selectDoctorForBooking('ThS. BS. Trần Minh Quân (Chuyên gia Implant & Phục hình)')" class="w-full py-2.5 rounded-xl border border-slate-200 hover:border-teal hover:bg-mint/40 text-navy font-semibold text-xs transition-all">
+              Chọn Đặt Lịch Với BS. Minh Quân
+            </button>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85" 
+                alt="BS. CKI Nguyễn Hoàng Lan" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[11px]">
+                INVISALIGN DIAMOND PROVIDER
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">TRƯỞNG KHOA THẨM MỸ SỨ VENEER &amp; INVISALIGN</div>
+              <h3 class="text-xl font-bold text-navy mt-1">BS. CKI Nguyễn Hoàng Lan</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Chuyên gia thiết kế nụ cười Digital Smile Design (DSD) và mặt dán sứ Veneer xâm lấn tối thiểu. Bác sĩ hạng Diamond của Invisalign Đông Nam Á.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <button type="button" onclick="selectDoctorForBooking('BS. CKI Nguyễn Hoàng Lan (Chuyên gia Veneer & Invisalign)')" class="w-full py-2.5 rounded-xl border border-slate-200 hover:border-teal hover:bg-mint/40 text-navy font-semibold text-xs transition-all">
+              Chọn Đặt Lịch Với BS. Hoàng Lan
+            </button>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-swiss flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 overflow-hidden bg-navy">
+              <img 
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85" 
+                alt="TS. BS. Lê Vũ Bách" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-navy/85 backdrop-blur-md text-mint font-mono text-[11px]">
+                CHỨNG CHỈ LASER HOA KỲ
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-xs font-mono text-teal font-semibold">TRƯỞNG KHOA NHA CHU &amp; THẨM MỸ NỤ CƯỜI</div>
+              <h3 class="text-xl font-bold text-navy mt-1">TS. BS. Lê Vũ Bách</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Chuyên sâu điều trị cười hở lợi bằng tia Laser Diode không chảy máu, phục hồi mô nướu hồng hào và trẻ hóa vùng quanh miệng chuẩn Y khoa.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <button type="button" onclick="selectDoctorForBooking('TS. BS. Lê Vũ Bách (Chuyên gia Nha chu & Laser Thẩm mỹ)')" class="w-full py-2.5 rounded-xl border border-slate-200 hover:border-teal hover:bg-mint/40 text-navy font-semibold text-xs transition-all">
+              Chọn Đặt Lịch Với TS. BS. Vũ Bách
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FEATURE 3: 1-CLICK PRIORITY APPOINTMENT SCHEDULER (MIỄN PHÍ CHỤP PHIM CT CONEBEAM 3D) -->
+  <section id="booking-section" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-navy rounded-[32px] p-6 sm:p-10 lg:p-12 shadow-swiss-lg border border-navy-800 relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Left 5 Cols: Priority Booking Privilege Details -->
+          <div class="lg:col-span-5 text-white space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal/25 border border-mint/30 text-mint font-mono text-xs font-semibold">
+              PRIORITY RECEPTION • ZERO WAITING TIME
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+              Đặt Lịch Khám Ưu Tiên <span class="font-serif italic font-normal text-mint text-4xl sm:text-5xl block mt-1">Miễn Phí Chụp CT ConeBeam 3D</span>
+            </h2>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Đặt hẹn trước giúp Phòng khám chuẩn bị sẵn phòng vô trùng riêng biệt và sắp xếp Bác sĩ Chuyên khoa đón tiếp ngay khi bạn đến.
+            </p>
+
+            <!-- 3 Included Perks -->
+            <div class="space-y-3.5 pt-2">
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-9 h-9 rounded-xl bg-teal text-white flex items-center justify-center shrink-0 font-mono text-xs font-bold">01</div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Tặng 100% Phí Chụp Phim CT ConeBeam 3D</h4>
+                  <p class="text-xs text-slate-300 mt-0.5">Khảo sát cấu trúc xương hàm, chân răng và dây thần kinh (Trị giá 1.200.000đ).</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-9 h-9 rounded-xl bg-teal text-white flex items-center justify-center shrink-0 font-mono text-xs font-bold">02</div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Quét Dấu Răng AI iTero Element 5D</h4>
+                  <p class="text-xs text-slate-300 mt-0.5">Xem trước mô phỏng nụ cười mới trên màn hình 3D chỉ sau 60 giây.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-9 h-9 rounded-xl bg-teal text-white flex items-center justify-center shrink-0 font-mono text-xs font-bold">03</div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Khám &amp; Lên Phác Đồ Cùng Bác Sĩ Trưởng Khoa</h4>
+                  <p class="text-xs text-slate-300 mt-0.5">Hoàn toàn miễn phí, báo giá minh bạch trước khi quyết định điều trị.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clinical Equipment Preview -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 relative h-40">
+              <img 
+                src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=85" 
+                alt="Hệ thống Chụp Phim CT ConeBeam 3D" 
+                class="w-full h-full object-cover opacity-80"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-mint">HỆ THỐNG CHẨN ĐOÁN HÌNH ẢNH CT CONEBEAM 3D THẾ HỆ MỚI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 7 Cols: Interactive Appointment Form -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 text-navy shadow-xl">
+            <form id="priority-booking-form" onsubmit="submitPriorityBooking(event)" class="space-y-5">
+              
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div>
+                  <span class="text-[11px] font-mono font-bold text-teal uppercase">PHIẾU ĐẶT HẸN ĐIỆN TỬ</span>
+                  <h3 class="text-lg font-bold text-navy">Thông Tin Đặt Lịch Ưu Tiên</h3>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-mint text-teal-800 font-mono text-xs font-bold">
+                  XÁC NHẬN QUA ZALO TRONG 2 PHÚT
+                </span>
+              </div>
+
+              <!-- Patient Name & Phone -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="book-name" class="block text-xs font-bold text-navy mb-1.5">Họ và tên khách hàng *</label>
+                  <input 
+                    type="text" 
+                    id="book-name" 
+                    required 
+                    placeholder="VD: Nguyễn Minh Anh" 
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-pearl focus:bg-white focus:border-teal focus:outline-none text-sm"
+                  />
+                </div>
+                <div>
+                  <label for="book-phone" class="block text-xs font-bold text-navy mb-1.5">Số điện thoại / Zalo nhận lịch *</label>
+                  <input 
+                    type="tel" 
+                    id="book-phone" 
+                    required 
+                    placeholder="VD: 0909 123 456" 
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-pearl focus:bg-white focus:border-teal focus:outline-none text-sm font-mono"
+                  />
+                </div>
+              </div>
+
+              <!-- Select Doctor Specialist -->
+              <div>
+                <label for="book-doctor" class="block text-xs font-bold text-navy mb-1.5">Chọn Bác sĩ Chuyên khoa thăm khám</label>
+                <select 
+                  id="book-doctor" 
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-pearl focus:bg-white focus:border-teal focus:outline-none text-sm font-medium text-navy"
+                >
+                  <option value="ThS. BS. Trần Minh Quân (Chuyên gia Implant & Phục hình)">ThS. BS. Trần Minh Quân — Giám đốc Chuyên môn Implant &amp; Phục hình</option>
+                  <option value="BS. CKI Nguyễn Hoàng Lan (Chuyên gia Veneer & Invisalign)">BS. CKI Nguyễn Hoàng Lan — Trưởng khoa Sứ Veneer &amp; Invisalign Diamond</option>
+                  <option value="TS. BS. Lê Vũ Bách (Chuyên gia Nha chu & Laser Thẩm mỹ)">TS. BS. Lê Vũ Bách — Trưởng khoa Nha chu &amp; Laser Thẩm mỹ</option>
+                  <option value="Bác sĩ Trưởng ca trực sắp xếp tối ưu nhất">Đội ngũ Bác sĩ Trưởng ca sắp xếp theo khung giờ nhanh nhất</option>
+                </select>
+              </div>
+
+              <!-- Date & Time Slot Selector -->
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+                <div class="sm:col-span-5">
+                  <label for="book-date" class="block text-xs font-bold text-navy mb-1.5">Ngày khám dự kiến *</label>
+                  <input 
+                    type="date" 
+                    id="book-date" 
+                    required 
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-pearl focus:bg-white focus:border-teal focus:outline-none text-sm font-mono"
+                  />
+                </div>
+                <div class="sm:col-span-7">
+                  <label class="block text-xs font-bold text-navy mb-1.5">Khung giờ ưu tiên *</label>
+                  <div class="grid grid-cols-3 gap-2">
+                    <button type="button" onclick="selectTimeSlot('Sáng (08:30 - 11:30)', this)" class="slot-btn py-2.5 px-2 rounded-xl border-2 border-teal bg-mint/40 text-navy font-semibold text-xs text-center transition-all">
+                      Sáng<br><span class="font-mono text-[10px] text-slate-600">08:30–11:30</span>
+                    </button>
+                    <button type="button" onclick="selectTimeSlot('Chiều (13:30 - 17:00)', this)" class="slot-btn py-2.5 px-2 rounded-xl border border-slate-200 bg-pearl text-slate-700 font-semibold text-xs text-center transition-all hover:border-teal/50">
+                      Chiều<br><span class="font-mono text-[10px] text-slate-500">13:30–17:00</span>
+                    </button>
+                    <button type="button" onclick="selectTimeSlot('Tối (17:00 - 20:00)', this)" class="slot-btn py-2.5 px-2 rounded-xl border border-slate-200 bg-pearl text-slate-700 font-semibold text-xs text-center transition-all hover:border-teal/50">
+                      Tối<br><span class="font-mono text-[10px] text-slate-500">17:00–20:00</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Symptoms / Service Tags -->
+              <div>
+                <label class="block text-xs font-bold text-navy mb-1.5">Nhu cầu hoặc triệu chứng cần Bác sĩ tư vấn</label>
+                <div class="flex flex-wrap gap-2 mb-2.5">
+                  <button type="button" onclick="toggleSymptomTag(this, 'Thẩm mỹ Răng sứ Veneer / Cercon')" class="symptom-chip px-3 py-1.5 rounded-lg border border-slate-200 bg-pearl text-xs font-medium text-slate-700 hover:border-teal transition-all">
+                    + Bọc sứ / Dán sứ Veneer
+                  </button>
+                  <button type="button" onclick="toggleSymptomTag(this, 'Tẩy trắng răng Laser Beyond II')" class="symptom-chip px-3 py-1.5 rounded-lg border border-slate-200 bg-pearl text-xs font-medium text-slate-700 hover:border-teal transition-all">
+                    + Tẩy trắng răng Laser
+                  </button>
+                  <button type="button" onclick="toggleSymptomTag(this, 'Niềng răng trong suốt Invisalign')" class="symptom-chip px-3 py-1.5 rounded-lg border border-slate-200 bg-pearl text-xs font-medium text-slate-700 hover:border-teal transition-all">
+                    + Niềng răng Invisalign
+                  </button>
+                  <button type="button" onclick="toggleSymptomTag(this, 'Trồng răng Implant Thụy Sĩ')" class="symptom-chip px-3 py-1.5 rounded-lg border border-slate-200 bg-pearl text-xs font-medium text-slate-700 hover:border-teal transition-all">
+                    + Cấy ghép Implant
+                  </button>
+                  <button type="button" onclick="toggleSymptomTag(this, 'Cạo vôi siêu âm & Khám tổng quát')" class="symptom-chip px-3 py-1.5 rounded-lg border border-slate-200 bg-pearl text-xs font-medium text-slate-700 hover:border-teal transition-all">
+                    + Cạo vôi &amp; Khám tổng quát
+                  </button>
+                </div>
+                <textarea 
+                  id="book-notes" 
+                  rows="2" 
+                  placeholder="Ghi chú thêm (Tone màu răng mong muốn, dự toán trả góp hoặc triệu chứng ê buốt...)" 
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-pearl focus:bg-white focus:border-teal focus:outline-none text-xs"
+                ></textarea>
+              </div>
+
+              <!-- Submit Dispatch to Clinic Zalo -->
+              <button 
+                type="submit" 
+                class="w-full py-4 px-6 rounded-2xl bg-teal hover:bg-teal-700 text-white font-bold text-sm sm:text-base shadow-teal-glow transition-all flex items-center justify-center gap-2.5"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Gửi Phiếu Đặt Lịch &amp; Nhận Mã Chụp CT 3D Qua Zalo</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-slate-400 py-12 border-t border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div>
+        <div class="font-bold text-white text-base" id="footer-clinic-name">
+          SmileStudio International Dental &amp; Aesthetic Clinic
+        </div>
+        <p id="footer-clinic-addr" class="text-slate-400 mt-1">
+          Đặt lịch khám Online: Miễn phí 100% Chụp Phim CT 3D &amp; Tư vấn Bác sĩ
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 font-mono">
+        <span>HOTLINE / ZALO: <strong id="footer-clinic-phone" class="text-mint">0909 888 999</strong></span>
+        <span>•</span>
+        <span>SWISS DENTAL STANDARD</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING GLASS PILL FOR CLINIC OWNER (BOTTOM-LEFT) -->
+  <button 
+    type="button" 
+    onclick="openOwnerModal()"
+    class="fixed bottom-4 left-4 z-50 max-w-[92vw] px-4 py-3 rounded-2xl bg-navy/90 hover:bg-navy text-white backdrop-blur-xl border border-mint/40 shadow-swiss-lg flex items-center gap-2.5 text-xs font-semibold transition-all hover:scale-[1.02] group"
+  >
+    <span class="text-base leading-none">👑</span>
+    <span class="truncate">Dành cho Chủ Phòng Khám • Kích hoạt Website Đặt Lịch Khám này <strong class="text-mint font-mono">199.000đ</strong></span>
+  </button>
+
+  <!-- OWNER VIETQR ACTIVATION MODAL (199,000 VND) -->
+  <div id="owner-claim-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy/75 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative max-h-[92vh] overflow-y-auto">
+      <button 
+        type="button" 
+        onclick="closeOwnerModal()" 
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-navy flex items-center justify-center font-bold"
+        aria-label="Đóng"
+      >
+        ✕
+      </button>
+
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-mint text-teal-800 font-mono text-[11px] font-bold">
+        <span>👑 BÀN GIAO ĐỘC QUYỀN CHO CHỦ PHÒNG KHÁM</span>
+      </div>
+
+      <h3 class="text-2xl font-extrabold text-navy mt-2">
+        Kích Hoạt Website Nha Khoa Chuẩn Quốc Tế
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1">
+        Sở hữu trọn bộ giao diện mô phỏng nụ cười Before/After, bảng tính trả góp 0% và luồng đặt lịch CT 3D tự động gửi thẳng về Zalo Lễ tân của Phòng khám.
+      </p>
+
+      <!-- VietQR Box -->
+      <div class="mt-5 p-5 rounded-2xl bg-pearl border border-slate-200 flex flex-col items-center text-center">
+        <div class="text-xs font-mono uppercase text-teal font-bold mb-2">
+          QUÉT MÃ VIETQR ĐỂ KÍCH HOẠT NGAY (199.000 VNĐ)
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+          <img 
+            id="owner-vietqr-img" 
+            src="https://img.vietqr.io/image/MB-0988888888-compact2.png?amount=199000&addInfo=Kich%20Hoat%20Web%20Nha%20Khoa&accountName=CHU%20XUONG%20WEB" 
+            alt="Mã VietQR kích hoạt Website 199.000đ" 
+            class="w-52 h-52 object-contain mx-auto"
+          />
+        </div>
+        <div class="mt-3 space-y-1 text-xs font-mono text-navy">
+          <div>NGÂN HÀNG: <strong id="modal-bank-name" class="text-teal">MB</strong> • STK: <strong id="modal-bank-acc">0988888888</strong></div>
+          <div>CHỦ TK: <strong id="modal-bank-owner">CHU XUONG WEB</strong> • SỐ TIỀN: <strong class="text-teal">199.000đ</strong></div>
+        </div>
+      </div>
+
+      <!-- Benefits Checklist -->
+      <ul class="mt-4 space-y-2 text-xs text-slate-600">
+        <li class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full bg-mint text-teal-800 flex items-center justify-center font-bold text-[10px]">✓</span>
+          <span>Cập nhật Tên Phòng Khám, Logo, Bảng giá sứ/Implant &amp; Đội ngũ Bác sĩ theo yêu cầu.</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full bg-mint text-teal-800 flex items-center justify-center font-bold text-[10px]">✓</span>
+          <span>Kết nối trực tiếp nút Đặt lịch CT 3D về số Zalo Hotline Lễ tân của Phòng khám.</span>
+        </li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <a 
+          id="modal-owner-zalo-btn" 
+          href="https://zalo.me/0988888888" 
+          target="_blank" 
+          rel="noopener"
+          class="flex-1 py-3.5 px-5 rounded-xl bg-teal hover:bg-teal-700 text-white font-bold text-xs sm:text-sm text-center shadow-teal-glow transition-all"
+        >
+          Nhắn Zalo Nhận Bàn Giao Ngay
+        </a>
+        <button 
+          type="button" 
+          onclick="closeOwnerModal()" 
+          class="py-3.5 px-5 rounded-xl border border-slate-200 hover:bg-pearl text-navy font-semibold text-xs sm:text-sm"
+        >
+          Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="clinical-toast" class="fixed bottom-20 right-4 z-50 hidden max-w-sm p-4 rounded-2xl bg-navy text-white shadow-2xl border border-mint/40 text-xs">
+    <div class="font-bold text-mint" id="toast-title">Đã cập nhật vào phiếu đặt lịch</div>
+    <p class="text-slate-300 mt-0.5" id="toast-body">Thông tin đã được đồng bộ xuống biểu mẫu đặt lịch khám.</p>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT ENGINE -->
+  <script>
+    // =========================================================================
+    // 1. URL PARAMETER CUSTOMIZATION ENGINE
+    // =========================================================================
+    const params = new URLSearchParams(window.location.search);
+    const CLINIC_CONFIG = {
+      name: params.get('name') || 'SmileStudio International Dental & Aesthetic Clinic',
+      phone: params.get('phone') || '0909888999',
+      addr: params.get('addr') || 'Đặt lịch khám Online: Miễn phí 100% Chụp Phim CT 3D & Tư vấn Bác sĩ',
+      obank: params.get('obank') || 'MB',
+      oacc: params.get('oacc') || '0988888888',
+      oname: params.get('oname') || 'CHU XUONG WEB',
+      ozalo: params.get('ozalo') || '0988888888'
+    };
+
+    function formatPhoneReadable(raw) {
+      const cleaned = String(raw).replace(/\D/g, '');
+      if (cleaned.length === 10) {
+        return `${cleaned.slice(0, 4)} ${cleaned.slice(4, 7)} ${cleaned.slice(7)}`;
+      }
+      return raw;
+    }
+
+    function applyClinicBranding() {
+      document.title = `${CLINIC_CONFIG.name} | Swiss Precision Dentistry`;
+      document.getElementById('nav-clinic-name').textContent = CLINIC_CONFIG.name;
+      document.getElementById('hero-clinic-name').textContent = CLINIC_CONFIG.name;
+      document.getElementById('footer-clinic-name').textContent = CLINIC_CONFIG.name;
+
+      document.getElementById('top-promo-addr').textContent = CLINIC_CONFIG.addr;
+      document.getElementById('hero-addr-text').textContent = CLINIC_CONFIG.addr;
+      document.getElementById('footer-clinic-addr').textContent = CLINIC_CONFIG.addr;
+
+      const cleanPhone = CLINIC_CONFIG.phone.replace(/\D/g, '') || '0909888999';
+      const formattedPhone = formatPhoneReadable(cleanPhone);
+      document.getElementById('nav-phone-display').textContent = formattedPhone;
+      document.getElementById('nav-phone-btn').href = `tel:${cleanPhone}`;
+      document.getElementById('footer-clinic-phone').textContent = formattedPhone;
+
+      // Configure Creator VietQR Modal
+      document.getElementById('modal-bank-name').textContent = CLINIC_CONFIG.obank;
+      document.getElementById('modal-bank-acc').textContent = CLINIC_CONFIG.oacc;
+      document.getElementById('modal-bank-owner').textContent = CLINIC_CONFIG.oname;
+
+      const transferMemo = encodeURIComponent(`Kich hoat web ${CLINIC_CONFIG.name.slice(0, 22)}`);
+      const accOwner = encodeURIComponent(CLINIC_CONFIG.oname);
+      const qrUrl = `https://img.vietqr.io/image/${encodeURIComponent(CLINIC_CONFIG.obank)}-${encodeURIComponent(CLINIC_CONFIG.oacc)}-compact2.png?amount=199000&addInfo=${transferMemo}&accountName=${accOwner}`;
+      document.getElementById('owner-vietqr-img').src = qrUrl;
+
+      const cleanOzalo = CLINIC_CONFIG.ozalo.replace(/\D/g, '') || '0988888888';
+      document.getElementById('modal-owner-zalo-btn').href = `https://zalo.me/${cleanOzalo}`;
+    }
+
+    // =========================================================================
+    // 2. INTERACTIVE SMILE TRANSFORMATION SIMULATOR (BEFORE/AFTER + SHADE GUIDE)
+    // =========================================================================
+    const SMILE_CASES = [
+      {
+        photo: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=85',
+        caption: 'Phác đồ: Laser Beyond II + Phủ sứ Emax Press 0.3mm'
+      },
+      {
+        photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=1000&q=85',
+        caption: 'Phác đồ: Thiết kế 16 Mặt dán sứ Emax Veneer Thụy Sĩ'
+      },
+      {
+        photo: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85',
+        caption: 'Phác đồ: Chỉnh nha Invisalign + Tẩy trắng khoáng hóa men răng'
+      }
+    ];
+
+    let currentShade = 'A1';
+    let currentShadeName = 'Tone Tự Nhiên A1';
+
+    function updateSmileComparison(percent) {
+      const clamped = Math.max(5, Math.min(95, Number(percent)));
+      const beforeWrapper = document.getElementById('sim-before-wrapper');
+      const handleLine = document.getElementById('sim-handle-line');
+      const rangeInput = document.getElementById('sim-range-input');
+      const readout = document.getElementById('sim-percent-readout');
+
+      beforeWrapper.style.clipPath = `inset(0 ${100 - clamped}% 0 0)`;
+      handleLine.style.left = `${clamped}%`;
+      rangeInput.value = clamped;
+      readout.textContent = `TRƯỚC ${Math.round(clamped)}% / SAU ${Math.round(100 - clamped)}%`;
+    }
+
+    // Pointer / Touch Dragging on the Comparison Stage
+    const compStage = document.getElementById('comparison-container');
+    let isDraggingSlider = false;
+
+    function handleStagePointer(e) {
+      const rect = compStage.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const relX = ((clientX - rect.left) / rect.width) * 100;
+      updateSmileComparison(relX);
+    }
+
+    compStage.addEventListener('mousedown', (e) => {
+      isDraggingSlider = true;
+      handleStagePointer(e);
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (isDraggingSlider) handleStagePointer(e);
+    });
+    window.addEventListener('mouseup', () => {
+      isDraggingSlider = false;
+    });
+
+    compStage.addEventListener('touchstart', (e) => {
+      isDraggingSlider = true;
+      handleStagePointer(e);
+    }, { passive: true });
+    compStage.addEventListener('touchmove', (e) => {
+      if (isDraggingSlider) handleStagePointer(e);
+    }, { passive: true });
+    compStage.addEventListener('touchend', () => {
+      isDraggingSlider = false;
+    });
+
+    function selectSmileCase(index) {
+      const chosen = SMILE_CASES[index] || SMILE_CASES[0];
+      document.getElementById('sim-after-img').src = chosen.photo;
+      document.getElementById('sim-before-img').src = chosen.photo;
+      document.getElementById('sim-case-caption').textContent = chosen.caption;
+
+      [0, 1, 2].forEach((i) => {
+        const btn = document.getElementById(`case-tab-${i}`);
+        if (i === index) {
+          btn.className = 'case-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-white shadow-sm';
+        } else {
+          btn.className = 'case-tab-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 hover:text-navy';
+        }
+      });
+    }
+
+    function selectToothShade(shadeCode) {
+      currentShade = shadeCode;
+      const afterImg = document.getElementById('sim-after-img');
+      const afterBadge = document.getElementById('sim-after-badge');
+      const specTrans = document.getElementById('spec-translucency');
+      const specStrength = document.getElementById('spec-strength');
+
+      afterImg.classList.remove('smile-after-a1', 'smile-after-bl2', 'smile-after-bl1');
+
+      const shadeMap = {
+        'A1': {
+          cls: 'smile-after-a1',
+          label: 'SAU 60 PHÚT: TONE TỰ NHIÊN A1',
+          name: 'Tone Tự Nhiên A1',
+          trans: '98.4% (Emax)',
+          strength: '530 MPa'
+        },
+        'BL2': {
+          cls: 'smile-after-bl2',
+          label: 'SAU 60 PHÚT: TONE TRẮNG SÁNG BL2',
+          name: 'Tone Trắng Sáng BL2',
+          trans: '95.0% (Lisi Press)',
+          strength: '580 MPa'
+        },
+        'BL1': {
+          cls: 'smile-after-bl1',
+          label: 'SAU 60 PHÚT: TONE SỨ HOLLYWOOD BL1',
+          name: 'Tone Sứ Hollywood BL1',
+          trans: '92.5% (Hollywood)',
+          strength: '620 MPa'
+        }
+      };
+
+      const cfg = shadeMap[shadeCode] || shadeMap['A1'];
+      currentShadeName = cfg.name;
+      afterImg.classList.add(cfg.cls);
+      afterBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-mint"></span> ${cfg.label}`;
+      specTrans.textContent = cfg.trans;
+      specStrength.textContent = cfg.strength;
+
+      ['A1', 'BL2', 'BL1'].forEach((code) => {
+        const btn = document.getElementById(`shade-btn-${code}`);
+        if (code === shadeCode) {
+          btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-teal bg-white shadow-sm transition-all flex items-center justify-between gap-4';
+        } else {
+          btn.className = 'w-full text-left p-4 rounded-2xl border border-slate-200 bg-white/70 hover:bg-white transition-all flex items-center justify-between gap-4';
+        }
+      });
+    }
+
+    function applyShadeToBooking() {
+      const notesEl = document.getElementById('book-notes');
+      const prefix = `Mong muốn thử form răng & bảng màu sứ: ${currentShadeName}. `;
+      if (!notesEl.value.includes(currentShadeName)) {
+        notesEl.value = prefix + notesEl.value;
+      }
+      showToast('Đã lưu Tone màu sứ vào phiếu đặt hẹn', `Bác sĩ sẽ chuẩn bị sẵn bảng so màu VITA ${currentShadeName} khi bạn đến khám.`);
+      document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // 3. TRANSPARENT TREATMENT & INSTALLMENT COST CALCULATOR
+    // =========================================================================
+    const SERVICES_DB = {
+      scaling: {
+        title: 'Cạo vôi siêu âm EMS & Đánh bóng',
+        unitPrice: 400000,
+        unitName: 'liệu trình 2 hàm',
+        defaultQty: 1,
+        maxQty: 4,
+        code: '#PRO-EMS-01'
+      },
+      whitening: {
+        title: 'Tẩy trắng răng Laser Beyond II',
+        unitPrice: 2500000,
+        unitName: 'liệu trình 2 hàm',
+        defaultQty: 1,
+        maxQty: 4,
+        code: '#LASER-BYD-02'
+      },
+      veneer: {
+        title: 'Răng sứ Veneer Emax / Cercon HT',
+        unitPrice: 6000000,
+        unitName: 'răng',
+        defaultQty: 8,
+        maxQty: 20,
+        code: '#VEN-EMAX-08'
+      },
+      invisalign: {
+        title: 'Niềng răng trong suốt Invisalign',
+        unitPrice: 45000000,
+        unitName: 'trọn gói 2 hàm',
+        defaultQty: 1,
+        maxQty: 2,
+        code: '#INV-USA-5D'
+      },
+      implant: {
+        title: 'Trồng răng Implant Thụy Sĩ / Hàn Quốc',
+        unitPrice: 18000000,
+        unitName: 'trụ trọn gói',
+        defaultQty: 2,
+        maxQty: 12,
+        code: '#IMP-SWISS-3D'
+      }
+    };
+
+    let calcState = {
+      serviceKey: 'veneer',
+      qty: 8,
+      paymentMode: 'direct', // 'direct' (-15%) or 'installment' (0%)
+      months: 6
+    };
+
+    function formatVND(num) {
+      return Math.round(num).toLocaleString('vi-VN') + 'đ';
+    }
+
+    function selectCalcService(key) {
+      const srv = SERVICES_DB[key];
+      if (!srv) return;
+      calcState.serviceKey = key;
+      calcState.qty = srv.defaultQty;
+
+      const rangeEl = document.getElementById('calc-teeth-range');
+      rangeEl.max = srv.maxQty;
+      rangeEl.value = srv.defaultQty;
+
+      Object.keys(SERVICES_DB).forEach((k) => {
+        const btn = document.getElementById(`srv-btn-${k}`);
+        if (!btn) return;
+        const extraSpan = k === 'implant' ? 'sm:col-span-2 ' : '';
+        if (k === key) {
+          btn.className = `calc-srv-btn ${extraSpan}p-4 rounded-2xl border-2 border-teal bg-white text-left transition-all shadow-sm`;
+        } else {
+          btn.className = `calc-srv-btn ${extraSpan}p-4 rounded-2xl border border-slate-200 bg-white text-left transition-all hover:border-teal/50`;
+        }
+      });
+
+      renderCalculatorSummary();
+    }
+
+    function updateTeethCount(val) {
+      calcState.qty = Math.max(1, Number(val));
+      renderCalculatorSummary();
+    }
+
+    function stepTeethCount(delta) {
+      const srv = SERVICES_DB[calcState.serviceKey];
+      const next = Math.max(1, Math.min(srv.maxQty, calcState.qty + delta));
+      calcState.qty = next;
+      document.getElementById('calc-teeth-range').value = next;
+      renderCalculatorSummary();
+    }
+
+    function selectPaymentMode(mode) {
+      calcState.paymentMode = mode;
+      const directBtn = document.getElementById('pay-mode-direct');
+      const instBtn = document.getElementById('pay-mode-installment');
+      const directRadio = document.getElementById('pay-radio-direct');
+      const instRadio = document.getElementById('pay-radio-installment');
+      const monthsBar = document.getElementById('installment-months-bar');
+
+      if (mode === 'direct') {
+        directBtn.className = 'p-4 rounded-2xl border-2 border-teal bg-white text-left transition-all shadow-sm flex items-start justify-between';
+        instBtn.className = 'p-4 rounded-2xl border border-slate-200 bg-white/80 text-left transition-all hover:bg-white flex items-start justify-between';
+        directRadio.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-teal"></span>';
+        directRadio.className = 'w-5 h-5 rounded-full border-2 border-teal flex items-center justify-center mt-1 shrink-0';
+        instRadio.innerHTML = '';
+        instRadio.className = 'w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center mt-1 shrink-0';
+        monthsBar.classList.add('hidden');
+      } else {
+        instBtn.className = 'p-4 rounded-2xl border-2 border-teal bg-white text-left transition-all shadow-sm flex items-start justify-between';
+        directBtn.className = 'p-4 rounded-2xl border border-slate-200 bg-white/80 text-left transition-all hover:bg-white flex items-start justify-between';
+        instRadio.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-teal"></span>';
+        instRadio.className = 'w-5 h-5 rounded-full border-2 border-teal flex items-center justify-center mt-1 shrink-0';
+        directRadio.innerHTML = '';
+        directRadio.className = 'w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center mt-1 shrink-0';
+        monthsBar.classList.remove('hidden');
+      }
+
+      renderCalculatorSummary();
+    }
+
+    function selectInstallmentMonths(m) {
+      calcState.months = m;
+      [3, 6, 12].forEach((num) => {
+        const b = document.getElementById(`month-btn-${num}`);
+        if (num === m) {
+          b.className = 'px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-navy text-white';
+        } else {
+          b.className = 'px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border border-slate-200 text-slate-600';
+        }
+      });
+      renderCalculatorSummary();
+    }
+
+    function renderCalculatorSummary() {
+      const srv = SERVICES_DB[calcState.serviceKey];
+      const baseTotal = srv.unitPrice * calcState.qty;
+
+      document.getElementById('calc-teeth-display').textContent = `${calcState.qty} ${srv.unitName}`;
+      document.getElementById('summary-service-title').textContent = srv.title;
+      document.getElementById('summary-code-badge').textContent = srv.code;
+      document.getElementById('summary-unit-price').textContent = `${formatVND(srv.unitPrice)} / ${srv.unitName}`;
+      document.getElementById('summary-quantity').textContent = `${calcState.qty} ${srv.unitName}`;
+      document.getElementById('summary-original-total').textContent = formatVND(baseTotal);
+
+      const discountLabel = document.getElementById('summary-discount-label');
+      const discountAmount = document.getElementById('summary-discount-amount');
+      const finalCaption = document.getElementById('summary-final-caption');
+      const finalPrice = document.getElementById('summary-final-price');
+      const suffix = document.getElementById('summary-per-month-suffix');
+      const subnote = document.getElementById('summary-subnote');
+
+      if (calcState.paymentMode === 'direct') {
+        const discount = baseTotal * 0.15;
+        const finalPay = baseTotal - discount;
+        discountLabel.textContent = 'Ưu đãi Trả thẳng (-15%)';
+        discountAmount.textContent = `-${formatVND(discount)}`;
+        finalCaption.textContent = 'TỔNG THANH TOÁN TRỌN GÓI (ĐÃ GIẢM 15%)';
+        finalPrice.textContent = formatVND(finalPay);
+        suffix.textContent = '/ trọn gói';
+        subnote.textContent = `Tiết kiệm ngay ${formatVND(discount)} khi thanh toán trực tiếp + Tặng gói chụp CT 3D 1.200.000đ.`;
+      } else {
+        const monthly = baseTotal / calcState.months;
+        discountLabel.textContent = `Lãi suất trả góp (${calcState.months} tháng)`;
+        discountAmount.textContent = '0% LÃI SUẤT (0đ)';
+        finalCaption.textContent = `MỨC THANH TOÁN HÀNG THÁNG (KỲ HẠN ${calcState.months} THÁNG)`;
+        finalPrice.textContent = formatVND(monthly);
+        suffix.textContent = `/ tháng × ${calcState.months} tháng`;
+        subnote.textContent = `Tổng giá trị trả góp: ${formatVND(baseTotal)} • Duyệt hồ sơ CCCD hoặc Thẻ tín dụng trong 5 phút.`;
+      }
+    }
+
+    function jumpToCalculator(serviceKey) {
+      selectCalcService(serviceKey);
+      document.getElementById('cost-calculator').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function applyQuoteToBooking() {
+      const srv = SERVICES_DB[calcState.serviceKey];
+      const baseTotal = srv.unitPrice * calcState.qty;
+      let quoteText = '';
+      if (calcState.paymentMode === 'direct') {
+        quoteText = `Dự toán: ${srv.title} (${calcState.qty} ${srv.unitName}) - Trả thẳng (-15%) còn ${formatVND(baseTotal * 0.85)}.`;
+      } else {
+        quoteText = `Dự toán: ${srv.title} (${calcState.qty} ${srv.unitName}) - Trả góp 0% (${ formatVND(baseTotal / calcState.months) }/tháng x ${calcState.months} tháng).`;
+      }
+      const notesEl = document.getElementById('book-notes');
+      notesEl.value = quoteText + (notesEl.value ? ` | ${notesEl.value}` : '');
+      showToast('Đã đính kèm Bảng dự toán chi phí', 'Ưu đãi chi phí và suất chụp CT 3D miễn phí đã được cập nhật vào phiếu đặt lịch.');
+      document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // 4. PRIORITY APPOINTMENT SCHEDULER & ZALO DISPATCH
+    // =========================================================================
+    let selectedTimeSlot = 'Sáng (08:30 - 11:30)';
+    let selectedSymptoms = new Set();
+
+    function selectTimeSlot(slotText, btnEl) {
+      selectedTimeSlot = slotText;
+      document.querySelectorAll('.slot-btn').forEach((b) => {
+        b.className = 'slot-btn py-2.5 px-2 rounded-xl border border-slate-200 bg-pearl text-slate-700 font-semibold text-xs text-center transition-all hover:border-teal/50';
+      });
+      btnEl.className = 'slot-btn py-2.5 px-2 rounded-xl border-2 border-teal bg-mint/40 text-navy font-semibold text-xs text-center transition-all';
+    }
+
+    function toggleSymptomTag(btn, label) {
+      if (selectedSymptoms.has(label)) {
+        selectedSymptoms.delete(label);
+        btn.className = 'symptom-chip px-3 py-1.5 rounded-lg border border-slate-200 bg-pearl text-xs font-medium text-slate-700 hover:border-teal transition-all';
+      } else {
+        selectedSymptoms.add(label);
+        btn.className = 'symptom-chip px-3 py-1.5 rounded-lg border-2 border-teal bg-mint/60 text-xs font-bold text-navy transition-all';
+      }
+    }
+
+    function selectDoctorForBooking(doctorName) {
+      const sel = document.getElementById('book-doctor');
+      sel.value = doctorName;
+      showToast('Đã chọn Bác sĩ Chuyên khoa', `Lịch hẹn của bạn sẽ được ưu tiên sắp xếp với ${doctorName}.`);
+      document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitPriorityBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('book-name').value.trim();
+      const phone = document.getElementById('book-phone').value.trim();
+      const doctor = document.getElementById('book-doctor').value;
+      const date = document.getElementById('book-date').value;
+      const notes = document.getElementById('book-notes').value.trim();
+      const symptomsList = Array.from(selectedSymptoms).join(', ') || 'Khám & Chụp phim CT ConeBeam 3D tổng quát';
+
+      const msg = [
+        `[ĐẶT LỊCH KHÁM ƯU TIÊN - ${CLINIC_CONFIG.name}]`,
+        `• Khách hàng: ${name}`,
+        `• SĐT: ${phone}`,
+        `• Bác sĩ: ${doctor}`,
+        `• Ngày giờ: ${date} | ${selectedTimeSlot}`,
+        `• Dịch vụ quan tâm: ${symptomsList}`,
+        notes ? `• Ghi chú/Dự toán: ${notes}` : '',
+        `• Đặc quyền: Miễn phí 100% Chụp Phim CT ConeBeam 3D`
+      ].filter(Boolean).join('\n');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(msg).catch(() => {});
+      }
+
+      const cleanClinicPhone = CLINIC_CONFIG.phone.replace(/\D/g, '') || '0909888999';
+      const zaloUrl = `https://zalo.me/${cleanClinicPhone}?text=${encodeURIComponent(msg)}`;
+      showToast('Đang kết nối Zalo Lễ Tân Phòng Khám...', 'Nội dung phiếu đặt lịch đã được sao chép tự động để gửi nhanh.');
+      setTimeout(() => {
+        window.open(zaloUrl, '_blank', 'noopener');
+      }, 450);
+    }
+
+    // =========================================================================
+    // 5. OWNER MODAL & TOAST HELPERS
+    // =========================================================================
+    function openOwnerModal() {
+      const modal = document.getElementById('owner-claim-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeOwnerModal() {
+      const modal = document.getElementById('owner-claim-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    let toastTimer = null;
+    function showToast(title, body) {
+      const toast = document.getElementById('clinical-toast');
+      document.getElementById('toast-title').textContent = title;
+      document.getElementById('toast-body').textContent = body;
+      toast.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4200);
+    }
+
+    // Initialize default date to tomorrow & render initial state
+    window.addEventListener('DOMContentLoaded', () => {
+      applyClinicBranding();
+      renderCalculatorSummary();
+      const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+      const dateInput = document.getElementById('book-date');
+      if (dateInput) {
+        dateInput.value = tomorrow;
+        dateInput.min = new Date().toISOString().split('T')[0];
+      }
+    });
+  </script>
+</body>
+</html>

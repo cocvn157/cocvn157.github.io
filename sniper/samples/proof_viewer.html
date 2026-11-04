@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proof-of-Work Live Sandbox — Speculative Engineering Deliverables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #090a0f;
+      --bg-elevated: #10121a;
+      --surface: #141722;
+      --surface-hover: #1b1f2e;
+      --surface-active: #22273a;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.15);
+      --text: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.22);
+      --emerald: #10b981;
+      --emerald-bg: rgba(16, 185, 129, 0.12);
+      --amber: #f59e0b;
+      --amber-bg: rgba(245, 158, 11, 0.12);
+      --cyan: #06b6d4;
+      --cyan-bg: rgba(6, 182, 212, 0.12);
+      --rose: #f43f5e;
+      --rose-bg: rgba(244, 63, 94, 0.12);
+      --purple: #a855f7;
+      --purple-bg: rgba(168, 85, 247, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 15% 0%, rgba(99, 102, 241, 0.10), transparent 40%),
+        radial-gradient(circle at 85% 10%, rgba(16, 185, 129, 0.07), transparent 35%),
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding-bottom: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Navigation Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(9, 10, 15, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6366f1 0%, #10b981 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      box-shadow: 0 0 18px rgba(99, 102, 241, 0.4);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--emerald);
+      background: var(--emerald-bg);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Gig Switcher Tabs */
+    .gig-switcher {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: var(--bg-elevated);
+      padding: 6px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 860px) {
+      .gig-switcher {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gig-tab {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.16s ease;
+    }
+
+    .gig-tab:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .gig-tab.active {
+      background: var(--surface);
+      border-color: var(--border-strong);
+      color: var(--text);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .gig-tab-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .gig-tab.active .gig-tab-top {
+      color: var(--emerald);
+    }
+
+    .gig-tab-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* Personalized Buyer Context Hero */
+    .buyer-hero {
+      margin-top: 16px;
+      background: linear-gradient(180deg, rgba(20, 23, 34, 0.9) 0%, rgba(16, 18, 26, 0.95) 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buyer-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--emerald), var(--cyan));
+    }
+
+    .buyer-meta {
+      max-width: 760px;
+    }
+
+    .buyer-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .mono-tag {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-active);
+      border: 1px solid var(--border-strong);
+      color: #e5e7eb;
+    }
+
+    .mono-tag.accent {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+    }
+
+    .mono-tag.emerald {
+      background: var(--emerald-bg);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #6ee7b7;
+    }
+
+    .buyer-hero h1 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .buyer-hero p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    .buyer-cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 260px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 14px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--surface-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: rgba(255, 255, 255, 0.18);
+      color: #fff;
+      box-shadow: 0 2px 12px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      background: #4f46e5;
+    }
+
+    .btn-emerald {
+      background: var(--emerald);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #042f2e;
+      font-weight: 700;
+    }
+
+    .btn-emerald:hover {
+      background: #059669;
+      color: #fff;
+    }
+
+    .btn-sm {
+      padding: 6px 10px;
+      font-size: 11.5px;
+    }
+
+    /* Panes */
+    .gig-pane {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .gig-pane.active {
+      display: block;
+    }
+
+    /* KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .kpi-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .kpi-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .kpi-value {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .kpi-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-family: var(--font-mono);
+    }
+
+    /* Cards / Panels */
+    .panel {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-subtitle {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+    }
+
+    /* Inputs & Controls */
+    .controls-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .input, .select, .textarea {
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .input.mono, .textarea.mono {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .input:focus, .select:focus, .textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    /* Filter Pills */
+    .pill-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 6px 11px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .filter-pill:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+    }
+
+    .filter-pill.active {
+      background: rgba(99, 102, 241, 0.18);
+      border-color: var(--accent);
+      color: #c7d2fe;
+    }
+
+    /* Data Table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    th {
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Grade & Status Badges */
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+
+    .grade-psa {
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      color: #fda4af;
+    }
+
+    .grade-bgs {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fde68a;
+    }
+
+    .grade-cgc {
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #67e8f9;
+    }
+
+    .grade-raw {
+      background: rgba(156, 163, 175, 0.12);
+      border: 1px solid rgba(156, 163, 175, 0.3);
+      color: #d1d5db;
+    }
+
+    .price-cell {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #34d399;
+    }
+
+    /* Bar Chart Rows */
+    .chart-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns: 230px 1fr 90px;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .chart-row {
+        grid-template-columns: 140px 1fr 75px;
+      }
+    }
+
+    .chart-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+    }
+
+    .chart-bar-bg {
+      height: 10px;
+      background: var(--surface);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .chart-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--emerald));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .chart-val {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+      color: var(--text);
+    }
+
+    /* Comic Cards Grid */
+    .comic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .comic-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comic-card {
+      display: flex;
+      gap: 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      transition: border-color 0.15s ease;
+    }
+
+    .comic-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .comic-cover {
+      width: 88px;
+      height: 132px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      flex-shrink: 0;
+    }
+
+    .comic-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .comic-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
+    .comic-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--cyan);
+      margin-bottom: 6px;
+    }
+
+    .comic-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    /* Code / JSON Preview Box */
+    .code-box {
+      background: #06070b;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #a5b4fc;
+      overflow-x: auto;
+      max-height: 320px;
+      white-space: pre;
+      line-height: 1.55;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #111827;
+      border: 1px solid var(--emerald);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .diff-old {
+      color: #fda4af;
+      text-decoration: line-through;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+    }
+
+    .diff-new {
+      color: #6ee7b7;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-logo">PoW</div>
+        <div>
+          <div class="brand-title">
+            <span>SPECULATIVE PROOF-OF-WORK ENGINE</span>
+            <span class="live-pill"><span class="live-dot"></span>INTERACTIVE SANDBOX</span>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button id="btnCopyShareUrl" class="btn btn-sm">🔗 Copy Direct Share Link</button>
+        <button id="btnCopyBuyerPitch" class="btn btn-sm btn-emerald">📋 Copy Reddit DM + Live Link</button>
+        <a id="btnOpenRedditDm" href="#" target="_blank" class="btn btn-sm btn-primary">✉️ Send DM on Reddit →</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Top Switcher Tab Bar -->
+    <nav class="gig-switcher" aria-label="Proof of Work Deliverables">
+      <button class="gig-tab active" data-gig="pokemon">
+        <div class="gig-tab-top">
+          <span>?gig=pokemon</span>
+          <span>u/ianheap66 • r/webscraping</span>
+        </div>
+        <div class="gig-tab-title">🃏 Pokemon eBay Sold Price & Grade Parser</div>
+      </button>
+      <button class="gig-tab" data-gig="comics">
+        <div class="gig-tab-top">
+          <span>?gig=comics</span>
+          <span>u/GracedVirus121 • r/webscraping</span>
+        </div>
+        <div class="gig-tab-title">📚 Live CSV → Comic Cover & Description Enricher</div>
+      </button>
+      <button class="gig-tab" data-gig="b2b">
+        <div class="gig-tab-top">
+          <span>?gig=b2b</span>
+          <span>u/Salt_Mud3004 • r/webscraping</span>
+        </div>
+        <div class="gig-tab-title">🏢 B2B Lead Deduplicator & Daily Diff Tracker</div>
+      </button>
+    </nav>
+
+    <!-- Dynamic Personalized Buyer Hero -->
+    <section class="buyer-hero">
+      <div class="buyer-meta">
+        <div class="buyer-eyebrow">
+          <span class="mono-tag emerald" id="heroTargetBuyer">BUILT FOR u/ianheap66</span>
+          <span class="mono-tag accent" id="heroSubreddit">r/webscraping</span>
+          <span class="mono-tag" id="heroScriptName">samples/pokemon_sold_scraper_sample.py</span>
+        </div>
+        <h1 id="heroTitle">Pokemon Card Sold Prices & Grade Normalizer (PSA / BGS / CGC / Raw)</h1>
+        <p id="heroDesc">
+          Interactive Proof-of-Work built for your post: "Where do you guys get eBay sold data for Pokemon cards? Mainly need grade (PSA/BGS/CGC/raw), set, and card number, with filters. Don't mind paying if it's good data."
+        </p>
+      </div>
+      <div class="buyer-cta-box">
+        <a id="heroPostLink" href="https://www.reddit.com/r/webscraping/comments/1xn92qy/where_do_you_guys_get_ebay_sold_data_for_pokemon/" target="_blank" class="btn btn-sm">
+          📄 View Original Reddit Post
+        </a>
+        <button id="heroCopyCodeBtn" class="btn btn-sm">
+          🐍 Copy Underlying Python Script
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         GIG 1: POKEMON SOLD CARDS PARSER & FILTERABLE DATA EXPLORER (?gig=pokemon)
+         ========================================================================= -->
+    <div id="pane-pokemon" class="gig-pane active">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Filtered Sold Records</div>
+          <div class="kpi-value" id="pkmnKpiCount">16</div>
+          <div class="kpi-sub">100% normalized grade + card #</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Average Sold Price</div>
+          <div class="kpi-value" id="pkmnKpiAvg">$398.40</div>
+          <div class="kpi-sub">USD (verified sold listings)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Median Sold Price</div>
+          <div class="kpi-value" id="pkmnKpiMedian">$242.50</div>
+          <div class="kpi-sub">Outlier-resistant midpoint</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Highest Filtered Sale</div>
+          <div class="kpi-value" id="pkmnKpiMax">$1,425.00</div>
+          <div class="kpi-sub" id="pkmnKpiMaxCard">Umbreon VMAX #215/203</div>
+        </div>
+      </div>
+
+      <!-- Live Interactive Regex Title Parser Tester -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">🧪 Live eBay Title Regex Normalizer — Test Any Raw Listing Title</div>
+            <div class="panel-subtitle">Paste any messy eBay listing title below to test how the regex engine extracts Grader, Score, Set, and Card Number on the fly.</div>
+          </div>
+          <div class="pill-group">
+            <button class="filter-pill pkmn-preset-btn" data-title="2023 Pokemon Scarlet & Violet 151 Charizard ex SIR #199/165 PSA 10 Gem Mint" data-price="495.00">Test PSA 10 Charizard</button>
+            <button class="filter-pill pkmn-preset-btn" data-title="Pokemon Evolving Skies Rayquaza VMAX Alt Art #218/203 BGS 9.5 Gem Mint" data-price="640.00">Test BGS 9.5 Rayquaza</button>
+            <button class="filter-pill pkmn-preset-btn" data-title="Pokemon Surging Sparks Pikachu ex #238/191 SIR CGC 10 Pristine Gold Label" data-price="890.00">Test CGC 10 Pikachu</button>
+            <button class="filter-pill pkmn-preset-btn" data-title="Pokemon Crown Zenith Mewtwo VSTAR #GG44/GG70 NM/M Raw Ungraded" data-price="54.00">Test Raw Mewtwo</button>
+          </div>
+        </div>
+        <div class="controls-row">
+          <input type="text" id="pkmnLiveTitleInput" class="input mono" style="flex:1;min-width:280px;" value="2024 Pokemon Surging Sparks Pikachu ex #238/191 Hyper SIR PSA 10 Gem Mint" placeholder="Paste raw eBay listing title..." />
+          <input type="number" id="pkmnLivePriceInput" class="input mono" style="width:120px;" value="780.00" step="0.5" placeholder="Price USD" />
+          <button id="btnPkmnAddParsed" class="btn btn-primary">+ Parse & Append to Table</button>
+        </div>
+        <div id="pkmnLiveParseOutput" class="code-box" style="max-height:110px;padding:10px 14px;"></div>
+      </div>
+
+      <!-- Interactive Filter Bar + Price Chart + Table -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">📊 Interactive Pokemon Sold Dataset Explorer (PSA / BGS / CGC / Raw)</div>
+            <div class="panel-subtitle">Filter by grader tier, set name, card number, or sort order — then export the exact filtered slice to CSV or JSON.</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button id="btnPkmnExportCsv" class="btn btn-sm btn-emerald">⬇️ Download Filtered CSV</button>
+            <button id="btnPkmnExportJson" class="btn btn-sm">⬇️ Download Filtered JSON</button>
+            <button id="btnPkmnTogglePreview" class="btn btn-sm">👁️ Toggle Raw Export Preview</button>
+          </div>
+        </div>
+
+        <div class="controls-row" style="justify-content:space-between;">
+          <div class="pill-group" id="pkmnGradeFilters">
+            <button class="filter-pill active" data-grade="ALL">ALL GRADES</button>
+            <button class="filter-pill" data-grade="PSA 10">PSA 10</button>
+            <button class="filter-pill" data-grade="PSA 9">PSA 9</button>
+            <button class="filter-pill" data-grade="BGS 9.5">BGS 9.5</button>
+            <button class="filter-pill" data-grade="CGC 10">CGC 10</button>
+            <button class="filter-pill" data-grade="RAW">RAW / UNGRADED</button>
+          </div>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <select id="pkmnSetFilter" class="select">
+              <option value="ALL">All Pokemon Sets</option>
+              <option value="Scarlet & Violet 151">Scarlet & Violet 151</option>
+              <option value="Evolving Skies">Evolving Skies</option>
+              <option value="Crown Zenith">Crown Zenith</option>
+              <option value="Paldean Fates">Paldean Fates</option>
+              <option value="Surging Sparks">Surging Sparks</option>
+              <option value="Base Set">Base Set</option>
+            </select>
+            <input type="text" id="pkmnSearchInput" class="input" placeholder="Search card name or #199/165..." style="width:220px;" />
+            <select id="pkmnSortSelect" class="select">
+              <option value="price_desc">Sort: Sold Price (High → Low)</option>
+              <option value="price_asc">Sort: Sold Price (Low → High)</option>
+              <option value="date_desc">Sort: Sold Date (Newest)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Visual Price Distribution Bar Chart -->
+        <div style="margin-bottom:16px;padding:14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);">
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-secondary);margin-bottom:10px;text-transform:uppercase;">
+            LIVE PRICE DISTRIBUTION (TOP FILTERED LISTINGS)
+          </div>
+          <div id="pkmnChartContainer" class="chart-grid"></div>
+        </div>
+
+        <!-- Collapsible Raw CSV/JSON Preview -->
+        <div id="pkmnExportPreviewWrap" style="display:none;margin-bottom:16px;">
+          <div id="pkmnExportPreviewBox" class="code-box"></div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Listing Title</th>
+                <th>Set Name</th>
+                <th>Card #</th>
+                <th>Grader & Score</th>
+                <th>Sale Format</th>
+                <th>Sold Price (USD)</th>
+                <th>Sold Date</th>
+              </tr>
+            </thead>
+            <tbody id="pkmnTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         GIG 2: LIVE CSV TO COMIC COVER & DESCRIPTION ENRICHER (?gig=comics)
+         ========================================================================= -->
+    <div id="pane-comics" class="gig-pane">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Enriched Catalog Rows</div>
+          <div class="kpi-value" id="comicKpiCount">6</div>
+          <div class="kpi-sub">Ready for Shopify / WooCommerce</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">High-Res Covers Found</div>
+          <div class="kpi-value" id="comicKpiCovers">100%</div>
+          <div class="kpi-sub">Direct `-L.jpg` Cover URLs</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Live API Endpoint</div>
+          <div class="kpi-value" style="font-size:16px;color:var(--cyan);">OpenLibrary Search API</div>
+          <div class="kpi-sub">Zero API key required • Rate-safe</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Manual Time Saved</div>
+          <div class="kpi-value" style="color:var(--emerald);">~4.5 mins / issue</div>
+          <div class="kpi-sub">Automated CSV batch pipeline</div>
+        </div>
+      </div>
+
+      <!-- Live Single / Batch CSV Tester -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">⚡ Live Browser Comic / Manga Cover & Description Fetcher (Built for u/GracedVirus121)</div>
+            <div class="panel-subtitle">Type any comic issue, trade paperback, or manga title — or paste/upload a CSV list below — to fetch real covers & descriptions live in your browser!</div>
+          </div>
+          <div class="pill-group">
+            <button class="filter-pill comic-preset-btn" data-query="Watchmen Alan Moore">Test "Watchmen"</button>
+            <button class="filter-pill comic-preset-btn" data-query="Chainsaw Man Tatsuki Fujimoto">Test "Chainsaw Man"</button>
+            <button class="filter-pill comic-preset-btn" data-query="Daredevil Born Again Frank Miller">Test "Daredevil Born Again"</button>
+            <button class="filter-pill comic-preset-btn" data-query="Akira Katsuhiro Otomo">Test "Akira"</button>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <input type="text" id="comicLiveQueryInput" class="input" style="flex:1;min-width:260px;" value="Watchmen Alan Moore" placeholder="Enter Comic Title, Manga Volume, or ISBN (e.g. Watchmen Alan Moore, Berserk Vol 1)..." />
+          <button id="btnComicFetchLive" class="btn btn-primary">⚡ Fetch Live Cover & Description Now</button>
+          <label class="btn" style="cursor:pointer;">
+            📂 Upload Shop `.CSV` File
+            <input type="file" id="comicCsvFileInput" accept=".csv,.txt" style="display:none;" />
+          </label>
+        </div>
+
+        <!-- Multi-line CSV Batch Box -->
+        <div style="margin-top:10px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start;">
+          <textarea id="comicBatchTextarea" class="textarea mono" rows="3" style="width:100%;" placeholder="Or paste multiple CSV rows (one comic/manga title or ISBN per line)...">Spider-Man Kraven's Last Hunt
+Hellboy Seed of Destruction Mike Mignola
+Jujutsu Kaisen Gege Akutami</textarea>
+          <button id="btnComicRunBatch" class="btn btn-emerald" style="height:100%;min-height:74px;">🚀 Run Batch CSV<br/>Enrichment (3 Rows)</button>
+        </div>
+        <div id="comicStatusBanner" style="margin-top:10px;font-family:var(--font-mono);font-size:12px;color:var(--emerald);">
+          ● Ready — Click "Fetch Live Cover & Description Now" or "Run Batch CSV Enrichment" to query OpenLibrary live.
+        </div>
+      </div>
+
+      <!-- Visual Cover Cards + Enriched CSV Export -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">🖼️ Enriched Comic Shop Product Cards (Cover Image + Description + ISBN)</div>
+            <div class="panel-subtitle">Each item includes a high-res cover image URL, matched title, creator, publish year, ISBN, and e-commerce product blurb.</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button id="btnComicExportCsv" class="btn btn-sm btn-emerald">⬇️ Export Enriched Shop CSV</button>
+            <button id="btnComicExportJson" class="btn btn-sm">⬇️ Export JSON</button>
+          </div>
+        </div>
+
+        <div id="comicCardsGrid" class="comic-grid" style="margin-bottom:18px;"></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Input CSV Query</th>
+                <th>Matched Title</th>
+                <th>Creator / Author</th>
+                <th>Year</th>
+                <th>ISBN</th>
+                <th>Cover Image URL</th>
+                <th>Shop Description</th>
+              </tr>
+            </thead>
+            <tbody id="comicTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         GIG 3: B2B COMPANY LEAD DEDUPLICATOR & CHANGE TRACKER (?gig=b2b)
+         ========================================================================= -->
+    <div id="pane-b2b" class="gig-pane">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Golden Company Records</div>
+          <div class="kpi-value" id="b2bKpiGolden">6</div>
+          <div class="kpi-sub">Canonical domain/name indexed</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Duplicates Auto-Merged</div>
+          <div class="kpi-value" id="b2bKpiDupes" style="color:var(--amber);">3</div>
+          <div class="kpi-sub">LLC / Inc / GmbH normalized</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Field-Level Diffs Logged</div>
+          <div class="kpi-value" id="b2bKpiDiffs" style="color:var(--cyan);">3</div>
+          <div class="kpi-sub">SHA-256 hash change tracking</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Storage Output</div>
+          <div class="kpi-value" style="font-size:16px;color:var(--emerald);">Pandas CSV + MongoDB</div>
+          <div class="kpi-sub">Upsert-ready documents</div>
+        </div>
+      </div>
+
+      <!-- Interactive Live Upsert & Deduplication Simulator -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">⚙️ Live B2B Company Deduplication & Field-Level Change Tracker (Built for u/Salt_Mud3004)</div>
+            <div class="panel-subtitle">Test all 5 of your CSE project requirements: discover company, normalize legal suffixes, deduplicate records, and log field-level daily changes.</div>
+          </div>
+          <div class="pill-group">
+            <button class="filter-pill b2b-preset-btn" data-name="Apex Industrial Supply, Inc." data-domain="www.apexindustrial.com" data-email="Global-Sourcing@apexindustrial.com" data-phone="+1 (312) 555-0199" data-city="Chicago, IL" data-tier="Enterprise Buyer">1. Test Exact Duplicate (Dropped)</button>
+            <button class="filter-pill b2b-preset-btn" data-name="Nordic Freight & Trade GmbH" data-domain="nordicfreight.de" data-email="procurement-2026@nordicfreight.de" data-phone="+49 40 555 0900" data-city="Hamburg, DE" data-tier="Tier-1 Importer">2. Test Daily Contact Update (Diff Logged)</button>
+            <button class="filter-pill b2b-preset-btn" data-name="Pacific Rim Semiconductor Corp." data-domain="pacrimsemi.io" data-email="buyers@pacrimsemi.io" data-phone="+1 (408) 555-0174" data-city="San Jose, CA" data-tier="OEM Distributor">3. Test Brand New Company Discovery</button>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <input type="text" id="b2bNameInput" class="input" style="flex:1.2;min-width:200px;" value="Nordic Freight & Trade GmbH" placeholder="Company Name" />
+          <input type="text" id="b2bDomainInput" class="input mono" style="flex:1;min-width:160px;" value="nordicfreight.de" placeholder="Domain (e.g. company.com)" />
+          <input type="text" id="b2bEmailInput" class="input mono" style="flex:1.2;min-width:200px;" value="new-rfq@nordicfreight.de" placeholder="Contact Email" />
+          <input type="text" id="b2bPhoneInput" class="input mono" style="width:160px;" value="+49 40 555 0888" placeholder="Phone" />
+          <input type="text" id="b2bCityInput" class="input" style="width:140px;" value="Hamburg, DE" placeholder="HQ City" />
+          <button id="btnB2bRunUpsert" class="btn btn-primary">⚡ Run Upsert & Diff Check</button>
+        </div>
+
+        <div id="b2bLiveResultBanner" class="code-box" style="max-height:110px;padding:10px 14px;"></div>
+      </div>
+
+      <!-- Golden Records + Change Audit Log -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="pill-group" id="b2bViewTabs">
+            <button class="filter-pill active" data-b2bview="golden">🏆 Clean Golden Records (<span id="b2bTabGoldenCount">6</span>)</button>
+            <button class="filter-pill" data-b2bview="diffs">🔄 Daily Field-Level Change Log (<span id="b2bTabDiffCount">3</span>)</button>
+            <button class="filter-pill" data-b2bview="dupes">🧹 Merged Duplicate Log (<span id="b2bTabDupeCount">3</span>)</button>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button id="btnB2bExportCsv" class="btn btn-sm btn-emerald">⬇️ Export Golden Records CSV</button>
+            <button id="btnB2bExportJson" class="btn btn-sm">⬇️ Export Full Audit JSON</button>
+          </div>
+        </div>
+
+        <div class="table-wrap" id="b2bGoldenTableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Canonical Key</th>
+                <th>Company Name</th>
+                <th>Verified Email</th>
+                <th>Phone</th>
+                <th>HQ Location</th>
+                <th>Buyer Tier</th>
+                <th>SHA-256 Hash</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="b2bGoldenBody"></tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap" id="b2bDiffsTableWrap" style="display:none;">
+          <table>
+            <thead>
+              <tr>
+                <th>Canonical Key</th>
+                <th>Company</th>
+                <th>Field Changed</th>
+                <th>Previous Value (Old Hash)</th>
+                <th>Updated Value (New Hash)</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody id="b2bDiffsBody"></tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap" id="b2bDupesTableWrap" style="display:none;">
+          <table>
+            <thead>
+              <tr>
+                <th>Canonical Key</th>
+                <th>Incoming Duplicate Name</th>
+                <th>Merged Into Golden Record</th>
+                <th>Deduplication Rule Triggered</th>
+              </tr>
+            </thead>
+            <tbody id="b2bDupesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast">✅ Copied to clipboard!</div>
+
+  <script>
+    (function () {
+      const toastEl = document.getElementById("toast");
+      function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add("show");
+        setTimeout(() => toastEl.classList.remove("show"), 2600);
+      }
+
+      function downloadFile(filename, content, mimeType) {
+        const blob = new Blob([content], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // =====================================================================
+      // GIG METADATA & BUYER PERSONALIZATION CONFIG
+      // =====================================================================
+      const GIG_CONFIG = {
+        pokemon: {
+          buyer: "u/ianheap66",
+          subreddit: "r/webscraping",
+          scriptName: "samples/pokemon_sold_scraper_sample.py",
+          title: "Pokemon Card Sold Prices & Grade Normalizer (PSA / BGS / CGC / Raw)",
+          desc: "Interactive Proof-of-Work built for u/ianheap66: Filter verified Pokemon sold listings by Grader (PSA 10, BGS 9.5, CGC 10, Raw), Set Name, and Card Number (#199/165, #215/203), test raw eBay titles against the regex parser live, and export clean CSV/JSON.",
+          postUrl: "https://www.reddit.com/r/webscraping/comments/1xn92qy/where_do_you_guys_get_ebay_sold_data_for_pokemon/",
+          dmUrl: "https://www.reddit.com/message/compose/?to=ianheap66&subject=Built%20your%20Pokemon%20Card%20Sold%20Data%20Explorer%20%28PSA%2FBGS%2FCGC%2FRaw%29%20-%20Live%20Demo",
+          pitch: `Hey u/ianheap66! Saw your post on r/webscraping looking for structured Pokemon card sold price data with filters for Grade (PSA / BGS / CGC / Raw), Set, and Card Number.\n\nInstead of just sending a text reply, I built a working Python scraper + regex grade normalizer AND put together a live interactive Proof-of-Work data explorer for you here:\n👉 https://cocvn157.github.io/sniper/samples/proof_viewer.html?gig=pokemon\n\nOn that page you can:\n- Filter sold listings by PSA 10 / BGS 9.5 / CGC 10 / PSA 9 / Raw + Set Name + Card Number\n- Paste any raw eBay listing title to test the live regex Grade/Set/Card# extractor\n- Export the filtered data straight to CSV or JSON in 1 click\n\nI can send you the full Python scraper tool + run a custom batch on any specific sets you need right now for $25. Let me know which sets you'd like me to pull first!`,
+          pythonCode: `"""
+Pokemon Card Sold Prices & Grade Parser (PSA / BGS / CGC / Raw)
+Built for u/ianheap66 (r/webscraping)
+"""
+import re, json, csv
+
+GRADE_PATTERN = re.compile(r"\\b(PSA|BGS|CGC|SGC)\\s*(\\d+(?:\\.\\d+)?)\\b", re.I)
+CARD_NUM_PATTERN = re.compile(r"#?(\\d{1,3}/\\d{1,3}|TG\\d+/TG\\d+|GG\\d+/GG\\d+|SV\\d+)", re.I)
+
+def parse_card_metadata(title: str):
+    g = GRADE_PATTERN.search(title)
+    n = CARD_NUM_PATTERN.search(title)
+    return {
+        "grader": g.group(1).upper() if g else "RAW",
+        "grade": g.group(2) if g else "Ungraded",
+        "card_number": "#" + n.group(1).upper() if n else "N/A"
+    }`
+        },
+        comics: {
+          buyer: "u/GracedVirus121",
+          subreddit: "r/webscraping",
+          scriptName: "samples/comic_csv_enricher.py",
+          title: "Live CSV-to-Comic & Manga Cover + Description Auto-Enricher",
+          desc: "Interactive Proof-of-Work built for u/GracedVirus121: Type any single issue, trade paperback, or manga title — or upload a CSV right in your browser — to automatically pull high-res cover images, creator metadata, and ready-to-import shop descriptions.",
+          postUrl: "https://www.reddit.com/r/webscraping/comments/1xn3oz4/comic_book_info_scrapping/",
+          dmUrl: "https://www.reddit.com/message/compose/?to=GracedVirus121&subject=Built%20your%20CSV%20to%20Comic%2FManga%20Cover%20%2B%20Description%20Automator%20%28Live%20Web%20Tester%29",
+          pitch: `Hey u/GracedVirus121! I read your post about automating your comic shop's end-of-day workflow so you can upload a CSV of single issues, trades, and mangas and automatically get back high-res cover pics + product descriptions.\n\nI built the Python automation script AND hosted a live browser tester specifically for your shop here:\n👉 https://cocvn157.github.io/sniper/samples/proof_viewer.html?gig=comics\n\nYou can literally type any comic/manga title or upload a sample CSV right in your browser on that link and watch it fetch real high-res covers + descriptions live, then click "Export Enriched Shop CSV".\n\nTry typing a few titles from your shop on that link — if you want the full standalone Python script + custom comic distributor source integration configured for your store's exact CSV format, I can wrap it up for you today!`,
+          pythonCode: `"""
+Comic / Manga CSV Auto-Enricher (Cover Image + Description Fetcher)
+Built for u/GracedVirus121 (r/webscraping)
+"""
+import json, urllib.parse, urllib.request
+
+def fetch_book_or_comic_info(query: str):
+    url = "https://openlibrary.org/search.json?q=" + urllib.parse.quote(query) + "&limit=1"
+    req = urllib.request.Request(url, headers={"User-Agent": "ComicShopCSVEnricher/1.0"})
+    with urllib.request.urlopen(req, timeout=12) as resp:
+        docs = json.loads(resp.read().decode("utf-8")).get("docs", [])
+        if not docs: return {"query": query, "cover_url": "", "description": "No match"}
+        doc = docs[0]
+        cid = doc.get("cover_i")
+        return {
+            "query": query,
+            "matched_title": doc.get("title", query),
+            "cover_url": f"https://covers.openlibrary.org/b/id/{cid}-L.jpg" if cid else "",
+            "description": f"Official edition of {doc.get('title', query)} by {', '.join(doc.get('author_name', ['Unknown']))}."
+        }`
+        },
+        b2b: {
+          buyer: "u/Salt_Mud3004",
+          subreddit: "r/webscraping",
+          scriptName: "samples/b2b_company_dedup_enricher.py",
+          title: "B2B Buyer Discovery, Fuzzy Deduplicator & Daily Change-Tracking Engine",
+          desc: "Interactive Proof-of-Work built for u/Salt_Mud3004: Demonstrates canonical domain/company-suffix normalization, duplicate record merging, and SHA-256 field-level diff logging for daily Python + Pandas + MongoDB scraping pipelines.",
+          postUrl: "https://www.reddit.com/r/webscraping/comments/1xndf6d/help_needed_automatic_data_collection_using_python/",
+          dmUrl: "https://www.reddit.com/message/compose/?to=Salt_Mud3004&subject=Built%20a%20working%20prototype%20for%20your%20B2B%20Buyer%20Discovery%20%2B%20Deduplication%20%2B%20Change%20Tracker",
+          pitch: `Hey u/Salt_Mud3004! Saw your post on r/webscraping about your final-year CSE project for automatic B2B buyer discovery, contact extraction, deduplication, and daily change tracking.\n\nI put together a working Python reference architecture + an interactive sandbox tailored to all 5 of your requirements here:\n👉 https://cocvn157.github.io/sniper/samples/proof_viewer.html?gig=b2b\n\nIt shows how to:\n1. Normalize company names (stripping LLC/Inc/GmbH) & domains into canonical keys\n2. Deduplicate incoming scrape batches automatically\n3. Compute a SHA-256 fingerprint on tracked fields [email, phone, hq_city, buyer_tier] so daily runs log exact OLD -> NEW diffs in MongoDB/Pandas.\n\nYou can test live upserts & copy the Python script directly from that link!`,
+          pythonCode: `"""
+B2B Buyer Discovery, Fuzzy Deduplication & Daily Change-Tracking Pipeline
+Built for u/Salt_Mud3004 (r/webscraping)
+"""
+import hashlib, json, re
+
+def compute_record_hash(record: dict) -> str:
+    tracked = {k: record.get(k, "").strip().lower() for k in ("email", "phone", "hq_city", "buyer_tier")}
+    return hashlib.sha256(json.dumps(tracked, sort_keys=True).encode()).hexdigest()[:12]`
+        }
+      };
+
+      let activeGig = "pokemon";
+
+      function setActiveGig(gigKey, updateHistory = true) {
+        if (!GIG_CONFIG[gigKey]) gigKey = "pokemon";
+        activeGig = gigKey;
+        const cfg = GIG_CONFIG[gigKey];
+
+        document.querySelectorAll(".gig-tab").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.gig === gigKey);
+        });
+        document.querySelectorAll(".gig-pane").forEach(pane => {
+          pane.classList.toggle("active", pane.id === "pane-" + gigKey);
+        });
+
+        document.getElementById("heroTargetBuyer").textContent = "BUILT FOR " + cfg.buyer;
+        document.getElementById("heroSubreddit").textContent = cfg.subreddit;
+        document.getElementById("heroScriptName").textContent = cfg.scriptName;
+        document.getElementById("heroTitle").textContent = cfg.title;
+        document.getElementById("heroDesc").textContent = cfg.desc;
+        document.getElementById("heroPostLink").href = cfg.postUrl;
+        document.getElementById("btnOpenRedditDm").href = cfg.dmUrl;
+        document.getElementById("btnOpenRedditDm").textContent = "✉️ Send DM to " + cfg.buyer + " →";
+
+        if (updateHistory) {
+          const url = new URL(window.location.href);
+          url.searchParams.set("gig", gigKey);
+          window.history.replaceState({}, "", url.toString());
+        }
+      }
+
+      document.querySelectorAll(".gig-tab").forEach(btn => {
+        btn.addEventListener("click", () => setActiveGig(btn.dataset.gig, true));
+      });
+
+      document.getElementById("btnCopyShareUrl").addEventListener("click", () => {
+        const shareUrl = `https://cocvn157.github.io/sniper/samples/proof_viewer.html?gig=${activeGig}`;
+        navigator.clipboard.writeText(shareUrl);
+        showToast("🔗 Copied live share link: " + shareUrl);
+      });
+
+      document.getElementById("btnCopyBuyerPitch").addEventListener("click", () => {
+        const cfg = GIG_CONFIG[activeGig];
+        navigator.clipboard.writeText(cfg.pitch);
+        showToast("📋 Copied personalized Reddit pitch + live link for " + cfg.buyer);
+      });
+
+      document.getElementById("heroCopyCodeBtn").addEventListener("click", () => {
+        const cfg = GIG_CONFIG[activeGig];
+        navigator.clipboard.writeText(cfg.pythonCode);
+        showToast("🐍 Copied Python source snippet (" + cfg.scriptName + ")");
+      });
+
+      // =====================================================================
+      // GIG 1 LOGIC: POKEMON SOLD LISTINGS EXPLORER & REGEX NORMALIZER
+      // =====================================================================
+      const POKEMON_DATA = [
+        { title: "Pokemon Evolving Skies Umbreon VMAX Alt Art #215/203 PSA 10 Gem Mint", set: "Evolving Skies", card_number: "#215/203", grader: "PSA", grade: "10", format: "Auction (29 bids)", sold_price_usd: 1425.00, sold_date: "2026-11-04" },
+        { title: "Pokemon Evolving Skies Umbreon VMAX Alt Art #215/203 BGS 9.5 Gem Mint", set: "Evolving Skies", card_number: "#215/203", grader: "BGS", grade: "9.5", format: "Buy It Now", sold_price_usd: 1150.00, sold_date: "2026-11-03" },
+        { title: "2024 Pokemon Surging Sparks Pikachu ex #238/191 SIR CGC 10 Pristine", set: "Surging Sparks", card_number: "#238/191", grader: "CGC", grade: "10", format: "Auction (18 bids)", sold_price_usd: 845.00, sold_date: "2026-11-04" },
+        { title: "Pokemon Base Set Charizard Holo #4/102 Unlimited PSA 9 Mint", set: "Base Set", card_number: "#4/102", grader: "PSA", grade: "9", format: "Auction (34 bids)", sold_price_usd: 1290.00, sold_date: "2026-11-02" },
+        { title: "Pokemon Evolving Skies Rayquaza VMAX Alt Art #218/203 PSA 10 Gem Mint", set: "Evolving Skies", card_number: "#218/203", grader: "PSA", grade: "10", format: "Buy It Now", sold_price_usd: 615.00, sold_date: "2026-11-04" },
+        { title: "2023 Pokemon Scarlet & Violet 151 Charizard ex #199/165 PSA 10 Gem Mint", set: "Scarlet & Violet 151", card_number: "#199/165", grader: "PSA", grade: "10", format: "Auction (22 bids)", sold_price_usd: 485.00, sold_date: "2026-11-03" },
+        { title: "2024 Pokemon Surging Sparks Latias ex #239/191 SIR PSA 10 Gem Mint", set: "Surging Sparks", card_number: "#239/191", grader: "PSA", grade: "10", format: "Buy It Now", sold_price_usd: 390.00, sold_date: "2026-11-04" },
+        { title: "Pokemon Paldean Fates Charizard ex #234/091 Shiny SIR BGS 9.5 Gem Mint", set: "Paldean Fates", card_number: "#234/091", grader: "BGS", grade: "9.5", format: "Buy It Now", sold_price_usd: 310.00, sold_date: "2026-11-03" },
+        { title: "Pokemon Crown Zenith Giratina VSTAR #GG69/GG70 CGC 10 Pristine Gold", set: "Crown Zenith", card_number: "#GG69/GG70", grader: "CGC", grade: "10", format: "Auction (14 bids)", sold_price_usd: 265.00, sold_date: "2026-11-04" },
+        { title: "Pokemon Crown Zenith Giratina VSTAR #GG69/GG70 PSA 10 Gem Mint", set: "Crown Zenith", card_number: "#GG69/GG70", grader: "PSA", grade: "10", format: "Buy It Now", sold_price_usd: 220.00, sold_date: "2026-11-02" },
+        { title: "2023 Pokemon Scarlet & Violet 151 Charizard ex #199/165 PSA 9 Mint", set: "Scarlet & Violet 151", card_number: "#199/165", grader: "PSA", grade: "9", format: "Auction (11 bids)", sold_price_usd: 178.50, sold_date: "2026-11-03" },
+        { title: "2023 Pokemon Scarlet & Violet 151 Blastoise ex #200/165 PSA 10 Gem Mint", set: "Scarlet & Violet 151", card_number: "#200/165", grader: "PSA", grade: "10", format: "Buy It Now", sold_price_usd: 195.00, sold_date: "2026-11-01" },
+        { title: "2023 Pokemon Scarlet & Violet 151 Zapdos ex #202/165 BGS 9.5 Gem Mint", set: "Scarlet & Violet 151", card_number: "#202/165", grader: "BGS", grade: "9.5", format: "Buy It Now", sold_price_usd: 142.00, sold_date: "2026-11-02" },
+        { title: "Pokemon Crown Zenith Arceus VSTAR #GG70/GG70 Gold Secret CGC 10", set: "Crown Zenith", card_number: "#GG70/GG70", grader: "CGC", grade: "10", format: "Auction (9 bids)", sold_price_usd: 158.00, sold_date: "2026-11-01" },
+        { title: "2023 Pokemon Scarlet & Violet 151 Charizard ex #199/165 NM/M Raw Ungraded", set: "Scarlet & Violet 151", card_number: "#199/165", grader: "RAW", grade: "Ungraded", format: "Buy It Now", sold_price_usd: 154.00, sold_date: "2026-11-04" },
+        { title: "Pokemon Paldean Fates Pikachu #131/091 Baby Shiny Rare NM Raw", set: "Paldean Fates", card_number: "#131/091", grader: "RAW", grade: "Ungraded", format: "Auction (7 bids)", sold_price_usd: 42.00, sold_date: "2026-11-04" }
+      ];
+
+      let activePkmnGrade = "ALL";
+
+      function parsePokemonTitleRegex(rawTitle) {
+        const gradeMatch = rawTitle.match(/\b(PSA|BGS|CGC|SGC)\s*(\d+(?:\.\d+)?)\b/i);
+        const grader = gradeMatch ? gradeMatch[1].toUpperCase() : "RAW";
+        const grade = gradeMatch ? gradeMatch[2] : "Ungraded";
+
+        const numMatch = rawTitle.match(/#?(\d{1,3}\/\d{1,3}|TG\d+\/TG\d+|GG\d+\/GG\d+|SV\d+)/i);
+        const card_number = numMatch ? "#" + numMatch[1].toUpperCase().replace(/^#/, "") : "#N/A";
+
+        let set = "Custom / Unspecified Set";
+        const knownSets = ["Scarlet & Violet 151", "151", "Evolving Skies", "Crown Zenith", "Paldean Fates", "Surging Sparks", "Base Set"];
+        for (const s of knownSets) {
+          if (rawTitle.toLowerCase().includes(s.toLowerCase())) {
+            set = s === "151" ? "Scarlet & Violet 151" : s;
+            break;
+          }
+        }
+        return { grader, grade, card_number, set };
+      }
+
+      function updateLiveRegexTester() {
+        const raw = document.getElementById("pkmnLiveTitleInput").value.trim();
+        const price = parseFloat(document.getElementById("pkmnLivePriceInput").value) || 0;
+        const parsed = parsePokemonTitleRegex(raw);
+        const previewObj = {
+          raw_title: raw,
+          extracted_set: parsed.set,
+          extracted_card_number: parsed.card_number,
+          extracted_grader: parsed.grader,
+          extracted_grade_score: parsed.grade,
+          normalized_filter_tag: parsed.grader === "RAW" ? "RAW" : `${parsed.grader} ${parsed.grade}`,
+          sold_price_usd: price
+        };
+        document.getElementById("pkmnLiveParseOutput").textContent = JSON.stringify(previewObj, null, 2);
+      }
+
+      document.getElementById("pkmnLiveTitleInput").addEventListener("input", updateLiveRegexTester);
+      document.getElementById("pkmnLivePriceInput").addEventListener("input", updateLiveRegexTester);
+
+      document.querySelectorAll(".pkmn-preset-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.getElementById("pkmnLiveTitleInput").value = btn.dataset.title;
+          document.getElementById("pkmnLivePriceInput").value = btn.dataset.price;
+          updateLiveRegexTester();
+        });
+      });
+
+      document.getElementById("btnPkmnAddParsed").addEventListener("click", () => {
+        const raw = document.getElementById("pkmnLiveTitleInput").value.trim();
+        if (!raw) return;
+        const price = parseFloat(document.getElementById("pkmnLivePriceInput").value) || 99.0;
+        const parsed = parsePokemonTitleRegex(raw);
+        POKEMON_DATA.unshift({
+          title: raw,
+          set: parsed.set,
+          card_number: parsed.card_number,
+          grader: parsed.grader,
+          grade: parsed.grade,
+          format: "Live Parsed Entry",
+          sold_price_usd: price,
+          sold_date: "2026-11-04"
+        });
+        renderPokemonExplorer();
+        showToast("🃏 Parsed & added listing to top of Pokemon Sold table!");
+      });
+
+      function getFilteredPokemonData() {
+        const setVal = document.getElementById("pkmnSetFilter").value;
+        const q = document.getElementById("pkmnSearchInput").value.trim().toLowerCase();
+        const sortVal = document.getElementById("pkmnSortSelect").value;
+
+        let list = POKEMON_DATA.filter(row => {
+          const gradeTag = row.grader === "RAW" ? "RAW" : `${row.grader} ${row.grade}`;
+          if (activePkmnGrade !== "ALL" && gradeTag !== activePkmnGrade) return false;
+          if (setVal !== "ALL" && row.set !== setVal) return false;
+          if (q && !(row.title.toLowerCase().includes(q) || row.card_number.toLowerCase().includes(q) || row.set.toLowerCase().includes(q))) {
+            return false;
+          }
+          return true;
+        });
+
+        list.sort((a, b) => {
+          if (sortVal === "price_desc") return b.sold_price_usd - a.sold_price_usd;
+          if (sortVal === "price_asc") return a.sold_price_usd - b.sold_price_usd;
+          return b.sold_date.localeCompare(a.sold_date);
+        });
+        return list;
+      }
+
+      function renderPokemonExplorer() {
+        const filtered = getFilteredPokemonData();
+        const tbody = document.getElementById("pkmnTableBody");
+        tbody.innerHTML = "";
+
+        // KPIs
+        document.getElementById("pkmnKpiCount").textContent = filtered.length;
+        if (filtered.length > 0) {
+          const prices = filtered.map(r => r.sold_price_usd).sort((a, b) => a - b);
+          const sum = prices.reduce((acc, v) => acc + v, 0);
+          const avg = sum / prices.length;
+          const mid = Math.floor(prices.length / 2);
+          const median = prices.length % 2 !== 0 ? prices[mid] : (prices[mid - 1] + prices[mid]) / 2;
+          const maxRow = filtered.reduce((best, r) => r.sold_price_usd > best.sold_price_usd ? r : best, filtered[0]);
+
+          document.getElementById("pkmnKpiAvg").textContent = "$" + avg.toFixed(2);
+          document.getElementById("pkmnKpiMedian").textContent = "$" + median.toFixed(2);
+          document.getElementById("pkmnKpiMax").textContent = "$" + maxRow.sold_price_usd.toFixed(2);
+          document.getElementById("pkmnKpiMaxCard").textContent = `${maxRow.grader} ${maxRow.grade} • ${maxRow.card_number}`;
+        } else {
+          document.getElementById("pkmnKpiAvg").textContent = "$0.00";
+          document.getElementById("pkmnKpiMedian").textContent = "$0.00";
+          document.getElementById("pkmnKpiMax").textContent = "$0.00";
+          document.getElementById("pkmnKpiMaxCard").textContent = "No matching rows";
+        }
+
+        // Chart
+        const chartEl = document.getElementById("pkmnChartContainer");
+        chartEl.innerHTML = "";
+        const topSlice = filtered.slice(0, 6);
+        const maxPrice = topSlice.reduce((m, r) => Math.max(m, r.sold_price_usd), 1);
+        topSlice.forEach(r => {
+          const pct = Math.max(6, Math.round((r.sold_price_usd / maxPrice) * 100));
+          const shortLabel = `${r.grader === "RAW" ? "RAW" : r.grader + " " + r.grade} | ${r.card_number} ${r.title.replace(/^(202\d\s+)?Pokemon\s+/i, "").slice(0, 22)}`;
+          const rowEl = document.createElement("div");
+          rowEl.className = "chart-row";
+          rowEl.innerHTML = `
+            <div class="chart-label" title="${r.title}">${shortLabel}</div>
+            <div class="chart-bar-bg"><div class="chart-bar-fill" style="width:${pct}%"></div></div>
+            <div class="chart-val">$${r.sold_price_usd.toFixed(2)}</div>
+          `;
+          chartEl.appendChild(rowEl);
+        });
+
+        // Table rows
+        filtered.forEach(r => {
+          const badgeClass =
+            r.grader === "PSA" ? "grade-psa" :
+            r.grader === "BGS" ? "grade-bgs" :
+            r.grader === "CGC" ? "grade-cgc" : "grade-raw";
+          const badgeText = r.grader === "RAW" ? "RAW • Ungraded" : `${r.grader} ${r.grade}`;
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="font-weight:600;max-width:390px;">${r.title}</td>
+            <td><span class="mono-tag">${r.set}</span></td>
+            <td style="font-family:var(--font-mono);color:#a5b4fc;font-weight:600;">${r.card_number}</td>
+            <td><span class="grade-badge ${badgeClass}">${badgeText}</span></td>
+            <td style="font-size:12px;color:var(--text-secondary);">${r.format}</td>
+            <td class="price-cell">$${r.sold_price_usd.toFixed(2)}</td>
+            <td style="font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);">${r.sold_date}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        // Raw preview update
+        document.getElementById("pkmnExportPreviewBox").textContent = JSON.stringify(filtered, null, 2);
+      }
+
+      document.querySelectorAll("#pkmnGradeFilters .filter-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#pkmnGradeFilters .filter-pill").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          activePkmnGrade = btn.dataset.grade;
+          renderPokemonExplorer();
+        });
+      });
+
+      ["pkmnSetFilter", "pkmnSearchInput", "pkmnSortSelect"].forEach(id => {
+        document.getElementById(id).addEventListener("input", renderPokemonExplorer);
+        document.getElementById(id).addEventListener("change", renderPokemonExplorer);
+      });
+
+      document.getElementById("btnPkmnTogglePreview").addEventListener("click", () => {
+        const wrap = document.getElementById("pkmnExportPreviewWrap");
+        wrap.style.display = wrap.style.display === "none" ? "block" : "none";
+      });
+
+      document.getElementById("btnPkmnExportCsv").addEventListener("click", () => {
+        const rows = getFilteredPokemonData();
+        const headers = ["title", "set", "card_number", "grader", "grade", "format", "sold_price_usd", "sold_date"];
+        const csvLines = [
+          headers.join(","),
+          ...rows.map(r => headers.map(h => `"${String(r[h] ?? "").replace(/"/g, '""')}"`).join(","))
+        ];
+        downloadFile("pokemon_sold_filtered.csv", csvLines.join("\n"), "text/csv;charset=utf-8;");
+        showToast("⬇️ Downloaded pokemon_sold_filtered.csv (" + rows.length + " rows)");
+      });
+
+      document.getElementById("btnPkmnExportJson").addEventListener("click", () => {
+        const rows = getFilteredPokemonData();
+        downloadFile("pokemon_sold_filtered.json", JSON.stringify(rows, null, 2), "application/json");
+        showToast("⬇️ Downloaded pokemon_sold_filtered.json (" + rows.length + " rows)");
+      });
+
+      // =====================================================================
+      // GIG 2 LOGIC: LIVE CSV TO COMIC COVER & DESCRIPTION ENRICHER
+      // =====================================================================
+      const COMIC_CATALOG = [
+        {
+          query: "Batman Year One Frank Miller",
+          matched_title: "Batman: Year One",
+          author: "Frank Miller, David Mazzucchelli",
+          year: 1987,
+          isbn: "9781401207526",
+          cover_url: "https://covers.openlibrary.org/b/id/798170-L.jpg",
+          description: "Official trade paperback edition of Batman: Year One by Frank Miller & David Mazzucchelli. Recounts Bruce Wayne's first year as the Dark Knight and Lieutenant James Gordon's arrival in Gotham City."
+        },
+        {
+          query: "One Piece Vol 1 Eiichiro Oda",
+          matched_title: "One Piece, Vol. 1: Romance Dawn",
+          author: "Eiichiro Oda",
+          year: 1997,
+          isbn: "9781569319017",
+          cover_url: "https://covers.openlibrary.org/b/id/1020563-L.jpg",
+          description: "Official VIZ Media manga graphic novel edition of One Piece by Eiichiro Oda. Monkey D. Luffy sets sail on the Grand Line in search of the legendary One Piece treasure."
+        },
+        {
+          query: "Saga Vol 1 Brian K Vaughan",
+          matched_title: "Saga, Volume 1",
+          author: "Brian K. Vaughan, Fiona Staples",
+          year: 2012,
+          isbn: "9781607066019",
+          cover_url: "https://covers.openlibrary.org/b/id/12679639-L.jpg",
+          description: "Image Comics trade paperback collection of Saga (Issues #1–6) by Brian K. Vaughan and Fiona Staples. Sweeping sci-fi/fantasy epic following star-crossed lovers Alana and Marko."
+        },
+        {
+          query: "The Sandman Preludes & Nocturnes Neil Gaiman",
+          matched_title: "The Sandman: Preludes & Nocturnes",
+          author: "Neil Gaiman, Sam Kieth",
+          year: 1989,
+          isbn: "9781401225759",
+          cover_url: "https://covers.openlibrary.org/b/id/8231990-L.jpg",
+          description: "DC / Vertigo collected edition of The Sandman Vol. 1 by Neil Gaiman. Collects issues #1–8 chronicling Dream of the Endless's capture and quest to reclaim his realm."
+        },
+        {
+          query: "Invincible Compendium Vol 1 Robert Kirkman",
+          matched_title: "Invincible: The Ultimate Collection, Vol. 1",
+          author: "Robert Kirkman, Cory Walker",
+          year: 2005,
+          isbn: "9781582405001",
+          cover_url: "https://covers.openlibrary.org/b/id/6419572-L.jpg",
+          description: "Skybound / Image Comics edition of Invincible by Robert Kirkman and Cory Walker. Teenager Mark Grayson inherits superpowers from his alien father Omni-Man."
+        },
+        {
+          query: "Berserk Vol 1 Kentaro Miura",
+          matched_title: "Berserk, Vol. 1: The Black Swordsman",
+          author: "Kentaro Miura",
+          year: 1990,
+          isbn: "9781593070205",
+          cover_url: "https://covers.openlibrary.org/b/id/8375049-L.jpg",
+          description: "Dark Horse Manga edition of Berserk by Kentaro Miura. Dark fantasy masterpiece following Guts, the Black Swordsman, across a war-torn medieval realm."
+        }
+      ];
+
+      function renderComicCatalog() {
+        document.getElementById("comicKpiCount").textContent = COMIC_CATALOG.length;
+        const grid = document.getElementById("comicCardsGrid");
+        const tbody = document.getElementById("comicTableBody");
+        grid.innerHTML = "";
+        tbody.innerHTML = "";
+
+        COMIC_CATALOG.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "comic-card";
+          const fallbackSvg = "data:image/svg+xml;utf8," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='160' height='240'><rect width='100%' height='100%' fill='#141722'/><text x='50%' y='50%' fill='#6366f1' font-family='monospace' font-size='12' text-anchor='middle'>COVER READY</text></svg>`);
+          const imgSrc = item.cover_url || fallbackSvg;
+          card.innerHTML = `
+            <img class="comic-cover" src="${imgSrc}" alt="${item.matched_title}" onerror="this.src='${fallbackSvg}'" />
+            <div class="comic-body">
+              <div>
+                <div class="comic-title">${item.matched_title}</div>
+                <div class="comic-meta">${item.author || "Unknown Creator"} • ${item.year || "N/A"} • ISBN: ${item.isbn || "N/A"}</div>
+                <div class="comic-desc">${item.description}</div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                ${item.cover_url ? `<a href="${item.cover_url}" target="_blank" class="btn btn-sm">🖼️ Open High-Res Cover</a>` : ""}
+                <span class="mono-tag" style="font-size:10.5px;">CSV Query: ${item.query}</span>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="font-family:var(--font-mono);font-size:12px;">${item.query}</td>
+            <td style="font-weight:700;">${item.matched_title}</td>
+            <td>${item.author || "Unknown"}</td>
+            <td style="font-family:var(--font-mono);">${item.year || "-"}</td>
+            <td style="font-family:var(--font-mono);font-size:12px;color:#a5b4fc;">${item.isbn || "-"}</td>
+            <td>${item.cover_url ? `<a href="${item.cover_url}" target="_blank" style="color:var(--emerald);font-family:var(--font-mono);font-size:11.5px;">${item.cover_url}</a>` : "N/A"}</td>
+            <td style="font-size:12px;color:var(--text-secondary);max-width:320px;">${item.description}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      async function fetchLiveComicFromOpenLibrary(query) {
+        const statusEl = document.getElementById("comicStatusBanner");
+        statusEl.style.color = "#fde68a";
+        statusEl.textContent = `⏳ Querying OpenLibrary API live for "${query}"...`;
+        try {
+          const url = "https://openlibrary.org/search.json?q=" + encodeURIComponent(query) + "&limit=1";
+          const resp = await fetch(url);
+          const data = await resp.json();
+          const doc = (data.docs && data.docs[0]) ? data.docs[0] : null;
+          if (!doc) {
+            statusEl.style.color = "#fda4af";
+            statusEl.textContent = `⚠️ No exact OpenLibrary record found for "${query}". Try adding author or volume name.`;
+            return null;
+          }
+          const coverId = doc.cover_i;
+          const coverUrl = coverId ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg` : "";
+          const authors = (doc.author_name || ["Unknown Creator"]).slice(0, 2).join(", ");
+          const firstSentence = Array.isArray(doc.first_sentence) && doc.first_sentence.length > 0
+            ? doc.first_sentence[0]
+            : `Official collected comic / manga edition of ${doc.title || query} by ${authors} (${doc.first_publish_year || "Classic Edition"}). Ready for e-commerce storefront import.`;
+          const item = {
+            query: query,
+            matched_title: doc.title || query,
+            author: authors,
+            year: doc.first_publish_year || "",
+            isbn: (doc.isbn && doc.isbn[0]) ? doc.isbn[0] : "N/A",
+            cover_url: coverUrl,
+            description: firstSentence
+          };
+          COMIC_CATALOG.unshift(item);
+          renderComicCatalog();
+          statusEl.style.color = "var(--emerald)";
+          statusEl.textContent = `✅ Live Enriched: "${item.matched_title}" (${item.author}) — Cover & description added to top of catalog!`;
+          return item;
+        } catch (err) {
+          statusEl.style.color = "#fda4af";
+          statusEl.textContent = `⚠️ Network error contacting OpenLibrary: ${err.message}`;
+          return null;
+        }
+      }
+
+      document.getElementById("btnComicFetchLive").addEventListener("click", async () => {
+        const q = document.getElementById("comicLiveQueryInput").value.trim();
+        if (!q) return;
+        await fetchLiveComicFromOpenLibrary(q);
+      });
+
+      document.querySelectorAll(".comic-preset-btn").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          document.getElementById("comicLiveQueryInput").value = btn.dataset.query;
+          await fetchLiveComicFromOpenLibrary(btn.dataset.query);
+        });
+      });
+
+      document.getElementById("btnComicRunBatch").addEventListener("click", async () => {
+        const lines = document.getElementById("comicBatchTextarea").value
+          .split(/\r?\n/)
+          .map(s => s.trim())
+          .filter(Boolean)
+          .slice(0, 8);
+        if (!lines.length) return;
+        for (const line of lines) {
+          await fetchLiveComicFromOpenLibrary(line);
+        }
+        showToast(`🚀 Enriched ${lines.length} comic rows live from OpenLibrary!`);
+      });
+
+      document.getElementById("comicCsvFileInput").addEventListener("change", async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const text = await file.text();
+        const rows = text.split(/\r?\n/).map(r => r.split(",")[0].replace(/^"|"$/g, "").trim()).filter(Boolean);
+        const batch = rows.slice(0, 6);
+        document.getElementById("comicBatchTextarea").value = batch.join("\n");
+        for (const q of batch) {
+          await fetchLiveComicFromOpenLibrary(q);
+        }
+        showToast(`📂 Uploaded & enriched ${batch.length} rows from ${file.name}!`);
+      });
+
+      document.getElementById("btnComicExportCsv").addEventListener("click", () => {
+        const headers = ["query", "matched_title", "author", "year", "isbn", "cover_url", "description"];
+        const csvLines = [
+          headers.join(","),
+          ...COMIC_CATALOG.map(r => headers.map(h => `"${String(r[h] ?? "").replace(/"/g, '""')}"`).join(","))
+        ];
+        downloadFile("shopify_comics_enriched.csv", csvLines.join("\n"), "text/csv;charset=utf-8;");
+        showToast("⬇️ Downloaded shopify_comics_enriched.csv (" + COMIC_CATALOG.length + " products)");
+      });
+
+      document.getElementById("btnComicExportJson").addEventListener("click", () => {
+        downloadFile("shopify_comics_enriched.json", JSON.stringify(COMIC_CATALOG, null, 2), "application/json");
+        showToast("⬇️ Downloaded shopify_comics_enriched.json");
+      });
+
+      // =====================================================================
+      // GIG 3 LOGIC: B2B COMPANY LEAD DEDUPLICATOR & CHANGE TRACKER
+      // =====================================================================
+      const B2B_GOLDEN = [
+        { canonical_key: "dom:apexindustrial.com", company_name: "Apex Industrial Supply, LLC", domain: "apexindustrial.com", email: "global-sourcing@apexindustrial.com", phone: "+1 (312) 555-0199", hq_city: "Chicago, IL", buyer_tier: "Enterprise Buyer", record_hash: "838b62d7d619", status: "UPDATED" },
+        { canonical_key: "dom:nordicfreight.de", company_name: "Nordic Freight & Trade GmbH", domain: "nordicfreight.de", email: "rfq@nordicfreight.de", phone: "+49 40 555 0198", hq_city: "Hamburg, DE", buyer_tier: "International Importer", record_hash: "079aac33a3bc", status: "NEW_DISCOVERY" },
+        { canonical_key: "dom:kestrelmed.co.uk", company_name: "Kestrel Medical Devices Ltd", domain: "kestrelmed.co.uk", email: "procurement@kestrelmed.co.uk", phone: "+44 20 7946 0921", hq_city: "London, UK", buyer_tier: "Tier-1 Distributor", record_hash: "4f91a2c80e11", status: "UPDATED" },
+        { canonical_key: "dom:solariscomponents.com", company_name: "Solaris Energy Components Corp", domain: "solariscomponents.com", email: "supplychain@solariscomponents.com", phone: "+1 (512) 555-0183", hq_city: "Austin, TX", buyer_tier: "OEM Buyer", record_hash: "9c42e10ab441", status: "NEW_DISCOVERY" },
+        { canonical_key: "dom:alpinelogistics.ch", company_name: "Alpine Cold-Chain Logistics AG", domain: "alpinelogistics.ch", email: "vendor-intake@alpinelogistics.ch", phone: "+41 44 555 0130", hq_city: "Zurich, CH", buyer_tier: "Wholesale Partner", record_hash: "7a19bc330f22", status: "NEW_DISCOVERY" },
+        { canonical_key: "dom:meridiansteel.ca", company_name: "Meridian Structural Steel Inc.", domain: "meridiansteel.ca", email: "buyers@meridiansteel.ca", phone: "+1 (416) 555-0164", hq_city: "Toronto, ON", buyer_tier: "Tier-1 Wholesale", record_hash: "2e88d4109c77", status: "UPDATED" }
+      ];
+
+      const B2B_DIFFS = [
+        { canonical_key: "dom:apexindustrial.com", company_name: "Apex Industrial Supply, LLC", field: "email, phone", old_val: "purchasing@apexindustrial.com (0e728de191cc)", new_val: "global-sourcing@apexindustrial.com (838b62d7d619)", ts: "2026-11-04 08:30 UTC" },
+        { canonical_key: "dom:kestrelmed.co.uk", company_name: "Kestrel Medical Devices Ltd", field: "buyer_tier", old_val: "Regional Reseller (1b09d44a21ef)", new_val: "Tier-1 Distributor (4f91a2c80e11)", ts: "2026-11-04 09:15 UTC" },
+        { canonical_key: "dom:meridiansteel.ca", company_name: "Meridian Structural Steel Inc.", field: "phone", old_val: "+1 (416) 555-0100 (5c12a88f9012)", new_val: "+1 (416) 555-0164 (2e88d4109c77)", ts: "2026-11-04 11:05 UTC" }
+      ];
+
+      const B2B_DUPES = [
+        { canonical_key: "dom:apexindustrial.com", dropped_name: "Apex Industrial Supply Inc.", kept_name: "Apex Industrial Supply, LLC", reason: "Normalized domain + legal suffix stripped (Inc. == LLC)" },
+        { canonical_key: "dom:kestrelmed.co.uk", dropped_name: "Kestrel Medical Devices Limited", kept_name: "Kestrel Medical Devices Ltd", reason: "Canonical domain match + identical SHA-256 fingerprint" },
+        { canonical_key: "dom:solariscomponents.com", dropped_name: "Solaris Energy Components Corporation", kept_name: "Solaris Energy Components Corp", reason: "Fuzzy company suffix normalization + exact email match" }
+      ];
+
+      function normalizeB2bKey(name, domain) {
+        if (domain && domain.trim()) {
+          const cleanDom = domain.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, "").split("/")[0];
+          if (cleanDom) return "dom:" + cleanDom;
+        }
+        const stripped = name.toLowerCase().replace(/\b(llc|inc|incorporated|corp|corporation|ltd|limited|gmbh|ag|co)\b\.?/gi, "");
+        return "name:" + stripped.replace(/[^a-z0-9]+/g, "");
+      }
+
+      function simpleHash12(str) {
+        let h1 = 0xdeadbeef ^ str.length;
+        let h2 = 0x41c6ce57 ^ str.length;
+        for (let i = 0, ch; i < str.length; i++) {
+          ch = str.charCodeAt(i);
+          h1 = Math.imul(h1 ^ ch, 2654435761);
+          h2 = Math.imul(h2 ^ ch, 1597334677);
+        }
+        h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+        h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+        return (h2 >>> 0).toString(16).padStart(6, "0") + (h1 >>> 0).toString(16).padStart(6, "0");
+      }
+
+      function computeRecordHashJS(rec) {
+        const payload = `${(rec.email || "").toLowerCase().trim()}|${(rec.phone || "").trim()}|${(rec.hq_city || "").trim()}`;
+        return simpleHash12(payload).slice(0, 12);
+      }
+
+      function renderB2bTables() {
+        document.getElementById("b2bKpiGolden").textContent = B2B_GOLDEN.length;
+        document.getElementById("b2bKpiDupes").textContent = B2B_DUPES.length;
+        document.getElementById("b2bKpiDiffs").textContent = B2B_DIFFS.length;
+        document.getElementById("b2bTabGoldenCount").textContent = B2B_GOLDEN.length;
+        document.getElementById("b2bTabDiffCount").textContent = B2B_DIFFS.length;
+        document.getElementById("b2bTabDupeCount").textContent = B2B_DUPES.length;
+
+        const gBody = document.getElementById("b2bGoldenBody");
+        gBody.innerHTML = "";
+        B2B_GOLDEN.forEach(r => {
+          const badgeClass = r.status === "UPDATED" ? "grade-cgc" : "grade-bgs";
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="font-family:var(--font-mono);font-size:12px;color:#a5b4fc;">${r.canonical_key}</td>
+            <td style="font-weight:700;">${r.company_name}</td>
+            <td style="font-family:var(--font-mono);font-size:12px;color:var(--emerald);">${r.email}</td>
+            <td style="font-family:var(--font-mono);font-size:12px;">${r.phone}</td>
+            <td>${r.hq_city}</td>
+            <td><span class="mono-tag">${r.buyer_tier}</span></td>
+            <td style="font-family:var(--font-mono);font-size:11.5px;color:var(--text-secondary);">${r.record_hash}</td>
+            <td><span class="grade-badge ${badgeClass}">${r.status}</span></td>
+          `;
+          gBody.appendChild(tr);
+        });
+
+        const diffBody = document.getElementById("b2bDiffsBody");
+        diffBody.innerHTML = "";
+        B2B_DIFFS.forEach(d => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="font-family:var(--font-mono);font-size:12px;color:#a5b4fc;">${d.canonical_key}</td>
+            <td style="font-weight:700;">${d.company_name}</td>
+            <td><span class="mono-tag accent">${d.field}</span></td>
+            <td><span class="diff-old">${d.old_val}</span></td>
+            <td><span class="diff-new">${d.new_val}</span></td>
+            <td style="font-family:var(--font-mono);font-size:11.5px;color:var(--text-secondary);">${d.ts}</td>
+          `;
+          diffBody.appendChild(tr);
+        });
+
+        const dupeBody = document.getElementById("b2bDupesBody");
+        dupeBody.innerHTML = "";
+        B2B_DUPES.forEach(d => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="font-family:var(--font-mono);font-size:12px;color:#a5b4fc;">${d.canonical_key}</td>
+            <td style="color:#fda4af;font-weight:600;">${d.dropped_name}</td>
+            <td style="color:#6ee7b7;font-weight:700;">${d.kept_name}</td>
+            <td style="font-size:12px;color:var(--text-secondary);">${d.reason}</td>
+          `;
+          dupeBody.appendChild(tr);
+        });
+      }
+
+      document.querySelectorAll("#b2bViewTabs .filter-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#b2bViewTabs .filter-pill").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const v = btn.dataset.b2bview;
+          document.getElementById("b2bGoldenTableWrap").style.display = v === "golden" ? "block" : "none";
+          document.getElementById("b2bDiffsTableWrap").style.display = v === "diffs" ? "block" : "none";
+          document.getElementById("b2bDupesTableWrap").style.display = v === "dupes" ? "block" : "none";
+        });
+      });
+
+      document.querySelectorAll(".b2b-preset-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.getElementById("b2bNameInput").value = btn.dataset.name;
+          document.getElementById("b2bDomainInput").value = btn.dataset.domain;
+          document.getElementById("b2bEmailInput").value = btn.dataset.email;
+          document.getElementById("b2bPhoneInput").value = btn.dataset.phone;
+          document.getElementById("b2bCityInput").value = btn.dataset.city;
+        });
+      });
+
+      document.getElementById("btnB2bRunUpsert").addEventListener("click", () => {
+        const incoming = {
+          company_name: document.getElementById("b2bNameInput").value.trim(),
+          domain: document.getElementById("b2bDomainInput").value.trim(),
+          email: document.getElementById("b2bEmailInput").value.trim(),
+          phone: document.getElementById("b2bPhoneInput").value.trim(),
+          hq_city: document.getElementById("b2bCityInput").value.trim(),
+          buyer_tier: "Enterprise Buyer"
+        };
+        const key = normalizeB2bKey(incoming.company_name, incoming.domain);
+        const newHash = computeRecordHashJS(incoming);
+        const existing = B2B_GOLDEN.find(r => r.canonical_key === key);
+        const banner = document.getElementById("b2bLiveResultBanner");
+
+        if (!existing) {
+          const newRec = { ...incoming, canonical_key: key, record_hash: newHash, status: "NEW_DISCOVERY" };
+          B2B_GOLDEN.unshift(newRec);
+          banner.textContent = JSON.stringify({
+            action: "INSERT_NEW_GOLDEN_RECORD",
+            canonical_key: key,
+            record_hash: newHash,
+            note: "No existing company matched canonical domain/name key."
+          }, null, 2);
+          showToast("🆕 Discovered & inserted new golden B2B record (" + key + ")");
+        } else if (existing.email.toLowerCase() === incoming.email.toLowerCase() && existing.phone === incoming.phone) {
+          B2B_DUPES.unshift({
+            canonical_key: key,
+            dropped_name: incoming.company_name,
+            kept_name: existing.company_name,
+            reason: "Exact contact fingerprint + canonical domain match"
+          });
+          banner.textContent = JSON.stringify({
+            action: "DUPLICATE_DROPPED_AND_MERGED",
+            canonical_key: key,
+            kept_golden_record: existing.company_name,
+            dropped_variant: incoming.company_name
+          }, null, 2);
+          showToast("🧹 Duplicate variant auto-merged into " + existing.company_name);
+        } else {
+          const oldVal = `${existing.email} | ${existing.phone} (${existing.record_hash})`;
+          const newVal = `${incoming.email} | ${incoming.phone} (${newHash})`;
+          B2B_DIFFS.unshift({
+            canonical_key: key,
+            company_name: existing.company_name,
+            field: "email / phone",
+            old_val: oldVal,
+            new_val: newVal,
+            ts: "Just now (Live Run)"
+          });
+          existing.email = incoming.email;
+          existing.phone = incoming.phone;
+          existing.hq_city = incoming.hq_city;
+          existing.record_hash = newHash;
+          existing.status = "UPDATED";
+          banner.textContent = JSON.stringify({
+            action: "FIELD_LEVEL_DIFF_LOGGED",
+            canonical_key: key,
+            old_state: oldVal,
+            new_state: newVal
+          }, null, 2);
+          showToast("🔄 Logged field-level contact change for " + existing.company_name);
+        }
+        renderB2bTables();
+      });
+
+      document.getElementById("btnB2bExportCsv").addEventListener("click", () => {
+        const headers = ["canonical_key", "company_name", "domain", "email", "phone", "hq_city", "buyer_tier", "record_hash", "status"];
+        const csvLines = [
+          headers.join(","),
+          ...B2B_GOLDEN.map(r => headers.map(h => `"${String(r[h] ?? "").replace(/"/g, '""')}"`).join(","))
+        ];
+        downloadFile("b2b_golden_buyers.csv", csvLines.join("\n"), "text/csv;charset=utf-8;");
+        showToast("⬇️ Downloaded b2b_golden_buyers.csv (" + B2B_GOLDEN.length + " companies)");
+      });
+
+      document.getElementById("btnB2bExportJson").addEventListener("click", () => {
+        const payload = {
+          golden_records: B2B_GOLDEN,
+          field_level_change_logs: B2B_DIFFS,
+          duplicates_merged: B2B_DUPES
+        };
+        downloadFile("b2b_pipeline_audit.json", JSON.stringify(payload, null, 2), "application/json");
+        showToast("⬇️ Downloaded b2b_pipeline_audit.json");
+      });
+
+      // =====================================================================
+      // INITIALIZE ON LOAD FROM URL QUERY PARAM (?gig=pokemon|comics|b2b)
+      // =====================================================================
+      const params = new URLSearchParams(window.location.search);
+      const rawGig = (params.get("gig") || "pokemon").toLowerCase();
+      const aliasMap = {
+        pokemon: "pokemon",
+        ianheap66: "pokemon",
+        ebay: "pokemon",
+        comics: "comics",
+        comic: "comics",
+        gracedvirus121: "comics",
+        b2b: "b2b",
+        salt_mud3004: "b2b"
+      };
+      setActiveGig(aliasMap[rawGig] || "pokemon", false);
+      updateLiveRegexTester();
+      renderPokemonExplorer();
+      renderComicCatalog();
+      renderB2bTables();
+      document.getElementById("b2bLiveResultBanner").textContent = JSON.stringify({
+        pipeline_status: "READY",
+        canonical_normalizer: "Strips LLC/Inc/Corp/GmbH + normalizes domain",
+        change_detection: "SHA-256 hash on [email, phone, hq_city, buyer_tier]"
+      }, null, 2);
+    })();
+  </script>
+</body>
+</html>

@@ -3,503 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="pageTitle">Website Đặt Hàng & Menu Trực Tuyến Chính Thức</title>
+  <title id="routerTitle">Bespoke Digital Storefront & Booking Experience</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --primary: #e11d48;
-      --primary-dark: #be123c;
-      --bg: #fffbfc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: #f1f5f9;
-      --accent: #f59e0b;
-    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Be Vietnam Pro', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      padding-bottom: 130px;
-      line-height: 1.5;
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: #09090b; font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    .container { max-width: 1020px; margin: 0 auto; padding: 0 16px; }
-    /* Header */
-    .shop-header {
-      background: #fff;
-      border-bottom: 1px solid #e2e8f0;
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      padding: 12px 0;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    .viewport-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: #faf7f2;
     }
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-logo {
-      width: 46px; height: 46px;
-      border-radius: 14px;
-      background: var(--primary);
-      color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; font-weight: 800;
-      box-shadow: 0 6px 16px rgba(225, 29, 72, 0.25);
-    }
-    .brand-text h1 { font-size: 18px; font-weight: 800; color: #0f172a; }
-    .brand-text p { font-size: 12px; color: var(--muted); }
-    .header-cta {
-      display: flex; gap: 8px; align-items: center;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 10px 16px; border-radius: 12px;
-      font-weight: 700; font-size: 13px; text-decoration: none;
-      cursor: pointer; border: none; transition: 0.2s;
-    }
-    .btn-primary {
-      background: var(--primary); color: #fff;
-      box-shadow: 0 6px 16px rgba(225, 29, 72, 0.25);
-    }
-    .btn-primary:hover { transform: translateY(-1px); opacity: 0.95; }
-    .btn-outline {
-      background: #f8fafc; color: #0f172a; border: 1px solid #cbd5e1;
-    }
-    /* Hero */
-    .hero {
-      margin-top: 20px;
-      border-radius: 24px;
-      padding: 32px 24px;
-      color: #fff;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 24px;
-      align-items: center;
-    }
-    @media (max-width: 720px) {
-      .hero { grid-template-columns: 1fr; padding: 24px 18px; }
-    }
-    .badge-verified {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,0.14);
-      padding: 6px 12px; border-radius: 99px;
-      font-size: 12px; font-weight: 700; margin-bottom: 12px;
-      color: #fde047;
-    }
-    .hero h2 { font-size: 28px; font-weight: 900; line-height: 1.25; margin-bottom: 10px; }
-    .hero p { font-size: 14px; color: #cbd5e1; margin-bottom: 18px; }
-    .hero-meta {
-      display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #e2e8f0;
-      margin-bottom: 18px;
-    }
-    .hero-card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 18px;
-      padding: 18px;
-      text-align: center;
-    }
-    .hero-card strong { display: block; font-size: 15px; margin-bottom: 6px; color: #fde047; }
-    .hero-card p { font-size: 12px; margin-bottom: 12px; }
-    /* Menu Grid */
-    .section-head {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin: 28px 0 16px;
-    }
-    .section-head h3 { font-size: 20px; font-weight: 800; }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 16px;
-    }
-    .item-card {
-      background: #fff;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: 0.2s;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
-    }
-    .item-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08); }
-    .item-visual {
-      height: 140px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 54px;
-      background: linear-gradient(135deg, #fff1f2, #ffe4e6);
-      position: relative;
-    }
-    .item-tag {
-      position: absolute; top: 10px; left: 10px;
-      background: #0f172a; color: #fff;
-      font-size: 11px; font-weight: 700;
-      padding: 4px 9px; border-radius: 99px;
-    }
-    .item-body { padding: 14px; }
-    .item-body h4 { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
-    .item-body p { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-    .item-foot {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 14px 14px;
-    }
-    .price { font-size: 16px; font-weight: 900; color: var(--primary); }
-    .btn-add {
-      background: #0f172a; color: #fff;
-      border: none; padding: 8px 12px; border-radius: 10px;
-      font-size: 12px; font-weight: 700; cursor: pointer;
-    }
-    .btn-add:hover { background: var(--primary); }
-
-    /* Cart Box */
-    .cart-box {
-      margin-top: 28px;
-      background: #fff;
-      border-radius: 20px;
-      border: 2px solid #e2e8f0;
-      padding: 20px;
-    }
-    .cart-row {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-    }
-
-    /* OWNER CLAIM FLOATING BAR (THE MONEY MAKER) */
-    .owner-claim-bar {
+    /* Discrete Studio Theme Switcher (top-right pill, auto-collapses on mobile) */
+    .studio-switcher {
       position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(90deg, #0f172a 0%, #1e1b4b 100%);
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: rgba(9, 9, 11, 0.86);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 5px 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .studio-switcher.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -20px);
+    }
+    .sw-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #a1a1aa;
+      padding: 0 8px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .sw-btn {
+      background: transparent;
+      border: none;
+      color: #d4d4d8;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.18s;
+      white-space: nowrap;
+    }
+    .sw-btn:hover {
       color: #fff;
-      padding: 12px 16px;
-      z-index: 99;
-      border-top: 2px solid #f59e0b;
-      box-shadow: 0 -8px 30px rgba(0,0,0,0.35);
+      background: rgba(255, 255, 255, 0.08);
     }
-    .owner-claim-inner {
-      max-width: 1020px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 12px; flex-wrap: wrap;
+    .sw-btn.active {
+      background: #f4f4f5;
+      color: #09090b;
     }
-    .owner-claim-text { font-size: 13px; }
-    .owner-claim-text strong { color: #fde047; font-size: 14px; }
-    .btn-claim {
-      background: linear-gradient(135deg, #f59e0b, #ea580c);
-      color: #fff; border: none;
-      padding: 10px 18px; border-radius: 12px;
-      font-weight: 800; font-size: 13px; cursor: pointer;
-      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    .sw-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #a1a1aa;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 11px;
+      cursor: pointer;
+      margin-left: 4px;
     }
-
-    /* MODAL */
-    .modal-backdrop {
-      position: fixed; inset: 0;
-      background: rgba(15, 23, 42, 0.75);
-      display: none; align-items: center; justify-content: center;
-      z-index: 200; padding: 16px;
+    .sw-close:hover { color: #fff; background: rgba(255,255,255,0.18); }
+    @media (max-width: 768px) {
+      .studio-switcher {
+        max-width: 94vw;
+        overflow-x: auto;
+        top: 8px;
+      }
+      .sw-label { display: none; }
     }
-    .modal-backdrop.active { display: flex; }
-    .modal-card {
-      background: #fff; color: #0f172a;
-      max-width: 480px; width: 100%;
-      border-radius: 24px; padding: 24px;
-      text-align: center;
-      position: relative;
-      max-height: 92vh; overflow-y: auto;
-    }
-    .modal-close {
-      position: absolute; top: 14px; right: 14px;
-      background: #f1f5f9; border: none; width: 32px; height: 32px;
-      border-radius: 50%; font-weight: 800; cursor: pointer;
-    }
-    .qr-img {
-      width: 240px; height: 240px; object-fit: contain;
-      border: 2px solid #e2e8f0; border-radius: 16px;
-      margin: 12px auto; display: block;
-    }
-    .perk-list {
-      text-align: left; background: #f8fafc;
-      padding: 12px 16px; border-radius: 14px;
-      font-size: 13px; margin: 12px 0;
-      list-style: none;
-    }
-    .perk-list li { margin-bottom: 6px; }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="shop-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="brand-logo" id="shopIcon">🎂</div>
-        <div class="brand-text">
-          <h1 id="shopNameHeader">Tiệm Bánh Kem & Quà Tặng</h1>
-          <p id="shopAddrHeader">📍 Giao nhanh nội thành trong 30 phút</p>
-        </div>
-      </div>
-      <div class="header-cta">
-        <a id="btnZaloTop" href="#" target="_blank" class="btn btn-outline">💬 Chat Zalo</a>
-        <a href="#menuSection" class="btn btn-primary">🛒 Đặt Ngay (<span id="cartCountTop">0</span>)</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <div class="badge-verified">✅ Trang Đặt Hàng & Ưu Đãi Trực Tuyến Chính Thức</div>
-        <h2 id="heroTitle">Chào mừng quý khách đến với Tiệm Bánh Kem!</h2>
-        <p id="heroDesc">Đặt món/đặt lịch trực tiếp trên Website để được ưu đãi giảm ngay 10% và ưu tiên giao hàng / giữ chỗ nhanh nhất qua Zalo!</p>
-        <div class="hero-meta">
-          <span id="metaAddr">📍 Địa chỉ: Trung tâm Thành phố</span>
-          <span id="metaPhone">📞 Hotline/Zalo: 0909.888.999</span>
-          <span>⏰ Mở cửa: 08:00 – 22:00 hàng ngày</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="#menuSection" class="btn btn-primary">🔥 Xem Menu & Bảng Giá Ưu Đãi</a>
-          <a id="btnCallHero" href="#" class="btn btn-outline">📞 Gọi Điện Đặt Nhanh</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <strong>🎁 ƯU ĐÃI KHÁCH ĐẶT ONLINE</strong>
-        <p>Chọn sản phẩm/dịch vụ bên dưới, đơn hàng sẽ được gửi thẳng về Zalo của quán trong 3 giây mà không cần tạo tài khoản!</p>
-        <div style="font-size:34px;margin:8px 0;">⚡📲</div>
-        <small style="color:#fde047;font-weight:700;">100% Phản hồi ngay lập tức</small>
-      </div>
-    </section>
-
-    <!-- MENU -->
-    <div class="section-head" id="menuSection">
-      <div>
-        <h3>🌟 Menu Nổi Bật & Bán Chạy Nhất</h3>
-        <p style="font-size:13px;color:var(--muted);">Bấm "Thêm vào đơn" để gửi yêu cầu nhanh qua Zalo cho quán</p>
-      </div>
-    </div>
-
-    <div class="menu-grid" id="menuGrid"></div>
-
-    <!-- CART / QUICK ZALO ORDER -->
-    <section class="cart-box" id="cartBox">
-      <div class="cart-row">
-        <div>
-          <h4 style="font-size:17px;font-weight:800;">🛍️ Giỏ Hàng / Yêu Cầu Đặt Nhanh Của Bạn</h4>
-          <p id="cartSummaryText" style="font-size:13px;color:var(--muted);">Chưa có món nào được chọn. Hãy bấm chọn món ở trên!</p>
-        </div>
-        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-          <strong id="cartTotalText" style="font-size:20px;color:var(--primary);">0đ</strong>
-          <button id="btnSendOrderZalo" class="btn btn-primary">🚀 Gửi Đơn Này Qua Zalo Quán</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FLOATING BAR FOR THE SHOP OWNER TO BUY THIS SITE FOR 199K -->
-  <div class="owner-claim-bar">
-    <div class="owner-claim-inner">
-      <div class="owner-claim-text">
-        👑 <strong>Dành riêng cho Chủ Quán <span id="claimShopName"></span>:</strong>
-        Bạn ưng ý giao diện Website đặt đơn này? Nhận bàn giao trọn đời + gắn mã VietQR chính chủ của quán chỉ với <strong>199.000đ</strong> (0đ phí duy trì hàng tháng)!
-      </div>
-      <button class="btn-claim" id="btnOpenClaimModal">
-        ⚡ Kích Hoạt & Sở Hữu Web Này (199.000đ)
-      </button>
-    </div>
+  <div class="studio-switcher" id="studioSwitcher" title="Thanh chuyển nhanh 6 giao diện ngành hàng (Có thể bấm X để ẩn khi khách xem)">
+    <span class="sw-label">6 Giao Diện Luxury:</span>
+    <button class="sw-btn" data-cat="bakery">Patisserie & Cake</button>
+    <button class="sw-btn" data-cat="spa">Luxury Spa</button>
+    <button class="sw-btn" data-cat="restaurant">Bistro & Hotpot</button>
+    <button class="sw-btn" data-cat="dental">Swiss Dental</button>
+    <button class="sw-btn" data-cat="flower">Floral Atelier</button>
+    <button class="sw-btn" data-cat="salon">Korean Salon</button>
+    <button class="sw-close" id="btnHideSwitcher" title="Ẩn thanh chọn giao diện">✕</button>
   </div>
 
-  <!-- MODAL VIETQR FOR SHOP OWNER -->
-  <div class="modal-backdrop" id="claimModal">
-    <div class="modal-card">
-      <button class="modal-close" id="btnCloseClaimModal">✕</button>
-      <div style="font-size:12px;font-weight:800;color:#ea580c;text-transform:uppercase;">Bàn Giao Trọn Gói Trong 5 Phút</div>
-      <h3 style="font-size:20px;font-weight:900;margin:6px 0;">Sở Hữu Website Riêng Cho <span id="modalShopName">Quán Của Bạn</span></h3>
-      <p style="font-size:13px;color:#64748b;">Chỉ thanh toán 1 lần duy nhất <strong>199.000đ</strong> — Không tốn phí gia hạn hàng tháng!</p>
-
-      <img id="claimQrImg" class="qr-img" src="" alt="VietQR 199.000đ" />
-
-      <div style="font-size:13px;background:#fff7ed;border:1px solid #fed7aa;padding:10px;border-radius:12px;margin-bottom:10px;">
-        Nội dung CK tự động: <strong id="claimMemoText" style="color:#c2410c;">WEB 199K</strong>
-      </div>
-
-      <ul class="perk-list">
-        <li>✅ Cập nhật 100% Menu thật, hình ảnh thật & bảng giá của quán.</li>
-        <li>✅ Kết nối nút Đặt hàng đẩy đơn thẳng về Zalo & Messenger của chủ quán.</li>
-        <li>✅ Tích hợp sẵn mã VietQR chính chủ của quán để khách chuyển khoản.</li>
-        <li>✅ Tặng kèm mã QR để in dán tại quầy / gắn lên tiểu sử Facebook, TikTok.</li>
-      </ul>
-
-      <a id="btnContactCreatorZalo" href="#" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;">
-        💬 Đã Chuyển Khoản / Nhắn Zalo Nhận Bàn Giao Ngay
-      </a>
-    </div>
-  </div>
+  <iframe id="templateFrame" class="viewport-frame" title="Bespoke Client Website"></iframe>
 
   <script>
     (function() {
-      const CATALOGS = {
-        bakery: {
-          icon: "🎂",
-          color: "#e11d48",
-          desc: "Chuyên bánh kem sinh nhật, bánh sự kiện, tiramisu & cupcake tươi mới mỗi ngày — Nhận làm theo mẫu trong 60 phút!",
-          items: [
-            { name: "Bánh Kem Sinh Nhật Hàn Quốc Pastel", desc: "Cốt bông lan vani mềm mịn, kem tươi ít ngọt, tặng kèm nến & dao muỗng", price: 249000, emoji: "🎂", tag: "Bán chạy #1" },
-            { name: "Bánh Tiramisu Trái Tim Phủ Cacao", desc: "Lớp phô mai Mascarpone béo ngậy thơm lừng, vẽ chữ theo yêu cầu", price: 219000, emoji: "🍰", tag: "Hot Trend" },
-            { name: "Set 6 Bánh Cupcake Hoa Kem Bơ", desc: "Hộp quà sang trọng phù hợp tặng sinh nhật, kỷ niệm, 8/3, 20/10", price: 159000, emoji: "🧁", tag: "Quà tặng" },
-            { name: "Bánh Kem Bento Mini Đáng Yêu (10cm)", desc: "Trang trí hình vẽ ngộ nghĩnh cho cặp đôi hoặc nhóm bạn thân", price: 119000, emoji: "🍮", tag: "Sinh viên" }
-          ]
-        },
-        spa: {
-          icon: "💆‍♀️",
-          color: "#0d9488",
-          desc: "Không gian thư giãn chuẩn Y khoa & Dưỡng sinh chuyên sâu — Đặt lịch trước trên Web để được giảm ngay 15% không phải chờ đợi!",
-          items: [
-            { name: "Gội Đầu Dưỡng Sinh Trung Hoa + Massage Cổ Vai Gáy (75p)", desc: "Thảo dược nấu tươi, đả thông kinh lạc, ngâm chân thảo mộc", price: 169000, emoji: "🌿", tag: "Đặt nhiều nhất" },
-            { name: "Liệu Trình Chăm Sóc Da Chuyên Sâu & Cấp Ẩm Aqua Peel", desc: "Làm sạch sâu lỗ chân lông, đắp mặt nạ tảo xoắn & chiếu ánh sáng sinh học", price: 299000, emoji: "✨", tag: "Ưu đãi -20%" },
-            { name: "Combo Massage Body Đá Nóng Thư Giãn Toàn Thân (90p)", desc: "Xua tan mệt mỏi, đau nhức văn phòng, tặng kèm trà thảo mộc", price: 320000, emoji: "🌸", tag: "VIP" },
-            { name: "Lấy Nhân Mụn Chuẩn Y Khoa + Điện Di Tinh Chất", desc: "Dụng cụ riêng biệt vô trùng 100%, giảm sưng đỏ tức thì", price: 249000, emoji: "💧", tag: "Cam kết hiệu quả" }
-          ]
-        },
-        flower: {
-          icon: "💐",
-          color: "#db2777",
-          desc: "Thiết kế hoa tươi nghệ thuật, bó hoa sinh nhật, kệ hoa khai trương sang trọng — Chụp ảnh hoa thật duyệt trước khi giao!",
-          items: [
-            { name: "Bó Hoa Hồng Ohara Đỏ / Pastel Khổng Lồ", desc: "Thiết kế giấy gói Hàn Quốc cao cấp, tặng kèm thiệp in lời chúc riêng", price: 350000, emoji: "🌹", tag: "Bán chạy #1" },
-            { name: "Giỏ Hoa Tươi Chúc Mừng Sinh Nhật & Kỷ Niệm", desc: "Kết hợp hoa hồng, cẩm tú cầu và baby trắng tinh tế", price: 420000, emoji: "💐", tag: "Sang trọng" },
-            { name: "Kệ Hoa Khai Trương Hồng Phát 2 Tầng", desc: "Tone đỏ vàng tài lộc, miễn phí in bảng tên công ty & giao tận nơi", price: 790000, emoji: "🌺", tag: "Khai trương" },
-            { name: "Hộp Hoa Kèm Bánh Ngọt Tình Yêu", desc: "Món quà bất ngờ hoàn hảo cho người thương trong ngày đặc biệt", price: 480000, emoji: "🎁", tag: "Combo Hot" }
-          ]
-        },
-        food: {
-          icon: "🍲",
-          color: "#ea580c",
-          desc: "Thực đơn món ngon nóng hổi chế biến trong ngày — Đặt bàn trước hoặc gọi ship tận nhà nhanh chóng trong 25 phút!",
-          items: [
-            { name: "Set Lẩu Đặc Biệt Cho 2–3 Người (Đầy Đủ Topping)", desc: "Nước dùng ninh xương 12 tiếng đậm đà, thịt bò Mỹ tươi, rau nấm sạch", price: 289000, emoji: "🍲", tag: "Best Seller" },
-            { name: "Combo Nướng BBQ Thập Cẩm Kèm Sốt Độc Quyền", desc: "Ba chỉ bò, sườn non, bạch tuộc tươi ướp sốt đậm vị", price: 319000, emoji: "🥩", tag: "Ngon nhức nách" },
-            { name: "Mẹt Món Ăn Vặt / Khai Vị Tổng Hợp", desc: "Khoai tây chiên, chân gà sả tắc, nem chua rán giòn rụm", price: 139000, emoji: "🍟", tag: "Gọi thêm" },
-            { name: "Combo Nước Trái Cây Nhiệt Đới (4 Ly)", desc: "Trà đào cam sả / Trà mãng cầu tươi mát lạnh", price: 99000, emoji: "🍹", tag: "Tiết kiệm" }
-          ]
-        },
-        dental: {
-          icon: "🦷",
-          color: "#0284c7",
-          desc: "Phòng khám Nha khoa công nghệ cao, Bác sĩ giàu kinh nghiệm — Đặt lịch khám trên Web để được miễn phí khám & tư vấn 100%!",
-          items: [
-            { name: "Cạo Vôi Răng & Đánh Bóng Siêu Âm Không Ê Buốt", desc: "Công nghệ sóng siêu âm nhẹ nhàng, sạch mảng bám trong 20 phút", price: 150000, emoji: "🦷", tag: "Phổ biến nhất" },
-            { name: "Tẩy Trắng Răng Công Nghệ Laser Whitening", desc: "Bật 2–3 tông ngay sau 45 phút, an toàn tuyệt đối cho men răng", price: 1190000, emoji: "✨", tag: "Ưu đãi -30%" },
-            { name: "Trám Răng Thẩm Mỹ Composite Hàn Quốc", desc: "Bền đẹp tự nhiên như răng thật, bảo hành dài hạn", price: 250000, emoji: "💎", tag: "Thẩm mỹ" },
-            { name: "Gói Khám Tổng Quát & Chụp Phim X-Quang Răng", desc: "Ưu đãi miễn phí 100% phí khám ban đầu cho khách đặt lịch qua Website", price: 0, emoji: "🏥", tag: "Miễn phí" }
-          ]
-        }
+      const MAP = {
+        bakery: "templates/bakery.html",
+        spa: "templates/spa.html",
+        restaurant: "templates/restaurant.html",
+        food: "templates/restaurant.html",
+        dental: "templates/dental.html",
+        flower: "templates/flower.html",
+        salon: "templates/salon.html"
       };
 
       const params = new URLSearchParams(window.location.search);
-      const shopName = params.get("name") || "Tiệm Bánh Kem & Quà Tặng Sweetie";
-      const catKey = params.get("cat") || "bakery";
-      const shopPhone = params.get("phone") || "0909888999";
-      const shopAddr = params.get("addr") || "Giao nhanh nội thành & Đặt lịch 24/7";
+      let currentCat = (params.get("cat") || "bakery").toLowerCase();
+      if (!MAP[currentCat]) currentCat = "bakery";
 
-      // Creator (Your) VietQR info to collect the 199k website payment
-      const ownerBank = params.get("obank") || localStorage.getItem("sniper_owner_bank") || "MB";
-      const ownerAcc = params.get("oacc") || localStorage.getItem("sniper_owner_acc") || "0988888888";
-      const ownerName = params.get("oname") || localStorage.getItem("sniper_owner_name") || "CHU XUONG WEB";
-      const ownerZalo = params.get("ozalo") || localStorage.getItem("sniper_owner_zalo") || "0988888888";
-
-      const cat = CATALOGS[catKey] || CATALOGS.bakery;
-      document.documentElement.style.setProperty("--primary", cat.color);
-      document.getElementById("pageTitle").textContent = shopName + " — Đặt Hàng & Bảng Giá Trực Tuyến";
-      document.getElementById("shopIcon").textContent = cat.icon;
-      document.getElementById("shopNameHeader").textContent = shopName;
-      document.getElementById("shopAddrHeader").textContent = "📍 " + shopAddr;
-      document.getElementById("heroTitle").textContent = shopName;
-      document.getElementById("heroDesc").textContent = cat.desc;
-      document.getElementById("metaAddr").textContent = "📍 " + shopAddr;
-      document.getElementById("metaPhone").textContent = "📞 Hotline/Zalo: " + shopPhone;
-      document.getElementById("claimShopName").textContent = shopName;
-      document.getElementById("modalShopName").textContent = shopName;
-
-      const cleanShopPhone = shopPhone.replace(/\D/g, "") || "0909888999";
-      document.getElementById("btnZaloTop").href = "https://zalo.me/" + cleanShopPhone;
-      document.getElementById("btnCallHero").href = "tel:" + cleanShopPhone;
-
-      const cart = [];
-      const grid = document.getElementById("menuGrid");
-
-      function formatVnd(n) {
-        return n === 0 ? "Miễn phí (0đ)" : n.toLocaleString("vi-VN") + "đ";
+      if (params.get("clean") === "1") {
+        document.getElementById("studioSwitcher").classList.add("hidden");
       }
 
-      function renderCart() {
-        document.getElementById("cartCountTop").textContent = cart.length;
-        const total = cart.reduce((s, it) => s + it.price, 0);
-        document.getElementById("cartTotalText").textContent = formatVnd(total);
-        if (cart.length === 0) {
-          document.getElementById("cartSummaryText").textContent = "Chưa có sản phẩm/dịch vụ nào được chọn. Hãy bấm chọn ở trên!";
-        } else {
-          document.getElementById("cartSummaryText").textContent =
-            "Đã chọn (" + cart.length + "): " + cart.map(i => i.name).join(", ");
-        }
+      const shopName = params.get("name");
+      if (shopName) {
+        document.getElementById("routerTitle").textContent = shopName + " — Official Digital Storefront";
       }
 
-      cat.items.forEach((it) => {
-        const card = document.createElement("div");
-        card.className = "item-card";
-        card.innerHTML = `
-          <div>
-            <div class="item-visual">
-              <span class="item-tag">${it.tag}</span>
-              <span>${it.emoji}</span>
-            </div>
-            <div class="item-body">
-              <h4>${it.name}</h4>
-              <p>${it.desc}</p>
-            </div>
-          </div>
-          <div class="item-foot">
-            <span class="price">${formatVnd(it.price)}</span>
-            <button class="btn-add">+ Chọn món</button>
-          </div>
-        `;
-        card.querySelector(".btn-add").addEventListener("click", () => {
-          cart.push(it);
-          renderCart();
+      function loadCat(catKey) {
+        const targetFile = MAP[catKey] || MAP.bakery;
+        const forwardParams = new URLSearchParams(window.location.search);
+        forwardParams.set("cat", catKey);
+        document.getElementById("templateFrame").src = targetFile + "?" + forwardParams.toString();
+
+        document.querySelectorAll(".sw-btn").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.cat === (catKey === "food" ? "restaurant" : catKey));
         });
-        grid.appendChild(card);
+      }
+
+      document.querySelectorAll(".sw-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const newCat = btn.dataset.cat;
+          params.set("cat", newCat);
+          window.history.replaceState({}, "", window.location.pathname + "?" + params.toString());
+          loadCat(newCat);
+        });
       });
 
-      document.getElementById("btnSendOrderZalo").addEventListener("click", () => {
-        const itemsText = cart.length
-          ? cart.map((i, idx) => `${idx + 1}. ${i.name} (${formatVnd(i.price)})`).join("\n")
-          : "Tư vấn menu / đặt lịch";
-        const msg = `Chào ${shopName}, mình đặt đơn từ Website:\n${itemsText}\nQuán xác nhận giúp mình nhé!`;
-        navigator.clipboard?.writeText(msg).catch(() => {});
-        window.open("https://zalo.me/" + cleanShopPhone, "_blank");
+      document.getElementById("btnHideSwitcher").addEventListener("click", () => {
+        document.getElementById("studioSwitcher").classList.add("hidden");
       });
 
-      // Setup Owner Claim Modal (199,000 VND VietQR)
-      const memo = ("WEB199K " + shopName.substring(0, 14)).toUpperCase().replace(/[^A-Z0-9 ]/g, "");
-      document.getElementById("claimMemoText").textContent = memo;
-      const qrUrl = `https://img.vietqr.io/image/${encodeURIComponent(ownerBank)}-${encodeURIComponent(ownerAcc)}-compact2.png?amount=199000&addInfo=${encodeURIComponent(memo)}&accountName=${encodeURIComponent(ownerName)}`;
-      document.getElementById("claimQrImg").src = qrUrl;
-      document.getElementById("btnContactCreatorZalo").href = "https://zalo.me/" + ownerZalo.replace(/\D/g, "");
-
-      const modal = document.getElementById("claimModal");
-      document.getElementById("btnOpenClaimModal").addEventListener("click", () => modal.classList.add("active"));
-      document.getElementById("btnCloseClaimModal").addEventListener("click", () => modal.classList.remove("active"));
+      loadCat(currentCat);
     })();
   </script>
 </body>

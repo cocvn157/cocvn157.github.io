@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">L'Amour Patisserie & Bespoke Cakes — Xưởng Bánh Nghệ Thuật</title>
+  <meta name="description" content="Haute Patisserie & Bespoke Cake Studio. Bánh sinh nhật thiết kế thủ công, Entremet Pháp, nguyên liệu bơ AOP & sô-cô-la Valrhona thượng hạng." />
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, JetBrains Mono, Pinyon Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#FAF7F2',
+            oat: '#F2ECE1',
+            oatDark: '#E5DCCB',
+            espresso: '#1C1512',
+            espressoLight: '#3A2E29',
+            gold: '#B8860B',
+            goldLight: '#D4AF37',
+            raspberry: '#9E2A2B',
+            raspberryDark: '#7C1F20',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            script: ['"Pinyon Script"', 'cursive'],
+          },
+          boxShadow: {
+            'editorial': '0 20px 50px -15px rgba(28, 21, 18, 0.08)',
+            'plaque': '0 12px 30px -5px rgba(18, 12, 10, 0.55), inset 0 1px 1px rgba(212, 175, 55, 0.35)',
+            'luxury': '0 25px 60px -15px rgba(28, 21, 18, 0.16)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-alabaster: #FAF7F2;
+      --bg-oat: #F2ECE1;
+      --ink-espresso: #1C1512;
+      --gold-burnished: #B8860B;
+      --raspberry-muted: #9E2A2B;
+    }
+
+    body {
+      background-color: var(--bg-alabaster);
+      color: var(--ink-espresso);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #1C1512;
+      selection-color: #FAF7F2;
+    }
+
+    ::selection {
+      background: #1C1512;
+      color: #FAF7F2;
+    }
+
+    /* Subtle French Paper Grain Overlay */
+    .paper-grain {
+      background-image: radial-gradient(rgba(28, 21, 18, 0.035) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Gold Foil Shimmer Text for Cake Plaque */
+    .gold-calligraphy {
+      background: linear-gradient(
+        135deg,
+        #E6C672 0%,
+        #FFF2B2 28%,
+        #D4AF37 52%,
+        #F7E094 76%,
+        #B8860B 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.45));
+    }
+
+    .ivory-calligraphy {
+      color: #7C1F20;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F2ECE1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C7B9A5;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1C1512;
+    }
+
+    /* Editorial Hairline Borders */
+    .border-editorial {
+      border-color: rgba(28, 21, 18, 0.11);
+    }
+
+    /* Smooth Image Zoom */
+    .img-zoom-wrap {
+      overflow: hidden;
+    }
+    .img-zoom-wrap img {
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-zoom-wrap:hover img {
+      transform: scale(1.055);
+    }
+
+    /* Animated Candle Flame */
+    @keyframes flicker {
+      0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+      50% { transform: scale(1.08, 0.94) rotate(2deg); opacity: 1; }
+    }
+    .candle-flame {
+      animation: flicker 2.1s infinite ease-in-out;
+      transform-origin: bottom center;
+    }
+
+    /* Marquee Ticker */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 34s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+
+<body class="paper-grain antialiased">
+
+  <!-- TOP EDITORIAL ANNOUNCEMENT BAR -->
+  <div class="bg-espresso text-alabaster text-xs py-2.5 px-4 border-b border-white/10 relative z-40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-block w-2 h-2 rounded-full bg-goldLight animate-pulse"></span>
+        <span class="tracking-wider uppercase font-medium text-[11px] text-oat">Haute Patisserie Thủ Công Trong Ngày</span>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <span id="top-addr" class="hidden sm:inline text-oat/80">Thảo Điền, Quận 2 • Giao nhanh 45 phút</span>
+      </div>
+      <div class="flex items-center gap-4 font-mono text-[11px]">
+        <span class="text-goldLight">MIỄN PHÍ VIẾT CHỮ Kalligraphy & NẾN XOẮN GOLD</span>
+        <a id="top-phone-link" href="tel:0909888999" class="underline decoration-gold/60 hover:text-goldLight transition">
+          Hotline: <span id="top-phone">0909888999</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-alabaster/90 backdrop-blur-md border-b border-editorial transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Left Nav Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-[0.16em] font-semibold text-espresso/80">
+        <a href="#customizer" class="hover:text-raspberry transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-raspberry"></span>
+          Thiết Kế Bánh Riêng
+        </a>
+        <a href="#lookbook" class="hover:text-gold transition">Bộ Sưu Tập</a>
+        <a href="#savoir-faire" class="hover:text-gold transition">Cấu Trúc 5 Tầng Vị</a>
+        <a href="#gifting" class="hover:text-gold transition">Quà Tặng VIP</a>
+      </nav>
+
+      <!-- Center Brand Identity -->
+      <a href="#" class="text-center group">
+        <div class="text-[10px] uppercase tracking-[0.28em] text-gold font-semibold mb-0.5">Maison de Haute Pâtisserie</div>
+        <h1 id="brand-name-nav" class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-espresso group-hover:text-raspberry transition">
+          L'Amour Patisserie & Bespoke Cakes
+        </h1>
+      </a>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a id="nav-zalo-btn" href="https://zalo.me/0909888999" target="_blank" rel="noopener"
+           class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-espresso/15 text-xs font-medium text-espresso hover:border-espresso hover:bg-oat/60 transition">
+          <svg class="w-3.5 h-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>Tư Vấn Mẫu Bánh</span>
+        </a>
+
+        <!-- Cart Drawer Trigger -->
+        <button onclick="toggleCartDrawer(true)"
+                class="relative inline-flex items-center gap-2.5 bg-espresso text-alabaster px-4 py-2.5 rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-raspberry transition shadow-sm">
+          <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="hidden sm:inline">Giỏ Bánh</span>
+          <span id="cart-count-badge" class="font-mono bg-gold text-espresso px-1.5 py-0.5 rounded-full text-[11px] font-bold">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION: EDITORIAL PARISIENNE -->
+  <section class="relative pt-8 pb-16 lg:py-20 border-b border-editorial overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Editorial Copy (7 cols) -->
+        <div class="lg:col-span-7 space-y-7">
+          <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-oat border border-espresso/10">
+            <span class="text-[11px] font-mono uppercase tracking-widest text-raspberry font-semibold">Bespoke Edition 2026</span>
+            <span class="text-espresso/30">•</span>
+            <span class="text-xs text-espresso/80 font-medium">100% Bơ Pháp AOP & Sô-cô-la Valrhona</span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-6xl lg:text-[68px] leading-[1.04] font-semibold text-espresso tracking-tight">
+            Nghệ Thuật Bánh Ngọt Pháp <br />
+            <span class="italic font-normal text-raspberry">&amp; Dấu Ấn Chữ Viết Tay</span> Cho Khoảnh Khắc Độc Bản.
+          </h2>
+
+          <p class="text-base sm:text-lg text-espresso/75 max-w-2xl leading-relaxed font-normal">
+            Tại <strong id="hero-brand-name" class="text-espresso font-semibold">L'Amour Patisserie & Bespoke Cakes</strong>, mỗi chiếc bánh Entremet là một tác phẩm kiến trúc vị giác 5 tầng — ít ngọt, thanh tao, được hoàn thiện cùng bảng sô-cô-la khắc chữ vàng thủ công dành riêng cho người bạn thương quý.
+          </p>
+
+          <!-- Key Trust Badges -->
+          <div class="grid grid-cols-3 gap-4 pt-2 border-t border-editorial max-w-xl">
+            <div>
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-espresso">45 Phút</div>
+              <div class="text-xs text-espresso/65 mt-0.5">Giao bánh hỏa tốc giữ lạnh tiêu chuẩn</div>
+            </div>
+            <div class="border-l border-editorial pl-4">
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-espresso">Ít Ngọt</div>
+              <div class="text-xs text-espresso/65 mt-0.5">Công thức giảm 40% đường tinh luyện</div>
+            </div>
+            <div class="border-l border-editorial pl-4">
+              <div class="font-serif text-2xl sm:text-3xl font-bold text-espresso">100% Tươi</div>
+              <div class="text-xs text-espresso/65 mt-0.5">Nướng & đổ khuôn mới mỗi sáng</div>
+            </div>
+          </div>
+
+          <!-- Hero CTA Group -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#customizer"
+               class="inline-flex items-center gap-3 bg-espresso text-alabaster px-7 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-raspberry transition-all shadow-editorial group">
+              <span>Thiết Kế Bánh & Viết Chữ Lên Bánh</span>
+              <svg class="w-4 h-4 text-goldLight group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#lookbook"
+               class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-oat hover:bg-oatDark text-espresso text-sm font-semibold transition">
+              <span>Xem Menu Bánh Có Sẵn</span>
+            </a>
+          </div>
+
+          <!-- Location & Live Status Pill -->
+          <div class="flex items-center gap-3 text-xs text-espresso/70 pt-1">
+            <svg class="w-4 h-4 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span id="hero-addr">Thảo Điền, Quận 2 • Giao nhanh 45 phút</span>
+          </div>
+        </div>
+
+        <!-- Right Asymmetric Editorial Showcase (5 cols) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-luxury border border-espresso/10 bg-oat aspect-[4/5] img-zoom-wrap">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85"
+                 alt="Signature Artisanal Cake"
+                 class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/15 to-transparent"></div>
+
+            <!-- Floating Spec Tag Top-Right -->
+            <div class="absolute top-4 right-4 bg-alabaster/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-espresso/10 shadow-sm">
+              <div class="text-[10px] font-mono uppercase tracking-wider text-raspberry font-bold">Best Seller No.01</div>
+              <div class="font-serif text-base font-bold text-espresso">L'Amour Dark Velvet 70%</div>
+              <div class="font-mono text-xs text-gold font-semibold">Từ 450.000đ</div>
+            </div>
+
+            <!-- Floating Interactive Preview Caption Bottom -->
+            <div class="absolute bottom-5 left-5 right-5 bg-espresso/90 backdrop-blur-md text-alabaster p-4 rounded-xl border border-gold/30">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-goldLight">Bảng Sô-cô-la Chữ Vàng Thủ Công</span>
+                <span class="text-[11px] font-mono text-alabaster/70">Miễn phí theo bánh</span>
+              </div>
+              <p class="font-serif italic text-xl text-goldLight tracking-wide">"Joyeux Anniversaire Mon Amour"</p>
+              <div class="mt-2.5 pt-2.5 border-t border-white/10 flex items-center justify-between text-xs">
+                <span class="text-oat/80">Bạn có thể tự gõ lời chúc & xem trước ngay bên dưới</span>
+                <a href="#customizer" class="text-goldLight font-semibold underline">Thử ngay →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Floating Miniature Card -->
+          <div class="hidden sm:flex items-center gap-3.5 absolute -bottom-6 -left-8 bg-alabaster p-3.5 rounded-2xl shadow-editorial border border-espresso/10 max-w-[260px]">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+                 alt="Raspberry Entremet"
+                 class="w-16 h-16 rounded-xl object-cover shrink-0" />
+            <div>
+              <div class="text-[10px] font-mono uppercase text-raspberry font-semibold">Mới Ra Lò 15 Phút Trước</div>
+              <div class="font-serif font-bold text-base text-espresso leading-tight">Fraise & Mascarpone</div>
+              <div class="text-xs text-espresso/60 mt-0.5">Còn 4 cốt bánh giao ngay</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL MARQUEE RIBBON -->
+  <div class="bg-oat border-b border-editorial py-3.5 overflow-hidden select-none">
+    <div class="animate-marquee flex items-center gap-10 text-xs uppercase tracking-[0.2em] font-semibold text-espresso/75">
+      <span>• Sô-cô-la Valrhona Pháp 70%</span>
+      <span>• Bơ Tươi AOP Charentes-Poitou</span>
+      <span>• Vani Nguyên Quả Madagascar</span>
+      <span>• Trà Xanh Uji Kyoto Thượng Hạng</span>
+      <span>• Miễn Phí Bảng Chữ Vàng Calligraphy</span>
+      <span>• Giao Bánh Giữ Lạnh Tiêu Chuẩn 45 Phút</span>
+      <span>• Sô-cô-la Valrhona Pháp 70%</span>
+      <span>• Bơ Tươi AOP Charentes-Poitou</span>
+      <span>• Vani Nguyên Quả Madagascar</span>
+      <span>• Trà Xanh Uji Kyoto Thượng Hạng</span>
+      <span>• Miễn Phí Bảng Chữ Vàng Calligraphy</span>
+      <span>• Giao Bánh Giữ Lạnh Tiêu Chuẩn 45 Phút</span>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE BESPOKE CAKE STUDIO CUSTOMIZER -->
+  <section id="customizer" class="py-16 lg:py-24 border-b border-editorial relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Heading -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-raspberry font-semibold mb-2">
+            <span>Atelier Sur-Mesure</span>
+            <span>•</span>
+            <span>Trải Nghiệm Tương Tác Trực Tiếp</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso tracking-tight">
+            Xưởng Thiết Kế Bánh &amp; <span class="italic font-normal text-gold">Khắc Chữ Trực Tuyến</span>
+          </h2>
+        </div>
+        <p class="text-sm text-espresso/70 max-w-md">
+          Tùy chỉnh kích thước, cốt vị bánh Pháp và gõ lời chúc của bạn. Xem trước ngay nét chữ vàng Calligraphy hiển thị trực tiếp trên mặt bánh.
+        </p>
+      </div>
+
+      <!-- SPLIT-SCREEN INTERACTIVE STUDIO -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+        <!-- LEFT COLUMN: LIVE INTERACTIVE CAKE STAGE (6 cols, sticky on desktop) -->
+        <div class="lg:col-span-6 lg:sticky lg:top-28 space-y-4">
+          <div class="relative rounded-3xl overflow-hidden bg-espresso shadow-luxury border border-espresso/15 aspect-[4/4.2] sm:aspect-[4/3.8]">
+
+            <!-- Live Flavor Cake Photography -->
+            <img id="studio-cake-img"
+                 src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85"
+                 alt="Live Cake Preview"
+                 class="w-full h-full object-cover opacity-90 transition-all duration-500" />
+
+            <!-- Subtle Vignette for Readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/25 to-espresso/30"></div>
+
+            <!-- Top Studio HUD Badges -->
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10">
+              <div class="bg-alabaster/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-espresso/10 flex items-center gap-2 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-raspberry animate-ping"></span>
+                <span class="text-[11px] font-mono font-semibold text-espresso uppercase tracking-wider">Live Studio Preview</span>
+              </div>
+              <div id="studio-size-badge" class="bg-espresso/90 backdrop-blur-md text-goldLight font-mono text-xs px-3.5 py-1.5 rounded-full border border-gold/30">
+                Standard Ø 16cm • 5–7 người
+              </div>
+            </div>
+
+            <!-- Animated Golden Candles Overlay (Toggled by user) -->
+            <div id="studio-candles-overlay" class="absolute top-14 left-1/2 -translate-x-1/2 flex items-end gap-5 z-10 pointer-events-none transition-opacity duration-300">
+              <div class="flex flex-col items-center">
+                <div class="w-3 h-5 rounded-full bg-gradient-to-t from-amber-500 via-yellow-300 to-white candle-flame shadow-[0_0_16px_#fbbf24]"></div>
+                <div class="w-1.5 h-12 bg-gradient-to-b from-goldLight via-amber-200 to-gold rounded-sm shadow"></div>
+              </div>
+              <div class="flex flex-col items-center -translate-y-2">
+                <div class="w-3.5 h-6 rounded-full bg-gradient-to-t from-amber-500 via-yellow-200 to-white candle-flame shadow-[0_0_20px_#fbbf24]"></div>
+                <div class="w-1.5 h-14 bg-gradient-to-b from-goldLight via-amber-200 to-gold rounded-sm shadow"></div>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-3 h-5 rounded-full bg-gradient-to-t from-amber-500 via-yellow-300 to-white candle-flame shadow-[0_0_16px_#fbbf24]"></div>
+                <div class="w-1.5 h-12 bg-gradient-to-b from-goldLight via-amber-200 to-gold rounded-sm shadow"></div>
+              </div>
+            </div>
+
+            <!-- INTERACTIVE CALLIGRAPHY CAKE PLAQUE STAGE -->
+            <div class="absolute inset-x-4 sm:inset-x-10 bottom-24 sm:bottom-28 flex flex-col items-center justify-center z-20">
+              <div id="plaque-container"
+                   class="w-full max-w-md rounded-2xl px-6 py-5 sm:py-6 transition-all duration-300 shadow-plaque border-2 border-gold/60 bg-gradient-to-br from-[#231714] via-[#18100E] to-[#2B1D19] text-center relative">
+                <!-- Decorative Corner Filigree Dots -->
+                <span class="absolute top-2.5 left-2.5 w-1.5 h-1.5 rounded-full bg-gold/70"></span>
+                <span class="absolute top-2.5 right-2.5 w-1.5 h-1.5 rounded-full bg-gold/70"></span>
+                <span class="absolute bottom-2.5 left-2.5 w-1.5 h-1.5 rounded-full bg-gold/70"></span>
+                <span class="absolute bottom-2.5 right-2.5 w-1.5 h-1.5 rounded-full bg-gold/70"></span>
+
+                <div id="plaque-Label" class="text-[10px] font-mono uppercase tracking-[0.25em] text-gold/75 mb-1">
+                  L'Amour Haute Pâtisserie
+                </div>
+                <div id="live-plaque-text"
+                     class="font-script text-2xl sm:text-3xl md:text-4xl leading-snug gold-calligraphy break-words min-h-[2.5rem] flex items-center justify-center px-2">
+                  Happy Birthday Em Yêu 04/11
+                </div>
+              </div>
+              <span class="mt-2 text-[11px] font-mono text-oat/80 bg-espresso/80 px-3 py-0.5 rounded-full border border-white/10">
+                ↑ Bảng chữ hiển thị thực tế trên mặt bánh
+              </span>
+            </div>
+
+            <!-- Bottom Flavor Notes Bar -->
+            <div class="absolute bottom-0 inset-x-0 bg-espresso/95 backdrop-blur-md p-4 sm:px-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-goldLight">Cốt Vị Đang Chọn</div>
+                <div id="studio-flavor-title" class="font-serif text-lg sm:text-xl font-semibold text-alabaster">
+                  Earl Grey &amp; Raspberry (Trà Bá Tước &amp; Phúc Bồn Tử)
+                </div>
+                <div id="studio-flavor-notes" class="text-xs text-oat/70">
+                  Mousse trà Bá Tước Bergamot, nhân mứt phúc bồn tử tươi nấu chậm, bạt hạnh nhân Pháp.
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-[10px] font-mono uppercase text-oat/60">Giá Hoàn Thiện</div>
+                <div id="studio-live-price" class="font-mono text-xl sm:text-2xl font-bold text-goldLight">680.000đ</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tasting Profile Meter under Preview -->
+          <div class="grid grid-cols-3 gap-3 bg-oat p-4 rounded-2xl border border-editorial text-xs">
+            <div>
+              <div class="flex justify-between font-medium text-espresso/80 mb-1">
+                <span>Độ Ngọt</span>
+                <span id="meter-sweet-label" class="font-mono text-[11px]">Thanh nhẹ (3/5)</span>
+              </div>
+              <div class="h-1.5 bg-espresso/10 rounded-full overflow-hidden">
+                <div id="meter-sweet-bar" class="h-full bg-gold w-3/5 rounded-full transition-all duration-300"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between font-medium text-espresso/80 mb-1">
+                <span>Độ Béo Mousse</span>
+                <span id="meter-rich-label" class="font-mono text-[11px]">Mượt mà (4/5)</span>
+              </div>
+              <div class="h-1.5 bg-espresso/10 rounded-full overflow-hidden">
+                <div id="meter-rich-bar" class="h-full bg-espresso w-4/5 rounded-full transition-all duration-300"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between font-medium text-espresso/80 mb-1">
+                <span>Hương Trái Cây/Trà</span>
+                <span id="meter-aroma-label" class="font-mono text-[11px]">Đậm đà (5/5)</span>
+              </div>
+              <div class="h-1.5 bg-espresso/10 rounded-full overflow-hidden">
+                <div id="meter-aroma-bar" class="h-full bg-raspberry w-full rounded-full transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: INTERACTIVE BESPOKE CONTROLS (6 cols) -->
+        <div class="lg:col-span-6 bg-oat/70 rounded-3xl p-6 sm:p-8 border border-editorial shadow-editorial space-y-7">
+
+          <!-- STEP 1: CAKE SIZE -->
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-xs font-mono uppercase tracking-widest text-espresso font-bold">
+                01. Chọn Kích Thước Bánh (Size)
+              </label>
+              <span class="text-xs text-espresso/60">Chiều cao tiêu chuẩn 8.5cm</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="size-options-grid">
+              <button type="button" onclick="selectCakeSize('Mini 12cm (2–3 người)', 450000, this)"
+                      class="size-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso transition">
+                <div class="font-serif font-bold text-base text-espresso">Mini 12cm</div>
+                <div class="text-xs text-espresso/65 mt-0.5">2–3 người thưởng thức</div>
+                <div class="font-mono text-xs font-semibold text-gold mt-2">450.000đ</div>
+              </button>
+
+              <button type="button" onclick="selectCakeSize('Standard 16cm (5–7 người)', 680000, this)"
+                      class="size-btn active text-left p-3.5 rounded-2xl border-2 border-espresso bg-espresso text-alabaster transition relative">
+                <span class="absolute -top-2 right-3 bg-raspberry text-alabaster text-[9px] font-mono uppercase px-2 py-0.5 rounded-full">Phổ biến</span>
+                <div class="font-serif font-bold text-base">Standard 16cm</div>
+                <div class="text-xs text-oat/75 mt-0.5">5–7 người thưởng thức</div>
+                <div class="font-mono text-xs font-semibold text-goldLight mt-2">680.000đ</div>
+              </button>
+
+              <button type="button" onclick="selectCakeSize('Grand 20cm (10–12 người)', 950000, this)"
+                      class="size-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso transition">
+                <div class="font-serif font-bold text-base text-espresso">Grand 20cm</div>
+                <div class="text-xs text-espresso/65 mt-0.5">10–12 người • Tiệc lớn</div>
+                <div class="font-mono text-xs font-semibold text-gold mt-2">950.000đ</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: FLAVOR CORE -->
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-xs font-mono uppercase tracking-widest text-espresso font-bold">
+                02. Chọn Cốt Vị Bánh Pháp (Flavor Core)
+              </label>
+              <span class="text-xs text-raspberry font-medium">4 Tuyệt Tác Signature</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="flavor-options-grid">
+
+              <button type="button"
+                      onclick="selectCakeFlavor('Earl Grey & Raspberry', 'Mousse trà Bá Tước Bergamot, nhân mứt phúc bồn tử tươi nấu chậm, bạt hạnh nhân Pháp.', 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85', '60%', '80%', '100%', this)"
+                      class="flavor-btn active text-left p-3.5 rounded-2xl border-2 border-espresso bg-alabaster flex items-start gap-3 transition">
+                <span class="w-4 h-4 rounded-full bg-raspberry mt-1 shrink-0 ring-2 ring-offset-2 ring-espresso"></span>
+                <div>
+                  <div class="font-serif font-bold text-base text-espresso leading-snug">Earl Grey &amp; Raspberry</div>
+                  <div class="text-xs text-espresso/65 mt-0.5">Trà Bá Tước &amp; Phúc Bồn Tử thanh mát</div>
+                </div>
+              </button>
+
+              <button type="button"
+                      onclick="selectCakeFlavor('Belgian Dark Chocolate 70%', 'Sô-cô-la đen Valrhona Guanaja 70%, lớp giòn hạt phỉ Praline Feuilletine & kem tươi.', 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=900&q=85', '50%', '95%', '85%', this)"
+                      class="flavor-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso flex items-start gap-3 transition">
+                <span class="w-4 h-4 rounded-full bg-[#2C1810] mt-1 shrink-0"></span>
+                <div>
+                  <div class="font-serif font-bold text-base text-espresso leading-snug">Belgian Dark Chocolate 70%</div>
+                  <div class="text-xs text-espresso/65 mt-0.5">Sô-cô-la đen đắng nhẹ &amp; Hạt phỉ giòn</div>
+                </div>
+              </button>
+
+              <button type="button"
+                      onclick="selectCakeFlavor('Matcha Uji & Mascarpone', 'Trà xanh Uji Kyoto ủ lạnh kết hợp phô mai Mascarpone Ý mềm tan và đậu đỏ Nhật.', 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=85', '55%', '75%', '95%', this)"
+                      class="flavor-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso flex items-start gap-3 transition">
+                <span class="w-4 h-4 rounded-full bg-[#4A6B3B] mt-1 shrink-0"></span>
+                <div>
+                  <div class="font-serif font-bold text-base text-espresso leading-snug">Matcha Uji &amp; Mascarpone</div>
+                  <div class="text-xs text-espresso/65 mt-0.5">Trà xanh Kyoto Nhật &amp; Phô mai tươi</div>
+                </div>
+              </button>
+
+              <button type="button"
+                      onclick="selectCakeFlavor('Madagascar Vanilla & Strawberry', 'Vani nguyên quả Madagascar, dâu tây giống Nhật tươi mọng & kem Chantilly nhẹ như mây.', 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85', '70%', '70%', '90%', this)"
+                      class="flavor-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso flex items-start gap-3 transition">
+                <span class="w-4 h-4 rounded-full bg-[#D9534F] mt-1 shrink-0"></span>
+                <div>
+                  <div class="font-serif font-bold text-base text-espresso leading-snug">Madagascar Vanilla &amp; Strawberry</div>
+                  <div class="text-xs text-espresso/65 mt-0.5">Vani Madagascar &amp; Dâu tây tươi mọng</div>
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- STEP 3: LIVE CALLIGRAPHY INSCRIPTION -->
+          <div class="bg-alabaster p-5 rounded-2xl border border-espresso/15 space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="inscription-input" class="text-xs font-mono uppercase tracking-widest text-espresso font-bold flex items-center gap-2">
+                <span>03. Lời Chúc Viết Tay Lên Mặt Bánh</span>
+                <span class="bg-gold/20 text-espresso px-2 py-0.5 rounded text-[10px]">Live Preview</span>
+              </label>
+              <span id="char-counter" class="font-mono text-xs text-espresso/50">27/45 ký tự</span>
+            </div>
+
+            <input id="inscription-input"
+                   type="text"
+                   maxlength="45"
+                   value="Happy Birthday Em Yêu 04/11"
+                   placeholder="Nhập lời chúc trên bánh (VD: Happy Birthday Em Yêu...)"
+                   oninput="updateInscriptionPreview(this.value)"
+                   class="w-full px-4 py-3 rounded-xl bg-oat/60 border border-espresso/20 text-espresso font-medium text-sm focus:outline-none focus:border-espresso focus:ring-2 focus:ring-gold/30 transition" />
+
+            <!-- Quick Suggestion Chips -->
+            <div class="flex flex-wrap items-center gap-1.5 pt-1">
+              <span class="text-[11px] text-espresso/50 mr-1">Gợi ý nhanh:</span>
+              <button type="button" onclick="setQuickInscription('Happy Birthday Em Yêu 04/11')"
+                      class="text-[11px] px-2.5 py-1 rounded-full bg-oat hover:bg-espresso hover:text-alabaster transition">
+                Happy Birthday Em Yêu
+              </button>
+              <button type="button" onclick="setQuickInscription('Chúc Mừng Sinh Nhật Mẹ Yêu')"
+                      class="text-[11px] px-2.5 py-1 rounded-full bg-oat hover:bg-espresso hover:text-alabaster transition">
+                Sinh Nhật Mẹ Yêu
+              </button>
+              <button type="button" onclick="setQuickInscription('Happy Anniversary My Love')"
+                      class="text-[11px] px-2.5 py-1 rounded-full bg-oat hover:bg-espresso hover:text-alabaster transition">
+                Happy Anniversary
+              </button>
+              <button type="button" onclick="setQuickInscription('Joyeux Anniversaire Mon Amour')"
+                      class="text-[11px] px-2.5 py-1 rounded-full bg-oat hover:bg-espresso hover:text-alabaster transition">
+                Tiếng Pháp Lãng Mạn
+              </button>
+            </div>
+
+            <!-- Plaque Color & Candle Toggle -->
+            <div class="pt-2 border-t border-editorial flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-3">
+                <span class="text-espresso/70 font-medium">Nền bảng chữ:</span>
+                <button type="button" onclick="setPlaqueTheme('dark')" id="plaque-theme-dark"
+                        class="px-2.5 py-1 rounded-lg bg-espresso text-goldLight font-medium border border-espresso">
+                  Sô-cô-la Đen Chữ Vàng
+                </button>
+                <button type="button" onclick="setPlaqueTheme('ivory')" id="plaque-theme-ivory"
+                        class="px-2.5 py-1 rounded-lg bg-oat text-espresso/80 font-medium border border-espresso/15">
+                  Fondant Ngà Chữ Đỏ
+                </button>
+              </div>
+              <label class="inline-flex items-center gap-2 cursor-pointer select-none">
+                <input type="checkbox" id="toggle-candles-chk" checked onchange="toggleCandlesPreview(this.checked)"
+                       class="rounded text-espresso focus:ring-0 accent-espresso" />
+                <span class="font-medium text-espresso">Kèm Nến Xoắn Gold (Miễn phí)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 4: DELIVERY DATE & 1-HOUR SLOT -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="delivery-date" class="block text-xs font-mono uppercase tracking-widest text-espresso font-bold mb-2">
+                04. Ngày Nhận Bánh
+              </label>
+              <input type="date" id="delivery-date"
+                     class="w-full px-4 py-3 rounded-xl bg-alabaster border border-espresso/20 text-sm font-medium text-espresso focus:outline-none focus:border-espresso" />
+            </div>
+            <div>
+              <label for="delivery-slot" class="block text-xs font-mono uppercase tracking-widest text-espresso font-bold mb-2">
+                Khung Giờ Giao (1 Giờ)
+              </label>
+              <select id="delivery-slot"
+                      class="w-full px-4 py-3 rounded-xl bg-alabaster border border-espresso/20 text-sm font-medium text-espresso focus:outline-none focus:border-espresso">
+                <option value="Giao Hỏa Tốc 45 Phút">⚡ Giao Hỏa Tốc Trong 45 Phút</option>
+                <option value="09:00 - 10:00 Sáng">09:00 - 10:00 Sáng</option>
+                <option value="11:00 - 12:00 Trưa">11:00 - 12:00 Trưa</option>
+                <option value="14:00 - 15:00 Chiều">14:00 - 15:00 Chiều</option>
+                <option value="16:30 - 17:30 Chiều">16:30 - 17:30 Chiều</option>
+                <option value="18:30 - 19:30 Tối" selected>18:30 - 19:30 Tối (Giờ Tiệc)</option>
+                <option value="20:00 - 21:00 Tối">20:00 - 21:00 Tối</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- STEP 5: SUBMIT BESPOKE CAKE TO CART -->
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <button type="button" onclick="addBespokeCakeToCart()"
+                    class="flex-1 bg-espresso hover:bg-raspberry text-alabaster py-4 px-6 rounded-2xl font-semibold text-sm tracking-wide transition shadow-editorial flex items-center justify-center gap-3">
+              <svg class="w-5 h-5 text-goldLight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+              <span>Lưu Mẫu Thiết Kế Này Vào Giỏ Bánh</span>
+              <span id="btn-live-price" class="font-mono bg-white/15 px-2.5 py-0.5 rounded-full text-xs text-goldLight">680.000đ</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERABLE COLLECTION LOOKBOOK -->
+  <section id="lookbook" class="py-16 lg:py-24 border-b border-editorial">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header & Filter Tabs -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="text-xs font-mono uppercase tracking-[0.2em] text-gold font-semibold mb-2">
+            La Collection Permanente
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso tracking-tight">
+            Bộ Sưu Tập <span class="italic font-normal text-raspberry">Haute Pâtisserie</span>
+          </h2>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2" id="lookbook-tabs">
+          <button onclick="filterLookbook('all', this)"
+                  class="lookbook-tab active px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-espresso text-alabaster transition">
+            Tất Cả (8)
+          </button>
+          <button onclick="filterLookbook('birthday', this)"
+                  class="lookbook-tab px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-oat text-espresso/80 hover:bg-oatDark transition">
+            Bánh Sinh Nhật Nghệ Thuật
+          </button>
+          <button onclick="filterLookbook('entremet', this)"
+                  class="lookbook-tab px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-oat text-espresso/80 hover:bg-oatDark transition">
+            Entremet &amp; Mousse
+          </button>
+          <button onclick="filterLookbook('viennoiserie', this)"
+                  class="lookbook-tab px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-oat text-espresso/80 hover:bg-oatDark transition">
+            Bánh Nướng &amp; Croissant
+          </button>
+          <button onclick="filterLookbook('vip', this)"
+                  class="lookbook-tab px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-oat text-espresso/80 hover:bg-oatDark transition">
+            Set Quà Tặng VIP
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="lookbook-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+        <!-- Rendered dynamically by JS from verified high-res Unsplash dataset -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SAVOIR-FAIRE: 5-LAYER ANATOMY OF AN ENTREMET -->
+  <section id="savoir-faire" class="py-16 lg:py-24 bg-oat/60 border-b border-editorial">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+        <!-- Left Editorial Image & Cross-Section Callouts (6 cols) -->
+        <div class="lg:col-span-6 relative">
+          <div class="rounded-3xl overflow-hidden shadow-luxury border border-espresso/15 aspect-[4/3.6] bg-espresso relative">
+            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=900&q=85"
+                 alt="5-Layer French Entremet Anatomy"
+                 class="w-full h-full object-cover opacity-90" />
+            <div class="absolute inset-0 bg-gradient-to-r from-espresso/75 via-transparent to-espresso/40"></div>
+
+            <!-- Interactive Layer Pins -->
+            <div class="absolute inset-y-6 left-6 flex flex-col justify-between max-w-xs">
+              <div class="bg-alabaster/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-espresso/10 shadow-sm">
+                <div class="font-mono text-[10px] text-raspberry font-bold uppercase">Tầng 01 • Lớp Tráng Gương</div>
+                <div class="font-serif font-bold text-sm text-espresso">Glaçage Miroir Cacao Pháp</div>
+              </div>
+              <div class="bg-alabaster/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-espresso/10 shadow-sm ml-4">
+                <div class="font-mono text-[10px] text-gold font-bold uppercase">Tầng 02 • Kem Mousse Lạnh</div>
+                <div class="font-serif font-bold text-sm text-espresso">Mousse Mascarpone &amp; Valrhona 70%</div>
+              </div>
+              <div class="bg-alabaster/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-espresso/10 shadow-sm">
+                <div class="font-mono text-[10px] text-raspberry font-bold uppercase">Tầng 03 • Nhân Trái Cây Tươi</div>
+                <div class="font-serif font-bold text-sm text-espresso">Compote Phúc Bồn Tử Nấu Chậm</div>
+              </div>
+              <div class="bg-alabaster/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-espresso/10 shadow-sm ml-4">
+                <div class="font-mono text-[10px] text-gold font-bold uppercase">Tầng 04 &amp; 05 • Đế Giòn &amp; Bạt Bánh</div>
+                <div class="font-serif font-bold text-sm text-espresso">Praline Feuilletine &amp; Biscuit Joconde</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Savoir-Faire Story (6 cols) -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="text-xs font-mono uppercase tracking-[0.2em] text-raspberry font-semibold">
+            Savoir-Faire &amp; Nguyên Liệu Thượng Hạng
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-espresso leading-tight">
+            Cấu Trúc 5 Tầng Vị Giác — <span class="italic font-normal text-gold">Không Phải Bánh Kem Thông Thường.</span>
+          </h2>
+          <p class="text-sm sm:text-base text-espresso/75 leading-relaxed">
+            Khác biệt hoàn toàn với cốt bông lan kem bơ truyền thống, mỗi chiếc bánh Entremet tại xưởng là sự giao thoa giữa độ mềm tan như lụa của Mousse lạnh, vị chua thanh của mứt trái cây tươi nấu thủ công và tầng đế hạt phỉ giòn rụm Praline Feuilletine.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-alabaster border border-editorial">
+              <div class="font-mono text-xs text-gold font-bold uppercase mb-1">0% Chất Bảo Quản &amp; Kem Thực Vật</div>
+              <p class="text-xs text-espresso/70 leading-relaxed">
+                Chỉ sử dụng kem tươi động vật Elle &amp; Vire (Pháp) và phô mai Mascarpone nhập khẩu Ý, giúp bánh tan ngay đầu lưỡi mà không hề ngấy.
+              </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-alabaster border border-editorial">
+              <div class="font-mono text-xs text-raspberry font-bold uppercase mb-1">Hộp Quà Bảo Quản Lạnh Kép</div>
+              <p class="text-xs text-espresso/70 leading-relaxed">
+                Mỗi chiếc bánh đi kèm hộp cứng ép kim sang trọng, bộ dao dĩa cao cấp, nến xoắn nghệ thuật và túi đá khô giữ phom bánh suốt 2 giờ di chuyển.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPORATE & VIP GIFTING BANNER -->
+  <section id="gifting" class="py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-espresso text-alabaster p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-luxury">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-block px-3 py-1 rounded-full bg-gold/20 border border-gold/40 text-goldLight font-mono text-[11px] uppercase tracking-widest">
+              Dịch Vụ Quà Tặng Doanh Nghiệp &amp; Tiệc Riêng
+            </div>
+            <h3 class="font-serif text-3xl sm:text-5xl font-semibold leading-tight">
+              Set Trà Chiều &amp; Hộp Bánh Quà Tặng <span class="italic font-normal text-goldLight">Khắc Logo Riêng.</span>
+            </h3>
+            <p class="text-sm sm:text-base text-oat/80 max-w-xl leading-relaxed">
+              Nhận thiết kế tháp bánh Macaron, hộp quà Croissant bơ Pháp &amp; bánh Entremet in logo sô-cô-la riêng cho sự kiện thương hiệu, sinh nhật VIP và đối tác chiến lược. Xuất hóa đơn VAT đầy đủ.
+            </p>
+            <div class="pt-3 flex flex-wrap gap-3">
+              <a id="vip-zalo-link" href="https://zalo.me/0909888999" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 bg-gold hover:bg-goldLight text-espresso font-semibold text-sm px-6 py-3.5 rounded-full transition">
+                <span>Nhận Báo Giá Tiệc &amp; Quà VIP Qua Zalo</span>
+                <span>→</span>
+              </a>
+              <a href="#customizer"
+                 class="inline-flex items-center gap-2 border border-white/20 hover:border-goldLight text-alabaster text-sm px-6 py-3.5 rounded-full transition">
+                Thiết Kế Bánh Lẻ Ngay
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="grid grid-cols-2 gap-3">
+              <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=900&q=85"
+                   alt="Artisanal Pastries"
+                   class="rounded-2xl h-44 w-full object-cover border border-white/10" />
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+                   alt="French Croissants"
+                   class="rounded-2xl h-44 w-full object-cover border border-white/10 translate-y-4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-oat border-t border-editorial pt-14 pb-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-editorial">
+        <div class="md:col-span-5 space-y-3">
+          <div class="text-[10px] font-mono uppercase tracking-[0.25em] text-gold font-bold">Maison de Haute Pâtisserie</div>
+          <h4 id="footer-brand-name" class="font-serif text-3xl font-bold text-espresso">
+            L'Amour Patisserie &amp; Bespoke Cakes
+          </h4>
+          <p class="text-xs text-espresso/70 max-w-sm leading-relaxed">
+            Xưởng bánh sinh nhật thiết kế thủ công &amp; Pâtisserie Pháp cao cấp. Nướng mới mỗi ngày từ nguyên liệu bơ AOP Pháp, sô-cô-la Valrhona và trái cây tươi tuyển chọn.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 space-y-2 text-xs">
+          <div class="font-mono uppercase tracking-wider text-espresso font-bold mb-2">Thông Tin Liên Hệ &amp; Giao Bánh</div>
+          <p class="text-espresso/80">
+            <strong class="text-espresso">Địa chỉ xưởng:</strong>
+            <span id="footer-addr">Thảo Điền, Quận 2 • Giao nhanh 45 phút</span>
+          </p>
+          <p class="text-espresso/80">
+            <strong class="text-espresso">Hotline / Zalo đặt bánh:</strong>
+            <a id="footer-phone-link" href="tel:0909888999" class="font-mono font-semibold text-raspberry underline">
+              <span id="footer-phone">0909888999</span>
+            </a>
+          </p>
+          <p class="text-espresso/80">
+            <strong class="text-espresso">Giờ mở cửa:</strong> 07:30 – 21:30 (Tất cả các ngày trong tuần)
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2 text-xs">
+          <div class="font-mono uppercase tracking-wider text-espresso font-bold mb-2">Cam Kết Chất Lượng</div>
+          <ul class="space-y-1.5 text-espresso/75">
+            <li>✓ Miễn phí bảng chữ sô-cô-la viết tay</li>
+            <li>✓ Kèm bộ dao, dĩa, nến xoắn Gold &amp; đá khô</li>
+            <li>✓ Hoàn tiền 100% nếu bánh không đúng mẫu</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-espresso/50 gap-2">
+        <div>© 2026 <span id="copyright-brand">L'Amour Patisserie & Bespoke Cakes</span>. All rights reserved.</div>
+        <div class="font-mono text-[11px]">Bespoke Haute Pâtisserie Experience</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER CART DRAWER -->
+  <div id="cart-drawer-backdrop"
+       onclick="toggleCartDrawer(false)"
+       class="fixed inset-0 bg-espresso/60 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300"></div>
+
+  <aside id="cart-drawer"
+         class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-alabaster z-50 shadow-2xl border-l border-editorial translate-x-full transition-transform duration-300 flex flex-col">
+
+    <!-- Drawer Header -->
+    <div class="p-5 sm:px-6 border-b border-editorial flex items-center justify-between bg-oat/60">
+      <div>
+        <div class="text-[10px] font-mono uppercase tracking-widest text-gold font-bold">Đơn Đặt Bánh Của Bạn</div>
+        <h3 class="font-serif text-2xl font-bold text-espresso">Giỏ Bánh Thiết Kế</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)"
+              class="w-9 h-9 rounded-full bg-alabaster border border-espresso/15 flex items-center justify-center text-espresso hover:bg-espresso hover:text-alabaster transition">
+        ✕
+      </button>
+    </div>
+
+    <!-- Drawer Items List -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 sm:px-6 space-y-4">
+      <!-- Populated via JS -->
+    </div>
+
+    <!-- Customer Checkout Form & Zalo 1-Click Submit -->
+    <div class="p-5 sm:px-6 border-t border-editorial bg-oat/80 space-y-3.5">
+      <div class="flex items-center justify-between text-sm">
+        <span class="font-medium text-espresso/80">Tổng cộng tạm tính:</span>
+        <span id="cart-subtotal" class="font-mono text-xl font-bold text-raspberry">680.000đ</span>
+      </div>
+
+      <div class="space-y-2">
+        <input id="cust-name" type="text" placeholder="Họ tên người đặt / người nhận *"
+               class="w-full px-3.5 py-2.5 rounded-xl bg-alabaster border border-espresso/20 text-xs font-medium text-espresso focus:outline-none focus:border-espresso" />
+        <div class="grid grid-cols-2 gap-2">
+          <input id="cust-phone" type="tel" placeholder="Số điện thoại *"
+                 class="w-full px-3.5 py-2.5 rounded-xl bg-alabaster border border-espresso/20 text-xs font-medium text-espresso focus:outline-none focus:border-espresso" />
+          <input id="cust-addr" type="text" placeholder="Địa chỉ nhận bánh *"
+                 class="w-full px-3.5 py-2.5 rounded-xl bg-alabaster border border-espresso/20 text-xs font-medium text-espresso focus:outline-none focus:border-espresso" />
+        </div>
+      </div>
+
+      <button type="button" onclick="submitOrderViaZalo()"
+              class="w-full py-4 px-5 rounded-2xl bg-espresso hover:bg-raspberry text-alabaster font-semibold text-sm tracking-wide transition shadow-lg flex items-center justify-center gap-2.5">
+        <svg class="w-4 h-4 text-goldLight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+        <span>Gửi Đơn Đặt Bánh Qua Zalo Quán</span>
+      </button>
+      <p class="text-[11px] text-center text-espresso/60">
+        Hệ thống tự động sao chép chi tiết mẫu bánh, chữ viết trên bánh &amp; mở Zalo tiệm ngay lập tức.
+      </p>
+    </div>
+  </aside>
+
+  <!-- FLOATING LUXURY OWNER PREVIEW & ACTIVATION PILL (Bottom-Left) -->
+  <button type="button"
+          onclick="toggleOwnerModal(true)"
+          class="fixed bottom-4 left-4 z-40 group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-espresso/95 hover:bg-espresso text-alabaster border border-gold/50 shadow-luxury backdrop-blur-md transition-all duration-300 hover:scale-[1.02]">
+    <span class="text-sm">👑</span>
+    <span class="text-xs font-medium tracking-wide">
+      Chế độ Xem Trước Chủ Tiệm • <strong class="text-goldLight underline">Kích hoạt Web chính chủ 199.000đ</strong>
+    </span>
+  </button>
+
+  <!-- OWNER VIETQR CLAIM & ACTIVATION MODAL -->
+  <div id="owner-modal-backdrop"
+       onclick="toggleOwnerModal(false)"
+       class="fixed inset-0 bg-espresso/75 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div onclick="event.stopPropagation()"
+         class="bg-alabaster border-2 border-gold/50 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative">
+
+      <!-- Top Gold Header -->
+      <div class="bg-espresso text-alabaster p-6 border-b border-gold/30 flex items-start justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-widest text-goldLight mb-1">
+            <span>👑 Bản Quyền Website Dành Cho Chủ Tiệm</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-alabaster">
+            Kích Hoạt Website Chính Chủ
+          </h3>
+          <p class="text-xs text-oat/75 mt-1">
+            Sở hữu trọn đời giao diện Xưởng Bánh Nghệ Thuật kèm tính năng khách tự gõ chữ lên bánh &amp; đặt đơn Zalo.
+          </p>
+        </div>
+        <button onclick="toggleOwnerModal(false)"
+                class="w-8 h-8 rounded-full bg-white/10 text-alabaster flex items-center justify-center hover:bg-raspberry transition shrink-0">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5 max-h-[80vh] overflow-y-auto">
+
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center bg-oat p-4 rounded-2xl border border-editorial">
+          <div class="sm:col-span-5 flex flex-col items-center">
+            <img id="owner-vietqr-img"
+                 src="https://img.vietqr.io/image/MB-0988888888-compact2.png?amount=199000&addInfo=Kich%20Hoat%20Web%20Banh"
+                 alt="VietQR Kích Hoạt Website 199.000đ"
+                 class="w-44 h-44 object-contain rounded-xl bg-white p-2 border border-espresso/10 shadow-sm" />
+            <span class="mt-2 font-mono text-[11px] font-semibold text-espresso/70">Quét mã thanh toán 199.000đ</span>
+          </div>
+
+          <div class="sm:col-span-7 space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-xl bg-alabaster border border-editorial">
+              <div class="text-espresso/60">Ngân hàng thụ hưởng:</div>
+              <div class="font-mono font-bold text-sm text-espresso" id="modal-bank-info">MB - 0988888888</div>
+              <div class="font-mono text-xs text-gold font-semibold" id="modal-owner-name">CHU XUONG WEB</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-alabaster border border-editorial">
+              <div class="text-espresso/60">Phí kích hoạt trọn gói (1 lần duy nhất):</div>
+              <div class="font-mono font-bold text-lg text-raspberry">199.000đ <span class="text-[11px] font-normal text-espresso/60">(Không phí tháng)</span></div>
+            </div>
+            <ul class="space-y-1 text-espresso/80 text-[11px]">
+              <li>✓ Đổi tên tiệm, số Zalo, địa chỉ &amp; bảng giá riêng</li>
+              <li>✓ Xóa nút "Chế độ Xem Trước" &amp; bàn giao link riêng</li>
+              <li>✓ Hỗ trợ cập nhật hình ảnh bánh thật của quán</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a id="owner-zalo-confirm"
+             href="https://zalo.me/0988888888"
+             target="_blank" rel="noopener"
+             class="flex-1 py-3.5 px-5 rounded-xl bg-espresso hover:bg-raspberry text-alabaster font-semibold text-xs uppercase tracking-wider text-center transition">
+            Nhắn Zalo Xác Nhận &amp; Đổi Thông Tin Quán →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast-notification"
+       class="fixed bottom-6 right-6 z-50 bg-espresso text-alabaster px-5 py-3.5 rounded-2xl shadow-2xl border border-gold/40 flex items-center gap-3 translate-y-24 opacity-0 pointer-events-none transition-all duration-300">
+    <span class="w-2.5 h-2.5 rounded-full bg-goldLight"></span>
+    <span id="toast-text" class="text-xs font-medium">Đã cập nhật giỏ bánh!</span>
+  </div>
+
+  <!-- APPLICATION JAVASCRIPT -->
+  <script>
+    // =========================================================================
+    // 1. DYNAMIC URL PARAMETERS & OWNER CONFIG
+    // =========================================================================
+    const urlParams = new URLSearchParams(window.location.search);
+    const shopConfig = {
+      name: urlParams.get('name') || "L'Amour Patisserie & Bespoke Cakes",
+      phone: urlParams.get('phone') || "0909888999",
+      addr: urlParams.get('addr') || "Thảo Điền, Quận 2 • Giao nhanh 45 phút",
+      obank: urlParams.get('obank') || "MB",
+      oacc: urlParams.get('oacc') || "0988888888",
+      oname: urlParams.get('oname') || "CHU XUONG WEB",
+      ozalo: urlParams.get('ozalo') || "0988888888"
+    };
+
+    function applyShopConfig() {
+      document.getElementById('page-title').textContent = `${shopConfig.name} — Xưởng Bánh Nghệ Thuật`;
+      document.getElementById('brand-name-nav').textContent = shopConfig.name;
+      document.getElementById('hero-brand-name').textContent = shopConfig.name;
+      document.getElementById('footer-brand-name').textContent = shopConfig.name;
+      document.getElementById('copyright-brand').textContent = shopConfig.name;
+
+      document.getElementById('top-addr').textContent = shopConfig.addr;
+      document.getElementById('hero-addr').textContent = shopConfig.addr;
+      document.getElementById('footer-addr').textContent = shopConfig.addr;
+
+      document.getElementById('top-phone').textContent = shopConfig.phone;
+      document.getElementById('top-phone-link').href = `tel:${shopConfig.phone}`;
+      document.getElementById('footer-phone').textContent = shopConfig.phone;
+      document.getElementById('footer-phone-link').href = `tel:${shopConfig.phone}`;
+
+      const cleanShopZalo = shopConfig.phone.replace(/\D/g, '');
+      document.getElementById('nav-zalo-btn').href = `https://zalo.me/${cleanShopZalo}`;
+      document.getElementById('vip-zalo-link').href = `https://zalo.me/${cleanShopZalo}`;
+
+      // Owner VietQR Modal
+      const addInfoEncoded = encodeURIComponent(`Kich Hoat Web ${shopConfig.name.substring(0, 18)}`);
+      const qrUrl = `https://img.vietqr.io/image/${encodeURIComponent(shopConfig.obank)}-${encodeURIComponent(shopConfig.oacc)}-compact2.png?amount=199000&addInfo=${addInfoEncoded}&accountName=${encodeURIComponent(shopConfig.oname)}`;
+      document.getElementById('owner-vietqr-img').src = qrUrl;
+      document.getElementById('modal-bank-info').textContent = `${shopConfig.obank} • ${shopConfig.oacc}`;
+      document.getElementById('modal-owner-name').textContent = `Chủ TK: ${shopConfig.oname}`;
+      document.getElementById('owner-zalo-confirm').href = `https://zalo.me/${shopConfig.ozalo.replace(/\D/g, '')}`;
+    }
+
+    // Set default delivery date to today
+    function initDeliveryDate() {
+      const dateInput = document.getElementById('delivery-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
+    }
+
+    // =========================================================================
+    // 2. LIVE BESPOKE CAKE STUDIO CUSTOMIZER STATE & LOGIC
+    // =========================================================================
+    const studioState = {
+      size: 'Standard 16cm (5–7 người)',
+      price: 680000,
+      flavor: 'Earl Grey & Raspberry',
+      flavorNotes: 'Mousse trà Bá Tước Bergamot, nhân mứt phúc bồn tử tươi nấu chậm, bạt hạnh nhân Pháp.',
+      image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85',
+      inscription: 'Happy Birthday Em Yêu 04/11',
+      plaqueTheme: 'dark',
+      candles: true
+    };
+
+    function formatVND(amount) {
+      return amount.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function selectCakeSize(sizeLabel, priceValue, btnEl) {
+      studioState.size = sizeLabel;
+      studioState.price = priceValue;
+
+      // Update UI buttons
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.className = 'size-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso transition';
+      });
+      btnEl.className = 'size-btn active text-left p-3.5 rounded-2xl border-2 border-espresso bg-espresso text-alabaster transition relative';
+
+      // Update Live Preview HUD & Price
+      document.getElementById('studio-size-badge').textContent = sizeLabel;
+      document.getElementById('studio-live-price').textContent = formatVND(priceValue);
+      document.getElementById('btn-live-price').textContent = formatVND(priceValue);
+    }
+
+    function selectCakeFlavor(flavorName, notes, imgUrl, sweetPct, richPct, aromaPct, btnEl) {
+      studioState.flavor = flavorName;
+      studioState.flavorNotes = notes;
+      studioState.image = imgUrl;
+
+      // Highlight button
+      document.querySelectorAll('.flavor-btn').forEach(btn => {
+        btn.className = 'flavor-btn text-left p-3.5 rounded-2xl border border-espresso/15 bg-alabaster hover:border-espresso flex items-start gap-3 transition';
+      });
+      btnEl.className = 'flavor-btn active text-left p-3.5 rounded-2xl border-2 border-espresso bg-alabaster flex items-start gap-3 transition shadow-sm';
+
+      // Update Stage Image & Captions
+      const imgEl = document.getElementById('studio-cake-img');
+      imgEl.style.opacity = '0.4';
+      setTimeout(() => {
+        imgEl.src = imgUrl;
+        imgEl.style.opacity = '0.9';
+      }, 150);
+
+      document.getElementById('studio-flavor-title').textContent = flavorName;
+      document.getElementById('studio-flavor-notes').textContent = notes;
+
+      // Update meters
+      document.getElementById('meter-sweet-bar').style.width = sweetPct;
+      document.getElementById('meter-rich-bar').style.width = richPct;
+      document.getElementById('meter-aroma-bar').style.width = aromaPct;
+    }
+
+    function updateInscriptionPreview(val) {
+      const cleanVal = val.trim() || 'Joyeux Anniversaire';
+      studioState.inscription = cleanVal;
+      document.getElementById('live-plaque-text').textContent = cleanVal;
+      document.getElementById('char-counter').textContent = `${val.length}/45 ký tự`;
+    }
+
+    function setQuickInscription(text) {
+      const input = document.getElementById('inscription-input');
+      input.value = text;
+      updateInscriptionPreview(text);
+    }
+
+    function setPlaqueTheme(theme) {
+      studioState.plaqueTheme = theme;
+      const plaqueContainer = document.getElementById('plaque-container');
+      const plaqueText = document.getElementById('live-plaque-text');
+      const btnDark = document.getElementById('plaque-theme-dark');
+      const btnIvory = document.getElementById('plaque-theme-ivory');
+
+      if (theme === 'ivory') {
+        plaqueContainer.className = 'w-full max-w-md rounded-2xl px-6 py-5 sm:py-6 transition-all duration-300 shadow-plaque border-2 border-gold bg-gradient-to-br from-[#FAF7F2] via-[#F2ECE1] to-[#E8DEC8] text-center relative';
+        plaqueText.className = 'font-script text-2xl sm:text-3xl md:text-4xl leading-snug ivory-calligraphy break-words min-h-[2.5rem] flex items-center justify-center px-2';
+        btnIvory.className = 'px-2.5 py-1 rounded-lg bg-espresso text-goldLight font-medium border border-espresso';
+        btnDark.className = 'px-2.5 py-1 rounded-lg bg-oat text-espresso/80 font-medium border border-espresso/15';
+      } else {
+        plaqueContainer.className = 'w-full max-w-md rounded-2xl px-6 py-5 sm:py-6 transition-all duration-300 shadow-plaque border-2 border-gold/60 bg-gradient-to-br from-[#231714] via-[#18100E] to-[#2B1D19] text-center relative';
+        plaqueText.className = 'font-script text-2xl sm:text-3xl md:text-4xl leading-snug gold-calligraphy break-words min-h-[2.5rem] flex items-center justify-center px-2';
+        btnDark.className = 'px-2.5 py-1 rounded-lg bg-espresso text-goldLight font-medium border border-espresso';
+        btnIvory.className = 'px-2.5 py-1 rounded-lg bg-oat text-espresso/80 font-medium border border-espresso/15';
+      }
+    }
+
+    function toggleCandlesPreview(checked) {
+      studioState.candles = checked;
+      const candlesEl = document.getElementById('studio-candles-overlay');
+      candlesEl.style.opacity = checked ? '1' : '0';
+    }
+
+    // =========================================================================
+    // 3. FILTERABLE LOOKBOOK CATALOG (REAL UNSPLASH HIGH-RES IMAGES)
+    // =========================================================================
+    const patisserieCatalog = [
+      {
+        id: 'cake-01',
+        name: "L'Amour Velvet Guanaja 70%",
+        category: 'birthday',
+        categoryLabel: 'Bánh Sinh Nhật Nghệ Thuật',
+        price: 680000,
+        size: 'Standard 16cm (5–7 người)',
+        image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85',
+        notes: 'Mousse sô-cô-la đen Pháp 70%, nhân phúc bồn tử & đế hạt phỉ giòn.',
+        badge: 'Best Seller'
+      },
+      {
+        id: 'cake-02',
+        name: 'Fraise & Mascarpone Mille-Crêpes',
+        category: 'birthday',
+        categoryLabel: 'Bánh Sinh Nhật Nghệ Thuật',
+        price: 650000,
+        size: 'Standard 16cm (5–7 người)',
+        image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85',
+        notes: '20 lớp bánh Crêpe mỏng thủ công xen kẽ kem Mascarpone vani & dâu tươi.',
+        badge: 'Lady M Style'
+      },
+      {
+        id: 'cake-03',
+        name: 'Opéra Royale Praline & Gold Leaf',
+        category: 'entremet',
+        categoryLabel: 'Entremet & Mousse',
+        price: 590000,
+        size: 'Size 16cm Vuông (5–6 người)',
+        image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=900&q=85',
+        notes: 'Bạt hạnh nhân thấm cà phê Espresso Arabica, ganache đen & lá vàng 24K.',
+        badge: 'Signature Pháp'
+      },
+      {
+        id: 'cake-04',
+        name: 'Matcha Uji Kyoto & Yuzu Entremet',
+        category: 'entremet',
+        categoryLabel: 'Entremet & Mousse',
+        price: 620000,
+        size: 'Standard 16cm (5–7 người)',
+        image: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=85',
+        notes: 'Trà xanh Uji Nhật Bản kết hợp kem thanh yên Yuzu dịu mát ít ngọt.',
+        badge: 'Ít Ngọt'
+      },
+      {
+        id: 'cake-05',
+        name: 'Rose Lychee Ispahan Couture',
+        category: 'birthday',
+        categoryLabel: 'Bánh Sinh Nhật Nghệ Thuật',
+        price: 720000,
+        size: 'Standard 16cm (5–7 người)',
+        image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=900&q=85',
+        notes: 'Lấy cảm hứng từ Pierre Hermé: Hương hoa hồng Damask, vải thiều & phúc bồn tử.',
+        badge: 'Haute Couture'
+      },
+      {
+        id: 'cake-06',
+        name: 'Box 6 Croissant Bơ Pháp AOP Ngàn Lớp',
+        category: 'viennoiserie',
+        categoryLabel: 'Bánh Nướng & Croissant',
+        price: 340000,
+        size: 'Hộp 6 Bánh Nướng Mới',
+        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85',
+        notes: 'Gồm Croissant bơ AOP, Pain au Chocolat & Almond Croissant giòn tan.',
+        badge: 'Ra Lò Mỗi Sáng'
+      },
+      {
+        id: 'cake-07',
+        name: 'Tiramisu Classico Mascarpone & Kahlúa',
+        category: 'entremet',
+        categoryLabel: 'Entremet & Mousse',
+        price: 540000,
+        size: 'Hộp Thiếc Sang Trọng (4–6 người)',
+        image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85',
+        notes: 'Bánh Sampa thấm rượu Kahlúa & Espresso nguyên chất, phủ bột cacao Pháp.',
+        badge: 'Được Yêu Thích'
+      },
+      {
+        id: 'cake-08',
+        name: 'Coffret Prestige — Set Quà Tặng Pháp VIP',
+        category: 'vip',
+        categoryLabel: 'Set Quà Tặng VIP',
+        price: 890000,
+        size: 'Hộp Quà Thắt Nơ Lụa + Thiệp Sáp',
+        image: 'https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=900&q=85',
+        notes: '1 Bánh Entremet 14cm + 6 Macaron Pháp + Trà Bá Tước & Thiệp đóng dấu sáp vàng.',
+        badge: 'Quà Tặng VIP'
+      }
+    ];
+
+    function renderLookbook(filterCategory = 'all') {
+      const grid = document.getElementById('lookbook-grid');
+      const filtered = filterCategory === 'all'
+        ? patisserieCatalog
+        : patisserieCatalog.filter(item => item.category === filterCategory);
+
+      grid.innerHTML = filtered.map(item => `
+        <article class="group bg-oat/50 rounded-3xl overflow-hidden border border-editorial hover:border-espresso/30 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-editorial">
+          <div>
+            <div class="relative aspect-[4/3.6] img-zoom-wrap bg-espresso">
+              <img src="${item.image}" alt="${item.name}" loading="lazy" class="w-full h-full object-cover" />
+              <div class="absolute top-3 left-3 bg-alabaster/95 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider font-bold text-espresso border border-espresso/10">
+                ${item.badge}
+              </div>
+              <button type="button"
+                      onclick="loadIntoStudio('${item.id}')"
+                      class="absolute bottom-3 right-3 bg-espresso/90 hover:bg-raspberry text-goldLight text-[11px] font-medium px-3 py-1.5 rounded-full backdrop-blur-md border border-gold/30 transition">
+                ✎ Viết chữ lên bánh này
+              </button>
+            </div>
+
+            <div class="p-5">
+              <div class="text-[10px] font-mono uppercase tracking-widest text-espresso/55 mb-1">${item.categoryLabel} • ${item.size}</div>
+              <h3 class="font-serif text-xl font-bold text-espresso group-hover:text-raspberry transition leading-snug">
+                ${item.name}
+              </h3>
+              <p class="text-xs text-espresso/70 mt-1.5 line-clamp-2 leading-relaxed">
+                ${item.notes}
+              </p>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-3 border-t border-editorial flex items-center justify-between gap-2">
+            <div>
+              <div class="text-[10px] font-mono uppercase text-espresso/50">Giá niêm yết</div>
+              <div class="font-mono text-base font-bold text-espresso">${formatVND(item.price)}</div>
+            </div>
+            <button type="button"
+                    onclick="quickAddCatalogItem('${item.id}')"
+                    class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-espresso hover:bg-raspberry text-alabaster text-xs font-semibold transition">
+              <span>+ Giỏ Bánh</span>
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterLookbook(category, tabBtn) {
+      document.querySelectorAll('.lookbook-tab').forEach(btn => {
+        btn.className = 'lookbook-tab px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-oat text-espresso/80 hover:bg-oatDark transition';
+      });
+      tabBtn.className = 'lookbook-tab active px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-espresso text-alabaster transition';
+      renderLookbook(category);
+    }
+
+    function loadIntoStudio(itemId) {
+      const item = patisserieCatalog.find(p => p.id === itemId);
+      if (!item) return;
+
+      studioState.flavor = item.name;
+      studioState.flavorNotes = item.notes;
+      studioState.image = item.image;
+      studioState.price = item.price;
+      studioState.size = item.size;
+
+      document.getElementById('studio-cake-img').src = item.image;
+      document.getElementById('studio-flavor-title').textContent = item.name;
+      document.getElementById('studio-flavor-notes').textContent = item.notes;
+      document.getElementById('studio-size-badge').textContent = item.size;
+      document.getElementById('studio-live-price').textContent = formatVND(item.price);
+      document.getElementById('btn-live-price').textContent = formatVND(item.price);
+
+      document.getElementById('customizer').scrollIntoView({ behavior: 'smooth' });
+      const input = document.getElementById('inscription-input');
+      setTimeout(() => input.focus(), 600);
+      showToast(`Đã nạp "${item.name}" vào Xưởng Khắc Chữ!`);
+    }
+
+    // =========================================================================
+    // 4. CART DRAWER & 1-CLICK ZALO ORDER SUBMISSION
+    // =========================================================================
+    let cartItems = [
+      {
+        id: 'default-bespoke',
+        title: "Bánh Thiết Kế: Earl Grey & Raspberry",
+        size: "Standard 16cm (5–7 người)",
+        inscription: "Happy Birthday Em Yêu 04/11",
+        delivery: "Hôm nay • 18:30 - 19:30 Tối",
+        price: 680000,
+        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85"
+      }
+    ];
+
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const countBadge = document.getElementById('cart-count-badge');
+      const subtotalEl = document.getElementById('cart-subtotal');
+
+      countBadge.textContent = cartItems.length;
+
+      if (cartItems.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 space-y-3">
+            <div class="font-serif text-2xl text-espresso/60 italic">Giỏ bánh của bạn đang trống</div>
+            <p class="text-xs text-espresso/50">Hãy chọn một mẫu bánh từ bộ sưu tập hoặc tự thiết kế chữ viết trên bánh.</p>
+          </div>
+        `;
+        subtotalEl.textContent = '0đ';
+        return;
+      }
+
+      let total = 0;
+      container.innerHTML = cartItems.map((item, idx) => {
+        total += item.price;
+        return `
+          <div class="p-3.5 rounded-2xl bg-oat/70 border border-editorial flex gap-3.5 items-start relative">
+            <img src="${item.image}" alt="${item.title}" class="w-16 h-16 rounded-xl object-cover shrink-0 border border-espresso/10" />
+            <div class="flex-1 min-w-0">
+              <div class="font-serif font-bold text-base text-espresso leading-snug pr-6">${item.title}</div>
+              <div class="text-[11px] text-espresso/70 mt-0.5">${item.size}</div>
+              ${item.inscription ? `
+                <div class="mt-1.5 px-2.5 py-1 rounded-lg bg-espresso text-goldLight text-xs font-serif italic">
+                  Chữ trên bánh: "${item.inscription}"
+                </div>
+              ` : ''}
+              <div class="text-[11px] font-mono text-espresso/60 mt-1">${item.delivery}</div>
+              <div class="font-mono text-xs font-bold text-raspberry mt-1">${formatVND(item.price)}</div>
+            </div>
+            <button onclick="removeCartItem(${idx})"
+                    class="text-xs text-espresso/40 hover:text-raspberry p-1" title="Xóa">
+              ✕
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.textContent = formatVND(total);
+    }
+
+    function addBespokeCakeToCart() {
+      const dateVal = document.getElementById('delivery-date').value || 'Hôm nay';
+      const slotVal = document.getElementById('delivery-slot').value;
+      const candleNote = studioState.candles ? ' + Nến xoắn Gold' : '';
+
+      cartItems.push({
+        id: 'bespoke-' + Date.now(),
+        title: `Bánh Thiết Kế: ${studioState.flavor}`,
+        size: `${studioState.size}${candleNote}`,
+        inscription: studioState.inscription,
+        delivery: `${dateVal} • ${slotVal}`,
+        price: studioState.price,
+        image: studioState.image
+      });
+
+      renderCart();
+      toggleCartDrawer(true);
+      showToast('Đã lưu mẫu bánh & chữ viết tay vào giỏ!');
+    }
+
+    function quickAddCatalogItem(itemId) {
+      const item = patisserieCatalog.find(p => p.id === itemId);
+      if (!item) return;
+
+      cartItems.push({
+        id: item.id + '-' + Date.now(),
+        title: item.name,
+        size: item.size,
+        inscription: document.getElementById('inscription-input').value || 'Happy Birthday',
+        delivery: 'Giao theo khung giờ chọn',
+        price: item.price,
+        image: item.image
+      });
+
+      renderCart();
+      toggleCartDrawer(true);
+      showToast(`Đã thêm "${item.name}" vào giỏ bánh!`);
+    }
+
+    function removeCartItem(index) {
+      cartItems.splice(index, 1);
+      renderCart();
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cart-drawer');
+      const backdrop = document.getElementById('cart-drawer-backdrop');
+      if (open) {
+        backdrop.classList.remove('hidden');
+        setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+        drawer.classList.remove('translate-x-full');
+      } else {
+        backdrop.classList.add('opacity-0');
+        drawer.classList.add('translate-x-full');
+        setTimeout(() => backdrop.classList.add('hidden'), 300);
+      }
+    }
+
+    function submitOrderViaZalo() {
+      if (cartItems.length === 0) {
+        showToast('Giỏ bánh đang trống, vui lòng chọn bánh trước!');
+        return;
+      }
+
+      const custName = document.getElementById('cust-name').value.trim() || 'Khách đặt qua Website';
+      const custPhone = document.getElementById('cust-phone').value.trim() || 'Chưa nhập SĐT';
+      const custAddr = document.getElementById('cust-addr').value.trim() || 'Nhận tại tiệm / Trao đổi qua Zalo';
+
+      let total = 0;
+      const lines = cartItems.map((item, i) => {
+        total += item.price;
+        return `${i + 1}. ${item.title} (${item.size})\n   - Chữ viết trên bánh: "${item.inscription}"\n   - Giao lúc: ${item.delivery}\n   - Giá: ${formatVND(item.price)}`;
+      });
+
+      const orderSummary = [
+        `🎂 ĐƠN ĐẶT BÁNH MỚI — ${shopConfig.name.toUpperCase()}`,
+        `────────────────────`,
+        ...lines,
+        `────────────────────`,
+        `💰 TỔNG CỘNG: ${formatVND(total)}`,
+        `👤 Khách hàng: ${custName} (${custPhone})`,
+        `📍 Địa chỉ nhận: ${custAddr}`
+      ].join('\n');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(orderSummary).catch(() => {});
+      }
+
+      showToast('Đã sao chép chi tiết đơn bánh! Đang mở Zalo tiệm...');
+      const cleanZalo = shopConfig.phone.replace(/\D/g, '');
+      setTimeout(() => {
+        window.open(`https://zalo.me/${cleanZalo}`, '_blank');
+      }, 650);
+    }
+
+    // =========================================================================
+    // 5. OWNER MODAL & TOAST HELPERS
+    // =========================================================================
+    function toggleOwnerModal(open) {
+      const modal = document.getElementById('owner-modal-backdrop');
+      if (open) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      document.getElementById('toast-text').textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3200);
+    }
+
+    // Initialize on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+      applyShopConfig();
+      initDeliveryDate();
+      renderLookbook('all');
+      renderCart();
+    });
+  </script>
+</body>
+</html>

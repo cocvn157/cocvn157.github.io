@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">An Nhiên Sanctuary — Holistic Spa &amp; Head Spa</title>
+  <meta name="description" content="Không gian trị liệu dưỡng sinh, Gội đầu thảo dược Hoàng Cung, Massage cổ vai gáy đá nóng &amp; Chăm sóc da chuẩn Y khoa. Đặt lịch trực tuyến ưu đãi 15%." />
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            travertine: '#F4F1EA',
+            travertineDark: '#EAE5D9',
+            sage: '#E6EAE4',
+            sageDeep: '#C8D2C5',
+            forest: '#16261F',
+            forestLight: '#243B31',
+            terracotta: '#A46A46',
+            terracottaDark: '#8A5434',
+            terracottaLight: '#C58F6B',
+            charcoal: '#1E201D',
+            muted: '#5A6058'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'sanctuary': '0 24px 60px -15px rgba(22, 38, 31, 0.08)',
+            'card': '0 12px 32px -8px rgba(22, 38, 31, 0.06)',
+            'floating': '0 20px 50px rgba(22, 38, 31, 0.22)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-travertine: #F4F1EA;
+      --bg-sage: #E6EAE4;
+      --text-forest: #16261F;
+      --accent-terracotta: #A46A46;
+      --text-charcoal: #1E201D;
+    }
+
+    body {
+      background-color: var(--bg-travertine);
+      color: var(--text-charcoal);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #16261F;
+      selection-color: #F4F1EA;
+    }
+
+    ::selection {
+      background: #16261F;
+      color: #F4F1EA;
+    }
+
+    /* Subtle tactile paper & stone grain overlay */
+    .grain-overlay {
+      background-image: radial-gradient(rgba(22, 38, 31, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Custom Thin Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4F1EA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #A46A46;
+      border-radius: 3px;
+    }
+
+    /* Editorial hairline borders */
+    .border-hairline {
+      border-color: rgba(22, 38, 31, 0.12);
+    }
+
+    /* Smooth image hover zoom */
+    .img-zoom-wrap {
+      overflow: hidden;
+    }
+    .img-zoom-wrap img {
+      transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-zoom-wrap:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Ritual step animation */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-slide {
+      animation: fadeSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Subtle pulse for live availability dot */
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.55; }
+    }
+    .pulse-dot {
+      animation: softPulse 2.4s infinite ease-in-out;
+    }
+
+    /* Custom apothecary receipt edge */
+    .receipt-notches {
+      background-image: radial-gradient(circle at 10px 0, #F4F1EA 6px, transparent 7px);
+      background-size: 20px 14px;
+      background-repeat: repeat-x;
+    }
+  </style>
+</head>
+<body class="grain-overlay antialiased selection:bg-forest selection:text-travertine">
+
+  <!-- TOP EDITORIAL ANNOUNCEMENT BAR -->
+  <div class="bg-forest text-travertine border-b border-white/10 text-xs py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-terracottaLight pulse-dot"></span>
+        <span class="font-mono uppercase tracking-widest text-[11px] text-sage">SANCTUARY PRIVILEGE</span>
+        <span class="hidden sm:inline text-white/30">|</span>
+        <span class="text-travertine/90" data-brand-addr>Không gian yên tĩnh riêng tư • Đặt lịch trước giảm 15%</span>
+      </div>
+      <div class="flex items-center gap-4 font-mono text-[11px]">
+        <span class="hidden md:inline text-sage/80">MỞ CỬA: 09:00 – 21:30 MỖI NGÀY</span>
+        <a href="#booking-concierge" class="text-terracottaLight hover:text-white underline underline-offset-4 transition">Giữ phòng VIP ngay →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION HEADER (AESOP / AMAN ARCHITECTURAL STYLE) -->
+  <header class="sticky top-0 z-40 bg-travertine/90 backdrop-blur-md border-b border-hairline transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Brand Identity -->
+      <a href="#" class="group flex flex-col">
+        <div class="flex items-center gap-2.5">
+          <span class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-forest group-hover:text-terracotta transition-colors" data-brand-short>
+            An Nhiên Sanctuary
+          </span>
+          <span class="hidden sm:inline-block text-[10px] font-mono uppercase tracking-[0.2em] px-2 py-0.5 rounded-full bg-sage text-forest border border-forest/15">
+            EST. HOLISTIC
+          </span>
+        </div>
+        <span class="text-[11px] tracking-[0.14em] uppercase text-muted font-medium" data-brand-subtitle>
+          Holistic Spa, Head Spa &amp; Botanical Therapy
+        </span>
+      </a>
+
+      <!-- Center Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-charcoal/85">
+        <a href="#ritual-menu" class="hover:text-terracotta transition-colors py-1">Thực Đơn Liệu Trình</a>
+        <a href="#apothecary-bar" class="hover:text-terracotta transition-colors py-1">Bản Đồ Thảo Dược &amp; Trà</a>
+        <a href="#sensory-gallery" class="hover:text-terracotta transition-colors py-1">Không Gian Tĩnh Lặng</a>
+        <a href="#client-stories" class="hover:text-terracotta transition-colors py-1">Cảm Nhận Khách Hàng</a>
+        <a href="#booking-concierge" class="hover:text-terracotta transition-colors py-1">Đặt Lịch Phòng VIP</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-3">
+        <a href="tel:0909888999" data-brand-phone-link class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full border border-forest/20 text-xs font-mono text-forest hover:bg-sage/60 transition">
+          <svg class="w-3.5 h-3.5 text-terracotta" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+          </svg>
+          <span data-brand-phone>0909 888 999</span>
+        </a>
+
+        <a href="#booking-concierge" class="inline-flex items-center gap-2 bg-forest hover:bg-forestLight text-travertine text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full shadow-sm transition-all">
+          <span>Đặt Lịch Giảm 15%</span>
+          <svg class="w-4 h-4 text-terracottaLight" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION: ARCHITECTURAL SERENITY (AMAN / AESOP INSPIRED) -->
+  <section class="relative pt-8 pb-16 lg:py-20 border-b border-hairline overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Column: Editorial Narrative -->
+        <div class="lg:col-span-7 space-y-7">
+          <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-sage border border-forest/10 text-forest text-xs">
+            <span class="font-mono uppercase tracking-widest text-[10px] font-semibold text-terracotta">BOTANICAL APOTHECARY &amp; SANCTUARY</span>
+            <span class="w-1 h-1 rounded-full bg-forest/40"></span>
+            <span class="text-forest/80">100% Thảo Mộc Tự Nhiên</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-[64px] leading-[1.06] text-forest font-normal tracking-tight">
+            Nơi cơ thể được <span class="italic font-normal text-terracotta">lắng nghe</span>, tâm trí trở về tĩnh lặng.
+          </h1>
+
+          <p class="text-base sm:text-lg text-charcoal/80 leading-relaxed max-w-2xl font-light">
+            Chào mừng quý khách đến với <strong class="font-medium text-forest" data-brand-name>An Nhiên Sanctuary — Holistic Spa &amp; Head Spa</strong>. Kết hợp nghệ thuật ấn huyệt cổ truyền Phương Đông, nước gội bồ kết nấu thủ công 8 giờ và liệu pháp tinh dầu thực vật nguyên bản trong không gian phòng riêng cách âm tuyệt đối.
+          </p>
+
+          <!-- Key Sanctuary Pillars -->
+          <div class="grid grid-cols-3 gap-4 pt-2 border-y border-hairline py-5">
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl text-forest font-semibold">18 Vị</p>
+              <p class="text-xs text-muted mt-0.5">Thảo mộc nấu tươi mỗi sáng</p>
+            </div>
+            <div class="border-x border-hairline px-4">
+              <p class="font-serif text-2xl sm:text-3xl text-forest font-semibold">100%</p>
+              <p class="text-xs text-muted mt-0.5">Phòng rèm riêng &amp; Không chèo kéo</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl text-terracotta font-semibold">-15%</p>
+              <p class="text-xs text-muted mt-0.5">Ưu đãi khi giữ giờ trước qua Web</p>
+            </div>
+          </div>
+
+          <!-- CTA Group -->
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-1">
+            <a href="#ritual-menu" class="inline-flex items-center justify-center gap-3 bg-forest hover:bg-forestLight text-travertine px-7 py-4 rounded-full text-sm font-medium transition shadow-sanctuary">
+              <span>Khám Phá Bảng Giá &amp; Liệu Trình</span>
+              <svg class="w-4 h-4 text-terracottaLight" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              </svg>
+            </a>
+            <a href="#booking-concierge" class="inline-flex items-center justify-center gap-2.5 bg-travertineDark/80 hover:bg-sage text-forest border border-forest/20 px-6 py-4 rounded-full text-sm font-medium transition">
+              <svg class="w-4 h-4 text-terracotta" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+              <span>Chọn Khung Giờ &amp; Phòng Đôi</span>
+            </a>
+          </div>
+
+          <!-- Location & Trust Note -->
+          <div class="flex items-start gap-2.5 text-xs text-muted pt-1">
+            <svg class="w-4 h-4 text-terracotta shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <div>
+              <span class="font-medium text-charcoal">Địa chỉ &amp; Đặc quyền:</span>
+              <span data-brand-addr>Không gian yên tĩnh riêng tư • Đặt lịch trước giảm 15%</span>
+              <span class="inline-block ml-2 font-mono text-[11px] text-terracotta underline cursor-pointer" onclick="document.getElementById('booking-concierge').scrollIntoView({behavior:'smooth'})">[Tặng kèm Trà Dưỡng Nhan &amp; Ngâm Chân Thảo Dược]</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Architectural Visual Composition -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-sanctuary border border-forest/10 img-zoom-wrap aspect-[4/5] bg-sage">
+            <img
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+              alt="Không gian trị liệu thảo mộc tĩnh lặng tại An Nhiên Sanctuary"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/15 to-transparent"></div>
+
+            <!-- Top Floating Badge -->
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+              <span class="bg-travertine/95 backdrop-blur-md text-forest font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-forest/10">
+                NO TIP POLICY • KHÔNG MỜI CHÀO GÓI
+              </span>
+              <span class="bg-forest/90 backdrop-blur-md text-travertine font-mono text-[11px] px-3 py-1.5 rounded-full">
+                4.9 ★ (680+ Đánh giá)
+              </span>
+            </div>
+
+            <!-- Bottom Floating Ritual Spotlight Card -->
+            <div class="absolute bottom-4 left-4 right-4 bg-travertine/95 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-forest/15 shadow-lg">
+              <div class="flex items-center justify-between gap-3 mb-2">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-terracotta font-semibold">
+                  LIỆU TRÌNH ĐƯỢC YÊU THÍCH NHẤT
+                </span>
+                <span class="text-xs font-mono bg-sage text-forest px-2.5 py-0.5 rounded-full font-medium">
+                  90 Phút • 459.000đ
+                </span>
+              </div>
+              <p class="font-serif text-xl text-forest font-semibold leading-snug">
+                Gội Đầu Dưỡng Sinh Hoàng Cung &amp; Trị Liệu Cổ Vai Gáy Đá Nóng
+              </p>
+              <div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between text-xs text-muted">
+                <span>Bao gồm 14 bước • Ngâm chân thảo mộc • Chườm mắt ngải cứu</span>
+                <button onclick="quickSelectFromHero()" class="text-terracotta font-semibold hover:underline shrink-0 ml-2">
+                  Chọn ngay →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE RITUAL & TREATMENT MENU WITH DURATION SWITCHER -->
+  <section id="ritual-menu" class="py-16 lg:py-24 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header + Global Duration Switcher -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-hairline">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-terracotta mb-3">
+            <span>01 / CURATED THERAPIES</span>
+            <span>—</span>
+            <span>THỰC ĐƠN DƯỠNG SINH &amp; TRỊ LIỆU</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl text-forest font-normal leading-tight">
+            Liệu trình thiết kế theo <span class="italic text-terracotta">thời lượng &amp; nhịp sinh học</span> của bạn.
+          </h2>
+          <p class="text-sm sm:text-base text-muted mt-3">
+            Chuyển đổi giữa <strong>60 Phút</strong>, <strong>90 Phút (Phổ biến)</strong> và <strong>120 Phút (Chuyên sâu)</strong> để xem chi tiết từng bước trị liệu và mức giá niêm yết minh bạch.
+          </p>
+        </div>
+
+        <!-- Global Duration Switcher Control -->
+        <div class="bg-sage/80 p-2 rounded-2xl border border-forest/15 self-start lg:self-end">
+          <div class="text-[11px] font-mono uppercase tracking-wider text-forest/70 px-2 pb-1.5 flex items-center justify-between">
+            <span>Chọn Thời Lượng Đồng Bộ:</span>
+            <span class="text-terracotta font-semibold">Tự động cập nhật bước làm</span>
+          </div>
+          <div class="grid grid-cols-3 gap-1.5" role="group" aria-label="Chọn thời lượng liệu trình">
+            <button
+              type="button"
+              onclick="setGlobalDuration(60)"
+              id="global-dur-60"
+              class="global-dur-btn px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all text-forest/80 hover:bg-travertine/60"
+            >
+              <span class="block font-mono font-semibold">60 Phút</span>
+              <span class="text-[10px] opacity-75">Cơ bản</span>
+            </button>
+            <button
+              type="button"
+              onclick="setGlobalDuration(90)"
+              id="global-dur-90"
+              class="global-dur-btn px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all bg-forest text-travertine shadow-sm"
+            >
+              <span class="block font-mono font-semibold">90 Phút ★</span>
+              <span class="text-[10px] text-terracottaLight">Phổ biến nhất</span>
+            </button>
+            <button
+              type="button"
+              onclick="setGlobalDuration(120)"
+              id="global-dur-120"
+              class="global-dur-btn px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all text-forest/80 hover:bg-travertine/60"
+            >
+              <span class="block font-mono font-semibold">120 Phút</span>
+              <span class="text-[10px] opacity-75">Chuyên sâu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto py-6 no-scrollbar" id="category-tabs">
+        <button
+          type="button"
+          onclick="filterCategory('all')"
+          data-cat="all"
+          class="cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-forest text-travertine shadow-sm"
+        >
+          Tất Cả Liệu Trình (8)
+        </button>
+        <button
+          type="button"
+          onclick="filterCategory('headspa')"
+          data-cat="headspa"
+          class="cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-travertineDark/70 text-charcoal hover:bg-sage border border-forest/10"
+        >
+          Gội Đầu Dưỡng Sinh Hoàng Cung
+        </button>
+        <button
+          type="button"
+          onclick="filterCategory('massage')"
+          data-cat="massage"
+          class="cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-travertineDark/70 text-charcoal hover:bg-sage border border-forest/10"
+        >
+          Trị Liệu Cổ Vai Gáy &amp; Đá Nóng
+        </button>
+        <button
+          type="button"
+          onclick="filterCategory('facial')"
+          data-cat="facial"
+          class="cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-travertineDark/70 text-charcoal hover:bg-sage border border-forest/10"
+        >
+          Chăm Sóc Da Chuẩn Y Khoa (Facial)
+        </button>
+        <button
+          type="button"
+          onclick="filterCategory('couple')"
+          data-cat="couple"
+          class="cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-travertineDark/70 text-charcoal hover:bg-sage border border-forest/10"
+        >
+          Ngâm Bồn Thảo Dược &amp; Couple Spa
+        </button>
+      </div>
+
+      <!-- Dynamic Ritual Cards Grid -->
+      <div id="rituals-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
+        <!-- Populated dynamically via JS for instant duration switching -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOTANICAL SCENT & TEA APOTHECARY BAR (AESOP / L'APOTHIQUAIRE TOUCH) -->
+  <section id="apothecary-bar" class="py-16 lg:py-20 bg-sage/60 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div>
+          <div class="text-xs font-mono uppercase tracking-[0.2em] text-terracotta mb-2">
+            02 / COMPLIMENTARY SENSORY RITUAL
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl text-forest font-normal">
+            Chọn mùi hương tinh dầu &amp; trà thảo mộc <span class="italic text-terracotta">dành riêng cho bạn</span>
+          </h2>
+          <p class="text-sm text-muted mt-2 max-w-2xl">
+            Trước mỗi buổi trị liệu, kỹ thuật viên sẽ xông phòng bằng tinh dầu nguyên chất và chuẩn bị ấm trà nóng theo đúng thể trạng bạn chọn dưới đây (Hoàn toàn miễn phí).
+          </p>
+        </div>
+        <div class="text-xs font-mono bg-travertine px-4 py-2.5 rounded-xl border border-forest/15 text-forest">
+          Đang chọn: <strong id="selected-scent-label" class="text-terracotta">Trầm Hương &amp; Trà Hoa Cúc Mật Ong</strong>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="scent-cards-container">
+        <!-- Scent 1 -->
+        <button
+          type="button"
+          onclick="selectScent('Trầm Hương & Trà Hoa Cúc Mật Ong', this)"
+          class="scent-card text-left p-5 rounded-2xl bg-travertine border-2 border-forest shadow-card transition-all group relative"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-terracotta">ELIXIR N°01 • AN THẦN</span>
+            <span class="scent-badge text-[10px] font-mono bg-forest text-travertine px-2 py-0.5 rounded-full">Đã chọn</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-forest group-hover:text-terracotta transition">
+            Trầm Hương &amp; Trà Hoa Cúc Mật Ong
+          </h3>
+          <p class="text-xs text-muted mt-2 leading-relaxed">
+            Hương gỗ trầm ấm áp giúp làm dịu hệ thần kinh, hỗ trợ người khó ngủ, căng thẳng đầu óc kéo dài.
+          </p>
+          <div class="mt-4 pt-3 border-t border-hairline flex items-center justify-between text-[11px] font-mono text-forest/70">
+            <span>Nốt hương: Gỗ Trầm, Tuyết Tùng</span>
+            <span>Ấm Nóng</span>
+          </div>
+        </button>
+
+        <!-- Scent 2 -->
+        <button
+          type="button"
+          onclick="selectScent('Sả Chanh Tươi & Trà Gừng Đường Thốt Nốt', this)"
+          class="scent-card text-left p-5 rounded-2xl bg-travertine/80 hover:bg-travertine border border-forest/15 transition-all group relative"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-terracotta">ELIXIR N°02 • GIẢI CẢM</span>
+            <span class="scent-badge text-[10px] font-mono bg-sage text-forest px-2 py-0.5 rounded-full">Chọn hương</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-forest group-hover:text-terracotta transition">
+            Sả Chanh Tươi &amp; Trà Gừng Đường Thốt Nốt
+          </h3>
+          <p class="text-xs text-muted mt-2 leading-relaxed">
+            Làm ấm cơ thể tức thì, giải phóng hàn khí vùng cổ vai gáy và kích thích tuần hoàn máu dưới da.
+          </p>
+          <div class="mt-4 pt-3 border-t border-hairline flex items-center justify-between text-[11px] font-mono text-forest/70">
+            <span>Nốt hương: Sả Tươi, Vỏ Chanh, Gừng</span>
+            <span>Thanh Khiết</span>
+          </div>
+        </button>
+
+        <!-- Scent 3 -->
+        <button
+          type="button"
+          onclick="selectScent('Vỏ Bưởi Non, Bồ Kết & Trà Kỷ Tử Táo Đỏ', this)"
+          class="scent-card text-left p-5 rounded-2xl bg-travertine/80 hover:bg-travertine border border-forest/15 transition-all group relative"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-terracotta">ELIXIR N°03 • DƯỠNG TÓC</span>
+            <span class="scent-badge text-[10px] font-mono bg-sage text-forest px-2 py-0.5 rounded-full">Chọn hương</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-forest group-hover:text-terracotta transition">
+            Vỏ Bưởi Non, Bồ Kết &amp; Trà Kỷ Tử Táo Đỏ
+          </h3>
+          <p class="text-xs text-muted mt-2 leading-relaxed">
+            Hương thơm ký ức truyền thống, kích thích nang tóc mọc khỏe và bổ khí huyết, hồng hào sắc diện.
+          </p>
+          <div class="mt-4 pt-3 border-t border-hairline flex items-center justify-between text-[11px] font-mono text-forest/70">
+            <span>Nốt hương: Hoa Bưởi, Bồ Kết Nướng</span>
+            <span>Ngọt Dịu</span>
+          </div>
+        </button>
+
+        <!-- Scent 4 -->
+        <button
+          type="button"
+          onclick="selectScent('Oải Hương Pháp & Trà Hoa Đậu Biếc Bạc Hà', this)"
+          class="scent-card text-left p-5 rounded-2xl bg-travertine/80 hover:bg-travertine border border-forest/15 transition-all group relative"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-terracotta">ELIXIR N°04 • TÁI TẠO</span>
+            <span class="scent-badge text-[10px] font-mono bg-sage text-forest px-2 py-0.5 rounded-full">Chọn hương</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-forest group-hover:text-terracotta transition">
+            Oải Hương Pháp &amp; Trà Đậu Biếc Bạc Hà
+          </h3>
+          <p class="text-xs text-muted mt-2 leading-relaxed">
+            Lý tưởng cho các liệu trình chăm sóc da mặt chuẩn Y khoa và thư giãn sâu sau ngày làm việc dài.
+          </p>
+          <div class="mt-4 pt-3 border-t border-hairline flex items-center justify-between text-[11px] font-mono text-forest/70">
+            <span>Nốt hương: Lavender, Bạc Hà</span>
+            <span>Dịu Mát</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE VIP TIME-SLOT & ROOM BOOKING CONCIERGE -->
+  <section id="booking-concierge" class="py-16 lg:py-24 border-b border-hairline relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-terracotta mb-3">
+          <span>03 / PRIVATE SANCTUARY RESERVATION</span>
+          <span>—</span>
+          <span>ĐẶT PHÒNG &amp; GIỮ KHUNG GIỜ</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-5xl text-forest font-normal leading-tight">
+          Thiết lập buổi trị liệu <span class="italic text-terracotta">cá nhân hóa</span> &amp; nhận ngay ưu đãi 15%.
+        </h2>
+        <p class="text-sm sm:text-base text-muted mt-3">
+          Để đảm bảo sự tĩnh lặng tuyệt đối và chuẩn bị sẵn nước thảo dược nóng, chúng tôi giới hạn số lượng khách mỗi khung giờ. Đặt trước bên dưới để giữ phòng riêng &amp; giảm trực tiếp 15% tổng hóa đơn.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        
+        <!-- Left 7 Cols: Interactive Concierge Form -->
+        <div class="lg:col-span-7 bg-travertine rounded-3xl border border-forest/15 p-6 sm:p-8 shadow-card space-y-8">
+          
+          <!-- Step 1: Select Ritual & Duration -->
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <label for="booking-ritual-select" class="text-xs font-mono uppercase tracking-wider text-forest font-semibold">
+                Bước 1 • Liệu Trình &amp; Thời Lượng Đang Chọn
+              </label>
+              <a href="#ritual-menu" class="text-xs text-terracotta hover:underline font-medium">Xem lại chi tiết các bước ↑</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="sm:col-span-2">
+                <select
+                  id="booking-ritual-select"
+                  onchange="onBookingSelectChange()"
+                  class="w-full bg-travertineDark/60 border border-forest/20 rounded-xl px-4 py-3.5 text-sm font-medium text-forest focus:outline-none focus:border-terracotta"
+                >
+                  <!-- Populated via JS -->
+                </select>
+              </div>
+              <div>
+                <select
+                  id="booking-duration-select"
+                  onchange="onBookingDurationChange()"
+                  class="w-full bg-travertineDark/60 border border-forest/20 rounded-xl px-4 py-3.5 text-sm font-mono font-semibold text-forest focus:outline-none focus:border-terracotta"
+                >
+                  <option value="60">60 Phút (Cơ bản)</option>
+                  <option value="90" selected>90 Phút (Phổ biến ★)</option>
+                  <option value="120">120 Phút (Chuyên sâu)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Pick Date & Time Slot -->
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 pt-2 border-t border-hairline">
+            <div class="sm:col-span-5">
+              <label for="booking-date" class="block text-xs font-mono uppercase tracking-wider text-forest font-semibold mb-2.5">
+                Bước 2 • Ngày Đến Spa
+              </label>
+              <input
+                type="date"
+                id="booking-date"
+                onchange="updateBookingSummary()"
+                class="w-full bg-travertineDark/60 border border-forest/20 rounded-xl px-4 py-3 text-sm font-mono text-forest focus:outline-none focus:border-terracotta"
+              />
+              <div class="flex gap-1.5 mt-2">
+                <button type="button" onclick="setQuickDate(0)" class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-sage hover:bg-sageDeep text-forest transition">Hôm nay</button>
+                <button type="button" onclick="setQuickDate(1)" class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-sage hover:bg-sageDeep text-forest transition">Ngày mai</button>
+                <button type="button" onclick="setQuickDate(2)" class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-sage hover:bg-sageDeep text-forest transition">Ngày kia</button>
+              </div>
+            </div>
+
+            <div class="sm:col-span-7">
+              <div class="flex items-center justify-between mb-2.5">
+                <label class="text-xs font-mono uppercase tracking-wider text-forest font-semibold">
+                  Khung Giờ Trống
+                </label>
+                <span class="text-[11px] text-terracotta font-mono">Giữ phòng miễn phí 30 phút</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2" id="timeslot-grid">
+                <button type="button" onclick="selectTimeSlot('09:30', this)" class="timeslot-btn py-2.5 px-2 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage text-center transition">
+                  <span class="block font-mono text-xs font-semibold text-forest">09:30</span>
+                  <span class="block text-[10px] text-muted">Còn 3 phòng</span>
+                </button>
+                <button type="button" onclick="selectTimeSlot('11:00', this)" class="timeslot-btn py-2.5 px-2 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage text-center transition">
+                  <span class="block font-mono text-xs font-semibold text-forest">11:00</span>
+                  <span class="block text-[10px] text-muted">Còn 2 phòng</span>
+                </button>
+                <button type="button" onclick="selectTimeSlot('14:00', this)" class="timeslot-btn py-2.5 px-2 rounded-xl border-2 border-forest bg-forest text-travertine text-center transition shadow-sm">
+                  <span class="block font-mono text-xs font-semibold">14:00</span>
+                  <span class="block text-[10px] text-terracottaLight">Đang chọn</span>
+                </button>
+                <button type="button" onclick="selectTimeSlot('16:30', this)" class="timeslot-btn py-2.5 px-2 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage text-center transition">
+                  <span class="block font-mono text-xs font-semibold text-forest">16:30</span>
+                  <span class="block text-[10px] text-terracotta">Còn 1 phòng</span>
+                </button>
+                <button type="button" onclick="selectTimeSlot('18:30', this)" class="timeslot-btn py-2.5 px-2 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage text-center transition">
+                  <span class="block font-mono text-xs font-semibold text-forest">18:30</span>
+                  <span class="block text-[10px] text-terracotta">Giờ cao điểm</span>
+                </button>
+                <button type="button" onclick="selectTimeSlot('20:00', this)" class="timeslot-btn py-2.5 px-2 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage text-center transition">
+                  <span class="block font-mono text-xs font-semibold text-forest">20:00</span>
+                  <span class="block text-[10px] text-muted">Thư giãn tối</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Number of Guests & Room Type -->
+          <div class="pt-2 border-t border-hairline">
+            <label class="block text-xs font-mono uppercase tracking-wider text-forest font-semibold mb-3">
+              Bước 3 • Số Lượng Khách &amp; Loại Phòng Riêng
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="guest-options">
+              <button
+                type="button"
+                onclick="selectGuests(1, this)"
+                class="guest-btn text-left p-4 rounded-2xl border-2 border-forest bg-sage/60 transition flex items-start justify-between"
+              >
+                <div>
+                  <span class="font-serif text-lg font-semibold text-forest block">1 Khách • Phòng Đơn Tĩnh Lặng</span>
+                  <span class="text-xs text-muted mt-0.5 block">Rèm lụa riêng tư, yên tĩnh tuyệt đối</span>
+                </div>
+                <span class="font-mono text-[11px] bg-forest text-travertine px-2.5 py-1 rounded-full">-15% Online</span>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectGuests(2, this)"
+                class="guest-btn text-left p-4 rounded-2xl border border-forest/15 bg-travertineDark/40 hover:bg-sage/40 transition flex items-start justify-between"
+              >
+                <div>
+                  <span class="font-serif text-lg font-semibold text-forest block">2 Khách • Phòng Đôi Riêng Tư</span>
+                  <span class="text-xs text-terracotta font-medium mt-0.5 block">Giảm thêm 10% Couple • Phòng VIP 2 giường</span>
+                </div>
+                <span class="font-mono text-[11px] bg-terracotta text-white px-2.5 py-1 rounded-full shrink-0">-25% Tổng</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Therapist Pressure Preference & Atmosphere -->
+          <div class="pt-2 border-t border-hairline">
+            <label class="block text-xs font-mono uppercase tracking-wider text-forest font-semibold mb-3">
+              Bước 4 • Lực Ấn Huyệt Của Kỹ Thuật Viên (Therapist Pressure)
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="pressure-options">
+              <button
+                type="button"
+                onclick="selectPressure('Nhẹ nhàng thư giãn (Dễ ngủ)', this)"
+                class="pressure-btn p-3.5 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage/40 text-left transition"
+              >
+                <span class="block text-xs font-semibold text-forest">Nhẹ nhàng thư giãn</span>
+                <span class="block text-[11px] text-muted mt-0.5">Chuyên sâu ru ngủ, giảm stress</span>
+              </button>
+              <button
+                type="button"
+                onclick="selectPressure('Ấn huyệt vừa (Cân bằng khí huyết)', this)"
+                class="pressure-btn p-3.5 rounded-xl border-2 border-forest bg-sage/60 text-left transition"
+              >
+                <span class="block text-xs font-semibold text-forest">Ấn huyệt vừa ★</span>
+                <span class="block text-[11px] text-muted mt-0.5">Đả thông kinh lạc êm ái</span>
+              </button>
+              <button
+                type="button"
+                onclick="selectPressure('Ấn huyệt sâu trị liệu (Mỏi cổ vai gáy)', this)"
+                class="pressure-btn p-3.5 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage/40 text-left transition"
+              >
+                <span class="block text-xs font-semibold text-forest">Ấn huyệt sâu trị liệu</span>
+                <span class="block text-[11px] text-muted mt-0.5">Tập trung giải cơ bó cứng</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 5: Guest Name, Phone & Special Focus -->
+          <div class="pt-2 border-t border-hairline grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="client-name" class="block text-xs font-mono uppercase tracking-wider text-forest font-semibold mb-1.5">
+                Tên Quý Khách
+              </label>
+              <input
+                type="text"
+                id="client-name"
+                oninput="updateBookingSummary()"
+                placeholder="VD: Chị Minh Anh"
+                class="w-full bg-travertineDark/50 border border-forest/20 rounded-xl px-4 py-3 text-sm text-forest placeholder:text-muted/60 focus:outline-none focus:border-terracotta"
+              />
+            </div>
+            <div>
+              <label for="client-phone" class="block text-xs font-mono uppercase tracking-wider text-forest font-semibold mb-1.5">
+                Số Điện Thoại / Zalo Nhận Lịch
+              </label>
+              <input
+                type="tel"
+                id="client-phone"
+                oninput="updateBookingSummary()"
+                placeholder="VD: 0909 xxx xxx"
+                class="w-full bg-travertineDark/50 border border-forest/20 rounded-xl px-4 py-3 text-sm font-mono text-forest placeholder:text-muted/60 focus:outline-none focus:border-terracotta"
+              />
+            </div>
+            <div class="sm:col-span-2">
+              <label for="client-note" class="block text-xs font-mono uppercase tracking-wider text-forest font-semibold mb-1.5">
+                Lưu Ý Riêng Cho Kỹ Thuật Viên (Tùy chọn)
+              </label>
+              <input
+                type="text"
+                id="client-note"
+                oninput="updateBookingSummary()"
+                placeholder="VD: Tập trung vùng cổ vai gáy bên phải, thích yên tĩnh không trò chuyện khi làm..."
+                class="w-full bg-travertineDark/50 border border-forest/20 rounded-xl px-4 py-3 text-sm text-forest placeholder:text-muted/60 focus:outline-none focus:border-terracotta"
+              />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 5 Cols: Live Apothecary Reservation Slip -->
+        <div class="lg:col-span-5 lg:sticky lg:top-28">
+          <div class="bg-forest text-travertine rounded-3xl overflow-hidden shadow-floating border border-forest">
+            
+            <!-- Header of Slip -->
+            <div class="p-6 sm:p-7 border-b border-white/10 bg-forestLight/60">
+              <div class="flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-terracottaLight mb-2">
+                <span>SANCTUARY RESERVATION SLIP</span>
+                <span id="summary-code">REF #AN-892</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-travertine font-normal" data-brand-short>
+                An Nhiên Sanctuary
+              </h3>
+              <p class="text-xs text-sage/75 mt-1" data-brand-addr>
+                Không gian yên tĩnh riêng tư • Đặt lịch trước giảm 15%
+              </p>
+            </div>
+
+            <!-- Live Summary Details -->
+            <div class="p-6 sm:p-7 space-y-4 text-sm">
+              
+              <div class="pb-4 border-b border-white/10">
+                <span class="text-[11px] font-mono uppercase tracking-wider text-sage/60 block">Liệu Trình Đã Chọn</span>
+                <div class="flex items-baseline justify-between gap-2 mt-1">
+                  <span id="sum-ritual-name" class="font-serif text-xl text-white font-semibold">
+                    Gội Đầu Dưỡng Sinh Hoàng Cung
+                  </span>
+                  <span id="sum-duration-badge" class="font-mono text-xs bg-terracotta text-white px-2.5 py-0.5 rounded-full shrink-0">
+                    90 Phút
+                  </span>
+                </div>
+                <p id="sum-ritual-steps-preview" class="text-xs text-sage/75 mt-1.5 leading-relaxed">
+                  Bao gồm 14 bước: Khai thiên môn, canh thảo dược bồ kết nấu tươi, đả thông cổ vai gáy &amp; chườm mắt ngải cứu.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 pb-4 border-b border-white/10 text-xs">
+                <div>
+                  <span class="font-mono uppercase text-[10px] text-sage/60 block">Ngày &amp; Khung Giờ</span>
+                  <span id="sum-datetime" class="font-mono text-sm text-white font-medium mt-0.5 block">14:00 • Hôm nay</span>
+                </div>
+                <div>
+                  <span class="font-mono uppercase text-[10px] text-sage/60 block">Số Khách &amp; Phòng</span>
+                  <span id="sum-guests" class="text-sm text-white font-medium mt-0.5 block">1 Khách (Phòng Đơn)</span>
+                </div>
+                <div>
+                  <span class="font-mono uppercase text-[10px] text-sage/60 block">Lực Ấn Huyệt</span>
+                  <span id="sum-pressure" class="text-white/90 mt-0.5 block">Ấn huyệt vừa (Cân bằng)</span>
+                </div>
+                <div>
+                  <span class="font-mono uppercase text-[10px] text-sage/60 block">Tinh Dầu &amp; Trà</span>
+                  <span id="sum-scent" class="text-terracottaLight mt-0.5 block">Trầm Hương &amp; Trà Hoa Cúc</span>
+                </div>
+              </div>
+
+              <!-- Price Breakdown with 15% Online + 10% Couple Discount -->
+              <div class="space-y-2 pt-1 font-mono text-xs">
+                <div class="flex justify-between text-sage/80">
+                  <span id="sum-orig-label">Giá niêm yết (1 khách × 90p):</span>
+                  <span id="sum-orig-price" class="line-through">540.000đ</span>
+                </div>
+                <div class="flex justify-between text-terracottaLight">
+                  <span>Ưu đãi Đặt lịch Online (-15%):</span>
+                  <span id="sum-discount-online">-81.000đ</span>
+                </div>
+                <div id="sum-couple-row" class="hidden justify-between text-emerald-300">
+                  <span>Ưu đãi Phòng Đôi Couple (-10% thêm):</span>
+                  <span id="sum-discount-couple">-108.000đ</span>
+                </div>
+                <div class="flex justify-between text-sage/75 text-[11px]">
+                  <span>Ngâm chân thảo dược &amp; Trà dưỡng nhan:</span>
+                  <span class="text-white">Tặng kèm (0đ)</span>
+                </div>
+
+                <div class="pt-3 border-t border-white/15 flex items-baseline justify-between">
+                  <div>
+                    <span class="text-xs uppercase tracking-wider text-sage block font-sans">Tổng Thanh Toán Tại Spa</span>
+                    <span class="text-[10px] text-sage/60 font-sans">Không cần cọc trước • Thanh toán sau khi hài lòng</span>
+                  </div>
+                  <span id="sum-final-price" class="text-2xl sm:text-3xl font-bold text-terracottaLight">
+                    459.000đ
+                  </span>
+                </div>
+              </div>
+
+              <!-- Primary Zalo Confirmation CTA -->
+              <div class="pt-3 space-y-2.5">
+                <button
+                  type="button"
+                  onclick="confirmBookingViaZalo()"
+                  class="w-full py-4 px-6 rounded-2xl bg-terracotta hover:bg-terracottaDark text-white font-semibold text-sm shadow-lg transition flex items-center justify-center gap-2.5 group"
+                >
+                  <span>Xác Nhận Giữ Chỗ Qua Zalo Spa</span>
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+
+                <p class="text-[11px] text-center text-sage/70">
+                  Lễ tân sẽ phản hồi xác nhận phòng trống trong vòng 3 phút qua Zalo/SĐT <strong data-brand-phone>0909 888 999</strong>.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SENSORY SPACE GALLERY (ARCHITECTURAL SANCTUARY) -->
+  <section id="sensory-gallery" class="py-16 lg:py-24 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="text-xs font-mono uppercase tracking-[0.2em] text-terracotta mb-2">
+            04 / ARCHITECTURAL SERENITY
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl text-forest font-normal">
+            Không gian đánh thức <span class="italic text-terracotta">năm giác quan</span>
+          </h2>
+        </div>
+        <p class="text-sm text-muted max-w-md">
+          Ánh sáng dịu nhẹ 2700K, âm thanh chuông xoay Tây Tạng tần số 432Hz, khăn bông hữu cơ sấy ấm và mùi thảo mộc nấu thủ công lan tỏa khắp hành lang.
+        </p>
+      </div>
+
+      <!-- Editorial Bento Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Large Feature 1 -->
+        <div class="md:col-span-7 relative rounded-2xl overflow-hidden img-zoom-wrap aspect-[16/11] bg-sage border border-forest/10 group">
+          <img
+            src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1000&q=85"
+            alt="Phòng Gội Đầu Dưỡng Sinh Hoàng Cung & Ngâm Thảo Mộc"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 text-travertine">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-terracottaLight">SANCTUARY SUITE 01</span>
+            <h3 class="font-serif text-2xl mt-0.5">Khu Gội Đầu Dưỡng Sinh Thủy Trị Liệu Vòm Tuần Hoàn</h3>
+            <p class="text-xs text-sage/85 mt-1">Giường đệm êm nâng đỡ cột sống cổ, vòm nước thảo dược ấm 38.5°C chảy tuần hoàn thư giãn sâu.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="md:col-span-5 relative rounded-2xl overflow-hidden img-zoom-wrap aspect-[4/3] md:aspect-auto bg-sage border border-forest/10 group">
+          <img
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85"
+            alt="Trị Liệu Cổ Vai Gáy & Đá Nóng Bazan"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 text-travertine">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-terracottaLight">SANCTUARY SUITE 02</span>
+            <h3 class="font-serif text-2xl mt-0.5">Phòng Đôi Couple &amp; Đá Nóng Núi Lửa</h3>
+            <p class="text-xs text-sage/85 mt-1">Không gian riêng tư dành cho các cặp đôi, bạn thân hoặc mẹ và con gái.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="md:col-span-4 relative rounded-2xl overflow-hidden img-zoom-wrap aspect-[4/3] bg-sage border border-forest/10">
+          <img
+            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"
+            alt="Bàn Pha Chế Thảo Dược & Tinh Dầu Nguyên Bản"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-travertine">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-terracottaLight">HERBAL APOTHECARY</span>
+            <h3 class="font-serif text-xl mt-0.5">Khu Nấu Cao Thảo Mộc Tươi Mỗi Ngày</h3>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="md:col-span-4 relative rounded-2xl overflow-hidden img-zoom-wrap aspect-[4/3] bg-sage border border-forest/10">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85"
+            alt="Chăm Sóc Da Mặt Chuẩn Y Khoa"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-travertine">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-terracottaLight">CLINICAL BOTANICAL FACIAL</span>
+            <h3 class="font-serif text-xl mt-0.5">Phòng Chăm Sóc Da Chuẩn Y Khoa</h3>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="md:col-span-4 relative rounded-2xl overflow-hidden img-zoom-wrap aspect-[4/3] bg-sage border border-forest/10">
+          <img
+            src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=900&q=85"
+            alt="Thưởng Trà Dưỡng Nhan Sau Trị Liệu"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-travertine">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-terracottaLight">TEA LOUNGE</span>
+            <h3 class="font-serif text-xl mt-0.5">Góc Thưởng Trà Dưỡng Nhan &amp; Chè Tuyết Yến</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFIED CLIENT STORIES & REVIEWS -->
+  <section id="client-stories" class="py-16 lg:py-24 bg-sage/40 border-b border-hairline">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="text-xs font-mono uppercase tracking-[0.2em] text-terracotta mb-2">
+            05 / GUEST REFLECTIONS
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl text-forest font-normal">
+            Trải nghiệm thực tế từ <span class="italic text-terracotta">khách hàng thân thiết</span>
+          </h2>
+        </div>
+        <div class="flex items-center gap-4 bg-travertine px-5 py-3 rounded-2xl border border-forest/10">
+          <div class="font-serif text-3xl font-bold text-forest">4.9/5</div>
+          <div class="text-xs text-muted">
+            <div class="text-terracotta font-mono">★★★★★</div>
+            <div>Từ hơn 680+ lượt khách đặt lịch</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <article class="bg-travertine p-7 rounded-2xl border border-forest/10 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-terracotta mb-4">
+              <span>★★★★★ • ĐÃ XÁC THỰC</span>
+              <span>90 PHÚT HOÀNG CUNG</span>
+            </div>
+            <p class="font-serif text-xl text-forest italic leading-relaxed">
+              “Mình làm văn phòng hay bị đau nửa đầu và mỏi cứng vai gáy. Bước vào spa ngửi mùi bồ kết sả chanh ấm áp là đã thấy nhẹ người. Bạn kỹ thuật viên ấn huyệt vùng cổ và thái dương cực kỳ chuẩn, không hề chèo kéo mua thẻ.”
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+            <div>
+              <strong class="text-forest block">Chị Thanh Trúc (32 tuổi)</strong>
+              <span class="text-muted">Giám đốc Sáng tạo • Khách hàng 2 năm</span>
+            </div>
+            <span class="font-mono text-[10px] bg-sage text-forest px-2.5 py-1 rounded-full">Phòng Đơn</span>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="bg-travertine p-7 rounded-2xl border border-forest/10 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-terracotta mb-4">
+              <span>★★★★★ • ĐÃ XÁC THỰC</span>
+              <span>120 PHÚT COUPLE SPA</span>
+            </div>
+            <p class="font-serif text-xl text-forest italic leading-relaxed">
+              “Cuối tuần đặt phòng đôi cho hai vợ chồng qua website được giảm tới 25%. Phòng riêng rất sạch, khăn ấm thơm mùi tinh dầu trầm. Thích nhất là lúc kết thúc được ăn chè dưỡng nhan và uống trà hoa cúc nóng.”
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+            <div>
+              <strong class="text-forest block">Anh Hoàng Nam &amp; Chị Lan</strong>
+              <span class="text-muted">Đặt lịch khung giờ 16:30 Chủ Nhật</span>
+            </div>
+            <span class="font-mono text-[10px] bg-sage text-forest px-2.5 py-1 rounded-full">Phòng Đôi VIP</span>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="bg-travertine p-7 rounded-2xl border border-forest/10 shadow-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-terracotta mb-4">
+              <span>★★★★★ • ĐÃ XÁC THỰC</span>
+              <span>90 PHÚT FACIAL Y KHOA</span>
+            </div>
+            <p class="font-serif text-xl text-forest italic leading-relaxed">
+              “Dụng cụ lấy nhân mụn và điện di tinh chất được tiệt trùng kỹ lưỡng. Làm xong da dịu hẳn, căng bóng mà không bị sưng đỏ. Kết hợp thêm massage đầu 20 phút cuối buổi làm mình ngủ quên lúc nào không biết.”
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-hairline flex items-center justify-between text-xs">
+            <div>
+              <strong class="text-forest block">Chị Khánh Linh (28 tuổi)</strong>
+              <span class="text-muted">Liệu trình Phục hồi da Thủy phân</span>
+            </div>
+            <span class="font-mono text-[10px] bg-sage text-forest px-2.5 py-1 rounded-full">Da Nhạy Cảm</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER SANCTUARY -->
+  <footer class="bg-forest text-travertine pt-16 pb-28 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <div class="md:col-span-5 space-y-4">
+          <div class="font-serif text-3xl text-travertine" data-brand-name>
+            An Nhiên Sanctuary — Holistic Spa &amp; Head Spa
+          </div>
+          <p class="text-sm text-sage/75 max-w-md leading-relaxed">
+            Không gian trị liệu dưỡng sinh nguyên bản. Nơi mỗi giọt tinh dầu, mỗi bát nước gội bồ kết và từng nhịp ấn huyệt đều được chăm chút bằng sự tận tâm.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3 text-xs font-mono text-terracottaLight">
+            <span>• KHÔNG NHẬN TIP</span>
+            <span>• PHÒNG RIÊNG TƯ</span>
+            <span>• THẢO MỘC TƯƠI 100%</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 space-y-3 text-sm">
+          <div class="font-mono text-xs uppercase tracking-widest text-terracottaLight">Liên Hệ &amp; Giữ Phòng</div>
+          <p class="text-sage/85">
+            <strong class="text-white">Địa chỉ &amp; Ưu đãi:</strong><br />
+            <span data-brand-addr>Không gian yên tĩnh riêng tư • Đặt lịch trước giảm 15%</span>
+          </p>
+          <p class="text-sage/85">
+            <strong class="text-white">Hotline / Zalo Đặt Lịch:</strong><br />
+            <a href="tel:0909888999" data-brand-phone-link class="font-mono text-lg text-terracottaLight hover:underline" data-brand-phone>0909 888 999</a>
+          </p>
+          <p class="text-xs text-sage/60 font-mono">
+            Giờ mở cửa: 09:00 – 21:30 (Tất cả các ngày trong tuần)
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-3 text-sm">
+          <div class="font-mono text-xs uppercase tracking-widest text-terracottaLight">Cam Kết Dịch Vụ</div>
+          <ul class="space-y-2 text-xs text-sage/80">
+            <li>✓ Giữ chỗ miễn phí, đổi lịch linh hoạt</li>
+            <li>✓ Khăn, lược, đồ dùng tiệt trùng UV riêng biệt</li>
+            <li>✓ Cam kết không tư vấn chèo kéo trong lúc nghỉ ngơi</li>
+            <li>✓ Hoàn tiền 100% nếu không hài lòng chất lượng</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-sage/50 gap-4">
+        <p>© 2026 <span data-brand-short>An Nhiên Sanctuary</span>. Crafted with Botanical Serenity.</p>
+        <button onclick="openOwnerModal()" class="text-terracottaLight hover:underline font-mono">
+          Kích hoạt Website Đặt Lịch Spa chính chủ (199.000đ) →
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BOTTOM-LEFT PILL FOR SPA OWNER CLAIM -->
+  <button
+    type="button"
+    onclick="openOwnerModal()"
+    class="fixed bottom-4 left-4 z-50 max-w-[calc(100vw-2rem)] bg-forest/95 hover:bg-forest text-travertine backdrop-blur-md border border-terracottaLight/50 rounded-full px-4 py-2.5 shadow-floating flex items-center gap-2.5 text-xs font-medium transition-all hover:scale-[1.02] group"
+  >
+    <span class="text-sm">👑</span>
+    <span class="truncate">Dành cho Chủ Spa • Kích hoạt Website Đặt Lịch này <strong class="text-terracottaLight font-mono">199.000đ</strong></span>
+    <span class="hidden sm:inline-block text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-terracotta text-white group-hover:bg-terracottaLight transition">
+      Nhận Web Ngay
+    </span>
+  </button>
+
+  <!-- ZALO BOOKING CONFIRMATION MODAL (CLIENT FACING) -->
+  <div id="zalo-confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/75 backdrop-blur-sm">
+    <div class="bg-travertine border border-forest/20 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-floating relative animate-fade-slide">
+      <button type="button" onclick="closeZaloModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-sage text-forest flex items-center justify-center hover:bg-forest hover:text-white transition">
+        ✕
+      </button>
+      <div class="text-[11px] font-mono uppercase tracking-widest text-terracotta mb-1">ĐÃ SAO CHÉP PHIẾU ĐẶT LỊCH</div>
+      <h3 class="font-serif text-2xl text-forest font-semibold">Phiếu giữ chỗ VIP của bạn đã sẵn sàng!</h3>
+      <p class="text-xs text-muted mt-1.5">
+        Hệ thống đã tự động sao chép chi tiết lịch hẹn kèm mã giảm 15%. Bạn chỉ cần nhấn mở Zalo bên dưới và <strong>Dán (Paste)</strong> gửi cho Lễ tân Spa.
+      </p>
+
+      <pre id="zalo-copied-text" class="mt-4 p-3.5 rounded-xl bg-sage/70 border border-forest/15 text-[11px] font-mono text-forest whitespace-pre-wrap leading-relaxed max-h-48 overflow-y-auto"></pre>
+
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <a
+          id="zalo-direct-link"
+          href="https://zalo.me/0909888999"
+          target="_blank"
+          rel="noopener"
+          class="py-3 px-4 rounded-xl bg-forest hover:bg-forestLight text-travertine text-xs font-semibold text-center transition flex items-center justify-center gap-2"
+        >
+          <span>Mở Zalo Spa Gửi Lịch Ngay</span>
+          <span>→</span>
+        </a>
+        <a
+          id="call-direct-link"
+          href="tel:0909888999"
+          class="py-3 px-4 rounded-xl border border-forest/25 hover:bg-sage text-forest text-xs font-semibold text-center transition"
+        >
+          Gọi Hotline Trực Tiếp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OWNER ACTIVATION & VIETQR MODAL -->
+  <div id="owner-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/80 backdrop-blur-md overflow-y-auto">
+    <div class="bg-travertine border border-forest/20 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-floating relative my-8 animate-fade-slide">
+      <button
+        type="button"
+        onclick="closeOwnerModal()"
+        class="absolute top-4 right-4 w-9 h-9 rounded-full bg-sage text-forest flex items-center justify-center hover:bg-forest hover:text-white transition"
+        aria-label="Đóng"
+      >
+        ✕
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        
+        <!-- Left Info & Live Customizer -->
+        <div class="md:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage text-forest text-[11px] font-mono uppercase tracking-wider">
+            <span>👑 BẢN QUYỀN WEBSITE SPA &amp; HEAD SPA</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl text-forest font-semibold leading-tight">
+            Sở hữu Website Đặt Lịch Chuẩn Resort cho Spa của bạn chỉ với <span class="text-terracotta">199.000đ</span>
+          </h3>
+          <p class="text-xs text-muted leading-relaxed">
+            Đã tích hợp sẵn: Bảng giá chuyển đổi 60p/90p/120p tự động, Quầy chọn Tinh dầu &amp; Trà, và Phiếu giữ chỗ Phòng đơn/Phòng đôi tự động tính giảm giá gửi thẳng về Zalo chủ Spa.
+          </p>
+
+          <!-- Live Brand Previewer inside Modal -->
+          <div class="p-4 rounded-2xl bg-sage/60 border border-forest/15 space-y-2.5">
+            <div class="text-[11px] font-mono uppercase tracking-wider text-forest font-semibold">
+               Dùng thử đổi tên Spa của bạn ngay lập tức:
+            </div>
+            <input
+              type="text"
+              id="preview-spa-name"
+              placeholder="Nhập tên Spa của bạn..."
+              class="w-full px-3 py-2 rounded-lg bg-travertine border border-forest/20 text-xs text-forest"
+            />
+            <div class="grid grid-cols-2 gap-2">
+              <input
+                type="text"
+                id="preview-spa-phone"
+                placeholder="SĐT/Zalo Spa..."
+                class="w-full px-3 py-2 rounded-lg bg-travertine border border-forest/20 text-xs font-mono text-forest"
+              />
+              <input
+                type="text"
+                id="preview-spa-addr"
+                placeholder="Địa chỉ Spa..."
+                class="w-full px-3 py-2 rounded-lg bg-travertine border border-forest/20 text-xs text-forest"
+              />
+            </div>
+            <button
+              type="button"
+              onclick="applyOwnerPreview()"
+              class="w-full py-2 rounded-lg bg-forest text-travertine text-xs font-medium hover:bg-forestLight transition"
+            >
+              Áp Dụng Xem Thử Trên Trang Này
+            </button>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-1">
+            <a
+              id="owner-zalo-btn"
+              href="https://zalo.me/0988888888"
+              target="_blank"
+              rel="noopener"
+              class="flex-1 py-3 px-4 rounded-xl bg-terracotta hover:bg-terracottaDark text-white text-xs font-semibold text-center transition"
+            >
+              Nhắn Zalo Hỗ Trợ Cài Đặt Ngay
+            </a>
+          </div>
+        </div>
+
+        <!-- Right VietQR Box -->
+        <div class="md:col-span-5 bg-white p-4 rounded-2xl border border-forest/15 text-center shadow-sm">
+          <div class="text-[10px] font-mono uppercase tracking-widest text-terracotta font-semibold mb-1">
+            QUÉT VIETQR KÍCH HOẠT TỰ ĐỘNG
+          </div>
+          <img
+            id="owner-vietqr-img"
+            src="https://img.vietqr.io/image/MB-0988888888-compact2.png?amount=199000&addInfo=Kich%20Hoat%20Web%20Spa"
+            alt="VietQR Kích hoạt Website Spa 199.000đ"
+            class="w-full max-w-[220px] mx-auto rounded-lg border border-gray-100"
+          />
+          <div class="mt-2.5 text-left bg-travertine/70 p-2.5 rounded-xl text-[11px] font-mono space-y-1 text-forest">
+            <div class="flex justify-between">
+              <span class="text-muted">Ngân hàng:</span>
+              <strong id="qr-bank-label">MB</strong>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-muted">Số TK:</span>
+              <strong id="qr-acc-label">0988888888</strong>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-muted">Chủ TK:</span>
+              <strong id="qr-name-label">CHU XUONG WEB</strong>
+            </div>
+            <div class="flex justify-between text-terracotta">
+              <span>Phí trọn gói:</span>
+              <strong>199.000đ</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION JAVASCRIPT -->
+  <script>
+    // =========================================================================
+    // 1. RITUAL & TREATMENT DATABASE (60 / 90 / 120 MINUTE DYNAMIC STEPS)
+    // =========================================================================
+    const RITUALS_DATA = [
+      {
+        id: 'royal-headspa',
+        category: 'headspa',
+        categoryLabel: 'Gội Đầu Dưỡng Sinh Hoàng Cung',
+        code: 'RITUAL N°01',
+        badge: 'Bán Chạy Nhất',
+        title: 'Gội Đầu Dưỡng Sinh Hoàng Cung & Canh Thảo Dược Nấu Tươi',
+        subtitle: 'Nước bồ kết, vỏ bưởi, hà thủ ô, sả gừng nấu thủ công 8 giờ kết hợp ấn huyệt khai thiên môn.',
+        image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=85',
+        durations: {
+          60: {
+            price: 350000,
+            stepCount: '10 Bước Chuẩn',
+            steps: [
+              'Ngâm chân thảo mộc quế hồi & thưởng trà nóng',
+              'Khai thiên môn, ấn huyệt giải tỏa căng thẳng vùng đầu',
+              'Gội 2 nước canh bồ kết & vỏ bưởi nấu tươi ấm',
+              'Ủ tóc tinh chất thảo dược & sấy dưỡng tơi phồng'
+            ]
+          },
+          90: {
+            price: 540000,
+            stepCount: '14 Bước Hoàng Cung ★',
+            steps: [
+              'Ngâm chân thảo dược tươi + Chườm mắt ngải cứu ấm',
+              'Đả thông kinh lạc vùng đầu, mặt, tai bằng lược sừng trâu',
+              'Massage chuyên sâu cổ vai gáy & chườm đá nóng núi lửa',
+              'Vòm nước thảo dược tuần hoàn 38.5°C thư giãn sâu hệ thần kinh',
+              'Rửa mặt, đắp mặt nạ thảo mộc & Xịt khoáng dưỡng nang tóc'
+            ]
+          },
+          120: {
+            price: 720000,
+            stepCount: '18 Bước Chuyên Sâu VIP',
+            steps: [
+              'Trọn bộ 14 bước Hoàng Cung + Tẩy tế bào chết da đầu thảo mộc',
+              'Trị liệu chuyên sâu đau mỏi cổ vai gáy, cánh tay & lưng trên (35 phút)',
+              'Liệu pháp chuông xoay Tây Tạng & Xông hơi tinh dầu nang tóc',
+              'Phục hồi keratin hữu cơ + Thưởng chè dưỡng nhan tuyết yến'
+            ]
+          }
+        }
+      },
+      {
+        id: 'neck-shoulder-stone',
+        category: 'massage',
+        categoryLabel: 'Trị Liệu Cổ Vai Gáy & Đá Nóng',
+        code: 'RITUAL N°02',
+        badge: 'Trị Liệu Đau Mỏi',
+        title: 'Trị Liệu Cổ Vai Gáy Chuyên Sâu & Đá Nóng Bazan Núi Lửa',
+        subtitle: 'Giải phóng điểm xoắn cơ (Trigger Points), tê bì tay chân và đau mỏi vai gáy cho dân văn phòng.',
+        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85',
+        durations: {
+          60: {
+            price: 390000,
+            stepCount: '7 Bước Trị Liệu',
+            steps: [
+              'Ngâm chân muối hồng Himalaya & gừng tươi ấm',
+              'Ấn huyệt mở huyệt đạo Phong Trì, Kiên Tỉnh vùng cổ vai',
+              'Trị liệu làm mềm cơ bó cứng bằng tinh dầu gừng sả ấm',
+              'Chườm và trượt đá nóng Bazan dọc sống lưng'
+            ]
+          },
+          90: {
+            price: 580000,
+            stepCount: '11 Bước Đả Thông ★',
+            steps: [
+              'Ngâm chân thảo dược + Chườm túi thảo mộc nóng vùng thắt lưng',
+              'Ấn huyệt sâu giải cơ cổ - vai - gáy - bả vai & hai cánh tay',
+              'Liệu pháp đi đá nóng Bazan kết hợp kéo giãn cột sống cổ êm ái',
+              'Massage đầu thư giãn 15 phút giúp máu lưu thông lên não',
+              'Lau khăn nóng tinh dầu & Thưởng trà gừng đường thốt nốt'
+            ]
+          },
+          120: {
+            price: 760000,
+            stepCount: '15 Bước Toàn Thân VIP',
+            steps: [
+              'Trị liệu toàn diện từ đỉnh đầu, cổ vai gáy đến thắt lưng & bắp chân',
+              'Đắp bùn cứu dưỡng sinh Nhật Bản hút hàn ẩm vùng vai gáy',
+              'Trị liệu đá nóng chuyên sâu + Ấn huyệt lòng bàn chân',
+              'Phục hồi năng lượng cùng chè dưỡng nhan & trà thảo mộc'
+            ]
+          }
+        }
+      },
+      {
+        id: 'medical-facial',
+        category: 'facial',
+        categoryLabel: 'Chăm Sóc Da Chuẩn Y Khoa (Facial)',
+        code: 'RITUAL N°03',
+        badge: 'Chuẩn Y Khoa',
+        title: 'Chăm Sóc Da Chuẩn Y Khoa & Điện Di Tinh Chất Thảo Mộc',
+        subtitle: 'Làm sạch sâu đa tầng, cấp ẩm phục hồi hàng rào bảo vệ da kết hợp nâng cơ mặt ngọc thạch.',
+        image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85',
+        durations: {
+          60: {
+            price: 420000,
+            stepCount: '9 Bước Cấp Ẩm',
+            steps: [
+              'Soi da phân tích độ ẩm & Làm sạch kép dịu nhẹ',
+              'Xông hơi thảo mộc, hút bã nhờn & thanh lọc lỗ chân lông',
+              'Massage nâng cơ mặt & Điện di lạnh Hyaluronic Acid B5',
+              'Đắp mặt nạ tảo non làm dịu da tức thì'
+            ]
+          },
+          90: {
+            price: 620000,
+            stepCount: '13 Bước Tái Tạo ★',
+            steps: [
+              'Làm sạch chuẩn Y khoa + Lấy nhân mụn êm ái không sưng đỏ',
+              'Khử khuẩn tia điện tím & Điện di tinh chất phục hồi chuyên sâu',
+              'Massage nâng cơ mặt bằng đá Ngọc Bích (Gua Sha) giảm bọng mắt',
+              'Chiếu ánh sáng sinh học Omega Light + Mặt nạ thủy phân',
+              'Tặng kèm 15 phút massage đầu & cổ vai gáy thư giãn'
+            ]
+          },
+          120: {
+            price: 850000,
+            stepCount: '16 Bước Luxury Glow',
+            steps: [
+              'Trọn gói 13 bước Y khoa + Peel thảo mộc sinh học căng bóng da',
+              'Trị liệu xóa nhăn vùng mắt & rãnh cười bằng đầu sóng RF ấm',
+              'Đắp mặt nạ Vàng 24K / Collagen tươi + Massage đầu, cổ, vai, tay',
+              'Thưởng trà kỷ tử táo đỏ bổ huyết sáng da'
+            ]
+          }
+        }
+      },
+      {
+        id: 'couple-herbal-bath',
+        category: 'couple',
+        categoryLabel: 'Ngâm Bồn Thảo Dược & Couple Spa',
+        code: 'RITUAL N°04',
+        badge: 'Phòng Đôi Riêng Tư',
+        title: 'Ngâm Bồn Gỗ Thảo Dược Dao Đỏ & Trị Liệu Toàn Thân',
+        subtitle: 'Trải nghiệm tắm lá thuốc cổ truyền trong bồn gỗ Pơ-mu thơm ngát, xua tan mệt mỏi toàn diện.',
+        image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85',
+        durations: {
+          60: {
+            price: 490000,
+            stepCount: 'Combo 60 Phút',
+            steps: [
+              'Ngâm bồn gỗ thảo dược lá thuốc Dao Đỏ 25 phút',
+              'Tẩy tế bào chết toàn thân bằng cám gạo & sữa non',
+              'Massage thư giãn lưng vai với tinh dầu thiên nhiên 35 phút'
+            ]
+          },
+          90: {
+            price: 690000,
+            stepCount: 'Combo 90 Phút ★',
+            steps: [
+              'Xông hơi ướt thảo mộc tươi + Ngâm bồn gỗ lá thuốc Dao Đỏ',
+              'Trị liệu toàn thân Aroma kết hợp đá nóng núi lửa (60 phút)',
+              'Chườm mắt thảo dược & Massage đầu thư giãn sâu',
+              'Thưởng thức trà hoa cúc mật ong & mứt gừng tại phòng riêng'
+            ]
+          },
+          120: {
+            price: 920000,
+            stepCount: 'Combo 120 Phút Sanctuary',
+            steps: [
+              'Ngâm bồn thảo dược hoa hồng & lá thuốc + Tẩy da chết toàn thân',
+              'Massage Body Đá Nóng 60 phút + Gội Đầu Dưỡng Sinh 40 phút',
+              'Đắp mặt nạ cấp ẩm thảo mộc + Bữa nhẹ dưỡng sinh tại phòng VIP'
+            ]
+          }
+        }
+      },
+      {
+        id: 'insomnia-headspa',
+        category: 'headspa',
+        categoryLabel: 'Gội Đầu Dưỡng Sinh Hoàng Cung',
+        code: 'RITUAL N°05',
+        badge: 'Chuyên Sâu Ngủ Ngon',
+        title: 'Liệu Trình An Thần Dưỡng Não & Chuông Xoay Tây Tạng',
+        subtitle: 'Thiết kế riêng cho người mất ngủ kinh niên, suy nghĩ nhiều, căng tức vùng trán và thái dương.',
+        image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=85',
+        durations: {
+          60: {
+            price: 380000,
+            stepCount: '9 Bước An Thần',
+            steps: [
+              'Trị liệu âm thanh chuông xoay Tây Tạng đưa não bộ về sóng Alpha',
+              'Ấn huyệt An Miên, Bách Hội, Thái Dương giúp dễ vào giấc ngủ',
+              'Gội thảo dược ấm hương Trầm & Oải Hương'
+            ]
+          },
+          90: {
+            price: 560000,
+            stepCount: '13 Bước Dưỡng Não ★',
+            steps: [
+              'Ngâm chân thảo mộc + Trị liệu sóng âm chuông xoay Tây Tạng',
+              'Ấn huyệt dưỡng não chuyên sâu 30 phút (Đầu, gáy, thái dương)',
+              'Vòm thủy trị liệu canh thảo dược ấm 2 tầng',
+              'Chườm mắt ngải cứu ấm & Massage cổ vai gáy êm dịu'
+            ]
+          },
+          120: {
+            price: 740000,
+            stepCount: '16 Bước Ngủ Sâu VIP',
+            steps: [
+              'Trọn bộ 13 bước Dưỡng Não + Massage toàn thân tinh dầu Trầm Hương',
+              'Chườm đá nóng dọc sống lưng & lòng bàn chân kích hoạt giấc ngủ sâu',
+              'Thưởng trà tâm sen táo đỏ ấm sau khi thức dậy'
+            ]
+          }
+        }
+      },
+      {
+        id: 'aroma-body-therapy',
+        category: 'massage',
+        categoryLabel: 'Trị Liệu Cổ Vai Gáy & Đá Nóng',
+        code: 'RITUAL N°06',
+        badge: 'Thư Giãn Toàn Thân',
+        title: 'Massage Tinh Dầu Thực Vật Nguyên Bản (Botanical Aroma)',
+        subtitle: 'Kỹ thuật vuốt dài Thụy Điển kết hợp ấn huyệt Phương Đông giúp giải độc hệ bạch huyết.',
+        image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85',
+        durations: {
+          60: {
+            price: 360000,
+            stepCount: 'Toàn Thân 60 Phút',
+            steps: [
+              'Chọn 1 trong 4 loại tinh dầu thực vật ép lạnh nguyên chất',
+              'Massage giải phóng cơ lưng, vai, cổ và chân',
+              'Lau khăn ấm thảo mộc sạch dịu không nhờn rít'
+            ]
+          },
+          90: {
+            price: 520000,
+            stepCount: 'Toàn Thân 90 Phút ★',
+            steps: [
+              'Ngâm chân thảo dược + Massage toàn thân chuyên sâu 75 phút',
+              'Kết hợp đi đá nóng vùng lưng & Ấn huyệt lòng bàn chân',
+              'Massage đầu & cổ vai gáy 15 phút hoàn thiện'
+            ]
+          },
+          120: {
+            price: 690000,
+            stepCount: 'Toàn Thân 120 Phút VIP',
+            steps: [
+              'Tẩy tế bào chết body thảo mộc + Massage tinh dầu & đá nóng 90p',
+              'Ủ dưỡng ẩm toàn thân & Đắp mặt nạ thiên nhiên'
+            ]
+          }
+        }
+      }
+    ];
+
+    // =========================================================================
+    // 2. APPLICATION STATE
+    // =========================================================================
+    const state = {
+      activeCategory: 'all',
+      globalDuration: 90,
+      cardDurations: {}, // per-card duration override
+      selectedRitualId: 'royal-headspa',
+      selectedDuration: 90,
+      selectedDate: '',
+      selectedTime: '14:00',
+      selectedGuests: 1, // 1 or 2
+      selectedPressure: 'Ấn huyệt vừa (Cân bằng khí huyết)',
+      selectedScent: 'Trầm Hương & Trà Hoa Cúc Mật Ong',
+      brand: {
+        name: 'An Nhiên Sanctuary — Holistic Spa & Head Spa',
+        shortName: 'An Nhiên Sanctuary',
+        phone: '0909888999',
+        addr: 'Không gian yên tĩnh riêng tư • Đặt lịch trước giảm 15%',
+        obank: 'MB',
+        oacc: '0988888888',
+        oname: 'CHU XUONG WEB',
+        ozalo: '0988888888'
+      }
+    };
+
+    // Initialize card durations
+    RITUALS_DATA.forEach(r => {
+      state.cardDurations[r.id] = 90;
+    });
+
+    // Helper: Format VND currency
+    function formatVND(amount) {
+      return amount.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function formatPhoneDisplay(raw) {
+      const cleaned = String(raw).replace(/\D/g, '');
+      if (cleaned.length === 10) {
+        return `${cleaned.slice(0, 4)} ${cleaned.slice(4, 7)} ${cleaned.slice(7)}`;
+      }
+      return raw;
+    }
+
+    // =========================================================================
+    // 3. URL PARAMETERS & BRANDING INITIALIZATION
+    // =========================================================================
+    function initUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('name')) state.brand.name = params.get('name').trim();
+      if (params.get('phone')) state.brand.phone = params.get('phone').trim();
+      if (params.get('addr')) state.brand.addr = params.get('addr').trim();
+      if (params.get('obank')) state.brand.obank = params.get('obank').trim();
+      if (params.get('oacc')) state.brand.oacc = params.get('oacc').trim();
+      if (params.get('oname')) state.brand.oname = params.get('oname').trim();
+      if (params.get('ozalo')) state.brand.ozalo = params.get('ozalo').trim();
+
+      applyBrandingToDOM();
+    }
+
+    function applyBrandingToDOM() {
+      const parts = state.brand.name.split(/[—–-]/);
+      state.brand.shortName = (parts[0] || state.brand.name).trim();
+      const subtitle = parts[1] ? parts[1].trim() : 'Holistic Spa, Head Spa & Botanical Therapy';
+
+      document.title = state.brand.name;
+
+      document.querySelectorAll('[data-brand-name]').forEach(el => {
+        el.textContent = state.brand.name;
+      });
+      document.querySelectorAll('[data-brand-short]').forEach(el => {
+        el.textContent = state.brand.shortName;
+      });
+      document.querySelectorAll('[data-brand-subtitle]').forEach(el => {
+        el.textContent = subtitle;
+      });
+      document.querySelectorAll('[data-brand-addr]').forEach(el => {
+        el.textContent = state.brand.addr;
+      });
+      document.querySelectorAll('[data-brand-phone]').forEach(el => {
+        el.textContent = formatPhoneDisplay(state.brand.phone);
+      });
+      document.querySelectorAll('[data-brand-phone-link]').forEach(el => {
+        el.setAttribute('href', `tel:${state.brand.phone.replace(/\D/g, '')}`);
+      });
+
+      // Update VietQR & Owner Modal
+      const qrInfo = encodeURIComponent(`Kich Hoat Web ${state.brand.shortName}`);
+      const qrUrl = `https://img.vietqr.io/image/${encodeURIComponent(state.brand.obank)}-${encodeURIComponent(state.brand.oacc)}-compact2.png?amount=199000&addInfo=${qrInfo}&accountName=${encodeURIComponent(state.brand.oname)}`;
+      const qrImg = document.getElementById('owner-vietqr-img');
+      if (qrImg) qrImg.src = qrUrl;
+
+      const bankLbl = document.getElementById('qr-bank-label');
+      const accLbl = document.getElementById('qr-acc-label');
+      const nameLbl = document.getElementById('qr-name-label');
+      const ozaloBtn = document.getElementById('owner-zalo-btn');
+      if (bankLbl) bankLbl.textContent = state.brand.obank;
+      if (accLbl) accLbl.textContent = state.brand.oacc;
+      if (nameLbl) nameLbl.textContent = state.brand.oname;
+      if (ozaloBtn) ozaloBtn.href = `https://zalo.me/${state.brand.ozalo.replace(/\D/g, '')}`;
+
+      // Pre-fill owner modal preview inputs
+      const pName = document.getElementById('preview-spa-name');
+      const pPhone = document.getElementById('preview-spa-phone');
+      const pAddr = document.getElementById('preview-spa-addr');
+      if (pName) pName.value = state.brand.name;
+      if (pPhone) pPhone.value = state.brand.phone;
+      if (pAddr) pAddr.value = state.brand.addr;
+    }
+
+    // =========================================================================
+    // 4. RENDER RITUAL TREATMENT MENU & DURATION SWITCHERS
+    // =========================================================================
+    function renderRitualsGrid() {
+      const grid = document.getElementById('rituals-grid');
+      if (!grid) return;
+
+      const filtered = state.activeCategory === 'all'
+        ? RITUALS_DATA
+        : RITUALS_DATA.filter(item => item.category === state.activeCategory);
+
+      grid.innerHTML = filtered.map(ritual => {
+        const dur = state.cardDurations[ritual.id] || 90;
+        const tier = ritual.durations[dur];
+        const onlinePrice = Math.round(tier.price * 0.85);
+        const isSelectedInBooking = state.selectedRitualId === ritual.id && state.selectedDuration === dur;
+
+        return `
+          <article class="bg-travertine rounded-3xl border ${isSelectedInBooking ? 'border-2 border-forest shadow-sanctuary' : 'border-forest/15 shadow-card'} overflow-hidden flex flex-col justify-between transition-all duration-300">
+            <div>
+              <!-- Image Header -->
+              <div class="relative h-60 sm:h-64 img-zoom-wrap bg-sage">
+                <img src="${ritual.image}" alt="${ritual.title}" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-forest/75 via-forest/15 to-transparent"></div>
+                
+                <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+                  <span class="bg-travertine/95 backdrop-blur-md text-forest font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-full">
+                    ${ritual.code} • ${ritual.categoryLabel}
+                  </span>
+                  <span class="bg-terracotta text-white font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                    ${ritual.badge}
+                  </span>
+                </div>
+
+                <!-- Dynamic Price Tag on Image Bottom -->
+                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-travertine">
+                  <div>
+                    <span class="text-[11px] font-mono text-sage/90 block">${tier.stepCount} (${dur} Phút)</span>
+                    <h3 class="font-serif text-2xl sm:text-[26px] leading-snug text-white font-semibold">${ritual.title}</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-6 space-y-5">
+                <p class="text-xs sm:text-sm text-muted leading-relaxed">
+                  ${ritual.subtitle}
+                </p>
+
+                <!-- Individual Duration Switcher inside Card -->
+                <div class="bg-sage/65 p-1.5 rounded-2xl border border-forest/10">
+                  <div class="grid grid-cols-3 gap-1">
+                    ${[60, 90, 120].map(d => {
+                      const active = dur === d;
+                      const label = d === 90 ? '90 Phút ★' : `${d} Phút`;
+                      const sub = d === 60 ? 'Cơ bản' : (d === 90 ? 'Phổ biến' : 'Chuyên sâu');
+                      return `
+                        <button
+                          type="button"
+                          onclick="setCardDuration('${ritual.id}', ${d})"
+                          class="py-2 px-2 rounded-xl text-center transition-all ${active ? 'bg-forest text-travertine shadow-sm' : 'text-forest/80 hover:bg-travertine/70'}"
+                        >
+                          <span class="block font-mono text-xs font-semibold">${label}</span>
+                          <span class="block text-[10px] ${active ? 'text-terracottaLight' : 'opacity-70'}">${sub}</span>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+
+                <!-- Dynamic Ritual Steps List -->
+                <div class="space-y-2 animate-fade-slide">
+                  <div class="flex items-center justify-between text-[11px] font-mono uppercase tracking-wider text-terracotta">
+                    <span>Quy trình ${dur} phút bao gồm:</span>
+                    <span>Thảo mộc 100%</span>
+                  </div>
+                  <ul class="space-y-1.5 text-xs text-charcoal/90">
+                    ${tier.steps.map((step, idx) => `
+                      <li class="flex items-start gap-2">
+                        <span class="font-mono text-[10px] text-terracotta font-semibold mt-0.5">0${idx + 1}.</span>
+                        <span>${step}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Footer: Price & Select CTA -->
+            <div class="px-6 py-4 bg-travertineDark/50 border-t border-hairline flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-mono text-muted line-through">${formatVND(tier.price)}</span>
+                  <span class="text-[10px] font-mono bg-terracotta/15 text-terracotta font-semibold px-2 py-0.5 rounded-full">-15% Đặt trước</span>
+                </div>
+                <div class="font-mono text-xl sm:text-2xl font-bold text-forest">
+                  ${formatVND(onlinePrice)}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onclick="selectRitualForBooking('${ritual.id}', ${dur})"
+                class="px-5 py-3 rounded-full text-xs font-semibold transition flex items-center gap-2 ${isSelectedInBooking ? 'bg-terracotta text-white' : 'bg-forest hover:bg-forestLight text-travertine'}"
+              >
+                <span>${isSelectedInBooking ? 'Đang Chọn • Giữ Giờ' : 'Chọn Liệu Trình Này'}</span>
+                <span>→</span>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function setCardDuration(ritualId, duration) {
+      state.cardDurations[ritualId] = duration;
+      if (state.selectedRitualId === ritualId) {
+        state.selectedDuration = duration;
+        const durSelect = document.getElementById('booking-duration-select');
+        if (durSelect) durSelect.value = String(duration);
+        updateBookingSummary();
+      }
+      renderRitualsGrid();
+    }
+
+    function setGlobalDuration(duration) {
+      state.globalDuration = duration;
+      RITUALS_DATA.forEach(r => {
+        state.cardDurations[r.id] = duration;
+      });
+      state.selectedDuration = duration;
+
+      // Update Global Duration Buttons UI
+      [60, 90, 120].forEach(d => {
+        const btn = document.getElementById(`global-dur-${d}`);
+        if (!btn) return;
+        if (d === duration) {
+          btn.className = 'global-dur-btn px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all bg-forest text-travertine shadow-sm';
+        } else {
+          btn.className = 'global-dur-btn px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all text-forest/80 hover:bg-travertine/60';
+        }
+      });
+
+      const durSelect = document.getElementById('booking-duration-select');
+      if (durSelect) durSelect.value = String(duration);
+
+      renderRitualsGrid();
+      updateBookingSummary();
+    }
+
+    function filterCategory(cat) {
+      state.activeCategory = cat;
+      document.querySelectorAll('.cat-tab').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-forest text-travertine shadow-sm';
+        } else {
+          btn.className = 'cat-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-travertineDark/70 text-charcoal hover:bg-sage border border-forest/10';
+        }
+      });
+      renderRitualsGrid();
+    }
+
+    function selectRitualForBooking(ritualId, duration) {
+      state.selectedRitualId = ritualId;
+      state.selectedDuration = duration;
+      state.cardDurations[ritualId] = duration;
+
+      const ritualSelect = document.getElementById('booking-ritual-select');
+      const durSelect = document.getElementById('booking-duration-select');
+      if (ritualSelect) ritualSelect.value = ritualId;
+      if (durSelect) durSelect.value = String(duration);
+
+      renderRitualsGrid();
+      updateBookingSummary();
+
+      const conciergeEl = document.getElementById('booking-concierge');
+      if (conciergeEl) {
+        conciergeEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function quickSelectFromHero() {
+      selectRitualForBooking('royal-headspa', 90);
+    }
+
+    // =========================================================================
+    // 5. APOTHECARY SCENT & TEA BAR
+    // =========================================================================
+    function selectScent(scentName, btnEl) {
+      state.selectedScent = scentName;
+      const label = document.getElementById('selected-scent-label');
+      if (label) label.textContent = scentName;
+
+      document.querySelectorAll('.scent-card').forEach(card => {
+        card.className = 'scent-card text-left p-5 rounded-2xl bg-travertine/80 hover:bg-travertine border border-forest/15 transition-all group relative';
+        const badge = card.querySelector('.scent-badge');
+        if (badge) {
+          badge.className = 'scent-badge text-[10px] font-mono bg-sage text-forest px-2 py-0.5 rounded-full';
+          badge.textContent = 'Chọn hương';
+        }
+      });
+
+      if (btnEl) {
+        btnEl.className = 'scent-card text-left p-5 rounded-2xl bg-travertine border-2 border-forest shadow-card transition-all group relative';
+        const badge = btnEl.querySelector('.scent-badge');
+        if (badge) {
+          badge.className = 'scent-badge text-[10px] font-mono bg-forest text-travertine px-2 py-0.5 rounded-full';
+          badge.textContent = 'Đã chọn';
+        }
+      }
+
+      updateBookingSummary();
+    }
+
+    // =========================================================================
+    // 6. VIP TIME-SLOT & ROOM BOOKING CONCIERGE LOGIC
+    // =========================================================================
+    function populateBookingSelect() {
+      const select = document.getElementById('booking-ritual-select');
+      if (!select) return;
+      select.innerHTML = RITUALS_DATA.map(r => `
+        <option value="${r.id}" ${r.id === state.selectedRitualId ? 'selected' : ''}>
+          ${r.title}
+        </option>
+      `).join('');
+    }
+
+    function setQuickDate(offsetDays) {
+      const dateInput = document.getElementById('booking-date');
+      const d = new Date();
+      d.setDate(d.getDate() + offsetDays);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      const formatted = `${yyyy}-${mm}-${dd}`;
+      state.selectedDate = formatted;
+      if (dateInput) dateInput.value = formatted;
+      updateBookingSummary();
+    }
+
+    function onBookingSelectChange() {
+      const select = document.getElementById('booking-ritual-select');
+      if (select) {
+        state.selectedRitualId = select.value;
+        renderRitualsGrid();
+        updateBookingSummary();
+      }
+    }
+
+    function onBookingDurationChange() {
+      const durSelect = document.getElementById('booking-duration-select');
+      if (durSelect) {
+        state.selectedDuration = parseInt(durSelect.value, 10);
+        state.cardDurations[state.selectedRitualId] = state.selectedDuration;
+        renderRitualsGrid();
+        updateBookingSummary();
+      }
+    }
+
+    function selectTimeSlot(slot, btnEl) {
+      state.selectedTime = slot;
+      document.querySelectorAll('.timeslot-btn').forEach(btn => {
+        btn.className = 'timeslot-btn py-2.5 px-2 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage text-center transition';
+      });
+      if (btnEl) {
+        btnEl.className = 'timeslot-btn py-2.5 px-2 rounded-xl border-2 border-forest bg-forest text-travertine text-center transition shadow-sm';
+      }
+      updateBookingSummary();
+    }
+
+    function selectGuests(count, btnEl) {
+      state.selectedGuests = count;
+      document.querySelectorAll('.guest-btn').forEach(btn => {
+        btn.className = 'guest-btn text-left p-4 rounded-2xl border border-forest/15 bg-travertineDark/40 hover:bg-sage/40 transition flex items-start justify-between';
+      });
+      if (btnEl) {
+        btnEl.className = 'guest-btn text-left p-4 rounded-2xl border-2 border-forest bg-sage/60 transition flex items-start justify-between';
+      }
+      updateBookingSummary();
+    }
+
+    function selectPressure(pressureText, btnEl) {
+      state.selectedPressure = pressureText;
+      document.querySelectorAll('.pressure-btn').forEach(btn => {
+        btn.className = 'pressure-btn p-3.5 rounded-xl border border-forest/15 bg-travertineDark/40 hover:bg-sage/40 text-left transition';
+      });
+      if (btnEl) {
+        btnEl.className = 'pressure-btn p-3.5 rounded-xl border-2 border-forest bg-sage/60 text-left transition';
+      }
+      updateBookingSummary();
+    }
+
+    function updateBookingSummary() {
+      const ritual = RITUALS_DATA.find(r => r.id === state.selectedRitualId) || RITUALS_DATA[0];
+      const dur = state.selectedDuration || 90;
+      const tier = ritual.durations[dur];
+      const guests = state.selectedGuests || 1;
+
+      const baseTotal = tier.price * guests;
+      const onlineDiscount = Math.round(baseTotal * 0.15);
+      const coupleDiscount = guests === 2 ? Math.round(baseTotal * 0.10) : 0;
+      const finalPrice = baseTotal - onlineDiscount - coupleDiscount;
+
+      const dateInput = document.getElementById('booking-date');
+      const rawDate = dateInput && dateInput.value ? dateInput.value : state.selectedDate;
+      let displayDate = 'Hôm nay';
+      if (rawDate) {
+        const parts = rawDate.split('-');
+        if (parts.length === 3) displayDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
+      }
+
+      document.getElementById('sum-ritual-name').textContent = ritual.title;
+      document.getElementById('sum-duration-badge').textContent = `${dur} Phút`;
+      document.getElementById('sum-ritual-steps-preview').textContent = `${tier.stepCount}: ${tier.steps.slice(0, 2).join(' • ')}...`;
+      document.getElementById('sum-datetime').textContent = `${state.selectedTime} • ${displayDate}`;
+      document.getElementById('sum-guests').textContent = guests === 2 ? '2 Khách (Phòng Đôi VIP)' : '1 Khách (Phòng Đơn)';
+      document.getElementById('sum-pressure').textContent = state.selectedPressure;
+      document.getElementById('sum-scent').textContent = state.selectedScent;
+
+      document.getElementById('sum-orig-label').textContent = `Giá niêm yết (${guests} khách × ${dur}p):`;
+      document.getElementById('sum-orig-price').textContent = formatVND(baseTotal);
+      document.getElementById('sum-discount-online').textContent = `-${formatVND(onlineDiscount)}`;
+
+      const coupleRow = document.getElementById('sum-couple-row');
+      if (guests === 2) {
+        coupleRow.classList.remove('hidden');
+        coupleRow.classList.add('flex');
+        document.getElementById('sum-discount-couple').textContent = `-${formatVND(coupleDiscount)}`;
+      } else {
+        coupleRow.classList.add('hidden');
+        coupleRow.classList.remove('flex');
+      }
+
+      document.getElementById('sum-final-price').textContent = formatVND(finalPrice);
+    }
+
+    function confirmBookingViaZalo() {
+      const ritual = RITUALS_DATA.find(r => r.id === state.selectedRitualId) || RITUALS_DATA[0];
+      const dur = state.selectedDuration || 90;
+      const tier = ritual.durations[dur];
+      const guests = state.selectedGuests || 1;
+
+      const baseTotal = tier.price * guests;
+      const onlineDiscount = Math.round(baseTotal * 0.15);
+      const coupleDiscount = guests === 2 ? Math.round(baseTotal * 0.10) : 0;
+      const finalPrice = baseTotal - onlineDiscount - coupleDiscount;
+
+      const clientName = (document.getElementById('client-name')?.value || '').trim() || 'Khách đặt qua Website';
+      const clientPhone = (document.getElementById('client-phone')?.value || '').trim() || 'Chưa nhập SĐT';
+      const clientNote = (document.getElementById('client-note')?.value || '').trim() || 'Không có ghi chú thêm';
+      const rawDate = document.getElementById('booking-date')?.value || state.selectedDate;
+
+      const slipText = [
+        `🌿 PHIẾU GIỮ PHÒNG VIP — ${state.brand.shortName.toUpperCase()}`,
+        `--------------------------------`,
+        `• Khách hàng: ${clientName} (${clientPhone})`,
+        `• Liệu trình: ${ritual.title}`,
+        `• Thời lượng: ${dur} Phút (${tier.stepCount})`,
+        `• Thời gian: ${state.selectedTime} | Ngày: ${rawDate}`,
+        `• Loại phòng: ${guests === 2 ? '2 Khách - Phòng Đôi Riêng Tư (-10% thêm)' : '1 Khách - Phòng Đơn Tĩnh Lặng'}`,
+        `• Lực ấn huyệt: ${state.selectedPressure}`,
+        `• Tinh dầu & Trà: ${state.selectedScent}`,
+        `• Lưu ý KTV: ${clientNote}`,
+        `--------------------------------`,
+        `• Giá gốc: ${formatVND(baseTotal)}`,
+        `• Ưu đãi Đặt lịch Web: -${formatVND(onlineDiscount + coupleDiscount)}`,
+        `👉 TỔNG THANH TOÁN TẠI SPA: ${formatVND(finalPrice)}`
+      ].join('\n');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(slipText).catch(() => {});
+      }
+
+      const cleanPhone = state.brand.phone.replace(/\D/g, '');
+      const preText = document.getElementById('zalo-copied-text');
+      const zaloLink = document.getElementById('zalo-direct-link');
+      const callLink = document.getElementById('call-direct-link');
+      if (preText) preText.textContent = slipText;
+      if (zaloLink) zaloLink.href = `https://zalo.me/${cleanPhone}`;
+      if (callLink) callLink.href = `tel:${cleanPhone}`;
+
+      const modal = document.getElementById('zalo-confirm-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeZaloModal() {
+      const modal = document.getElementById('zalo-confirm-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // =========================================================================
+    // 7. OWNER ACTIVATION MODAL & LIVE PREVIEW
+    // =========================================================================
+    function openOwnerModal() {
+      const modal = document.getElementById('owner-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeOwnerModal() {
+      const modal = document.getElementById('owner-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function applyOwnerPreview() {
+      const newName = document.getElementById('preview-spa-name')?.value.trim();
+      const newPhone = document.getElementById('preview-spa-phone')?.value.trim();
+      const newAddr = document.getElementById('preview-spa-addr')?.value.trim();
+
+      if (newName) state.brand.name = newName;
+      if (newPhone) state.brand.phone = newPhone;
+      if (newAddr) state.brand.addr = newAddr;
+
+      applyBrandingToDOM();
+      updateBookingSummary();
+      closeOwnerModal();
+    }
+
+    // Initialize everything on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+      initUrlParams();
+      populateBookingSelect();
+      setQuickDate(0);
+      renderRitualsGrid();
+      updateBookingSummary();
+    });
+  </script>
+</body>
+</html>

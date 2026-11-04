@@ -1,0 +1,3178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Maison de Fleurs — Bespoke Floral Atelier | Đặt Hoa Nghệ Thuật Giao Nhanh 60 Phút</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #FCF9F6;
+      --ivory-pure: #FFFFFF;
+      --blush: #F5EBE6;
+      --blush-deep: #EAD8CF;
+      --burgundy: #6B1D2F;
+      --burgundy-dark: #4E1220;
+      --burgundy-soft: rgba(107, 29, 47, 0.08);
+      --olive: #2D3A2E;
+      --olive-soft: rgba(45, 58, 46, 0.08);
+      --espresso: #1B1817;
+      --espresso-muted: #5C534F;
+      --espresso-subtle: #8C827D;
+      --gold: #B8965A;
+      --gold-light: #DFC9A3;
+      --border-hairline: rgba(27, 24, 23, 0.1);
+      --border-strong: rgba(27, 24, 23, 0.2);
+      --shadow-soft: 0 18px 48px -12px rgba(27, 24, 23, 0.08);
+      --shadow-elevated: 0 28px 64px -12px rgba(27, 24, 23, 0.16);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-arch: 180px 180px 16px 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--ivory);
+      color: var(--espresso);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--ivory);
+      color: var(--espresso);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Subtle Linen Paper Texture Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.028;
+      background-image: radial-gradient(var(--espresso) 0.55px, transparent 0.55px), radial-gradient(var(--burgundy) 0.55px, var(--ivory) 0.55px);
+      background-size: 22px 22px;
+      background-position: 0 0, 11px 11px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Editorial Marquee / Ribbon */
+    .top-ribbon {
+      background-color: var(--olive);
+      color: var(--ivory);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .top-ribbon-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .ribbon-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #F5EBE6;
+    }
+
+    .ribbon-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #E2B86B;
+      box-shadow: 0 0 8px #E2B86B;
+    }
+
+    .ribbon-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 11.5px;
+      color: rgba(252, 249, 246, 0.85);
+    }
+
+    @media (max-width: 768px) {
+      .ribbon-meta {
+        display: none;
+      }
+      .top-ribbon-inner {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* Sticky Couture Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(252, 249, 246, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-hairline);
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--espresso);
+    }
+
+    .brand-monogram {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: var(--ivory);
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      box-shadow: 0 8px 20px rgba(107, 29, 47, 0.22);
+      flex-shrink: 0;
+    }
+
+    .brand-titles h1 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+      color: var(--espresso);
+    }
+
+    .brand-titles p {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--espresso-muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--espresso);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--burgundy);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--burgundy);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-couture {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid transparent;
+    }
+
+    .btn-burgundy {
+      background-color: var(--burgundy);
+      color: var(--ivory);
+      box-shadow: 0 10px 24px -6px rgba(107, 29, 47, 0.35);
+    }
+
+    .btn-burgundy:hover {
+      background-color: var(--burgundy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -6px rgba(107, 29, 47, 0.45);
+    }
+
+    .btn-olive {
+      background-color: var(--olive);
+      color: var(--ivory);
+    }
+
+    .btn-olive:hover {
+      background-color: #1F2920;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-editorial {
+      background-color: transparent;
+      color: var(--espresso);
+      border: 1px solid var(--border-strong);
+    }
+
+    .btn-outline-editorial:hover {
+      border-color: var(--burgundy);
+      color: var(--burgundy);
+      background-color: var(--burgundy-soft);
+    }
+
+    .cart-trigger-btn {
+      position: relative;
+      background: var(--blush);
+      color: var(--espresso);
+      border: 1px solid rgba(107, 29, 47, 0.18);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .cart-trigger-btn:hover {
+      background: var(--blush-deep);
+      border-color: var(--burgundy);
+    }
+
+    .cart-badge {
+      background: var(--burgundy);
+      color: var(--ivory);
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand-titles h1 {
+        font-size: 19px;
+      }
+      .header-actions .btn-zalo-header {
+        display: none;
+      }
+    }
+
+    /* Editorial Hero Section */
+    .hero-section {
+      padding: 56px 0 76px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .editorial-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px;
+      background: var(--blush);
+      border: 1px solid rgba(107, 29, 47, 0.16);
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--burgundy);
+      margin-bottom: 22px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.2vw, 68px);
+      font-weight: 600;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      color: var(--espresso);
+      margin-bottom: 22px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--burgundy);
+      font-weight: 400;
+    }
+
+    .hero-lead {
+      font-size: 16.5px;
+      color: var(--espresso-muted);
+      max-width: 560px;
+      margin-bottom: 32px;
+      line-height: 1.75;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+
+    .hero-cta-group .btn-couture {
+      padding: 15px 28px;
+      font-size: 14px;
+    }
+
+    /* Guarantee & Trust Strip in Hero */
+    .hero-trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .trust-pillar {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .trust-pillar-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--burgundy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-pillar-desc {
+      font-size: 12.5px;
+      color: var(--espresso-muted);
+      line-height: 1.45;
+    }
+
+    /* Hero Visual Composition */
+    .hero-visual-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-arch-frame {
+      width: 100%;
+      max-width: 470px;
+      height: 570px;
+      border-radius: var(--radius-arch);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(107, 29, 47, 0.2);
+      box-shadow: var(--shadow-elevated);
+      background: var(--blush);
+    }
+
+    .hero-arch-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-arch-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-secondary-card {
+      position: absolute;
+      bottom: -22px;
+      left: -24px;
+      width: 215px;
+      background: rgba(252, 249, 246, 0.96);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(107, 29, 47, 0.18);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-secondary-card img {
+      width: 100%;
+      height: 125px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .hero-secondary-caption {
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: var(--espresso);
+    }
+
+    .hero-secondary-caption strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 15px;
+      color: var(--burgundy);
+    }
+
+    .hero-live-photo-seal {
+      position: absolute;
+      top: 28px;
+      right: -12px;
+      background: var(--espresso);
+      color: var(--ivory);
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gold);
+      box-shadow: var(--shadow-soft);
+      max-width: 230px;
+    }
+
+    .seal-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .seal-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+      .hero-arch-frame {
+        height: 460px;
+      }
+      .hero-secondary-card {
+        left: 10px;
+        bottom: -14px;
+      }
+      .hero-live-photo-seal {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-trust-strip {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .hero-secondary-card {
+        display: none;
+      }
+    }
+
+    /* Section Headers */
+    .section-pad {
+      padding: 84px 0;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .section-eyebrow {
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--burgundy);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      color: var(--espresso);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--burgundy);
+      font-weight: 400;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--espresso-muted);
+      line-height: 1.7;
+    }
+
+    /* Collection Filter Bar */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 42px;
+    }
+
+    .filter-tab {
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      color: var(--espresso-muted);
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-tab:hover {
+      border-color: var(--burgundy);
+      color: var(--burgundy);
+    }
+
+    .filter-tab.active {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+      color: var(--ivory);
+      box-shadow: 0 8px 20px -4px rgba(107, 29, 47, 0.35);
+    }
+
+    /* Editorial Product Grid */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .floral-card {
+      background: var(--ivory-pure);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .floral-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(107, 29, 47, 0.28);
+    }
+
+    .floral-card-media {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      background: var(--blush);
+    }
+
+    .floral-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .floral-card:hover .floral-card-media img {
+      transform: scale(1.06);
+    }
+
+    .floral-badge-top {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(27, 24, 23, 0.82);
+      backdrop-filter: blur(8px);
+      color: var(--ivory);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .floral-stem-pill {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(252, 249, 246, 0.92);
+      backdrop-filter: blur(6px);
+      color: var(--burgundy);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      border: 1px solid rgba(107, 29, 47, 0.15);
+    }
+
+    .floral-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
+    .floral-origin {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--olive);
+      font-weight: 600;
+    }
+
+    .floral-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1.25;
+    }
+
+    .floral-notes {
+      font-size: 13px;
+      color: var(--espresso-muted);
+      line-height: 1.55;
+    }
+
+    .floral-card-footer {
+      padding: 16px 20px 20px;
+      border-top: 1px solid var(--border-hairline);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .floral-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .floral-price-label {
+      font-size: 11.5px;
+      color: var(--espresso-subtle);
+    }
+
+    .floral-price-val {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    .floral-actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-card-action {
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+      border: 1px solid transparent;
+    }
+
+    .btn-card-bespoke {
+      background: var(--blush);
+      color: var(--burgundy);
+      border-color: rgba(107, 29, 47, 0.2);
+    }
+
+    .btn-card-bespoke:hover {
+      background: var(--blush-deep);
+    }
+
+    .btn-card-quick {
+      background: var(--burgundy);
+      color: var(--ivory);
+    }
+
+    .btn-card-quick:hover {
+      background: var(--burgundy-dark);
+    }
+
+    /* INTERACTIVE BOUQUET SIZE & WRAPPING ATELIER */
+    .atelier-section {
+      background: linear-gradient(180deg, var(--blush) 0%, var(--ivory) 100%);
+    }
+
+    .atelier-workbench {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 44px;
+      background: var(--ivory-pure);
+      border: 1px solid rgba(107, 29, 47, 0.16);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-soft);
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .atelier-workbench {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+    }
+
+    .atelier-preview-column {
+      position: sticky;
+      top: 100px;
+    }
+
+    .atelier-stage-frame {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 460px;
+      border: 8px solid #F5EBE6;
+      box-shadow: var(--shadow-soft);
+      transition: border-color 0.4s ease;
+      background: var(--espresso);
+    }
+
+    .atelier-stage-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .atelier-live-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(27,24,23,0.45) 0%, transparent 35%, transparent 60%, rgba(27,24,23,0.82) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      color: var(--ivory);
+    }
+
+    .atelier-top-pills {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .atelier-pill {
+      background: rgba(27, 24, 23, 0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .atelier-pill.gold {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .atelier-bottom-summary h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .atelier-bottom-summary p {
+      font-size: 13px;
+      color: rgba(252, 249, 246, 0.85);
+    }
+
+    .atelier-spec-bar {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: var(--ivory);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .spec-box {
+      text-align: center;
+    }
+
+    .spec-box span {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--espresso-subtle);
+    }
+
+    .spec-box strong {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--burgundy);
+    }
+
+    /* Controls Column */
+    .atelier-controls-column {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .control-step {
+      border-bottom: 1px solid var(--border-hairline);
+      padding-bottom: 24px;
+    }
+
+    .control-step:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .step-label {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--espresso);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--burgundy);
+      color: var(--ivory);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-hint {
+      font-size: 12px;
+      color: var(--espresso-subtle);
+    }
+
+    /* Base Flower Selector Pills */
+    .bouquet-select-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 520px) {
+      .bouquet-select-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bouquet-mini-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      background: var(--ivory);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .bouquet-mini-option img {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .bouquet-mini-option.active {
+      border-color: var(--burgundy);
+      background: var(--blush);
+      box-shadow: 0 0 0 1px var(--burgundy);
+    }
+
+    .bouquet-mini-meta strong {
+      display: block;
+      font-size: 13px;
+      color: var(--espresso);
+      line-height: 1.25;
+    }
+
+    .bouquet-mini-meta span {
+      font-size: 11.5px;
+      color: var(--burgundy);
+      font-weight: 600;
+    }
+
+    /* Tier Options Grid */
+    .tier-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .tier-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tier-card {
+      border: 1px solid var(--border-strong);
+      background: var(--ivory);
+      border-radius: 12px;
+      padding: 15px 14px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      text-align: left;
+      position: relative;
+    }
+
+    .tier-card:hover {
+      border-color: var(--burgundy);
+    }
+
+    .tier-card.active {
+      background: var(--blush);
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 1px var(--burgundy);
+    }
+
+    .tier-name {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--espresso);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tier-stems {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--burgundy);
+      margin-bottom: 6px;
+    }
+
+    .tier-desc {
+      font-size: 11.5px;
+      color: var(--espresso-muted);
+      line-height: 1.4;
+    }
+
+    /* Wrapping Paper Options */
+    .wrap-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .wrap-options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .wrap-card {
+      border: 1px solid var(--border-strong);
+      background: var(--ivory);
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .wrap-card:hover {
+      border-color: var(--burgundy);
+    }
+
+    .wrap-card.active {
+      background: var(--blush);
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 1px var(--burgundy);
+    }
+
+    .wrap-swatch-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wrap-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid rgba(27, 24, 23, 0.2);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    .wrap-price-delta {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--olive);
+    }
+
+    .wrap-title {
+      font-weight: 600;
+      font-size: 13.5px;
+      color: var(--espresso);
+    }
+
+    .wrap-sub {
+      font-size: 11.5px;
+      color: var(--espresso-muted);
+      line-height: 1.4;
+    }
+
+    /* Scent & Ribbon Finishing */
+    .scent-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .scent-pill {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      background: var(--ivory);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--espresso);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .scent-pill.active {
+      background: var(--olive);
+      color: var(--ivory);
+      border-color: var(--olive);
+    }
+
+    /* Atelier Total Action Bar */
+    .atelier-checkout-bar {
+      background: var(--espresso);
+      color: var(--ivory);
+      padding: 22px 24px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .atelier-total-meta span {
+      display: block;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+    }
+
+    .atelier-total-price {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ivory);
+    }
+
+    /* LIVE CALLIGRAPHY GREETING CARD STUDIO */
+    .card-studio-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .card-studio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .studio-form-card {
+      background: var(--ivory-pure);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .form-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--espresso);
+    }
+
+    .btn-poetic-suggest {
+      background: var(--blush);
+      color: var(--burgundy);
+      border: 1px solid rgba(107, 29, 47, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-poetic-suggest:hover {
+      background: var(--burgundy);
+      color: var(--ivory);
+    }
+
+    .occasion-chips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .occasion-chips {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .occasion-chip {
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--ivory);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--espresso);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+
+    .occasion-chip.active {
+      background: var(--burgundy);
+      color: var(--ivory);
+      border-color: var(--burgundy);
+    }
+
+    .editorial-input, .editorial-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      background: var(--ivory);
+      font-size: 14px;
+      color: var(--espresso);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .editorial-input:focus, .editorial-textarea:focus {
+      outline: none;
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 3px var(--burgundy-soft);
+      background: var(--ivory-pure);
+    }
+
+    .editorial-textarea {
+      resize: vertical;
+      min-height: 105px;
+      line-height: 1.6;
+    }
+
+    .paper-theme-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .paper-theme-btn {
+      flex: 1;
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .paper-theme-btn.active {
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 1px var(--burgundy);
+    }
+
+    /* Live Embossed Greeting Card Stage */
+    .embossed-card-stage {
+      perspective: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .embossed-card-canvas {
+      width: 100%;
+      max-width: 540px;
+      min-height: 430px;
+      background: #FCF9F4;
+      color: var(--espresso);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 30px 70px -15px rgba(27, 24, 23, 0.22), 0 0 1px rgba(27, 24, 23, 0.3);
+      position: relative;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Theme Variations for Greeting Card */
+    .embossed-card-canvas.theme-ivory {
+      background: linear-gradient(135deg, #FCF9F4 0%, #F4ECE1 100%);
+      color: var(--espresso);
+    }
+
+    .embossed-card-canvas.theme-burgundy {
+      background: linear-gradient(135deg, #5A1625 0%, #3D0D18 100%);
+      color: #FCF9F4;
+    }
+
+    .embossed-card-canvas.theme-olive {
+      background: linear-gradient(135deg, #2D3A2E 0%, #1E281F 100%);
+      color: #FCF9F4;
+    }
+
+    .card-foil-border {
+      border: 1.5px solid var(--gold);
+      outline: 1px solid rgba(184, 150, 90, 0.35);
+      outline-offset: -7px;
+      border-radius: 8px;
+      padding: 32px 28px 28px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .card-top-crest {
+      text-align: center;
+      border-bottom: 1px solid rgba(184, 150, 90, 0.3);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card-crest-atelier {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .card-occasion-heading {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--burgundy);
+    }
+
+    .theme-burgundy .card-occasion-heading,
+    .theme-olive .card-occasion-heading {
+      color: var(--gold-light);
+    }
+
+    .card-recipient-line {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .card-message-body {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      font-style: italic;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      white-space: pre-line;
+    }
+
+    .card-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(184, 150, 90, 0.25);
+      padding-top: 16px;
+    }
+
+    .card-sender-sign {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .card-sender-label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      display: block;
+    }
+
+    /* Authentic Wax Seal Badge */
+    .wax-seal-badge {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #9E2A42 0%, #6B1D2F 55%, #420E1A 100%);
+      border: 2px solid #C5A059;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35), inset 0 2px 6px rgba(255, 255, 255, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #F4E3C1;
+      text-align: center;
+      transform: rotate(-8deg);
+      flex-shrink: 0;
+    }
+
+    .wax-seal-badge span {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .wax-seal-badge small {
+      font-size: 7px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* REAL PHOTO GUARANTEE & 60-MIN PROTOCOL SECTION */
+    .guarantee-section {
+      background-color: var(--olive);
+      color: var(--ivory);
+      padding: 84px 0;
+    }
+
+    .guarantee-section .section-eyebrow {
+      color: var(--gold-light);
+    }
+
+    .guarantee-section .section-title {
+      color: var(--ivory);
+    }
+
+    .guarantee-section .section-title em {
+      color: var(--gold-light);
+    }
+
+    .guarantee-section .section-desc {
+      color: rgba(252, 249, 246, 0.8);
+    }
+
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 44px;
+    }
+
+    @media (max-width: 900px) {
+      .protocol-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .protocol-card {
+      background: rgba(252, 249, 246, 0.05);
+      border: 1px solid rgba(252, 249, 246, 0.14);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .protocol-img-wrap {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .protocol-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .protocol-step-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--burgundy);
+      color: var(--ivory);
+      border: 1px solid var(--gold);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .protocol-body {
+      padding: 24px;
+    }
+
+    .protocol-body h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .protocol-body p {
+      font-size: 14px;
+      color: rgba(252, 249, 246, 0.82);
+      line-height: 1.65;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--espresso);
+      color: var(--ivory);
+      padding: 64px 0 120px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 820px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(252, 249, 246, 0.72);
+      max-width: 420px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(252, 249, 246, 0.8);
+    }
+
+    /* SLIDE-OVER CART & 60-MIN EXPRESS DRAWER */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 24, 23, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 480px;
+      height: 100vh;
+      background: var(--ivory);
+      z-index: 210;
+      box-shadow: -20px 0 60px rgba(27, 24, 23, 0.25);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 22px 24px;
+      background: var(--ivory-pure);
+      border-bottom: 1px solid var(--border-hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .drawer-header h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--espresso);
+    }
+
+    .drawer-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border-strong);
+      background: transparent;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .drawer-body {
+      padding: 20px 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .drawer-guarantee-banner {
+      background: var(--blush);
+      border: 1px solid rgba(107, 29, 47, 0.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: var(--burgundy);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-item-row {
+      background: var(--ivory-pure);
+      border: 1px solid var(--border-hairline);
+      border-radius: 12px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 68px 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cart-item-row img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cart-item-info h4 {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1.2;
+    }
+
+    .cart-item-specs {
+      font-size: 11.5px;
+      color: var(--espresso-muted);
+      margin: 4px 0;
+    }
+
+    .cart-item-price {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    .cart-qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      border: 1px solid var(--border-strong);
+      background: var(--ivory);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .drawer-card-preview-box {
+      background: var(--ivory-pure);
+      border: 1px dashed var(--gold);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12.5px;
+    }
+
+    .drawer-card-preview-box strong {
+      color: var(--burgundy);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .delivery-slot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .slot-pill {
+      padding: 9px 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: var(--ivory-pure);
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .slot-pill.active {
+      background: var(--olive);
+      color: var(--ivory);
+      border-color: var(--olive);
+    }
+
+    .drawer-footer {
+      padding: 18px 24px 24px;
+      background: var(--ivory-pure);
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .drawer-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .drawer-total-row span {
+      font-size: 13px;
+      color: var(--espresso-muted);
+    }
+
+    .drawer-total-row strong {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--burgundy);
+    }
+
+    /* FLOATING OWNER CLAIM PILL (BOTTOM LEFT) */
+    .owner-claim-pill {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 150;
+      background: rgba(27, 24, 23, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: var(--ivory);
+      border: 1px solid var(--gold);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      max-width: calc(100vw - 40px);
+    }
+
+    .owner-claim-pill:hover {
+      transform: translateY(-3px);
+      background: var(--burgundy);
+      border-color: var(--gold-light);
+    }
+
+    /* OWNER VIETQR ACTIVATION MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 24, 23, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .claim-modal-card {
+      background: var(--ivory);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-lg);
+      max-width: 520px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 28px;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .modal-close-x {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border-strong);
+      background: var(--ivory-pure);
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .qr-frame-box {
+      background: var(--ivory-pure);
+      border: 1px solid var(--border-hairline);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      margin: 18px 0;
+    }
+
+    .qr-frame-box img {
+      max-width: 240px;
+      margin: 0 auto 10px;
+      border-radius: 8px;
+    }
+
+    .memo-pill {
+      display: inline-block;
+      background: var(--blush);
+      color: var(--burgundy);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      border: 1px dashed var(--burgundy);
+    }
+
+    /* Toast Notification */
+    .couture-toast {
+      position: fixed;
+      bottom: 84px;
+      right: 24px;
+      z-index: 400;
+      background: var(--espresso);
+      color: var(--ivory);
+      border-left: 4px solid var(--gold);
+      padding: 14px 20px;
+      border-radius: 10px;
+      box-shadow: var(--shadow-elevated);
+      font-size: 13.5px;
+      max-width: 360px;
+      transform: translateY(30px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .couture-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Editorial Ribbon -->
+  <div class="top-ribbon">
+    <div class="top-ribbon-inner">
+      <div class="ribbon-highlight">
+        <span class="ribbon-dot"></span>
+        <span id="ribbonGuaranteeText">Giao hoa hỏa tốc 60 phút • Chụp ảnh hoa thật duyệt trước khi giao</span>
+      </div>
+      <div class="ribbon-meta">
+        <span>Haute Couture Floristry • Hoa Nhập Khẩu Tuyển Chọn Mỗi Sáng</span>
+        <span id="ribbonPhoneText">Hotline/Zalo: 0909888999</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Couture Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-lockup">
+        <div class="brand-monogram" id="brandMonogram">M</div>
+        <div class="brand-titles">
+          <h1 id="shopNameHeader">Maison de Fleurs — Bespoke Floral Atelier</h1>
+          <p id="shopAddrHeader">Giao hoa hỏa tốc 60 phút • Chụp ảnh hoa thật duyệt trước khi giao</p>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#collection">Bộ Sưu Tập</a>
+        <a href="#atelier">Xưởng Thiết Kế Bó Hoa</a>
+        <a href="#card-studio">Xưởng Thiệp Calligraphy</a>
+        <a href="#guarantee">Cam Kết Ảnh Hoa Thật</a>
+      </nav>
+
+      <div class="header-actions">
+        <a id="btnZaloHeader" href="https://zalo.me/0909888999" target="_blank" rel="noopener" class="btn-couture btn-outline-editorial btn-zalo-header">
+          Chat Zalo Tư Vấn
+        </a>
+        <button type="button" class="cart-trigger-btn" id="btnOpenDrawerTop">
+          <span>Giỏ Hoa Đặt Giao</span>
+          <span class="cart-badge" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="editorial-kicker">
+          <span>✦ Bespoke Botanical Atelier • Tuyệt Tác Hoa Tươi Nghệ Thuật</span>
+        </div>
+        <h2 class="hero-title">
+          Nghệ Thuật Chế Tác <br />
+          <em>Cảm Xúc Từ Hoa Tươi</em> <br />
+          <span id="heroShopNameSpan" style="font-size: 0.62em; display: block; margin-top: 8px; color: var(--olive);">Maison de Fleurs — Bespoke Floral Atelier</span>
+        </h2>
+        <p class="hero-lead" id="heroLeadDesc">
+          Lấy cảm hứng từ những xưởng hoa Haute Couture tại London & Paris, mỗi tác phẩm được tuyển chọn từ hồng Ohara, mẫu đơn Hà Lan và hồng Ecuador thượng hạng — gói thủ công kèm thiệp dập nổi đóng dấu sáp hoàng gia.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#atelier" class="btn-couture btn-burgundy">
+            Thiết Kế Bó Hoa & Chọn Giấy Gói
+          </a>
+          <a href="#card-studio" class="btn-couture btn-outline-editorial">
+            Viết Thiệp Calligraphy Đóng Dấu Sáp
+          </a>
+        </div>
+
+        <div class="hero-trust-strip">
+          <div class="trust-pillar">
+            <span class="trust-pillar-title">📸 Duyệt Ảnh Thật</span>
+            <span class="trust-pillar-desc">Chụp ảnh & quay video bó hoa hoàn thiện gửi Zalo khách duyệt trước khi xuất xưởng.</span>
+          </div>
+          <div class="trust-pillar">
+            <span class="trust-pillar-title">⚡ Giao Nhanh 60 Phút</span>
+            <span class="trust-pillar-desc">Vận chuyển chuyên biệt giữ ẩm cánh hoa, đúng khung giờ kỷ niệm quan trọng.</span>
+          </div>
+          <div class="trust-pillar">
+            <span class="trust-pillar-title">💌 Thiệp Dấu Sáp Riêng</span>
+            <span class="trust-pillar-desc">Tặng kèm thiệp mỹ thuật in chữ Calligraphy và phong bì đóng dấu sáp thủ công.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-stage">
+        <div class="hero-arch-frame">
+          <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=85" alt="Bó hoa nghệ thuật cao cấp Maison de Fleurs" />
+        </div>
+
+        <div class="hero-live-photo-seal">
+          <span class="seal-tag">100% Real-Photo Protocol</span>
+          <div class="seal-title">Cam kết gửi ảnh hoa thật qua Zalo trước khi giao</div>
+        </div>
+
+        <div class="hero-secondary-card">
+          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=900&q=85" alt="Hoa hồng Juliet và mẫu đơn" />
+          <div class="hero-secondary-caption">
+            <strong>Hồng Ecuador & Mẫu Đơn</strong>
+            Độ nở hoàn hảo, giữ tươi 5–7 ngày tại phòng.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Floral Collection Section -->
+  <section id="collection" class="section-pad">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">La Collection Botanique</span>
+        <h2 class="section-title">Tuyệt Tác Hoa Tươi <em>Thiết Kế Thủ Công</em></h2>
+        <p class="section-desc">
+          Chọn ngay một thiết kế biểu tượng hoặc bấm <strong>"Tùy Chỉnh Cỡ & Giấy"</strong> để tự tay phối số lượng cành, màu giấy lụa Pháp và viết thiệp chúc mừng riêng.
+        </p>
+      </div>
+
+      <div class="filter-tabs" id="collectionFilterBar">
+        <button type="button" class="filter-tab active" data-filter="all">Tất Cả Tuyệt Tác (8)</button>
+        <button type="button" class="filter-tab" data-filter="bouquet">Bó Hoa Couture</button>
+        <button type="button" class="filter-tab" data-filter="box">Hộp Hoa Sơn Mài & Giỏ Nghệ Thuật</button>
+        <button type="button" class="filter-tab" data-filter="grand">Kệ Hoa & Sự Kiện Thượng Lưu</button>
+      </div>
+
+      <div class="collection-grid" id="collectionGrid">
+        <!-- Populated dynamically by JS with real verified Unsplash floral photography -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Bouquet Size & Wrapping Atelier -->
+  <section id="atelier" class="section-pad atelier-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">L'Atelier Sur-Mesure</span>
+        <h2 class="section-title">Xưởng Cá Nhân Hóa <em>Kích Cỡ & Giấy Gói</em></h2>
+        <p class="section-desc">
+          Trải nghiệm đặt hoa chuẩn Haute Couture: Tùy chọn phiên bản 15, 30 hay 50 cành bề thế và phối cùng giấy lụa kem Pháp, giấy đen huyền bí hoặc hộp sơn mài cao cấp.
+        </p>
+      </div>
+
+      <div class="atelier-workbench">
+        <!-- Live Visual Preview Column -->
+        <div class="atelier-preview-column">
+          <div class="atelier-stage-frame" id="atelierStageFrame">
+            <img id="atelierPreviewImg" src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=85" alt="Preview Bouquet" />
+            <div class="atelier-live-overlay">
+              <div class="atelier-top-pills">
+                <span class="atelier-pill" id="previewTierBadge">Classic - 15 Cành</span>
+                <span class="atelier-pill gold" id="previewWrapBadge">Giấy Lụa Kem Pháp</span>
+              </div>
+              <div class="atelier-bottom-summary">
+                <h3 id="previewBouquetTitle">L'Amour Éternel — Hồng Ohara Đỏ & Ecuador</h3>
+                <p id="previewBouquetDesc">Hương thơm quyến rũ, phối lá khuynh diệp bạc & ruy-băng lụa Pháp.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="atelier-spec-bar">
+            <div class="spec-box">
+              <span>Quy Mô Bó Hoa</span>
+              <strong id="specStemsText">15 Cành Tuyển</strong>
+            </div>
+            <div class="spec-box">
+              <span>Phong Cách Gói</span>
+              <strong id="specWrapText">Lụa Kem Pháp</strong>
+            </div>
+            <div class="spec-box">
+              <span>Hoàn Thiện</span>
+              <strong id="specScentText">Nơ Satin Ánh Kim</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Customizer Controls Column -->
+        <div class="atelier-controls-column">
+          <!-- Step 1: Select Base Floral Creation -->
+          <div class="control-step">
+            <div class="step-header">
+              <span class="step-label"><span class="step-num">1</span> Chọn Tác Phẩm Hoa Chủ Đạo</span>
+              <span class="step-hint">Hoa tươi nhập mới mỗi ngày</span>
+            </div>
+            <div class="bouquet-select-strip" id="atelierBaseSelector">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Step 2: Select Bouquet Tier -->
+          <div class="control-step">
+            <div class="step-header">
+              <span class="step-label"><span class="step-num">2</span> Chọn Kích Cỡ Bó Hoa (Số Lượng Cành)</span>
+              <span class="step-hint">Tự động tính giá minh bạch</span>
+            </div>
+            <div class="tier-options-grid" id="tierSelectorGrid">
+              <button type="button" class="tier-card active" data-tier="Classic - 15 Cành" data-delta="0" data-stems="15 Cành Tuyển">
+                <span class="tier-name">Classic</span>
+                <span class="tier-stems">15 Cành • Tiêu chuẩn</span>
+                <p class="tier-desc">Tinh tế, nhẹ nhàng cho buổi hẹn hò hoặc chúc mừng thân mật.</p>
+              </button>
+              <button type="button" class="tier-card" data-tier="Deluxe - 30 Cành (+150k)" data-delta="150000" data-stems="30 Cành Đầy Đặn">
+                <span class="tier-name">Deluxe</span>
+                <span class="tier-stems">30 Cành (+150k)</span>
+                <p class="tier-desc">Phom bó tròn đầy đặn, sang trọng nổi bật khi chụp hình kỷ niệm.</p>
+              </button>
+              <button type="button" class="tier-card" data-tier="Grand Couture - 50 Cành (+350k)" data-delta="350000" data-stems="50 Cành Đại Tác">
+                <span class="tier-name">Grand Couture</span>
+                <span class="tier-stems">50 Cành (+350k)</span>
+                <p class="tier-desc">Tuyệt tác ôm trọn vòng tay chuẩn McQueens London đầy choáng ngợp.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Select Wrapping Paper Tone -->
+          <div class="control-step">
+            <div class="step-header">
+              <span class="step-label"><span class="step-num">3</span> Chọn Tone Giấy Gói & Hộp Sơn Mài</span>
+              <span class="step-hint">Thử nghiệm viền màu trực tiếp</span>
+            </div>
+            <div class="wrap-options-grid" id="wrapSelectorGrid">
+              <button type="button" class="wrap-card active" data-wrap="Giấy Lụa Kem Pháp" data-delta="0" data-border="#F5EBE6" data-short="Lụa Kem Pháp">
+                <div class="wrap-swatch-row">
+                  <span class="wrap-swatch" style="background: linear-gradient(135deg, #FCF9F6, #EAD8CF);"></span>
+                  <span class="wrap-price-delta">Miễn phí (+0đ)</span>
+                </div>
+                <span class="wrap-title">Giấy Lụa Kem Pháp</span>
+                <span class="wrap-sub">Thanh lịch, tôn vinh sắc hoa tự nhiên cùng nơ lụa Ivory.</span>
+              </button>
+
+              <button type="button" class="wrap-card" data-wrap="Giấy Đen Huyền Bí" data-delta="30000" data-border="#1B1817" data-short="Đen Huyền Bí">
+                <div class="wrap-swatch-row">
+                  <span class="wrap-swatch" style="background: linear-gradient(135deg, #2B2624, #1B1817);"></span>
+                  <span class="wrap-price-delta">+30.000đ</span>
+                </div>
+                <span class="wrap-title">Giấy Đen Huyền Bí</span>
+                <span class="wrap-sub">Tương phản quyến rũ, viền mạ vàng kim sang trọng bậc nhất.</span>
+              </button>
+
+              <button type="button" class="wrap-card" data-wrap="Hộp Hoa Sơn Mài Cao Cấp" data-delta="90000" data-border="#6B1D2F" data-short="Hộp Sơn Mài">
+                <div class="wrap-swatch-row">
+                  <span class="wrap-swatch" style="background: linear-gradient(135deg, #8A263D, #4E1220);"></span>
+                  <span class="wrap-price-delta">+90.000đ</span>
+                </div>
+                <span class="wrap-title">Hộp Hoa Sơn Mài Cao Cấp</span>
+                <span class="wrap-sub">Cắm xốp giữ ẩm 7 ngày trong hộp cứng ép kim kèm túi quà.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Ribbon & Botanical Perfume Touch -->
+          <div class="control-step">
+            <div class="step-header">
+              <span class="step-label"><span class="step-num">4</span> Dấu Ấn Hoàn Thiện (Miễn Phí)</span>
+              <span class="step-hint">Tặng kèm theo tiêu chuẩn Atelier</span>
+            </div>
+            <div class="scent-pills" id="scentSelectorRow">
+              <button type="button" class="scent-pill active" data-scent="Nơ Satin Ánh Kim">🎀 Nơ Satin Ánh Kim</button>
+              <button type="button" class="scent-pill" data-scent="Xịt Tinh Dầu Hồng Bulgaria">🌹 Xịt Tinh Dầu Hồng Bulgaria</button>
+              <button type="button" class="scent-pill" data-scent="Nơ Voan Tơ Pháp Mềm">✨ Nơ Voan Tơ Pháp Mềm</button>
+            </div>
+          </div>
+
+          <!-- Finalize Bespoke Bouquet Bar -->
+          <div class="atelier-checkout-bar">
+            <div class="atelier-total-meta">
+              <span>Giá Tác Phẩm Thiết Kế Riêng</span>
+              <div class="atelier-total-price" id="atelierCalculatedPrice">590.000đ</div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="#card-studio" class="btn-couture btn-outline-editorial" style="color: var(--ivory); border-color: rgba(255,255,255,0.3);">
+                + Viết Thiệp Kèm Theo
+              </a>
+              <button type="button" class="btn-couture btn-burgundy" id="btnAddAtelierToCart">
+                Thêm Thiết Kế Này Vào Giỏ Hoa
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Calligraphy Greeting Card Studio -->
+  <section id="card-studio" class="section-pad">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Studio De Calligraphie</span>
+        <h2 class="section-title">Xưởng Thiệp Chúc Mừng <em>Đóng Dấu Sáp Hoàng Gia</em></h2>
+        <p class="section-desc">
+          Mỗi bó hoa đều đi kèm một tấm thiệp giấy mỹ thuật dập nổi miễn phí. Hãy chọn dịp tặng và nhập lời nhắn của bạn để xem bản dựng thiệp Calligraphy trực tiếp ngay bên dưới.
+        </p>
+      </div>
+
+      <div class="card-studio-grid">
+        <!-- Input Form -->
+        <div class="studio-form-card">
+          <div class="form-group">
+            <div class="form-label-row">
+              <label class="form-label">1. Chọn Dịp Tặng Hoa (Occasion)</label>
+            </div>
+            <div class="occasion-chips" id="occasionSelector">
+              <button type="button" class="occasion-chip active" data-occasion="Sinh Nhật" data-heading="Joyeux Anniversaire • Chúc Mừng Sinh Nhật">
+                🎂 Sinh Nhật Rực Rỡ
+              </button>
+              <button type="button" class="occasion-chip" data-occasion="Kỷ Niệm Tình Yêu" data-heading="L'Amour Éternel • Kỷ Niệm Tình Yêu">
+                🌹 Kỷ Niệm Tình Yêu
+              </button>
+              <button type="button" class="occasion-chip" data-occasion="Khai Trương Hồng Phát" data-heading="Félicitations • Khai Trương Hồng Phát">
+                🥂 Khai Trương Hồng Phát
+              </button>
+              <button type="button" class="occasion-chip" data-occasion="Xin Lỗi Người Thương" data-heading="Pardonne-Moi • Gửi Lời Xin Lỗi Chân Thành">
+                💌 Xin Lỗi Người Thương
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label class="form-label" for="cardRecipientInput">2. Tên Người Nhận Trên Thiệp</label>
+              <span style="font-size: 11px; color: var(--espresso-subtle);">Hiển thị trực tiếp</span>
+            </div>
+            <input type="text" id="cardRecipientInput" class="editorial-input" value="Người Thương Của Anh" placeholder="VD: Em yêu Thanh Hà / Quý Công Ty..." />
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label class="form-label" for="cardMessageInput">3. Lời Chúc Tâm Tình</label>
+              <button type="button" class="btn-poetic-suggest" id="btnCyclePoeticWish">
+                ✨ Đổi Gợi Ý Lời Chúc Hay
+              </button>
+            </div>
+            <textarea id="cardMessageInput" class="editorial-textarea" placeholder="Nhập lời chúc của bạn...">Chúc em một tuổi mới luôn rạng rỡ, kiêu sa và ngập tràn hạnh phúc như những đóa hoa tươi thắm nhất buổi sớm mai.</textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label class="form-label" for="cardSenderInput">4. Chữ Ký Người Gửi</label>
+            </div>
+            <input type="text" id="cardSenderInput" class="editorial-input" value="Thương gửi từ Minh Quân" placeholder="VD: Thương gửi từ... (hoặc để Giấu tên)" />
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-row">
+              <label class="form-label">5. Màu Giấy Mỹ Thuật & Phối Viền</label>
+            </div>
+            <div class="paper-theme-row" id="cardThemeRow">
+              <button type="button" class="paper-theme-btn active" data-theme="theme-ivory" style="background: #FCF9F4; color: #1B1817;">
+                Giấy Kem Pháp Dập Nổi
+              </button>
+              <button type="button" class="paper-theme-btn" data-theme="theme-burgundy" style="background: #5A1625; color: #FCF9F4;">
+                Đỏ Rượu Vang Hoàng Gia
+              </button>
+              <button type="button" class="paper-theme-btn" data-theme="theme-olive" style="background: #2D3A2E; color: #FCF9F4;">
+                Xanh Olive Thảo Mộc
+              </button>
+            </div>
+          </div>
+
+          <button type="button" class="btn-couture btn-burgundy" id="btnSaveCardToOrder" style="width: 100%; padding: 14px;">
+            ✓ Lưu Thiệp Calligraphy Này Vào Đơn Đặt Hoa (Miễn Phí)
+          </button>
+        </div>
+
+        <!-- Live Embossed Card Preview -->
+        <div class="embossed-card-stage">
+          <div class="embossed-card-canvas theme-ivory" id="liveCardCanvas">
+            <div class="card-foil-border">
+              <div class="card-top-crest">
+                <span class="card-crest-atelier" id="cardCrestShopName">MAISON DE FLEURS • HAUTE FLORISTRY</span>
+                <div class="card-occasion-heading" id="liveCardOccasionHeading">
+                  Joyeux Anniversaire • Chúc Mừng Sinh Nhật
+                </div>
+              </div>
+
+              <div>
+                <div class="card-recipient-line">
+                  Thân gửi <span id="liveCardRecipient">Người Thương Của Anh</span>,
+                </div>
+                <div class="card-message-body" id="liveCardMessage">
+                  “Chúc em một tuổi mới luôn rạng rỡ, kiêu sa và ngập tràn hạnh phúc như những đóa hoa tươi thắm nhất buổi sớm mai.”
+                </div>
+              </div>
+
+              <div class="card-footer-row">
+                <div>
+                  <span class="card-sender-label">Với tất cả trân quý</span>
+                  <div class="card-sender-sign" id="liveCardSender">Thương gửi từ Minh Quân</div>
+                </div>
+                <div class="wax-seal-badge" title="Dấu sáp đóng thủ công">
+                  <span id="waxSealInitial">M</span>
+                  <small>Atelier</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="margin-top: 14px; font-size: 12.5px; color: var(--espresso-muted); text-align: center;">
+            ✦ Bản xem trước thời gian thực • Thiệp thực tế được in chữ nghệ thuật và đóng dấu sáp nổi thủ công.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Photo Before Delivery & 60-Min Express Guarantee -->
+  <section id="guarantee" class="guarantee-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Notre Engagement D'Excellence</span>
+        <h2 class="section-title">Quy Trình 3 Bước <em>Cam Kết Hoa Thật — Giao Đúng Giờ</em></h2>
+        <p class="section-desc">
+          Xóa bỏ hoàn toàn nỗi lo "hoa giao tới không giống hình mẫu". Tại <span id="guaranteeShopName">Maison de Fleurs</span>, mọi đơn hoa đều tuân thủ quy trình kiểm duyệt khắt khe trước khi rời xưởng.
+        </p>
+      </div>
+
+      <div class="protocol-grid">
+        <div class="protocol-card">
+          <div class="protocol-img-wrap">
+            <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=900&q=85" alt="Tuyển chọn hoa tươi mỗi sáng" />
+            <span class="protocol-step-badge">Bước 01 • Tuyển Hoa Loại A+</span>
+          </div>
+          <div class="protocol-body">
+            <h3>Tuyển Chọn Hoa Sớm Tinh Mơ</h3>
+            <p>Chỉ sử dụng hoa cắt cành trong ngày từ nông trại Đà Lạt công nghệ cao và hoa nhập khẩu đường hàng không từ Hà Lan, Ecuador với độ nở chuẩn xác.</p>
+          </div>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-img-wrap">
+            <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=900&q=85" alt="Chụp ảnh hoa thật gửi Zalo duyệt trước" />
+            <span class="protocol-step-badge">Bước 02 • Chụp Ảnh Hoa Thật</span>
+          </div>
+          <div class="protocol-body">
+            <h3>Gửi Ảnh & Video Qua Zalo Duyệt Trước</h3>
+            <p>Ngay khi Florist hoàn thiện bó hoa và thiệp dấu sáp, tiệm chụp ảnh thực tế dưới ánh sáng tự nhiên gửi qua Zalo. Quý khách hài lòng 100% mới tiến hành giao.</p>
+          </div>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-img-wrap">
+            <img src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=900&q=85" alt="Giao hoa hỏa tốc 60 phút" />
+            <span class="protocol-step-badge">Bước 03 • Giao Hỏa Tốc 60 Phút</span>
+          </div>
+          <div class="protocol-body">
+            <h3>Vận Chuyển Giữ Ẩm 60 Phút</h3>
+            <p>Cuống hoa được bọc túi nước dưỡng chuyên dụng, che chắn gió và nắng tuyệt đối, trao tận tay người nhận đúng phút giây kỷ niệm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 id="footerShopName">Maison de Fleurs — Bespoke Floral Atelier</h3>
+        <p id="footerShopAddr">Giao hoa hỏa tốc 60 phút • Chụp ảnh hoa thật duyệt trước khi giao</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a id="footerZaloBtn" href="https://zalo.me/0909888999" target="_blank" rel="noopener" class="btn-couture btn-burgundy">
+            Nhắn Zalo Đặt Hoa Ngay
+          </a>
+          <a id="footerCallBtn" href="tel:0909888999" class="btn-couture btn-outline-editorial" style="color: var(--ivory); border-color: rgba(255,255,255,0.28);">
+            📞 Gọi Hotline: <span id="footerPhoneSpan">0909888999</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Dịch Vụ Đặc Quyền</h4>
+        <ul>
+          <li>✦ Thiết kế bó hoa sinh nhật & kỷ niệm theo yêu cầu</li>
+          <li>✦ Hộp hoa sơn mài & kệ hoa khai trương sang trọng</li>
+          <li>✦ In thiệp Calligraphy đóng dấu sáp miễn phí</li>
+          <li>✦ Chụp ảnh hoa thật gửi Zalo duyệt trước khi giao</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Khung Giờ Phục Vụ</h4>
+        <ul>
+          <li>✦ Mở cửa: 06:30 – 22:00 (Tất cả các ngày lễ & CN)</li>
+          <li>✦ Giao hỏa tốc nội thành chỉ từ 45 – 60 phút</li>
+          <li>✦ Bảo hành độ tươi hoa từ 5 – 7 ngày</li>
+          <li>✦ Hỗ trợ xuất hóa đơn VAT cho công ty & đối tác</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart & 60-Min Express Delivery Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Giỏ hoa đặt giao">
+    <div class="drawer-header">
+      <h3>Giỏ Hoa & Lịch Giao Hỏa Tốc</h3>
+      <button type="button" class="drawer-close-btn" id="btnCloseDrawer" aria-label="Đóng">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-guarantee-banner">
+        <span>📸</span>
+        <span>Cam kết chụp ảnh bó hoa thật gửi Zalo bạn duyệt trước khi shipper xuất phát!</span>
+      </div>
+
+      <!-- Cart Items -->
+      <div>
+        <div class="form-label" style="margin-bottom: 10px;">Tác Phẩm Hoa Đã Chọn</div>
+        <div class="cart-items-list" id="drawerCartList">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Attached Calligraphy Card Summary -->
+      <div class="drawer-card-preview-box" id="drawerCardSummaryBox">
+        <strong>💌 Thiệp Calligraphy Đính Kèm (Miễn Phí):</strong>
+        <div id="drawerCardSummaryText">Dịp: Sinh Nhật • Gửi: Người Thương Của Anh — “Chúc em một tuổi mới luôn rạng rỡ...”</div>
+      </div>
+
+      <!-- Express Delivery Time-Slot Picker -->
+      <div>
+        <div class="form-label" style="margin-bottom: 8px;">Khung Giờ Giao Hoa</div>
+        <div class="delivery-slot-grid" id="deliverySlotGrid">
+          <button type="button" class="slot-pill active" data-slot="Giao Hỏa Tốc 60 Phút">⚡ Giao Hỏa Tốc 60 Phút</button>
+          <button type="button" class="slot-pill" data-slot="Khung Sáng (08:00 - 11:30)">🌅 Sáng (08:00 - 11:30)</button>
+          <button type="button" class="slot-pill" data-slot="Khung Chiều (13:30 - 17:00)">☀️ Chiều (13:30 - 17:00)</button>
+          <button type="button" class="slot-pill" data-slot="Khung Tối Lãng Mạn (18:00 - 21:00)">🌙 Tối (18:00 - 21:00)</button>
+        </div>
+      </div>
+
+      <!-- Recipient & Delivery Note -->
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <input type="text" id="orderCustomerPhone" class="editorial-input" placeholder="Số điện thoại / Zalo người đặt hoa..." />
+        <input type="text" id="orderDeliveryAddress" class="editorial-input" placeholder="Địa chỉ nhận hoa (Hoặc để tiệm liên hệ người nhận)..." />
+        <label style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--espresso); cursor: pointer;">
+          <input type="checkbox" id="chkPhotoApprove" checked style="accent-color: var(--burgundy); width: 16px; height: 16px;" />
+          <span>Yêu cầu chụp ảnh hoa thật gửi Zalo duyệt trước khi giao</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="drawer-total-row">
+        <span>Tổng cộng tạm tính:</span>
+        <strong id="drawerTotalPrice">0đ</strong>
+      </div>
+      <button type="button" class="btn-couture btn-burgundy" id="btnCheckoutZalo" style="width: 100%; padding: 15px; font-size: 14px;">
+        Gửi Đơn Đặt Hoa & Duyệt Ảnh Thật Qua Zalo →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Refined Floating Glass Pill for Florist Shop Owner (Bottom Left) -->
+  <button type="button" class="owner-claim-pill" id="btnOpenClaimModal">
+    <span>👑 Dành cho Chủ Shop Hoa • Kích hoạt Website Đặt Hoa này 199.000đ</span>
+  </button>
+
+  <!-- Owner VietQR Activation Modal -->
+  <div class="modal-overlay" id="claimModal">
+    <div class="claim-modal-card">
+      <button type="button" class="modal-close-x" id="btnCloseClaimModal" aria-label="Đóng">✕</button>
+      <span class="section-eyebrow" style="margin-bottom: 4px;">Bàn Giao Bản Quyền Website Cho Chủ Tiệm Hoa</span>
+      <h3 style="font-family: var(--font-serif); font-size: 28px; color: var(--espresso); line-height: 1.2; margin-bottom: 8px;">
+        Sở Hữu Website Đặt Hoa Nghệ Thuật Này Cho <span id="modalShopName" style="color: var(--burgundy);">Maison de Fleurs</span>
+      </h3>
+      <p style="font-size: 13.5px; color: var(--espresso-muted); line-height: 1.55;">
+        Chỉ với <strong>199.000đ trọn gói một lần duy nhất</strong> (không phí duy trì hàng tháng), toàn bộ giao diện Xưởng Thiết Kế Bó Hoa, Xưởng Thiệp Calligraphy và Giỏ Hàng Đặt Nhanh qua Zalo sẽ được gắn chính thức với thương hiệu của bạn.
+      </p>
+
+      <div class="qr-frame-box">
+        <img id="claimQrImg" src="" alt="VietQR Thanh Toán 199.000đ" />
+        <div style="font-size: 12px; color: var(--espresso-muted); margin-bottom: 6px;">
+          Quét mã VietQR bằng mọi ứng dụng Ngân hàng • Số tiền: <strong>199.000đ</strong>
+        </div>
+        <div>
+          Nội dung chuyển khoản: <span class="memo-pill" id="claimMemoText">WEB199K MAISON</span>
+        </div>
+      </div>
+
+      <ul style="list-style: none; font-size: 13px; color: var(--espresso); display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px;">
+        <li>✅ <strong>Xóa nút kích hoạt mẫu</strong> và gắn Tên Shop Hoa, SĐT/Zalo, Địa chỉ thật vĩnh viễn.</li>
+        <li>✅ <strong>Cập nhật bảng giá & hình ảnh hoa riêng</strong> của tiệm bạn nếu cần.</li>
+        <li>✅ <strong>Tối ưu chốt đơn Zalo tự động</strong> kèm cỡ bó hoa, màu giấy gói & nội dung thiệp chúc mừng.</li>
+      </ul>
+
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a id="btnContactCreatorZalo" href="https://zalo.me/0988888888" target="_blank" rel="noopener" class="btn-couture btn-burgundy" style="flex: 1; padding: 14px;">
+          Nhắn Zalo Xác Nhận & Nhận Bàn Giao Ngay
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="couture-toast" id="coutureToast"></div>
+
+  <script>
+    (function () {
+      // 1. Read URL Parameters with Required Defaults
+      const params = new URLSearchParams(window.location.search);
+      const shopName = params.get("name") || "Maison de Fleurs — Bespoke Floral Atelier";
+      const shopPhone = params.get("phone") || "0909888999";
+      const shopAddr = params.get("addr") || "Giao hoa hỏa tốc 60 phút • Chụp ảnh hoa thật duyệt trước khi giao";
+
+      const ownerBank = params.get("obank") || localStorage.getItem("sniper_owner_bank") || "MB";
+      const ownerAcc = params.get("oacc") || localStorage.getItem("sniper_owner_acc") || "0988888888";
+      const ownerName = params.get("oname") || localStorage.getItem("sniper_owner_name") || "CHU XUONG WEB";
+      const ownerZalo = params.get("ozalo") || localStorage.getItem("sniper_owner_zalo") || "0988888888";
+
+      const cleanShopPhone = shopPhone.replace(/\D/g, "") || "0909888999";
+      const cleanOwnerZalo = ownerZalo.replace(/\D/g, "") || "0988888888";
+
+      // Apply Dynamic Brand Customizations across DOM
+      document.getElementById("pageTitle").textContent = `${shopName} | Đặt Hoa Tươi Nghệ Thuật & Giao Nhanh 60 Phút`;
+      document.getElementById("ribbonGuaranteeText").textContent = shopAddr;
+      document.getElementById("ribbonPhoneText").textContent = `Hotline/Zalo: ${shopPhone}`;
+      document.getElementById("shopNameHeader").textContent = shopName;
+      document.getElementById("shopAddrHeader").textContent = shopAddr;
+      document.getElementById("heroShopNameSpan").textContent = shopName;
+      document.getElementById("guaranteeShopName").textContent = shopName;
+      document.getElementById("footerShopName").textContent = shopName;
+      document.getElementById("footerShopAddr").textContent = `📍 ${shopAddr}`;
+      document.getElementById("footerPhoneSpan").textContent = shopPhone;
+      document.getElementById("modalShopName").textContent = shopName;
+      document.getElementById("cardCrestShopName").textContent = `${shopName.toUpperCase()} • HAUTE FLORISTRY`;
+
+      const firstChar = shopName.trim().charAt(0).toUpperCase() || "M";
+      document.getElementById("brandMonogram").textContent = firstChar;
+      document.getElementById("waxSealInitial").textContent = firstChar;
+
+      document.getElementById("btnZaloHeader").href = `https://zalo.me/${cleanShopPhone}`;
+      document.getElementById("footerZaloBtn").href = `https://zalo.me/${cleanShopPhone}`;
+      document.getElementById("footerCallBtn").href = `tel:${cleanShopPhone}`;
+
+      // Setup VietQR Owner Activation Modal
+      const memo = ("WEB199K " + shopName.substring(0, 14)).toUpperCase().replace(/[^A-Z0-9 ]/g, "");
+      document.getElementById("claimMemoText").textContent = memo;
+      const qrUrl = `https://img.vietqr.io/image/${encodeURIComponent(ownerBank)}-${encodeURIComponent(ownerAcc)}-compact2.png?amount=199000&addInfo=${encodeURIComponent(memo)}&accountName=${encodeURIComponent(ownerName)}`;
+      document.getElementById("claimQrImg").src = qrUrl;
+      document.getElementById("btnContactCreatorZalo").href = `https://zalo.me/${cleanOwnerZalo}`;
+
+      // 2. Verified High-Res Unsplash Floral Catalog (NO EMOJIS FOR BOUQUETS)
+      const FLORAL_COLLECTION = [
+        {
+          id: "ohara-velour",
+          category: "bouquet",
+          badge: "Bán Chạy #1",
+          origin: "Ecuador & Dalat Signature",
+          name: "L'Amour Éternel — Hồng Ohara Đỏ & Ecuador",
+          notes: "Sự kết hợp nồng nàn giữa hồng Ohara đỏ nhung thơm ngát, thảo mộc khuynh diệp bạc và ruy-băng lụa.",
+          basePrice: 590000,
+          defaultStems: "15–50 Cành",
+          image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          id: "peony-blush",
+          category: "bouquet",
+          badge: "Haute Couture",
+          origin: "Holland Peony Collection",
+          name: "Jardin de Pivoines — Mẫu Đơn Hồng Phấn Hà Lan",
+          notes: "Những đóa mẫu đơn hồng phấn bung nở kiêu kỳ phối cùng hồng kem bơ và cát tường kép thanh tao.",
+          basePrice: 780000,
+          defaultStems: "15–50 Cành",
+          image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          id: "paris-soiree",
+          category: "bouquet",
+          badge: "Nàng Thơ",
+          origin: "French Botanical Style",
+          name: "Soirée à Paris — Hồng Juliet & Cẩm Tú Cầu Kem",
+          notes: "Gam màu Pastel kem đào dịu dàng chuẩn quý cô Paris, hương thơm thanh khiết đầy lãng mạn.",
+          basePrice: 620000,
+          defaultStems: "15–50 Cành",
+          image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          id: "lacquer-box",
+          category: "box",
+          badge: "Quà Tặng VIP",
+          origin: "Bespoke Hatbox Edition",
+          name: "Boîte de Luxe — Hộp Hoa Hồng Kem & Mao Lương",
+          notes: "Thiết kế hộp hoa sang trọng đặt bàn làm việc hoặc bàn tiệc, giữ độ tươi rạng rỡ suốt 7 ngày.",
+          basePrice: 680000,
+          defaultStems: "25–45 Cành",
+          image: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          id: "botanical-basket",
+          category: "box",
+          badge: "Sinh Nhật & Tri Ân",
+          origin: "English Garden Basket",
+          name: "Symphonie Botanique — Giỏ Hoa Nghệ Thuật Châu Âu",
+          notes: "Giỏ hoa phóng khoáng kết hợp hồng cổ điển, phi yến trắng và lá bạc nhập khẩu tặng đối tác, người thân.",
+          basePrice: 750000,
+          defaultStems: "30–50 Cành",
+          image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          id: "grand-opening",
+          category: "grand",
+          badge: "Khai Trương",
+          origin: "Luxury Event & Opening",
+          name: "Aurore Dorée — Tuyệt Tác Hoa Khai Trương Hoàng Gia",
+          notes: "Thiết kế bề thế mang thông điệp thịnh vượng, tài lộc và đẳng cấp cho sự kiện khai trương, kỷ niệm lớn.",
+          basePrice: 1250000,
+          defaultStems: "Kệ/Bình Đại",
+          image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=85"
+        },
+        {
+          id: "tulip-spring",
+          category: "bouquet",
+          badge: "Nhập Khẩu",
+          origin: "Amsterdam Tulip Studio",
+          name: "Murmure du Printemps — Bó Hoa Tulip Hà Lan Tinh Khôi",
+          notes: "Vẻ đẹp thanh lịch, tối giản và hiện đại của những cành Tulip tươi rói vừa đáp chuyến bay sớm.",
+          basePrice: 690000,
+          defaultStems: "15–50 Cành",
+          image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          id: "velours-nuit",
+          category: "box",
+          badge: "Kỷ Niệm Tình Yêu",
+          origin: "Maison Signature Box",
+          name: "Velours de Nuit — Hộp Hoa Hồng Kem Dâu & Thảo Mộc",
+          notes: "Phối màu tinh tế giữa sắc hồng phấn ngọt ngào và lá xanh olive, tặng kèm thiệp đóng dấu sáp.",
+          basePrice: 640000,
+          defaultStems: "20–40 Cành",
+          image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=900&q=85"
+        }
+      ];
+
+      function formatVnd(amount) {
+        return amount.toLocaleString("vi-VN") + "đ";
+      }
+
+      function showToast(msg) {
+        const toast = document.getElementById("coutureToast");
+        toast.textContent = msg;
+        toast.classList.add("show");
+        clearTimeout(window.__toastTimer);
+        window.__toastTimer = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3200);
+      }
+
+      // 3. Render Curated Collection Grid & Filters
+      const collectionGrid = document.getElementById("collectionGrid");
+      let currentFilter = "all";
+
+      function renderCollection() {
+        collectionGrid.innerHTML = "";
+        const filtered = currentFilter === "all"
+          ? FLORAL_COLLECTION
+          : FLORAL_COLLECTION.filter(item => item.category === currentFilter);
+
+        filtered.forEach(item => {
+          const card = document.createElement("article");
+          card.className = "floral-card";
+          card.innerHTML = `
+            <div>
+              <div class="floral-card-media">
+                <img src="${item.image}" alt="${item.name}" loading="lazy" />
+                <span class="floral-badge-top">${item.badge}</span>
+                <span class="floral-stem-pill">${item.defaultStems}</span>
+              </div>
+              <div class="floral-card-body">
+                <span class="floral-origin">${item.origin}</span>
+                <h3 class="floral-title">${item.name}</h3>
+                <p class="floral-notes">${item.notes}</p>
+              </div>
+            </div>
+            <div class="floral-card-footer">
+              <div class="floral-price-row">
+                <span class="floral-price-label">Giá phiên bản Classic</span>
+                <span class="floral-price-val">${formatVnd(item.basePrice)}</span>
+              </div>
+              <div class="floral-actions-row">
+                <button type="button" class="btn-card-action btn-card-bespoke" data-customize="${item.id}">
+                  Tùy Chỉnh Cỡ & Giấy
+                </button>
+                <button type="button" class="btn-card-action btn-card-quick" data-quickadd="${item.id}">
+                  + Đặt Giao Ngay
+                </button>
+              </div>
+            </div>
+          `;
+
+          card.querySelector("[data-customize]").addEventListener("click", () => {
+            selectAtelierBase(item.id);
+            document.getElementById("atelier").scrollIntoView({ behavior: "smooth" });
+          });
+
+          card.querySelector("[data-quickadd]").addEventListener("click", () => {
+            addToCart({
+              id: item.id + "-classic",
+              name: item.name,
+              image: item.image,
+              tier: "Classic - 15 Cành",
+              wrapping: "Giấy Lụa Kem Pháp",
+              scent: "Nơ Satin Ánh Kim",
+              unitPrice: item.basePrice
+            });
+            openCartDrawer();
+          });
+
+          collectionGrid.appendChild(card);
+        });
+      }
+
+      document.querySelectorAll("#collectionFilterBar .filter-tab").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#collectionFilterBar .filter-tab").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentFilter = btn.getAttribute("data-filter");
+          renderCollection();
+        });
+      });
+
+      renderCollection();
+
+      // 4. Interactive Bouquet Size & Wrapping Atelier Logic
+      const atelierState = {
+        baseItem: FLORAL_COLLECTION[0],
+        tierName: "Classic - 15 Cành",
+        tierDelta: 0,
+        tierStemsLabel: "15 Cành Tuyển",
+        wrapName: "Giấy Lụa Kem Pháp",
+        wrapDelta: 0,
+        wrapBorder: "#F5EBE6",
+        wrapShort: "Lụa Kem Pháp",
+        scentName: "Nơ Satin Ánh Kim"
+      };
+
+      const baseSelectorEl = document.getElementById("atelierBaseSelector");
+
+      function renderAtelierBaseOptions() {
+        baseSelectorEl.innerHTML = "";
+        FLORAL_COLLECTION.slice(0, 4).forEach(item => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "bouquet-mini-option" + (atelierState.baseItem.id === item.id ? " active" : "");
+          btn.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="bouquet-mini-meta">
+              <strong>${item.name.split("—")[0].trim()}</strong>
+              <span>Từ ${formatVnd(item.basePrice)}</span>
+            </div>
+          `;
+          btn.addEventListener("click", () => selectAtelierBase(item.id));
+          baseSelectorEl.appendChild(btn);
+        });
+      }
+
+      function selectAtelierBase(itemId) {
+        const found = FLORAL_COLLECTION.find(i => i.id === itemId);
+        if (!found) return;
+        atelierState.baseItem = found;
+        renderAtelierBaseOptions();
+        updateAtelierPreview();
+      }
+
+      function updateAtelierPreview() {
+        const total = atelierState.baseItem.basePrice + atelierState.tierDelta + atelierState.wrapDelta;
+        document.getElementById("atelierPreviewImg").src = atelierState.baseItem.image;
+        document.getElementById("previewBouquetTitle").textContent = atelierState.baseItem.name;
+        document.getElementById("previewBouquetDesc").textContent = atelierState.baseItem.notes;
+        document.getElementById("previewTierBadge").textContent = atelierState.tierName;
+        document.getElementById("previewWrapBadge").textContent = atelierState.wrapName;
+        document.getElementById("atelierStageFrame").style.borderColor = atelierState.wrapBorder;
+
+        document.getElementById("specStemsText").textContent = atelierState.tierStemsLabel;
+        document.getElementById("specWrapText").textContent = atelierState.wrapShort;
+        document.getElementById("specScentText").textContent = atelierState.scentName;
+        document.getElementById("atelierCalculatedPrice").textContent = formatVnd(total);
+      }
+
+      // Tier buttons
+      document.querySelectorAll("#tierSelectorGrid .tier-card").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#tierSelectorGrid .tier-card").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          atelierState.tierName = btn.getAttribute("data-tier");
+          atelierState.tierDelta = parseInt(btn.getAttribute("data-delta"), 10) || 0;
+          atelierState.tierStemsLabel = btn.getAttribute("data-stems");
+          updateAtelierPreview();
+        });
+      });
+
+      // Wrapping buttons
+      document.querySelectorAll("#wrapSelectorGrid .wrap-card").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#wrapSelectorGrid .wrap-card").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          atelierState.wrapName = btn.getAttribute("data-wrap");
+          atelierState.wrapDelta = parseInt(btn.getAttribute("data-delta"), 10) || 0;
+          atelierState.wrapBorder = btn.getAttribute("data-border");
+          atelierState.wrapShort = btn.getAttribute("data-short");
+          updateAtelierPreview();
+        });
+      });
+
+      // Scent / Ribbon buttons
+      document.querySelectorAll("#scentSelectorRow .scent-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#scentSelectorRow .scent-pill").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          atelierState.scentName = btn.getAttribute("data-scent");
+          updateAtelierPreview();
+        });
+      });
+
+      document.getElementById("btnAddAtelierToCart").addEventListener("click", () => {
+        const unitPrice = atelierState.baseItem.basePrice + atelierState.tierDelta + atelierState.wrapDelta;
+        addToCart({
+          id: `${atelierState.baseItem.id}-${atelierState.tierName}-${atelierState.wrapName}`,
+          name: atelierState.baseItem.name,
+          image: atelierState.baseItem.image,
+          tier: atelierState.tierName,
+          wrapping: atelierState.wrapName,
+          scent: atelierState.scentName,
+          unitPrice
+        });
+        openCartDrawer();
+      });
+
+      renderAtelierBaseOptions();
+      updateAtelierPreview();
+
+      // 5. Live Calligraphy Greeting Card Studio Logic
+      const POETIC_WISHES = {
+        "Sinh Nhật": [
+          "Chúc em một tuổi mới luôn rạng rỡ, kiêu sa và ngập tràn hạnh phúc như những đóa hoa tươi thắm nhất buổi sớm mai.",
+          "Mừng ngày thế giới có thêm một đóa hoa tuyệt đẹp. Chúc tuổi mới của bạn mọi ước nguyện đều nở hoa rực rỡ.",
+          "Gửi ngàn hương sắc ngọt ngào nhất mừng sinh nhật. Chúc bạn luôn bình an, tỏa sáng và được yêu thương trọn vẹn."
+        ],
+        "Kỷ Niệm Tình Yêu": [
+          "Cảm ơn em vì đã đến và làm mỗi ngày bên nhau đều dịu dàng như một khu vườn mùa xuân. Yêu em hôm nay và mãi mãi.",
+          "Mỗi cánh hoa là một lời thương anh dành riêng tặng em nhân ngày kỷ niệm của chúng mình. Mãi nắm chặt tay nhau em nhé!",
+          "Giữa muôn vàn đóa hoa rực rỡ, em vẫn luôn là bông hoa duy nhất làm trái tim anh rung động như phút ban đầu."
+        ],
+        "Khai Trương Hồng Phát": [
+          "Chúc mừng Khai Trương Hồng Phát! Chúc Quý Công Ty vạn sự hanh thông, tài lộc dồi dào và vươn xa rực rỡ.",
+          "Khởi đầu thịnh vượng — Tương lai rạng ngời! Chúc thương hiệu mới gặt hái vô vàn thành công và bứt phá mạnh mẽ.",
+          "Chúc mừng cột mốc vàng son mới! Chúc công việc kinh doanh luôn thuận buồm xuôi gió, khách hàng tấp nập."
+        ],
+        "Xin Lỗi Người Thương": [
+          "Anh biết mình đã làm em buồn. Cho phép những đóa hoa này thay anh nói lời xin lỗi chân thành nhất. Đừng giận anh nữa nhé!",
+          "Một chút vụng về làm người thương phiền lòng. Mong nụ cười dịu dàng của em sớm quay trở lại như nắng ấm ban mai.",
+          "Gửi đến em bó hoa tươi nhất cùng lời xin lỗi từ tận đáy lòng. Với anh, niềm vui của em luôn là điều quý giá nhất."
+        ]
+      };
+
+      const cardState = {
+        occasion: "Sinh Nhật",
+        heading: "Joyeux Anniversaire • Chúc Mừng Sinh Nhật",
+        recipient: "Người Thương Của Anh",
+        message: POETIC_WISHES["Sinh Nhật"][0],
+        sender: "Thương gửi từ Minh Quân",
+        wishIndex: 0
+      };
+
+      const recipientInput = document.getElementById("cardRecipientInput");
+      const messageInput = document.getElementById("cardMessageInput");
+      const senderInput = document.getElementById("cardSenderInput");
+
+      function syncCardPreview() {
+        cardState.recipient = recipientInput.value.trim() || "Người Thương";
+        cardState.message = messageInput.value.trim() || "Chúc mọi điều tốt đẹp và rực rỡ nhất luôn bên bạn.";
+        cardState.sender = senderInput.value.trim() || "Người gửi giấu tên";
+
+        document.getElementById("liveCardOccasionHeading").textContent = cardState.heading;
+        document.getElementById("liveCardRecipient").textContent = cardState.recipient;
+        document.getElementById("liveCardMessage").textContent = `“${cardState.message}”`;
+        document.getElementById("liveCardSender").textContent = cardState.sender;
+
+        const shortMsg = cardState.message.length > 52 ? cardState.message.substring(0, 52) + "..." : cardState.message;
+        document.getElementById("drawerCardSummaryText").textContent =
+          `Dịp: ${cardState.occasion} • Gửi: ${cardState.recipient} — “${shortMsg}” (${cardState.sender})`;
+      }
+
+      recipientInput.addEventListener("input", syncCardPreview);
+      messageInput.addEventListener("input", syncCardPreview);
+      senderInput.addEventListener("input", syncCardPreview);
+
+      document.querySelectorAll("#occasionSelector .occasion-chip").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#occasionSelector .occasion-chip").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          cardState.occasion = btn.getAttribute("data-occasion");
+          cardState.heading = btn.getAttribute("data-heading");
+          cardState.wishIndex = 0;
+          const wishes = POETIC_WISHES[cardState.occasion] || POETIC_WISHES["Sinh Nhật"];
+          messageInput.value = wishes[0];
+          syncCardPreview();
+        });
+      });
+
+      document.getElementById("btnCyclePoeticWish").addEventListener("click", () => {
+        const wishes = POETIC_WISHES[cardState.occasion] || POETIC_WISHES["Sinh Nhật"];
+        cardState.wishIndex = (cardState.wishIndex + 1) % wishes.length;
+        messageInput.value = wishes[cardState.wishIndex];
+        syncCardPreview();
+      });
+
+      document.querySelectorAll("#cardThemeRow .paper-theme-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#cardThemeRow .paper-theme-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const themeClass = btn.getAttribute("data-theme");
+          const canvas = document.getElementById("liveCardCanvas");
+          canvas.classList.remove("theme-ivory", "theme-burgundy", "theme-olive");
+          canvas.classList.add(themeClass);
+        });
+      });
+
+      document.getElementById("btnSaveCardToOrder").addEventListener("click", () => {
+        syncCardPreview();
+        showToast("💌 Đã lưu nội dung Thiệp Calligraphy đóng dấu sáp vào đơn đặt hoa!");
+      });
+
+      // 6. Slide-Over Cart & 60-Min Express Delivery Drawer Logic
+      const cart = [
+        {
+          id: FLORAL_COLLECTION[0].id + "-default",
+          name: FLORAL_COLLECTION[0].name,
+          image: FLORAL_COLLECTION[0].image,
+          tier: "Classic - 15 Cành",
+          wrapping: "Giấy Lụa Kem Pháp",
+          scent: "Nơ Satin Ánh Kim",
+          unitPrice: FLORAL_COLLECTION[0].basePrice,
+          qty: 1
+        }
+      ];
+
+      let selectedDeliverySlot = "Giao Hỏa Tốc 60 Phút";
+
+      function addToCart(newItem) {
+        const existing = cart.find(i => i.id === newItem.id);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ ...newItem, qty: 1 });
+        }
+        renderCartDrawer();
+        showToast(`🌸 Đã thêm "${newItem.name.split("—")[0].trim()}" vào giỏ hoa!`);
+      }
+
+      function renderCartDrawer() {
+        const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+        const totalPrice = cart.reduce((sum, i) => sum + i.unitPrice * i.qty, 0);
+
+        document.getElementById("cartCountBadge").textContent = totalCount;
+        document.getElementById("drawerTotalPrice").textContent = formatVnd(totalPrice);
+
+        const listEl = document.getElementById("drawerCartList");
+        listEl.innerHTML = "";
+
+        if (cart.length === 0) {
+          listEl.innerHTML = `<div style="padding: 18px; text-align: center; color: var(--espresso-muted); font-size: 13px; background: var(--ivory-pure); border-radius: 10px;">Chưa có bó hoa nào trong giỏ. Hãy chọn hoa hoặc thiết kế tại Xưởng nhé!</div>`;
+          return;
+        }
+
+        cart.forEach((item, idx) => {
+          const row = document.createElement("div");
+          row.className = "cart-item-row";
+          row.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" />
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <div class="cart-item-specs">${item.tier} • ${item.wrapping}</div>
+              <div class="cart-item-price">${formatVnd(item.unitPrice * item.qty)}</div>
+            </div>
+            <div class="cart-qty-controls">
+              <button type="button" class="qty-btn" data-dec="${idx}">-</button>
+              <span style="font-size: 13px; font-weight: 700; min-width: 16px; text-align: center;">${item.qty}</span>
+              <button type="button" class="qty-btn" data-inc="${idx}">+</button>
+            </div>
+          `;
+
+          row.querySelector("[data-dec]").addEventListener("click", () => {
+            if (cart[idx].qty > 1) {
+              cart[idx].qty -= 1;
+            } else {
+              cart.splice(idx, 1);
+            }
+            renderCartDrawer();
+          });
+
+          row.querySelector("[data-inc]").addEventListener("click", () => {
+            cart[idx].qty += 1;
+            renderCartDrawer();
+          });
+
+          listEl.appendChild(row);
+        });
+      }
+
+      const cartDrawer = document.getElementById("cartDrawer");
+      const drawerBackdrop = document.getElementById("drawerBackdrop");
+
+      function openCartDrawer() {
+        syncCardPreview();
+        renderCartDrawer();
+        cartDrawer.classList.add("open");
+        drawerBackdrop.classList.add("open");
+      }
+
+      function closeCartDrawer() {
+        cartDrawer.classList.remove("open");
+        drawerBackdrop.classList.remove("open");
+      }
+
+      document.getElementById("btnOpenDrawerTop").addEventListener("click", openCartDrawer);
+      document.getElementById("btnCloseDrawer").addEventListener("click", closeCartDrawer);
+      drawerBackdrop.addEventListener("click", closeCartDrawer);
+
+      document.querySelectorAll("#deliverySlotGrid .slot-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll("#deliverySlotGrid .slot-pill").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedDeliverySlot = btn.getAttribute("data-slot");
+        });
+      });
+
+      // 1-Click Zalo Order Submission
+      document.getElementById("btnCheckoutZalo").addEventListener("click", () => {
+        syncCardPreview();
+        const totalPrice = cart.reduce((sum, i) => sum + i.unitPrice * i.qty, 0);
+        const custPhone = document.getElementById("orderCustomerPhone").value.trim() || "Trao đổi qua Zalo";
+        const delivAddr = document.getElementById("orderDeliveryAddress").value.trim() || "Cung cấp qua Zalo";
+        const wantPhotoApprove = document.getElementById("chkPhotoApprove").checked;
+
+        const itemsLines = cart.length
+          ? cart.map((i, idx) => `${idx + 1}. ${i.name} | Cỡ: ${i.tier} | Gói: ${i.wrapping} | SL: ${i.qty} (${formatVnd(i.unitPrice * i.qty)})`).join("\n")
+          : "Nhờ tiệm tư vấn mẫu hoa thiết kế riêng";
+
+        const orderMessage = [
+          `🌸 ĐƠN ĐẶT HOA TỪ WEBSITE — ${shopName}`,
+          `────────────────────────`,
+          `💐 TÁC PHẨM ĐÃ CHỌN:`,
+          itemsLines,
+          `💰 Tổng tạm tính: ${formatVnd(totalPrice)}`,
+          `────────────────────────`,
+          `💌 THIỆP CALLIGRAPHY ĐÍNH KÈM:`,
+          `• Dịp tặng: ${cardState.occasion}`,
+          `• Người nhận: ${cardState.recipient}`,
+          `• Lời chúc: "${cardState.message}"`,
+          `• Chữ ký: ${cardState.sender}`,
+          `────────────────────────`,
+          `⚡ THÔNG TIN GIAO HOA:`,
+          `• Khung giờ: ${selectedDeliverySlot}`,
+          `• SĐT người đặt: ${custPhone}`,
+          `• Địa chỉ giao: ${delivAddr}`,
+          wantPhotoApprove ? `📸 Yêu cầu: Chụp ảnh hoa thật gửi Zalo duyệt trước khi giao!` : ``
+        ].filter(Boolean).join("\n");
+
+        navigator.clipboard?.writeText(orderMessage).catch(() => {});
+        showToast("✓ Đã sao chép chi tiết đơn hoa & nội dung thiệp! Đang mở Zalo tiệm...");
+        setTimeout(() => {
+          window.open(`https://zalo.me/${cleanShopPhone}`, "_blank");
+        }, 650);
+      });
+
+      // Owner Claim Modal Open/Close
+      const claimModal = document.getElementById("claimModal");
+      document.getElementById("btnOpenClaimModal").addEventListener("click", () => {
+        claimModal.classList.add("active");
+      });
+      document.getElementById("btnCloseClaimModal").addEventListener("click", () => {
+        claimModal.classList.remove("active");
+      });
+      claimModal.addEventListener("click", (e) => {
+        if (e.target === claimModal) claimModal.classList.remove("active");
+      });
+
+      renderCartDrawer();
+      syncCardPreview();
+    })();
+  </script>
+</body>
+</html>

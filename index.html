@@ -18,13 +18,19 @@
         <div class="radar-orb">📡</div>
         <div>
           <h1>TRẠM RADAR CANH TIỀN VỀ 24/7 (COCVN157)</h1>
-          <p>Tự động kiểm tra tiền thưởng quốc tế & Quản lý 4 trang web thu tiền lẻ VietQR</p>
+          <p>
+            Tự động kiểm tra tiền thưởng quốc tế & Quản lý 4 trang web thu tiền lẻ VietQR •
+            <strong id="autoScanCountdown" style="color:#6ee7b7;">⏱️ Tự động quét lại sau: 05:00</strong>
+          </p>
         </div>
       </div>
 
       <div class="header-actions">
         <button id="btnRefreshRadar" class="btn-emerald">
           🔄 Quét Kiểm Tra Tiền Thưởng Mới Nhất
+        </button>
+        <button id="btnEnableDesktopNotify" class="btn-outline" style="border-color:#34d399;color:#6ee7b7;">
+          🔔 Bật Thông Báo Màn Hình Máy Tính
         </button>
         <a href="https://cocvn157.github.io/than-so-hoc-ai/" target="_blank" class="btn-gold-action">
           🔮 Mở Web Thần Số Học (29k)
@@ -37,7 +43,7 @@
 
     <!-- CELEBRATION / NOTIFICATION BANNER -->
     <div id="payoutAlertBanner" class="payout-alert-banner">
-      <!-- Populated dynamically by app.js when a PR is merged or has new comments -->
+      <!-- Populated dynamically by app.js when a PR is merged, simulated, or has new comments -->
     </div>
 
     <!-- 3 MAIN TABS -->
@@ -46,7 +52,7 @@
         <span class="t-icon">💰</span>
         <div>
           <strong>1. Radar Canh Tiền Thưởng Quốc Tế</strong>
-          <small>Theo dõi trực tiếp 23 bài thi săn thưởng USD</small>
+          <small>Theo dõi trực tiếp 23 bài thi săn thưởng ($7,660 USD)</small>
         </div>
       </button>
 
@@ -88,7 +94,7 @@
         <div class="kpi-box" style="border-color:rgba(16,185,129,0.5);">
           <div class="kpi-label">🎉 ĐÃ DUYỆT / NỔ TIỀN THƯỞNG</div>
           <div class="kpi-val" id="kpiMergedCount" style="color:#34d399;">0 Bài ($0)</div>
-          <div class="kpi-sub">Tự động đổ chuông báo ngay khi > 0!</div>
+          <div class="kpi-sub">Tự động đổ chuông & báo màn hình khi > 0!</div>
         </div>
 
         <div class="kpi-box">
@@ -122,9 +128,14 @@
       <!-- LIVE BOUNTY PRS TABLE -->
       <div class="panel-box">
         <div class="panel-head">
-          <h2>📋 Danh Sách Chi Tiết Các Bài Thi Săn Thưởng Quốc Tế Của Bạn (`author:cocvn157`)</h2>
+          <h2>📋 Danh Sách Chi Tiết 23 Bài Thi Săn Thưởng Quốc Tế Của Bạn (`author:cocvn157`)</h2>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button id="btnTestSoundAlert" class="btn-outline">🔔 Nghe Thử Chuông Báo Tiền Về</button>
+            <button id="btnSimulatePayout" class="btn-gold-action" style="padding:8px 14px;font-size:12.5px;">
+              🧪 Giả Lập Thử Khi Có Tiền Về
+            </button>
+            <button id="btnTestSoundAlert" class="btn-outline">
+              🔔 Nghe Thử Chuông Báo Tiền Về
+            </button>
           </div>
         </div>
 
@@ -135,6 +146,7 @@
                 <th>#</th>
                 <th>Công Ty / Dự Án Quốc Tế</th>
                 <th>Tên Bài Giải Đã Nộp (Bấm Để Xem Trực Tiếp)</th>
+                <th>Điểm Kỹ Thuật & Bản Quyền (CI / CLA)</th>
                 <th>Mức Thưởng (USD / VNĐ)</th>
                 <th>Trạng Thái Chấm Bài</th>
                 <th>Phản Hồi Giám Khảo</th>

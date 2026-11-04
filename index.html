@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💰 Trạm Radar Canh Tiền Về 24/7 & Trung Tâm Hệ Sinh Thái Web (cocvn157)</title>
+  <meta name="description" content="Bảng điều khiển theo dõi trực tiếp tiền thưởng lập trình quốc tế (GitHub Bounties) và trung tâm quản lý 4 trang web kiếm tiền tự động qua VietQR của cocvn157." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hub-container">
+    <!-- TOP HEADER -->
+    <header class="hub-header">
+      <div class="hub-brand">
+        <div class="radar-orb">📡</div>
+        <div>
+          <h1>TRẠM RADAR CANH TIỀN VỀ 24/7 (COCVN157)</h1>
+          <p>Tự động kiểm tra tiền thưởng quốc tế & Quản lý 4 trang web thu tiền lẻ VietQR</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btnRefreshRadar" class="btn-emerald">
+          🔄 Quét Kiểm Tra Tiền Thưởng Mới Nhất
+        </button>
+        <a href="https://cocvn157.github.io/than-so-hoc-ai/" target="_blank" class="btn-gold-action">
+          🔮 Mở Web Thần Số Học (29k)
+        </a>
+        <a href="https://cocvn157.github.io/qua-tang-3d/" target="_blank" class="btn-outline">
+          💖 Mở Web Tỏ Tình 3D (19k)
+        </a>
+      </div>
+    </header>
+
+    <!-- CELEBRATION / NOTIFICATION BANNER -->
+    <div id="payoutAlertBanner" class="payout-alert-banner">
+      <!-- Populated dynamically by app.js when a PR is merged or has new comments -->
+    </div>
+
+    <!-- 3 MAIN TABS -->
+    <nav class="hub-tabs">
+      <button class="hub-tab-btn active" data-tab="pane-radar">
+        <span class="t-icon">💰</span>
+        <div>
+          <strong>1. Radar Canh Tiền Thưởng Quốc Tế</strong>
+          <small>Theo dõi trực tiếp 22+ bài thi săn thưởng USD</small>
+        </div>
+      </button>
+
+      <button class="hub-tab-btn" data-tab="pane-webapps">
+        <span class="t-icon">🌐</span>
+        <div>
+          <strong>2. 4 Trang Web Thu Tiền Qua VietQR</strong>
+          <small>Thần Số Học (29k) • Quà Tặng 3D (19k) • AI Studio</small>
+        </div>
+      </button>
+
+      <button class="hub-tab-btn" data-tab="pane-posts">
+        <span class="t-icon">📋</span>
+        <div>
+          <strong>3. Kho Bài Đăng Câu Khách 1-Chạm</strong>
+          <small>Copy dán lên Facebook / Zalo / TikTok trong 3 giây</small>
+        </div>
+      </button>
+    </nav>
+
+    <!-- ======================================================================
+         TAB 1: TRẠM RADAR CANH TIỀN VỀ 24/7 (GITHUB BOUNTY TRACKER)
+         ====================================================================== -->
+    <section id="pane-radar" class="hub-pane active">
+      <!-- 4 BIG KPI CARDS -->
+      <div class="kpi-row-4">
+        <div class="kpi-box">
+          <div class="kpi-label">📦 TỔNG SỐ BÀI ĐÃ NỘP</div>
+          <div class="kpi-val" id="kpiTotalPrs">22 Bài</div>
+          <div class="kpi-sub" id="kpiLastSync">Đang kết nối GitHub trực tiếp...</div>
+        </div>
+
+        <div class="kpi-box" style="border-color:rgba(245,158,11,0.45);">
+          <div class="kpi-label">💵 TỔNG QUỸ THƯỞNG ĐANG CHỜ CHẤM</div>
+          <div class="kpi-val" id="kpiPendingUsd" style="color:#fde68a;">$7,495 USD</div>
+          <div class="kpi-sub" id="kpiPendingVnd" style="color:#fbbf24;">≈ 191.122.000 VNĐ</div>
+        </div>
+
+        <div class="kpi-box" style="border-color:rgba(16,185,129,0.5);">
+          <div class="kpi-label">🎉 ĐÃ DUYỆT / NỔ TIỀN THƯỞNG</div>
+          <div class="kpi-val" id="kpiMergedCount" style="color:#34d399;">0 Bài ($0)</div>
+          <div class="kpi-sub">Tự động đổ chuông báo ngay khi > 0!</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label">💬 BÌNH LUẬN MỚI TỪ GIÁM KHẢO</div>
+          <div class="kpi-val" id="kpiCommentsCount" style="color:#38bdf8;">0 Phản hồi</div>
+          <div class="kpi-sub">Báo ngay nếu chủ dự án hỏi thêm</div>
+        </div>
+      </div>
+
+      <!-- HONEST VIETNAMESE EXPLANATION BOX FOR USER -->
+      <div class="panel-box" style="background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(30,27,75,0.8));border-color:rgba(245,158,11,0.4);">
+        <h2 style="font-size:17px;color:#fde68a;margin-bottom:8px;">
+          💡 Giải Đáp Thẳng Thắn: "Làm nhiều bài như vậy có thật sự nhận được tiền không và bao giờ tiền về?"
+        </h2>
+        <div style="font-size:14px;color:#e2e8f0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+          <div style="background:rgba(255,255,255,0.04);padding:12px 14px;border-radius:12px;">
+            <strong style="color:#6ee7b7;display:block;margin-bottom:4px;">1. Vì sao nộp bài xong chưa có tiền ngay trong vài tiếng?</strong>
+            Các công ty phần mềm ở Mỹ và Châu Âu (`tscircuit`, `ZIO`, `Cap`, `Tenstorrent`...) chấm bài bằng kỹ sư thật của họ. Thông thường họ mất từ <strong>1 đến 7 ngày làm việc</strong> để kiểm tra mã nguồn và bấm nút <strong>Merge (Duyệt bài)</strong>.
+          </div>
+          <div style="background:rgba(255,255,255,0.04);padding:12px 14px;border-radius:12px;">
+            <strong style="color:#fde68a;display:block;margin-bottom:4px;">2. Khi có bài được duyệt thì nhận tiền về Việt Nam thế nào?</strong>
+            Ngay khi cột trạng thái bên dưới chuyển từ <span class="status-pill status-open">⏳ Đang chờ chấm</span> sang <span class="status-pill status-merged">🎉 ĐÃ DUYỆT (MERGED)</span>, con bot <code>algora-pbc</code> sẽ gửi link nhận tiền vào bài đó. Bạn chỉ cần bấm vào để rút thẳng về thẻ ngân hàng Việt Nam (qua Stripe/PayPal/GitHub Sponsors)!
+          </div>
+          <div style="background:rgba(255,255,255,0.04);padding:12px 14px;border-radius:12px;">
+            <strong style="color:#f472b6;display:block;margin-bottom:4px;">3. Trong lúc chờ tiền USD về, kiếm tiền tươi mỗi ngày ở đâu?</strong>
+            Chính là từ 2 trang web đời thường <strong>🔮 Thần Số Học (29.000đ)</strong> và <strong>💖 Quà Tặng 3D (19.000đ)</strong> ở Tab số 2! Khách Việt Nam quét mã VietQR là tiền vào thẳng tài khoản ngân hàng của bạn trong 3 giây!
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE BOUNTY PRS TABLE -->
+      <div class="panel-box">
+        <div class="panel-head">
+          <h2>📋 Danh Sách Chi Tiết Các Bài Thi Săn Thưởng Quốc Tế Của Bạn (`author:cocvn157`)</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button id="btnTestSoundAlert" class="btn-outline">🔔 Nghe Thử Chuông Báo Tiền Về</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="bounty-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Công Ty / Dự Án Quốc Tế</th>
+                <th>Tên Bài Giải Đã Nộp (Bấm Để Xem Trực Tiếp)</th>
+                <th>Mức Thưởng (USD / VNĐ)</th>
+                <th>Trạng Thái Chấm Bài</th>
+                <th>Phản Hồi Giám Khảo</th>
+              </tr>
+            </thead>
+            <tbody id="bountyTableBody">
+              <!-- Populated dynamically by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 2: 4 CỖ MÁY WEB THU TIỀN QUA VIETQR (1-CLICK LAUNCHPAD)
+         ====================================================================== -->
+    <section id="pane-webapps" class="hub-pane">
+      <div class="apps-grid">
+        <!-- App 1: Thần Số Học -->
+        <div class="app-showcase-card">
+          <div>
+            <span class="status-pill status-merged" style="margin-bottom:8px;">🔥 DỄ KIẾM TIỀN LẺ NHẤT VIỆT NAM</span>
+            <h3>🔮 1. Web Giải Mã Vận Mệnh, Thần Số Học Pitago, Bói Tình Duyên & Phong Thủy SĐT</h3>
+            <p style="font-size:13.5px;color:#cbd5e1;margin-bottom:10px;">
+              Ai nhìn vào cũng hiểu ngay trong 1 giây! Khách nhập Họ Tên & Ngày Sinh để xem Con Số Chủ Đạo, Biểu Đồ 3x3, Độ Hợp Đôi và Chấm Điểm SĐT. Thu <strong>29.000đ/lượt (bằng 1 ly trà sữa)</strong> qua VietQR!
+            </p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://cocvn157.github.io/than-so-hoc-ai/" target="_blank" class="btn-gold-action">
+              🚀 Mở Trang Web Thần Số Học
+            </a>
+            <button class="btn-outline btn-copy-url" data-url="https://cocvn157.github.io/than-so-hoc-ai/">
+              📋 Copy Link Đi Chia Sẻ
+            </button>
+          </div>
+        </div>
+
+        <!-- App 2: Quà Tặng 3D -->
+        <div class="app-showcase-card">
+          <div>
+            <span class="status-pill status-comment" style="margin-bottom:8px;">💖 HOT TREND TIKTOK / ZALO GIỚI TRẺ</span>
+            <h3>💖 2. Xưởng Tạo Web Trái Tim 3D Tỏ Tình, Bánh Kem Sinh Nhật & Xin Lỗi Người Yêu</h3>
+            <p style="font-size:13.5px;color:#cbd5e1;margin-bottom:10px;">
+              Có hiệu ứng nút <em>"Không đồng ý"</em> tự chạy trốn hài hước, thổi nến bánh kem nổ pháo hoa + phát nhạc tự động và Vòng quay tình yêu theo tên riêng. Thu <strong>19.000đ/lượt</strong> mở khóa VIP qua VietQR!
+            </p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://cocvn157.github.io/qua-tang-3d/" target="_blank" class="btn-emerald">
+              🚀 Mở Web Quà Tặng 3D
+            </a>
+            <button class="btn-outline btn-copy-url" data-url="https://cocvn157.github.io/qua-tang-3d/">
+              📋 Copy Link Đi Chia Sẻ
+            </button>
+          </div>
+        </div>
+
+        <!-- App 3: OmniStudio AI V2.5 -->
+        <div class="app-showcase-card">
+          <div>
+            <span class="status-pill status-open" style="margin-bottom:8px;">🤖 DÀNH CHO DÂN VĂN PHÒNG & KINH DOANH</span>
+            <h3>🤖 3. OmniStudio AI V2.5 — Đội AI 6 Vai Trò, Tạo Danh Thiếp QR & Kịch Bản TikTok</h3>
+            <p style="font-size:13.5px;color:#cbd5e1;margin-bottom:10px;">
+              19 công cụ làm việc & kinh doanh chạy trực tiếp trên trình duyệt: Đội AI 6 Vai Trò, Tạo Danh Thiếp Điện Tử Apple Glass, Kịch Bản Video 30s, Xuất Hóa Đơn PDF. Thu <strong>99.000đ – 299.000đ/gói</strong>!
+            </p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://cocvn157.github.io/ai-omni-studio/" target="_blank" class="btn-outline">
+              🚀 Mở OmniStudio AI V2.5
+            </a>
+            <button class="btn-outline btn-copy-url" data-url="https://cocvn157.github.io/ai-omni-studio/">
+              📋 Copy Link
+            </button>
+          </div>
+        </div>
+
+        <!-- App 4: GitHub Open Source Traffic Magnet -->
+        <div class="app-showcase-card">
+          <div>
+            <span class="status-pill status-open" style="margin-bottom:8px;">🌍 KÉO KHÁCH QUỐC TẾ TỰ ĐỘNG</span>
+            <h3>🧩 4. Kho Mã Nguồn Mở Quốc Tế (`agent-team-framework`) & Tiện Ích Chrome</h3>
+            <p style="font-size:13.5px;color:#cbd5e1;margin-bottom:10px;">
+              Đóng vai trò phễu hút lượt truy cập tự nhiên từ Google & GitHub toàn cầu đổ về hệ sinh thái trang web của bạn hoàn toàn miễn phí.
+            </p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://github.com/cocvn157/agent-team-framework" target="_blank" class="btn-outline">
+              🌐 Xem Kho GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 3: KHO BÀI ĐĂNG MỒI CÂU KHÁCH 1-CHẠM (COPY & DÁN)
+         ====================================================================== -->
+    <section id="pane-posts" class="hub-pane">
+      <div class="panel-box">
+        <div class="panel-head">
+          <h2>📋 Copy Các Mẫu Bài Viết Dưới Đây & Dán Lên Facebook / Hội Nhóm / Zalo / TikTok</h2>
+        </div>
+
+        <div class="post-card">
+          <h4>🔮 Mẫu 1: Bài đăng kéo khách vào Web Thần Số Học & Bói Tình Duyên (Dễ nổ tương tác nhất!)</h4>
+          <textarea class="post-textarea" rows="5" readonly>🔮 Mới tìm được trang web Giải Mã Ngày Sinh, Thần Số Học Pitago & Bói Độ Hợp Đôi Tình Duyên chuẩn phát sợ luôn mọi người ơi!! 😱
+Chỉ cần nhập Họ Tên + Ngày Sinh vào là nó vẽ ra luôn Biểu đồ 3x3, Con Số Chủ Đạo, 4 Đỉnh Cao Đời Người với chấm điểm Phong Thủy Số Điện Thoại / Số Tài Khoản Ngân Hàng miễn phí 100%!
+Ai muốn biết năm 2026 mình hợp nghề gì, bao nhiêu tuổi giàu hoặc hợp với người yêu bao nhiêu % thì bấm vào xem thử ngay nhé:
+👉 https://cocvn157.github.io/than-so-hoc-ai/</textarea>
+          <button class="btn-emerald btn-copy-post">📋 Sao Chép Bài Đăng Số 1</button>
+        </div>
+
+        <div class="post-card">
+          <h4>💖 Mẫu 2: Bài đăng kéo giới trẻ & các cặp đôi vào Web Trái Tim 3D Tỏ Tình / Sinh Nhật</h4>
+          <textarea class="post-textarea" rows="5" readonly>💖 Cứu tôi mọi người ơi 😂 Cái web tạo Trái Tim 3D tỏ tình với Xin lỗi người yêu này có cái nút "Không đồng ý" cứ chạm tay vào là nó tự chạy trốn không tài nào bấm được!!
+Còn có cả chế độ Bánh Kem 3D bấm thổi nến nổ pháo hoa chúc mừng sinh nhật kèm nhạc theo tên riêng nữa, tự tạo trong 10 giây gửi qua Zalo/Messenger làm người yêu bất ngờ cực đỉnh luôn:
+👉 https://cocvn157.github.io/qua-tang-3d/</textarea>
+          <button class="btn-gold-action btn-copy-post">📋 Sao Chép Bài Đăng Số 2</button>
+        </div>
+
+        <div class="post-card">
+          <h4>☯️ Mẫu 3: Bài đăng Chấm Điểm Phong Thủy Sim & Số Tài Khoản Ngân Hàng</h4>
+          <textarea class="post-textarea" rows="4" readonly>☯️ Mọi người thử mang Số Điện Thoại với Số Tài Khoản Ngân Hàng của mình vào đây chấm điểm Phong Thủy Bát Cực Linh Số xem được bao nhiêu trên 100 điểm nhé! Nó báo luôn tuổi mình hợp đuôi số nào để hút lộc Thiên Y và Giờ Hoàng Đạo trong ngày luôn:
+👉 https://cocvn157.github.io/than-so-hoc-ai/</textarea>
+          <button class="btn-outline btn-copy-post">📋 Sao Chép Bài Đăng Số 3</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

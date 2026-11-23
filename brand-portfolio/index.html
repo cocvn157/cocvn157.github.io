@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luu Quoc Trung — AI-Native Brand Identity & Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #090b10;
+      --surface: #11151f;
+      --surface-2: #181e2c;
+      --border: rgba(255,255,255,0.09);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #6366f1;
+      --accent-2: #22d3ee;
+      --emerald: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 48px 24px 96px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 36px; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 16px;
+    }
+    .brand-mark { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+    .status-pill {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      padding: 6px 12px; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .hero { padding: 64px 0 56px; max-width: 820px; }
+    .kicker { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent-2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+    h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 800; margin-bottom: 20px; }
+    .hero p { font-size: 18px; color: var(--muted); max-width: 680px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); color: #cbd5e1; }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; margin: 56px 0 24px; }
+    .section-head h2 { font-size: 24px; letter-spacing: -0.02em; }
+    .section-head span { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 24px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: rgba(99,102,241,0.45); }
+    .og-preview {
+      height: 210px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden; border-bottom: 1px solid var(--border);
+    }
+    .og-1 { background: radial-gradient(circle at 85% 15%, rgba(99,102,241,0.38), transparent 55%), linear-gradient(135deg, #0f172a, #090d16); }
+    .og-2 { background: radial-gradient(circle at 80% 20%, rgba(16,185,129,0.34), transparent 55%), linear-gradient(135deg, #061814, #0b111e); }
+    .og-3 { background: radial-gradient(circle at 80% 20%, rgba(245,158,11,0.32), transparent 55%), linear-gradient(135deg, #1a1207, #0c101b); }
+    .og-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.75); letter-spacing: 0.06em; text-transform: uppercase; }
+    .og-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; max-width: 280px; line-height: 1.2; }
+    .swatches { display: flex; gap: 6px; align-items: center; }
+    .swatch { width: 18px; height: 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); }
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .card-body h3 { font-size: 18px; font-weight: 700; }
+    .card-body p { font-size: 14px; color: var(--muted); }
+    .deliverables { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #cbd5e1; }
+    .workflow-box {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+    }
+    .step-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent-2); margin-bottom: 8px; }
+    .workflow-box h4 { font-size: 16px; margin-bottom: 6px; }
+    .workflow-box p { font-size: 13.5px; color: var(--muted); }
+    footer { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 14px; }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand-mark">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#6366F1"/>
+          <path d="M9 22L16 10L23 22H18.8L16 17L13.2 22H9Z" fill="white"/>
+        </svg>
+        <span>LUU QUOC TRUNG</span>
+      </div>
+      <div class="status-pill">● AVAILABLE FOR ASYNC CONTRACT · GMT+7</div>
+    </header>
+
+    <section class="hero">
+      <div class="kicker">Brand Identity Systems · OG & Social Cards · Product UI</div>
+      <h1>Polishing multi-brand ecosystems alongside AI agent teams.</h1>
+      <p>
+        I partner asynchronously with AI-native studios and engineering teams to unify logos, lockups, typography, color tokens, OG/social card pipelines, and clean product interfaces—shipping pragmatic visual upgrades without endless revision loops.
+      </p>
+      <div class="tags">
+        <span class="tag">Figma Variables & Auto-Layout</span>
+        <span class="tag">Illustrator Vector Craft</span>
+        <span class="tag">OG / Social Card Systems</span>
+        <span class="tag">Tailwind & Design Tokens</span>
+        <span class="tag">Claude · Midjourney · v0</span>
+        <span class="tag">Async Discord Workflow</span>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <h2>Selected Identity & Product UI Systems</h2>
+      <span>01 — 03 CASE STUDIES</span>
+    </div>
+
+    <div class="grid">
+      <!-- Case Study 1 -->
+      <article class="card">
+        <div class="og-preview og-1">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="og-badge">SIGNALPULSE · AI STRATEGY MEDIA</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#818CF8" stroke-width="2.5"/><circle cx="12" cy="12" r="4" fill="#22D3EE"/></svg>
+          </div>
+          <div class="og-title">Weekly Executive Intelligence Briefing</div>
+          <div class="swatches">
+            <span class="swatch" style="background:#0F172A" title="#0F172A"></span>
+            <span class="swatch" style="background:#6366F1" title="#6366F1"></span>
+            <span class="swatch" style="background:#22D3EE" title="#22D3EE"></span>
+            <span class="swatch" style="background:#F8FAFC" title="#F8FAFC"></span>
+            <span style="font-family:'JetBrains Mono';font-size:11px;color:#94a3b8;margin-left:6px;">Inter + JetBrains Mono</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>SignalPulse — Editorial Brand & Automated OG Card System</h3>
+          <p>Unified a fragmented tech-leadership newsletter and intelligence portal. Refined the geometric wordmark, dark/light lockups, favicon legibility at 16px, and parameterized Figma OG/social card templates for 20+ weekly category rankings.</p>
+          <div class="deliverables">Deliverables: Logo Lockups · Favicon Suite · Color/Type Spec · 1200×630 OG Templates</div>
+        </div>
+      </article>
+
+      <!-- Case Study 2 -->
+      <article class="card">
+        <div class="og-preview og-2">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="og-badge">PACELAB · ENDURANCE COACHING UI</span>
+            <svg width="26" height="24" viewBox="0 0 26 24" fill="none"><path d="M3 18L10 6L15 14L19 9L23 18H3Z" stroke="#34D399" stroke-width="2.2" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="og-title">Adaptive VO2 & Race Readiness Engine</div>
+          <div class="swatches">
+            <span class="swatch" style="background:#061814"></span>
+            <span class="swatch" style="background:#10B981"></span>
+            <span class="swatch" style="background:#34D399"></span>
+            <span class="swatch" style="background:#ECFDF5"></span>
+            <span style="font-family:'JetBrains Mono';font-size:11px;color:#94a3b8;margin-left:6px;">Plus Jakarta Sans</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>PaceLab — Consumer Fitness Identity & Product Dashboard</h3>
+          <p>Evolved an early MVP sports coaching app into a cohesive performance brand. Established high-contrast telemetry tokens, badge hierarchy, shareable race-week social cards, and responsive Tailwind component specs.</p>
+          <div class="deliverables">Deliverables: Brand Refresh · UI Component Kit · Shareable Social Cards · Token JSON</div>
+        </div>
+      </article>
+
+      <!-- Case Study 3 -->
+      <article class="card">
+        <div class="og-preview og-3">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="og-badge">ODDSLEAGUE · SOCIAL PREDICTION GAME</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#FBBF24" stroke-width="2.2"/><path d="M8 15L11 9L14 13L16 10" stroke="#FBBF24" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="og-title">Matchday Squads & Live Leaderboards</div>
+          <div class="swatches">
+            <span class="swatch" style="background:#1A1207"></span>
+            <span class="swatch" style="background:#F59E0B"></span>
+            <span class="swatch" style="background:#EF4444"></span>
+            <span class="swatch" style="background:#FEF3C7"></span>
+            <span style="font-family:'JetBrains Mono';font-size:11px;color:#94a3b8;margin-left:6px;">Space Grotesk</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>OddsLeague — Multi-Market Gaming Identity & Leaderboard UI</h3>
+          <p>Standardized brand guidelines across web and social channels without breaking existing user recognition. Audited contrast ratios, cleaned up SVG badge geometry, and built modular match-preview cards ready for agent batch rendering.</p>
+          <div class="deliverables">Deliverables: Identity Polish · SVG Badge System · Leaderboard UI · Brand Guidelines</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-head">
+      <h2>How I Work With AI Agent Teams</h2>
+      <span>ASYNC DISCORD WORKFLOW</span>
+    </div>
+
+    <section class="workflow-box">
+      <div>
+        <div class="step-num">01 / BRIEF & AUDIT</div>
+        <h4>Context Gathering</h4>
+        <p>Direct agents to pull current brand assets, live URLs, OG tags, and historical usage so every visual decision respects existing brand equity.</p>
+      </div>
+      <div>
+        <div class="step-num">02 / EXPLORE & FILTER</div>
+        <h4>Rapid Optioning</h4>
+        <p>Generate structured variations with AI & Figma variables, immediately filtering out noisy directions before human review.</p>
+      </div>
+      <div>
+        <div class="step-num">03 / CRAFT & SYSTEMATIZE</div>
+        <h4>Vector & Type Polish</h4>
+        <p>Refine kerning, optical balance, SVG paths, color contrast, and responsive card layouts in Figma and Illustrator.</p>
+      </div>
+      <div>
+        <div class="step-num">04 / SHIP FAST</div>
+        <h4>Tight Async Loops</h4>
+        <p>Deliver clean production SVG/PNG assets, Figma specs, and concise written rationale in Discord—ready to ship the same day.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div><strong>Luu Quoc Trung</strong> · Ho Chi Minh City, Vietnam</div>
+      <div>
+        <a href="mailto:cocvn157@gmail.com">cocvn157@gmail.com</a> &nbsp;·&nbsp;
+        <a href="https://github.com/cocvn157" target="_blank">github.com/cocvn157</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
